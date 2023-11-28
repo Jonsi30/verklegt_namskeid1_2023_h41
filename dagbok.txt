@@ -24,12 +24,18 @@ Tómas, Steinar, Jón, Helgi, Sindri
 
 Hver er að gera hvað:
 Byrjuðum á smá wireframe svo hópurinn getur séð fyrir sér verkefnið. 
-Og upplýsa allskonar kröfur og bugs sem gætu komið upp. 
+Og upplýsa allskonar kröfur og bugs sem gætu komið upp. Vorum saman að skoða klasarit saman líka
 Tómas er að vinna í Útlitshönnun
 Steinar er að vinna í kröfulistanum
 Helgi er að vinna í Klasariti
 Jón er að vinna í git handbókinni
 Sindri er að vinna í Use Cases 
+
+fundur klukkan 19:30:
+Kröfulistinn er kominn vantar eiginlega bara c kröfur. við erum á góðri leið með útlitshönnun, klasaritin
+og git handbók er á grunnstigi. þurfum að skoða use cases betur. Hönnunarskýrsla er á grunnstigi. 
+mættir: Tómas, Steinar, Jón, Helgi, Sindri. 
+
 
 Forgangsverkefni:
 Notkunartilvikum (e. Use cases). 
