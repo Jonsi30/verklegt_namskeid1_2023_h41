@@ -1,0 +1,39 @@
+Dagbók Hópur 41, Verklegt Námskeið 1 2023:
+
+27.Nóvember, Dagur 1:
+Mættir: 
+Tómas, Steinar og Jón seinni partinn
+
+Hver er að gera hvað: 
+Jón er að vinna í að gera Github Manual
+Tómas og Steinar voru að vinna í að útfæra kröfulistan og notendahópagreiningu.
+allir fengu verkefni að kynna sér git vídeóin
+
+Forgangsverkefni: 
+Notkunartilvikum (e. Use cases). 
+Klasariti (e. Class diagram). 
+Notendahópa Greiningu. 
+Útlitshönnun (e. Wireframe) sett fram sem “happy path”. 
+Kröfulista til viðmóts, með virknikröfum og nytsemis- og notendaupplifunarkröfum.
+Github Manual book
+
+
+28. Nóvember, dagur 2:
+Mættir: 
+Tómas, Steinar, Jón, Helgi, Sindri
+
+Hver er að gera hvað:
+Byrjuðum á smá wireframe svo hópurinn getur séð fyrir sér verkefnið. 
+Og upplýsa allskonar kröfur og bugs sem gætu komið upp. 
+Tómas er að vinna í Útlitshönnun
+Steinar er að vinna í kröfulistanum
+Helgi er að vinna í Klasariti
+Jón er að vinna í git handbókinni
+Sindri er að vinna í Use Cases 
+
+Forgangsverkefni:
+Notkunartilvikum (e. Use cases). 
+Klasariti (e. Class diagram).  
+Útlitshönnun (e. Wireframe) sett fram sem “happy path”. 
+Kröfulista til viðmóts, með virknikröfum og nytsemis- og notendaupplifunarkröfum.
+Github Manual book
