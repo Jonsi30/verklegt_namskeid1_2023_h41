@@ -1,6 +1,6 @@
 Dagbók Hópur 41, Verklegt Námskeið 1 2023:
 
-27.Nóvember, Dagur 1:
+27. Nóvember, Dagur 1:
 Mættir: 
 Tómas, Steinar og Jón seinni partinn
 
@@ -43,3 +43,26 @@ Klasariti (e. Class diagram).
 Útlitshönnun (e. Wireframe) sett fram sem “happy path”. 
 Kröfulista til viðmóts, með virknikröfum og nytsemis- og notendaupplifunarkröfum.
 Github Manual book
+
+29. Nóvember, dagur 3:
+mættir: 
+Tómas, Steinar, Jón, Helgi, Sindri
+
+Á morgunfundi klukkan 9:00 var ákveðið hvað markmiðið okkar væri í dag og hver væri að fara að gera hvað. 
+Markmiðið okkar í dag var að 
+
+Hver er að gera hvað: 
+Steinar og Sindri eru að vinna að Use cases
+Sindri er einnig að vinna að requirement listanum og að fínpússa hann
+Helgi er að vinna að klasaritinu
+Jón er að vinna í GitHub handbókinni
+Tómas er að vinna að Happy path 
+
+
+Forgangsverkefni:
+Notkunartilvikum (e. Use cases). 
+Klasariti (e. Class diagram).  
+Kröfulista til viðmóts, með virknikröfum og nytsemis- og notendaupplifunarkröfum.
+Útlitshönnun (e. Wireframe) sett fram sem “happy path”.
+Github Manual book
+
