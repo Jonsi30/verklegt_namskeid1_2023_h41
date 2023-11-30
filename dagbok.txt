@@ -82,5 +82,5 @@ Allir eru að vinna saman í að klára Hönnunarskýrsluna, eftir þarf að kl�
 Forgangsverkefni:
 Notkunartilvikum (e. Use cases). 
 Klasariti (e. Class diagram).
-“happy path”.
+Happy path.
 
