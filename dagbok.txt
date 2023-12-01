@@ -1,5 +1,6 @@
 Dagbók Hópur 41, Verklegt Námskeið 1 2023:
 
+
 27. Nóvember, Dagur 1:
 Mættir: 
 Tómas, Steinar og Jón seinni partinn
@@ -44,6 +45,7 @@ Klasariti (e. Class diagram).
 Kröfulista til viðmóts, með virknikröfum og nytsemis- og notendaupplifunarkröfum.
 Github Manual book
 
+
 29. Nóvember, dagur 3:
 mættir: 
 Tómas, Steinar, Jón, Helgi, Sindri
@@ -69,6 +71,7 @@ Klasariti (e. Class diagram).
 Útlitshönnun (e. Wireframe) sett fram sem “happy path”.
 Github Manual book
 
+
 30. Nóvember, dagur 4:
 Mættir:
 Tómas, Steinar, Jón, Helgi, Sindri
@@ -77,10 +80,33 @@ Morgunfundur klukkan 9:00
 Lögð áhersla á að leggja lokahönd á skýrslu, Git handbókin er eiginega tilbúinn á bara eftir að fínpússa hana. 
 
 hver er að gera hvað:
-Allir eru að vinna saman í að klára Hönnunarskýrsluna, eftir þarf að klára use cases, happy paths og klasaritin.
+Allir eru að vinna saman í að klára Hönnunarskýrsluna, 
+eftir þarf að klára use cases, happy paths og klasaritin.
 
-Forgangsverkefni:
-Notkunartilvikum (e. Use cases). 
+Forgangsverkefni: 
+use cases
 Klasariti (e. Class diagram).
 Happy path.
+
+fundur klukkan 19:35:
+Í dag var gert margt og mikið, Hönnunarskýrslan var tekin í bakaríið
+og á bara eftir að fínpússa hana og skila svo á morgun 
+
+
+1. Desember, dagur 5. 
+Mættir:
+Tómas, Steinar, Jón, Helgi, Sindri
+
+Morgunfundur klukkan 9:00.
+Skýrslan okkar kominn á lokastig og í dag verður hún kláruð, allir í hópnum eru sáttir við hvernig hún lýtur út og ekki mikið eftir
+nema fínpússa. Git handbókin okkar er hinsvegar tilbúinn.
+
+Hver er að gera hvað:
+Allir eru að vinna að því að fínpússa Hönnunarskýrsluna.
+
+forgangsverkefni:
+Hönnunarskýrsla
+
+
+
 
