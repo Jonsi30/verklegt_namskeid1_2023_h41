@@ -6,7 +6,7 @@ class Aircraft_data:
         
 
 
-
+    
     """
     def create_aircraft(self):
         #User can Create/assign airplane

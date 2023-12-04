@@ -7,7 +7,7 @@ class Voyage_data:
 
 
 
-
+        
 
 """
     def print_crew_list_for_voyage(self):
