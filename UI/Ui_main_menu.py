@@ -39,7 +39,7 @@ class Main_menu:
                         [m] Manager  [d] director
 
                                 or [q] quit
-"""
+                    """
         print(landing_ui)
         """Returns the input from the user"""
         input_str = input("login").lower()
