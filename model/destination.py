@@ -5,4 +5,4 @@ class Destination:
         self.numeric_id = numeric_id
 
     def __str__(self):
-        return f"id: {self.id}, destination: {self.destination}, numeric id: {self.numeric_id} "
+        return f"id: {self.id}, destination: {self.destination}, numeric_id: {self.numeric_id} "
