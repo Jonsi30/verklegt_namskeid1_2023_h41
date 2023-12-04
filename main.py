@@ -6,9 +6,11 @@ from UI.manager_path import manager_path
 def main():
     user_input = Landing_page.landing_page()
     if user_input == "m":
-        manager_path.manager_menu()
+        Main_menu.manager_menu()
     elif user_input == "d":
-        director_path.director_menu()
+        Main_menu.director_menu()
+    print("help")
+    print("Hello world")
 
 
 if __name__ == "__main__":
