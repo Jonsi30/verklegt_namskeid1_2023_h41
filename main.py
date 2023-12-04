@@ -1,7 +1,10 @@
-from UI.Ui_main_menu import Main_menu
+from UI.ui_main_menu import Main_menu
+
 
 def main():
-    Main_menu.landing_page
+    landing_page = Main_menu.landing_page
+    print(landing_page)
+
 
 if __name__ == "__main__":
     main()

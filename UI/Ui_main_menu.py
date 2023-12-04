@@ -6,7 +6,7 @@ class Main_menu:
         """Constructor for Main_menu"""
         pass
 
-    def landing_page(self):
+    def landing_page():
         """Prints the landing page for the user"""
         landing_ui = """
 
@@ -40,10 +40,16 @@ class Main_menu:
 
                                 or [q] quit
                     """
+        
         print(landing_ui)
         """Returns the input from the user"""
         input_str = input("login").lower()
         return input_str
+    
+    def manager_menu():
+        """Prints the manager menu for the user"""
+        manager_ui = """
+
 
     def clear_screen(self):
         """Clears the screen"""
