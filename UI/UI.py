@@ -1,0 +1,2 @@
+class MainPageUI():
+    pass
