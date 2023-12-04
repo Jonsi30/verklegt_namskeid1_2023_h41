@@ -1,9 +1,7 @@
-from UI.ui_main_menu.py import Main_menu
-
+from UI.Ui_main_menu import Main_menu
 
 def main():
-    pass
-
+    Main_menu.landing_page
 
 if __name__ == "__main__":
     main()
