@@ -15,4 +15,5 @@ class Voyage:
         return flight_dict
 
     def get_voyage():
-        pass    
+        voyage_dict = dict() 
+
