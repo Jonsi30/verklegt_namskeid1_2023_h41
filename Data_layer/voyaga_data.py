@@ -1,9 +1,12 @@
 import csv
 
 class Voyage_data:
-    def __init__(self): 
-        self.file_name = "files/voyage.csv" #filenameið sem inniheldur info um þetta class
-        pass
+    def __init__(self):
+        try: 
+            self.file_name = input(f"Enter voyage filename: ") #filenameið sem inniheldur info um þetta class
+            self.file = open(self.file_name, "r")             
+        except FileNotFoundError:
+            print("File not found, try again")
 
 
 
@@ -21,7 +24,5 @@ class Voyage_data:
         pass
 
     def read_voyage_information(self):
-        #User can read information about a voyage#
+        """User can read information about a voyage"""
         pass
-        
-"""
