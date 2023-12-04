@@ -1,8 +1,9 @@
-import os
+import csv
 
 class Voyage_data:
     def __init__(self): 
         self.file_name = "files/voyage.csv" #filenameið sem inniheldur info um þetta class
+        pass
 
     def print_crew_list_for_voyage(self):
         pass

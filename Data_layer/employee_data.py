@@ -1,10 +1,9 @@
-import os
+import csv
 
 class Employee_data:
     def __init__(self):
+        self.file_name = "files/crew.csv" #filenameið sem inniheldur info um þetta class
         
-    self.file_name = "files/crew.csv" #filenameið sem inniheldur info um þetta class
-
     def print_most_experienced_pilot(self):
         """User can read pilot with the most flight time"""
         pass
