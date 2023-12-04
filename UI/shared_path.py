@@ -1,4 +1,7 @@
-class Landing_page:
+from model.voyage import Voyage
+
+
+class Shared_path:
     def __init__(self):
         """Constructor for Main_menu"""
         pass
@@ -42,3 +45,6 @@ class Landing_page:
         """Returns the input from the user"""
         input_str = input("login: ").lower()
         return input_str
+
+    def voayge_list():
+        """Prints the voyage list for the user"""
