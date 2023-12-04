@@ -8,20 +8,21 @@ class Voyage_data:
         except FileNotFoundError:
             print("File not found, try again")
 
+
+
+
+
+"""
     def print_crew_list_for_voyage(self):
         pass
 
     def create_voyage(self):
-        """User can Create Voyage"""
+        #User can Create Voyage#
         pass
 
     def edit_voyage(self):
         pass
 
     def read_voyage_information(self):
-        flight_dict = dict()
         """User can read information about a voyage"""
-        for line in self.file:
-            flight_nr, dep_from, arr_at, departure, arrival, plane_insignia = line
-            flight_dict[flight_nr] = dep_from, arr_at, departure, arrival, plane_insignia
-        
+        pass
