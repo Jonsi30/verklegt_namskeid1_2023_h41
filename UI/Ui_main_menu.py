@@ -48,7 +48,7 @@ class Main_menu:
 
     def manager_menu():
         """Prints the manager menu for the user"""
-        clear_screen()
+        os.system("cls" if os.name == "nt" else "clear")
         manager_ui = """
     Welcome Manager 
 
@@ -65,8 +65,7 @@ class Main_menu:
     def director_menu():
         """prints director page and asks for input"""
 
-        clear_screen()
-        """Prints the director menu for the user"""
+        os.system("cls" if os.name == "nt" else "clear")
         director_ui = """
     Welcome Director 
 
