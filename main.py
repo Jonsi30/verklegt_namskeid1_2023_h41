@@ -1,11 +1,17 @@
-from UI.Ui_main_menu import Main_menu
+from UI.shared_path import Shared_path
+from UI.director_path import director_path
+from UI.manager_path import manager_path
+
 
 def main():
-    user_input = Main_menu.landing_page()
+    user_input = Shared_path.landing_page()
     if user_input == "m":
-        user_input = Main_menu.manager_menu()
+        manager_path.manager_menu()
     elif user_input == "d":
-        user_input = Main_menu.director_menu()
+        director_path.director_menu()
+    print("help")
+    print("Hello world")
+
 
 if __name__ == "__main__":
     main()
