@@ -1,9 +1,9 @@
-import os
+import csv
 
 class Aircraft_data:
     def __init__(self):
         self.file_name = "files/aircrafts.csv" #filenameið sem inniheldur info um þetta class
-
+        
     def create_aircraft(self):
         """User can Create/assign airplane"""
         pass
