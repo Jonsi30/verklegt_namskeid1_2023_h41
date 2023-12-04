@@ -6,7 +6,7 @@ class Main_menu:
         """Constructor for Main_menu"""
         pass
 
-    def landing_page(self):
+    def landing_page():
         """Prints the landing page for the user"""
         landing_ui = """
 
