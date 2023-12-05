@@ -11,3 +11,6 @@ class Data_wrapper:
 
     def create_destination(self, new_destination):
         return self.destination_data.create_destination(new_destination)
+    
+    def get_voyage_data(self):
+        return self.voyage_data.get_voyage_data()
