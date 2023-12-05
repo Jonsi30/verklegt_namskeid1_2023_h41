@@ -1,6 +1,6 @@
 import csv
 from model.employee import Employee
-self, name="", role="", rank="", license="", phone_nr="", adress="", ssn="")
+
 
 class Employee_data:
     def __init__(self):
