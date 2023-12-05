@@ -1,7 +1,7 @@
-from data.voyage_data import GetData
+from data.data_wrapper import Data_wrapper
 
 
-class Voyage_model:
+class Voyage_details:
     def __init__(self) -> None:
         self.file = GetData.get_voyage_data(self)
 

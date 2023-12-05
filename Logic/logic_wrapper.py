@@ -1,5 +1,5 @@
 from logic.voyage_formatter import VoyageFormatter
-from model.voyage_model import Voyage_model
+from model.voyage_details
 
 
 class logic_wrapper:
