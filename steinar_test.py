@@ -1,4 +1,4 @@
-from Data_layer.destination_data import Destination_data
+from data.destination_data import Destination_data
 from model.destination import Destination
 
 def main():
