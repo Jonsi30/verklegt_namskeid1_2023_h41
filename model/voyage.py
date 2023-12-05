@@ -1,4 +1,4 @@
-from Data_layer.voyaga_data import GetData
+from data.voyage_data import GetData
 
 
 class Voyage:
