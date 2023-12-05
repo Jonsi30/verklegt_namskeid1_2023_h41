@@ -16,7 +16,7 @@ class Employee_data:
         return ret_list
 
     def create_employee(self, employee_info):
-        #User can Create Destination
+        #User can Create Employee
         with open(self.file_name, 'a', newline='', encoding="utf-8") as csvfile:
             fieldnames = ["name", "role", "rank", "license", "phone_nr", "adress", "ssn"]
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)

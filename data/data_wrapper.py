@@ -18,3 +18,6 @@ class Data_wrapper:
 
     def get_all_employees(self):
         return self.employee_data.get_all_employees()
+    
+    def create_employee(self, employee_info):
+        return self.employee_data.create_employee(employee_info)
