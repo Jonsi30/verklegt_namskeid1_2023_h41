@@ -6,6 +6,7 @@ class Voyage_details:
         self.file = Data_wrapper.get_voyage_data(self)
 
     def get_flight(self):
+        # this gets flights and assigns their values to a dictionary
         flight_dict = dict()
         lines = self.file.readlines()[1:]
         for line in lines:
@@ -34,6 +35,7 @@ class Voyage_details:
         return flight_dict
 
     def get_voyage(self):
+        # this finds two flights that together make a voyage
         flight_dict = self.get_flight()
         voyage_dict = dict()
         flight_keys = list(flight_dict.keys())

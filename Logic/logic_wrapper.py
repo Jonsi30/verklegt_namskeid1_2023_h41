@@ -7,6 +7,7 @@ class logic_wrapper:
         pass
 
     def get_voyage_data(self):
+        # puts the voyage details into voyage formatter
         voyage = Voyage_details()  # create an instance of Voyage
         voyage_formatter = VoyageFormatter(
             voyage
