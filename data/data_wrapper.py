@@ -1,4 +1,5 @@
 from data.destination_data import Destination_data
+from data.voyage_data import GetData
 
 class Data_wrapper:
     def __init__(self):
