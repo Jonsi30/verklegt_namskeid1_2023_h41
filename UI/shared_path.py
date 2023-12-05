@@ -1,4 +1,4 @@
-from model.voyage import Voyage
+from data.data_wrapper import Data_wrapper
 
 
 class Shared_path:
@@ -48,3 +48,4 @@ class Shared_path:
 
     def voayge_list():
         """Prints the voyage list for the user"""
+        print(Data_wrapper.get_voyage_data())
