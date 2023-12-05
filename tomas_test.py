@@ -1,4 +1,4 @@
-from model.voyage import Voyage
+from model.voyage_model import Voyage_model
 
 
 class VoyageFormatter:
@@ -22,7 +22,7 @@ class VoyageFormatter:
         return formatted_voyage
 
 
-voyage = Voyage()  # create an instance of Voyage
+voyage = Voyage_model()  # create an instance of Voyage
 voyage_formatter = VoyageFormatter(
     voyage
 )  # pass the Voyage instance to VoyageFormatter

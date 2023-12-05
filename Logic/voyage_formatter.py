@@ -1,4 +1,4 @@
-from model.voyage_model import Voyage
+from model.voyage import Voyage
 
 
 class VoyageFormatter:
