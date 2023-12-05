@@ -1,12 +1,14 @@
-from data.data_wrapper import Data_wrapper
+from logic.logic_wrapper import logic_wrapper
+from logic.voyage_details import Voyage_details
 
 
 class Shared_Path:
     def __init__(self):
         """Constructor for Main_menu"""
+        self.logicwrapper = logic_wrapper()
         pass
 
-    def landing_page():
+    def landing_page(self):
         """Prints the landing page for the user"""
         landing_ui = """
 
@@ -45,7 +47,3 @@ class Shared_Path:
         """Returns the input from the user"""
         input_str = input("login: ").lower()
         return input_str
-
-    def voyage_list():
-        """Prints the voyage list for the user"""
-        print(Data_wrapper.get_voyage_data())
