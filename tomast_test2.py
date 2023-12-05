@@ -1,7 +1,10 @@
+"""scrap prolly"""
+
+
 from data.voyage_data import GetData
 
 
-class Voyage:
+class Voyage_details:
     def __init__(self) -> None:
         self.file = GetData.get_voyage_data(self)
 
@@ -57,9 +60,3 @@ class Voyage:
                 formatted_voyage += "\n"
             formatted_voyage += "\n"
         return formatted_voyage
-
-
-voyage_instance = (
-    Voyage()
-)  # Assuming Voyage doesn't require parameters to be initialized
-print(voyage_instance.format_voyage())
