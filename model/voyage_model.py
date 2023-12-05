@@ -1,5 +1,5 @@
 class Voyage_Model:
-    def __init__(self, id="",fligh_nr="",dep_from="",arr_at="",departure="",arrival="",plane_insignia="",captain="",copilot="",head_of_service="",flight_attendant="") -> None:
+    def __init__(self, id="",fligh_nr="",dep_from="",arr_at="",departure="",arrival="",plane_insignia="",captain="",copilot="",head_of_service="",flight_attendant=""):
         self.id = id
         self.fligh_nr = fligh_nr
         self.dep_from = dep_from
