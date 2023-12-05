@@ -1,7 +1,7 @@
 import os
 
 
-class manager_path:
+class Manager_Path:
     def __init__(self):
         pass
 

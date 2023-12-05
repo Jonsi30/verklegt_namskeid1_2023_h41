@@ -1,7 +1,7 @@
 import os
 
 
-class director_path:
+class Director_Path:
     def __init__(self):
         pass
 
