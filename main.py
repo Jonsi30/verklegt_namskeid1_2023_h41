@@ -1,6 +1,7 @@
 from UI.shared_path import Shared_path
 from UI.director_path import director_path
 from UI.manager_path import manager_path
+from Logic.logic_wrapper import logic_wrapper
 
 
 def main():
@@ -8,7 +9,9 @@ def main():
     if user_input == "m":
         manager_path.manager_menu()
     elif user_input == "d":
-        director_path.director_menu()
+        director_input = director_path.director_menu()
+        if director_input == "0":
+            Shared_path.voyage_list()
     print("help")
     print("Hello world")
 

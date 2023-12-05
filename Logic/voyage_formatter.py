@@ -1,4 +1,4 @@
-from model.voyage_model import Voyage_model
+from logic.voyage_details import Voyage_details
 
 
 class VoyageFormatter:
@@ -20,10 +20,3 @@ class VoyageFormatter:
                 formatted_voyage += "\n"
             formatted_voyage += "\n"
         return formatted_voyage
-
-
-voyage = Voyage_model()  # create an instance of Voyage
-voyage_formatter = VoyageFormatter(
-    voyage
-)  # pass the Voyage instance to VoyageFormatter
-print(voyage_formatter.format_voyage())
