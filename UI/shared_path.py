@@ -1,7 +1,7 @@
 from data.data_wrapper import Data_wrapper
 
 
-class Shared_path:
+class Shared_Path:
     def __init__(self):
         """Constructor for Main_menu"""
         pass
