@@ -1,6 +1,6 @@
-from UI.shared_path import Shared_path
-from UI.director_path import director_path
-from UI.manager_path import manager_path
+from ui.shared_path import Shared_path
+from ui.director_path import director_path
+from ui.manager_path import manager_path
 from logic.logic_wrapper import logic_wrapper
 
 
