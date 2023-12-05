@@ -1,4 +1,4 @@
-EMPLOYEE_FILE = "../Files/flight_list.csv"
+EMPLOYEE_FILE = "VERKLEGT_NAMSKEID1_2023_H41/Files/flight_list.csv"
 
 
 class GetData:
