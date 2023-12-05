@@ -23,6 +23,8 @@ class Employee_data:
 
             writer.writerow({'name': employee_info[0],'role': employee_info[1], 'rank': employee_info[2], 'license': employee_info[3], 'phone_nr': employee_info[4], 'adress': employee_info[5], 'ssn': employee_info[6]})
         
+    def edit_employee(self,):
+        pass
 
     """
     def print_most_experienced_pilot(self):
