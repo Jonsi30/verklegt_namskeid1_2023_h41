@@ -1,11 +1,14 @@
+EMPLOYEE_FILE = "../Files/flight_list.csv"
+
+
 class GetData:
     def __init__(self) -> None:
         pass
-    
+
     def get_voyage_data():
-        try: 
-            file_name = input(f"Enter voyage filename: ") #filenameið sem inniheldur info um þetta class
-            file = open(file_name, "r")
-            return file             
-        except FileNotFoundError:
-            print("File not found, try again")
+        # file_name = EMPLOYEE_FILE
+        file = open(EMPLOYEE_FILE, "r")
+        return file
+
+
+print(GetData.get_voyage_data())
