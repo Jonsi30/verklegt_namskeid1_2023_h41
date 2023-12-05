@@ -3,7 +3,7 @@ from data.data_wrapper import Data_wrapper
 
 class Voyage_details:
     def __init__(self) -> None:
-        self.file = GetData.get_voyage_data(self)
+        self.file = Data_wrapper.get_voyage_data(self)
 
     def get_flight(self):
         flight_dict = dict()
