@@ -46,6 +46,6 @@ class Shared_path:
         input_str = input("login: ").lower()
         return input_str
 
-    def voayge_list():
+    def voyage_list():
         """Prints the voyage list for the user"""
         print(Data_wrapper.get_voyage_data())
