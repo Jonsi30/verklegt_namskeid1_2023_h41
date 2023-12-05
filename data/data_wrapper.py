@@ -1,4 +1,5 @@
 from data.destination_data import Destination_data
+from data.employee_data import Employee_data
 
 class Data_wrapper:
     def __init__(self):
@@ -7,7 +8,8 @@ class Data_wrapper:
     def get_all_destinations(self):
         return self.destination_data.get_all_destination()
     
-    def create_destination(self, new_destination):
+    def create_destination(self, id, destination_name, numeric_id):
+        new_destination = (id, destination_name, numeric_id)
         return self.destination_data.create_destination(new_destination)
     
 

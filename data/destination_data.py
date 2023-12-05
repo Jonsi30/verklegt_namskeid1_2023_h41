@@ -20,7 +20,7 @@ class Destination_data:
             fieldnames = ["id", "destination", "numeric_id"]
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
-            writer.writerow({'id': destination_instance.id,'destination': destination_instance.destination, 'numeric_id': destination_instance.numeric_id})
+            writer.writerow({'id': destination_instance[0],'destination': destination_instance[1], 'numeric_id': destination_instance[2]})
 
 
 """

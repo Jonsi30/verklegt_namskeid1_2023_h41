@@ -1,4 +1,4 @@
-from model.destination import Destination
+
 from data.data_wrapper import Data_wrapper
 def main():
     
@@ -9,10 +9,7 @@ def main():
     destination = input("Enter new destination: ")
     numeric_id = input("Enter numeric id: ")
 
-    info = f'"{id}", "{destination}", "{numeric_id}"'
-
-    new_destination = (f'{id}', f'{destination}', f'{numeric_id}')
-    name.create_destination(new_destination)
+    name.create_destination(id, destination, numeric_id)
     all_destinations = name.get_all_destinations()
     
     for destination in all_destinations:
