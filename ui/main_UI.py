@@ -1,6 +1,9 @@
 import os
 
 from logic.logic_wrapper import Logic_wrapper
+from ui.voyage_UI import voyage
+from ui.Destination_UI import destination
+from ui.Aircraft_UI import Aircraft
 
 
 class main_UI:
@@ -46,8 +49,21 @@ class main_UI:
 
         print(landing_ui)
         """Returns the input from the user"""
-        input_str = input("login: ").lower()
-        return input_str
+
+    def landing_page_input_prompt(self):
+        self.landing_page()
+        while True:
+            command = input("Enter yer command sire!: ")
+            command = command.lower()
+            if command == "q":
+                print("shutting down")
+                break
+            elif command == "m":
+                main_UI.manager_menu_input_prompt()
+            elif command == "d":
+                main_UI.director_menu_
+            else:
+                print("invalid input!")
 
     def manager_menu():
         """Prints the manager menu for the user"""
@@ -62,8 +78,21 @@ class main_UI:
     [B]ACK
     """
         print(manager_ui)
-        input_str = input("Select Option: ").lower()
-        return input_str
+
+    def manager_menu_input_prompt(self):
+        self.manager_menu()
+        while True:
+            command = input("Enter yer command sire!: ")
+            command = command.lower()
+            if command == "q":
+                print("shutting down")
+                break
+            elif command == "m":
+                main_UI.manager_menu()
+            elif command == "d":
+                main_UI.director_menu
+            else:
+                print("invalid input!")
 
     def director_menu():
         """prints director page and asks for input"""
@@ -83,5 +112,18 @@ class main_UI:
     """
 
         print(director_ui)
-        input_str = input("Select Option: ").lower()
-        return input_str
+
+    def director_menu_input_prompt(self):
+        self.director_menu()
+        while True:
+            command = input("Enter yer command sire!: ")
+            command = command.lower()
+            if command == "q":
+                print("shutting down")
+                break
+            elif command == "m":
+                main_UI.manager_menu()
+            elif command == "d":
+                main_UI.director_menu
+            else:
+                print("invalid input!")
