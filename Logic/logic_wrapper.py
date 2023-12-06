@@ -1,11 +1,12 @@
-from logic.logic_destination import Logic_destination
+from logic.logic_destination import LogicDestination
 from data.data_wrapper import Data_wrapper
 from logic.voyage_logic import VoyageLogic
 from logic.logic_employees import LogicEmployees
 
+
 class Logic_wrapper:
     def __init__(self):
-        self.destinations = Logic_destination()
+        self.destinations = LogicDestination()
         self.data_wrapper = Data_wrapper()
         self.voyage_logic = VoyageLogic()
         self.employee_logic = LogicEmployees()

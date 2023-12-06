@@ -3,12 +3,14 @@ from data.voyage_data import GetData
 from data.employee_data import Employee_data
 from data.aircraft_data import Aircraft_Data
 
+
 class Data_wrapper:
     def __init__(self):
         self.destination_data = Destination_data()
         self.voyage_data = GetData()
         self.employee_data = Employee_data()
         self.aircraft_data = Aircraft_Data()
+
     def get_all_destinations(self):
         return self.destination_data.get_all_destination()
 
@@ -26,6 +28,6 @@ class Data_wrapper:
 
     def get_all_aircrafts(self):
         return self.aircraft_data.get_all_aircrafts()
-    
+
     def create_new_aircraft(self, new_aircraft_info):
         return self.aircraft_data.create_aircraft(new_aircraft_info)
