@@ -11,16 +11,17 @@ class Destination_data:
         with open(self.file_name, newline='', encoding="utf-8") as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
-                ret_list.append(Destination(row["id"], row["destination"], row["numeric_id"]))
+                ret_list.append(Destination(row["destination"], row["distance_from_ice"], row["flight time"], row["emergency contact"], row["emergency_contact_phone_nr"]))
         return ret_list
 
     def create_destination(self, destination_instance):
         #User can Create Destination
         with open(self.file_name, 'a', newline='', encoding="utf-8") as csvfile:
-            fieldnames = ["id", "destination", "numeric_id"]
+            fieldnames = ["destination", "distance_from_ice", "flight time", "emergency contact", "emergency_contact_phone_nr"]
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
-            writer.writerow({'id': destination_instance[0],'destination': destination_instance[1], 'numeric_id': destination_instance[2]})
+            writer.writerow({'destination': destination_instance[0],'distance_from_ice': destination_instance[1], 'flight_time': destination_instance[2], 'emergency contact': destination_instance[3], 'emergency_contact_phone_nr': destination_instance[4] })
+
 
     
 """

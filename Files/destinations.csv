@@ -1,13 +1,8 @@
-id,destination,numeric_id
-TOR,Thorshavn,2023
-RKV,Reykjavík,1337
-NUK,Nuuk,0666
-KUL,Kulusuk,0777
-TWL,Tingwall,2024
-LYB,Longyearbyean,6969
-KPH,Kobenhavn,4200
-OSL,Oslo,1234
-KOB,Kobenhavn,3212
-RVK,Reykjavik,5467
-SEL,Selfoss,6789
-HOF,hofsos,4564
+destination,distance_from_ice,flight time,emergency contact,emergency_contact_phone_nr
+Thorshavn,900,4:30,Gilli Brend I Hoyvik,3332121
+Nuuk,666,3:30,Kuupik Kleist,3334141
+Kulusuk,777,4:00,Anders Hove,3335151
+Tingwall,1463,6:30,Scott Robertson,3336161
+Longyearbyean,1673,7:30,Ola Toivonen,3337171
+Kobenhavn,2000,8:00,Simon Kjær,3338181
+Oslo,1234,5:00,Jon Arne Riise,3339191
