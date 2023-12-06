@@ -38,9 +38,7 @@ class Employee_data:
     
 
     def update_employee_info(self, employee_dict: dict):
-        user_input = input("enter name: ")
-
-        employee_dict[user_input]
+        pass
 
 
 
