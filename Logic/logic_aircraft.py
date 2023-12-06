@@ -11,3 +11,4 @@ class LogicAircraft:
     
     def get_all_aircrafts(self):
         return self.aircraft.get_all_aircrafts()
+    

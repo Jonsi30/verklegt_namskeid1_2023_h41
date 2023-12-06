@@ -10,7 +10,14 @@ class LogicEmployees:
         
         return self.employee.create_employee(new_info)
     
-
     def get_all_employees(self):
         return self.employee.get_all_employees()
+    
+    def update_employee(self,role,rank,license,phone,address):
+        updated_info = role,rank,license,phone,address
+
+        return self.employee.update_employee(updated_info)
+    
+    
+
         

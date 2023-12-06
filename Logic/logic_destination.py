@@ -15,4 +15,12 @@ class LogicDestination:
         for i in all_destinations:
             print(i)
 
+    def update_emergency_contact(self,emergency_contact,emergency_contact_phone_nr):
+        updated_info = emergency_contact, emergency_contact_phone_nr
+
+        return self.destination.update_emergency_contact(updated_info)
+    
+
+
+
 
