@@ -4,7 +4,6 @@ from logic.logic_wrapper import Logic_wrapper
 class voyage:
     def __init__(self):
         self.get_voyages = Logic_wrapper()
-        pass
 
     def create_new_voyage(self):
         return
