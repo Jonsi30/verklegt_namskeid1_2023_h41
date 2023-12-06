@@ -1,6 +1,4 @@
 Dagbók Hópur 41, Verklegt Námskeið 1 2023:
-yo
-
 
 27. Nóvember, Dagur 1:
 Mættir: 
@@ -119,7 +117,7 @@ Hver er að gera hvað:
 Steinar, Helgi, Sindri voru að vinna á data layernum.
 Jón og Tómas voru að vinna í UI layernum
 
-Síðdegisfundur 19:30
+Síðdegisfundur 19:30:
 Góður afrakstur í dag. skipulagt hvenær við ætlum að hittast á morgun
 
 forgangsverkefni:
@@ -136,9 +134,16 @@ morgunfundur klukkan 9:00:
 Hver er að gera hvað:
 Jón er að vinna að módel klösunum, Sindri og Helgi eru að vinna í datalayer
 Steinar er að vinna í logic layer
+Tómas er að vinna í UI
+
+Síðdegisfundur 19:30:
+Skipulagt hvar og hvenær á að hittast á morgun 
 
 Forgangsverkefni:
-Halda áfram að vinna í Data_layernum og model og logic
+Halda áfram að vinna í data og model og logic
+
+
+
 
 
 

@@ -1,12 +1,14 @@
+import os
 from data.data_wrapper import Data_wrapper
 
 
-class Voyage_details:
-    def __init__(self) -> None:
-        self.file = Data_wrapper.get_voyage_data(self)
+class VoyageLogic:
+    def __init__(self):
+        self.data_wrapper = Data_wrapper()
+        self.file = self.data_wrapper.get_voyage_data()
 
-    def get_flight(self):
-        # this gets flights and assigns their values to a dictionary
+    def get_all_voyages(self):
+        os.system("cls" if os.name == "nt" else "clear")
         flight_dict = dict()
         lines = self.file.readlines()[1:]
         for line in lines:
@@ -33,14 +35,3 @@ class Voyage_details:
                 "Plane Insignia": plane_insignia,
             }
         return flight_dict
-
-    def get_voyage(self):
-        # this finds two flights that together make a voyage
-        flight_dict = self.get_flight()
-        voyage_dict = dict()
-        flight_keys = list(flight_dict.keys())
-        for i in range(0, len(flight_keys), 2):
-            flight1 = flight_dict[flight_keys[i]]
-            flight2 = flight_dict[flight_keys[i + 1]]
-            voyage_dict[i // 2] = {"flight1": flight1, "flight2": flight2}
-        return voyage_dict

@@ -22,7 +22,7 @@ class Destination_data:
 
             writer.writerow({'id': destination_instance[0],'destination': destination_instance[1], 'numeric_id': destination_instance[2]})
 
-
+    
 """
     def print_most_popular_destination(self):
         #User can read popular destinations
