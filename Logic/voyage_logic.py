@@ -9,4 +9,4 @@ class VoyageLogic:
 
     def get_all_voyages(self):
         os.system("cls" if os.name == "nt" else "clear")
-        return self.file
+        for line in self.file:
