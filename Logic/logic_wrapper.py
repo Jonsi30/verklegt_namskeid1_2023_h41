@@ -4,7 +4,7 @@ from logic.voyage_logic import VoyageLogic
 
 
 class Logic_wrapper:
-    def __init__(self):
+    def init(self):
         self.destinations = Logic_destination()
         self.data_wrapper = Data_wrapper()
         self.voyage_logic = VoyageLogic()
