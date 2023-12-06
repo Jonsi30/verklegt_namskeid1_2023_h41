@@ -1,6 +1,7 @@
 from ui.main_UI import main_UI
 from ui.Destination_UI import destination
 from logic.logic_wrapper import Logic_wrapper
+from ui. import voyage
 
 
 def main():
