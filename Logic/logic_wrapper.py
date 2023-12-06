@@ -18,7 +18,8 @@ class Logic_wrapper:
         dest = Logic_wrapper()
 
         dest.all_destinations()
-        return self.destinations.all_dest()
         '''
+        return self.destinations.all_dest()
+        
     def get_all_voyages(self):
         return self.voyage_logic.get_all_voyages()
