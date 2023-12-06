@@ -1,11 +1,18 @@
 from data.data_wrapper import Data_wrapper
 
-class Logic_destination:
+class LogicDestination:
     def __init__(self) -> None:
-        self.name = Data_wrapper()
+        self.destination = Data_wrapper()
 
-    def all_dest(self):
-        all_destinations = self.name.get_all_destinations()
+    def create_destination(self,destination,distance_from_ice,flight_time,emergency_contact,emergency_contact_phone_nr):
+        new_info = destination,distance_from_ice,flight_time,emergency_contact,emergency_contact_phone_nr
+        
+        return self.destination.create_destination(new_info)
+
+    def get_all_destinations(self):
+        all_destinations = self.destination.get_all_destinations()
 
         for i in all_destinations:
             print(i)
+
+

@@ -143,6 +143,17 @@ Forgangsverkefni:
 Halda áfram að vinna í data og model og logic
 
 
+6. Desember, dagur 8.
+mættir:
+Tómas, Steinar, Jón, Helgi, Sindri
+
+morgunfundur klukkan 9:00:
+Ákveðið var að skipta okkur upp í hópa. Jón og Steinar myndu vinna í Data layernum, Tómas í UI og
+Helgi og Sindri þá í logicinum.
+
+
+
+
 
 
 
