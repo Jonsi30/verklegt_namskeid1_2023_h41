@@ -1,3 +1,6 @@
+"""GEYMA FOR NOW"""
+
+
 from logic.voyage_details import Voyage_details
 
 
