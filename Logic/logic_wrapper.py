@@ -3,6 +3,7 @@ from data.data_wrapper import Data_wrapper
 from logic.voyage_logic import VoyageLogic
 from logic.logic_employees import LogicEmployees
 
+
 class Logic_wrapper:
     def __init__(self):
         self.destinations = LogicDestination()
