@@ -28,10 +28,10 @@ class LogicEmployees:
 
         return self.employee.get_all_crew(crew_info)
     
-    def get_occupied_staff():
+    def get_occupied_staff(self):
         pass
 
-    def get_available_staff():
+    def get_available_staff(self):
         pass
     
     def get_by_ssn(self,ssn):
@@ -39,7 +39,7 @@ class LogicEmployees:
         
         return self.employee.get_by_ssn(get_ssn)
 
-    def check_if_available():
+    def check_if_available(self):
         pass
 
     
