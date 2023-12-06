@@ -1,12 +1,60 @@
+import os
+
+
 class destination:
     def __init__(self):
         pass
 
     def create_new_destination(self):
-        return
+        os.system("cls" if os.name == "nt" else "clear")
+        new_destination = """
+        Please Input The Following Details
+        ----------------------------------
+        destination"""
+        print(new_destination)
+        dest_input = input("-> ").lower()
+
+        distance = """ 
+        Please Input The Following Details
+        ----------------------------------
+        distance from iceland (km)"""
+        print(distance)
+        dist_input = input("-> ").lower()
+
+        duration = """
+        Please Input The Following Details
+        ----------------------------------
+        Duration (hrs:minutes)"""
+        print(duration)
+        dura_input = input("-> ").lower()
+
+        Contact = """
+        Please Input The Following Details
+        ----------------------------------
+        Emergency contact"""
+        print(Contact)
+        contact_input = input("-> ").lower()
+
+        Number = """
+        Please Input The Following Details
+        ----------------------------------
+        emergency contact phone_nr"""
+        print(Number)
+        contact_nr_input = input("-> ").lower()
+
+        return dest_input, dist_input, dura_input, contact_input, contact_nr_input
 
     def get_all_destinations(self):
-        return
+        os.system("cls" if os.name == "nt" else "clear")
+        print("all destinations")
+        get_all_destinations = """
+        [N]EW 
+        [Q]UIT
+        [B]ACK
+        """
+        print(get_all_destinations)
+        input_str = input("select action: ").lower()
+        return input_str
 
     def update_destination(self):
         return

@@ -58,8 +58,8 @@ class main_UI:
     [0] Voyage List  
     [1] View All Employees
 
-    [q] Quit 
-    [b] Back
+    [Q]UIT
+    [B]ACK
     """
         print(manager_ui)
         input_str = input("Select Option: ").lower()
@@ -78,8 +78,8 @@ class main_UI:
     [3] View All Destinations
 
 
-    [q] Quit 
-    [b] Back
+    [Q]UIT 
+    [B]ACK
     """
 
         print(director_ui)

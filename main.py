@@ -1,5 +1,5 @@
 from ui.main_UI import main_UI
-
+from ui.Destination_UI import destination
 from logic.logic_wrapper import Logic_wrapper
 
 
@@ -14,6 +14,11 @@ def main():
             all_voyages = Logic_wrapper().get_all_voyages()
             for voyage in all_voyages:
                 print(voyage)
+        elif director_input == "3":
+            destination().get_all_destinations()
+            director_input = destination().get_all_destinations()
+            if director_input == "n":
+                destination().create_new_destination()
 
 
 if __name__ == "__main__":
