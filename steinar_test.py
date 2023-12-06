@@ -1,4 +1,5 @@
 from data.data_wrapper import Data_wrapper
+from data.destination_data import Destination_data
 from model.destination import Destination
 def main():
     #destination,distance_from_ice,flight time,emergency contact,emergency_contact_phone_nr
