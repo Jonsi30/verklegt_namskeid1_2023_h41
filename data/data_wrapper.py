@@ -8,7 +8,6 @@ class Data_wrapper:
         self.destination_data = Destination_data()
         self.voyage_data = GetData()
         self.employee_data = Employee_data()
-
     def get_all_destinations(self):
         return self.destination_data.get_all_destination()
 
