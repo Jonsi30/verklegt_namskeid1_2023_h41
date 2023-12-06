@@ -14,10 +14,8 @@ def main():
     elif user_input == "d":
         director_input = main_UI.director_menu()
         if director_input == "0":
-            pass
             all_voyages = voyage().format_voyages()
-            for voyages in all_voyages:
-                print(voyages)
+            print(all_voyages)
         if director_input == "2":
             Aircraft().get_all_aircrafts()
             director_input = Aircraft().get_all_aircrafts()
@@ -30,5 +28,5 @@ def main():
                 destination().create_new_destination()
 
 
-if __name__ == "__main__":
+if __name__ == "main":
     main()

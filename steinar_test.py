@@ -1,4 +1,3 @@
-from data.destination_data import Destination_data
 from data.data_wrapper import Data_wrapper
 from model.destination import Destination
 def main():
@@ -43,7 +42,7 @@ def main():
 
     employee.create_employee(new_info)
    """
-"""
+   
     all_employees = employee.get_all_employees()
     for employee in all_employees:
        print(employee)
@@ -53,7 +52,7 @@ def main():
     employees = Employee_data()
 
     print(employees.get_employee_dict())
-    """
+    
     
 if __name__ == "__main__":
     main()
