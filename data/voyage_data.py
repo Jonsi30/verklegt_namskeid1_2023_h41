@@ -7,5 +7,5 @@ class GetData:
 
     def get_voyage_data(self):
         file_name = FLIGHT_FILE
-        file = open(file_name, "r")
+        file = open(file_name, "r", encoding="utf-8")
         return file
