@@ -1,10 +1,12 @@
+import os
 from data.data_wrapper import Data_wrapper
 
 
 class VoyageLogic:
     def __init__(self):
-        self.file = Data_wrapper.get_voyage_data(self)
+        self.data_wrapper = Data_wrapper()
+        self.file = self.data_wrapper.get_voyage_data()
 
     def get_all_voyages(self):
-        flight_dict = dict()
-        return flight_dict
+        os.system("cls" if os.name == "nt" else "clear")
+        return self.file

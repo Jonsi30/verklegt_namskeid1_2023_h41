@@ -4,7 +4,8 @@ from logic.logic_wrapper import logic_wrapper
 
 
 def main():
-    user_input = main_UI().landing_page()
+    m = main_UI()
+    user_input = m.landing_page()
     if user_input == "m":
         main_UI.manager_menu()
     elif user_input == "d":
