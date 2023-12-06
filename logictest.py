@@ -1,4 +1,4 @@
-from Logic.logic_wrapper import Logic_wrapper
+from logic.logic_wrapper import Logic_wrapper
 
 dest = Logic_wrapper()
 

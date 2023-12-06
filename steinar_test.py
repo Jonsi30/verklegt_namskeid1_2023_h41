@@ -19,9 +19,9 @@ def main():
         print(destination)
     
      """
-    """
-    employee = Data_wrapper()
     
+    employee = Data_wrapper()
+    """
     name = input("Enter employee name: ")
     role = input("Enter employee role: ")
     rank = input("Enter employee rank: ")
@@ -33,13 +33,12 @@ def main():
     new_info = name, role, rank, license, phone, adress, ssn
 
     employee.create_employee(new_info)
-   
+   """
    
     all_employees = employee.get_all_employees()
     for employee in all_employees:
        print(employee)
-    """
-
+    
     from data.employee_data import Employee_data
 
     employees = Employee_data()
