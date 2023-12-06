@@ -1,7 +1,7 @@
-from model.voyage import Voyage
+from data.data_wrapper import Data_wrapper
 
 
-class Shared_path:
+class Shared_Path:
     def __init__(self):
         """Constructor for Main_menu"""
         pass
@@ -46,5 +46,6 @@ class Shared_path:
         input_str = input("login: ").lower()
         return input_str
 
-    def voayge_list():
+    def voyage_list():
         """Prints the voyage list for the user"""
+        print(Data_wrapper.get_voyage_data())

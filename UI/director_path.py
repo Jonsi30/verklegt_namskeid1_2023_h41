@@ -1,7 +1,7 @@
 import os
 
 
-class director_path:
+class Director_Path:
     def __init__(self):
         pass
 
@@ -25,5 +25,3 @@ class director_path:
         print(director_ui)
         input_str = input("Select Option: ").lower()
         return input_str
-
-    def

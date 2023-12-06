@@ -1,14 +1,17 @@
-from UI.shared_path import Shared_path
-from UI.director_path import director_path
-from UI.manager_path import manager_path
+from ui.shared_path import Shared_Path
+from ui.director_path import Director_Path
+from ui.manager_path import Manager_Path
+from logic.logic_wrapper import logic_wrapper
 
 
 def main():
-    user_input = Shared_path.landing_page()
+    user_input = Shared_Path.landing_page()
     if user_input == "m":
-        manager_path.manager_menu()
+        Manager_Path.manager_menu()
     elif user_input == "d":
-        director_path.director_menu()
+        director_input = Director_Path.director_menu()
+        if director_input == "0":
+            Shared_Path.voyage_list()
     print("help")
     print("Hello world")
 

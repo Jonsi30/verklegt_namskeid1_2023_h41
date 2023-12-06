@@ -7,7 +7,6 @@ class VoyageFormatter:
         self.get_voyage = self.voyage.get_voyage()
 
     def format_voyage(self):
-        # formats the voyage string
         voyage_dict = self.get_voyage
         formatted_voyage = ""
         for key, voyage in voyage_dict.items():
@@ -21,3 +20,10 @@ class VoyageFormatter:
                 formatted_voyage += "\n"
             formatted_voyage += "\n"
         return formatted_voyage
+
+
+voyage = Voyage_details()  # create an instance of Voyage_details
+voyage_formatter = VoyageFormatter(
+    voyage
+)  # pass the Voyage_details instance to VoyageFormatter
+print(voyage_formatter.format_voyage())
