@@ -30,9 +30,6 @@ class Destination_data:
         #tæma skránna
         # write flag "w" writeheader()
         #kalla á create destination for each dest í þessum list *
-
-        #destination,distance_from_ice,flight time,emergency contact,emergency_contact_phone_nr
-
         all_dest = Destination_data()
         every_dest = all_dest.get_all_destination()
         new_list = []
@@ -41,15 +38,10 @@ class Destination_data:
                 new_list.append((updated_dest["destination"], updated_dest["distance_from_ice"], updated_dest["flight_time"], updated_dest["emergency_contact"], updated_dest["emergency_contact_phone_nr"]))
             else:
                 new_list.append((item["destination"], item["distance_from_ice"], item["flight_time"], item["emergency_contact"], item["emergency_contact_phone_nr"]))
-        # destination = destination
-        #self.distance_from_ice = distance_from_ice
-        #self.flight_time = flight_time
-        #self.emergency_contact = emergency_contact
-        #self.emergency_contact_phone_nr
+       
         f = open(self.file_name, "w")
         f.truncate()
         f.close()
-
 
         with open(self.file_name, 'w', newline='') as self.file_name:
             fields = ["destination", "distance_from_ice", "flight_time", "emergency_contact", "emergency_contact_phone_nr"]
@@ -58,7 +50,6 @@ class Destination_data:
             writer.writeheader()
 
         for item in new_list:
-            
             Destination_data().create_destination(item)
 
         
