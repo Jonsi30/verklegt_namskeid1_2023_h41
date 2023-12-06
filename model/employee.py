@@ -8,6 +8,9 @@ class Employee:
         self.adress = adress
         self.ssn = ssn
 
+    def __getitem__(self, key):
+        return getattr(self, key)
+
     def __str__(self):
         return f"name: {self.name}, role: {self.role}, rank: {self.rank}, license: {self.license}, phone nr: {self.phone_nr}, adress: {self.adress}, ssn: {self.ssn} "
         
