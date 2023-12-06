@@ -1,9 +1,15 @@
 from data.destination_data import Destination_data
 from data.data_wrapper import Data_wrapper
+from model.destination import Destination
 def main():
+    #destination,distance_from_ice,flight time,emergency contact,emergency_contact_phone_nr
+    #Nuuk,666,3:30,Kuupik Kleist,3334141
     
     air = Destination_data()
-    air.update_destination()
+    new_dest = Destination('Nuuk', '666', '3:30', 'Steinar', '3334141')
+
+    updated_dest = Destination_data().update_destination(new_dest)
+    
 
     """
     name = Data_wrapper()
@@ -20,10 +26,10 @@ def main():
     for destination in all_destinations:
         
         print(destination)
+    """
+     
     
-     """
-    
-    employee = Data_wrapper()
+    #employee = Data_wrapper()
     """
     name = input("Enter employee name: ")
     role = input("Enter employee role: ")

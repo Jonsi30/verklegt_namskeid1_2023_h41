@@ -1,6 +1,6 @@
-destination,distance_from_ice,flight time,emergency contact,emergency_contact_phone_nr
+destination,distance_from_ice,flight_time,emergency_contact,emergency_contact_phone_nr
 Thorshavn,900,4:30,Gilli Brend I Hoyvik,3332121
-Nuuk,666,3:30,Kuupik Kleist,3334141
+Nuuk,1234,4:30,Helgo,555555555
 Kulusuk,777,4:00,Anders Hove,3335151
 Tingwall,1463,6:30,Scott Robertson,3336161
 Longyearbyean,1673,7:30,Ola Toivonen,3337171

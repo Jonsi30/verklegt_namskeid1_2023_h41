@@ -1,5 +1,6 @@
 import csv
 from model.destination import Destination
+from ui.Destination_UI import destination
 
 class Destination_data:
     def __init__(self):
@@ -11,16 +12,16 @@ class Destination_data:
         with open(self.file_name, newline='', encoding="utf-8") as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
-                ret_list.append(Destination(row["destination"], row["distance_from_ice"], row["flight time"], row["emergency contact"], row["emergency_contact_phone_nr"]))
+                ret_list.append(Destination(row["destination"], row["distance_from_ice"], row["flight_time"], row["emergency_contact"], row["emergency_contact_phone_nr"]))
         return ret_list
 
     def create_destination(self, destination_instance):
         #User can Create Destination
         with open(self.file_name, 'a', newline='', encoding="utf-8") as csvfile:
-            fieldnames = ["destination", "distance_from_ice", "flight time", "emergency contact", "emergency_contact_phone_nr"]
+            fieldnames = ["destination", "distance_from_ice", "flight_time", "emergency_contact", "emergency_contact_phone_nr"]
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
-            writer.writerow({'destination': destination_instance[0],'distance_from_ice': destination_instance[1], 'flight_time': destination_instance[2], 'emergency contact': destination_instance[3], 'emergency_contact_phone_nr': destination_instance[4] })
+            writer.writerow({'destination': destination_instance[0],'distance_from_ice': destination_instance[1], 'flight_time': destination_instance[2], 'emergency_contact': destination_instance[3], 'emergency_contact_phone_nr': destination_instance[4] })
 
     def update_destination(self, updated_dest):
         #*sækja öll destination
@@ -32,12 +33,37 @@ class Destination_data:
 
         #destination,distance_from_ice,flight time,emergency contact,emergency_contact_phone_nr
 
-        all_dest = Destination_data.get_all_destination()
-        new_list = Destination_data.get_all_destination()
-        for item in all_dest:
-            destination,distance_from_ice,flight_time, emergency_contact,emergencry_contact_phone_nr = item.split(",")
-            if destination in item:
-                distance_from_ice = updated_dest
+        all_dest = Destination_data()
+        every_dest = all_dest.get_all_destination()
+        new_list = []
+        for item in every_dest:
+            if item["destination"] == updated_dest["destination"]:
+                new_list.append((updated_dest["destination"], updated_dest["distance_from_ice"], updated_dest["flight_time"], updated_dest["emergency_contact"], updated_dest["emergency_contact_phone_nr"]))
+            else:
+                new_list.append((item["destination"], item["distance_from_ice"], item["flight_time"], item["emergency_contact"], item["emergency_contact_phone_nr"]))
+        # destination = destination
+        #self.distance_from_ice = distance_from_ice
+        #self.flight_time = flight_time
+        #self.emergency_contact = emergency_contact
+        #self.emergency_contact_phone_nr
+        f = open(self.file_name, "w")
+        f.truncate()
+        f.close()
+
+
+        with open(self.file_name, 'w', newline='') as self.file_name:
+            fields = ["destination", "distance_from_ice", "flight_time", "emergency_contact", "emergency_contact_phone_nr"]
+            writer = csv.DictWriter(self.file_name, fieldnames=fields)
+            
+            writer.writeheader()
+
+        for item in new_list:
+            
+            Destination_data().create_destination(item)
+
+        
+
+                
 
 
 
