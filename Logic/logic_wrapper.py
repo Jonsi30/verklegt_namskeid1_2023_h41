@@ -13,17 +13,6 @@ class Logic_wrapper:
         self.logic_employees = LogicEmployees()
         self.logic_aircraft = LogicAircraft
         
-    def all_destinations(self):  # Þetta gefur alla destinations listaða
-        # Logic.Logic wrapper -> Logic.Logic_destination -> data.Data_wrapper -> data.destination_data
-        # Hægt að keyra þetta fyrir utan þessa möppu með þessu formatti:
-        """
-        from Logic.logic_wrapper import Logic_wrapper
-
-        dest = Logic_wrapper()
-
-        dest.all_destinations()
-        return self.destinations.all_dest()
-        """
     def create_destination(self):
         return self.logic_destinations.create_destination()
     
