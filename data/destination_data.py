@@ -22,6 +22,24 @@ class Destination_data:
 
             writer.writerow({'destination': destination_instance[0],'distance_from_ice': destination_instance[1], 'flight_time': destination_instance[2], 'emergency contact': destination_instance[3], 'emergency_contact_phone_nr': destination_instance[4] })
 
+    def update_destination(self, updated_dest):
+        #*sækja öll destination
+        #loopa yfir destinations
+            #ef ég finnd match á id í updated of current dest þá geri ég breytingarnar
+        #tæma skránna
+        # write flag "w" writeheader()
+        #kalla á create destination for each dest í þessum list *
+
+        #destination,distance_from_ice,flight time,emergency contact,emergency_contact_phone_nr
+
+        all_dest = Destination_data.get_all_destination()
+        new_list = Destination_data.get_all_destination()
+        for item in all_dest:
+            destination,distance_from_ice,flight_time, emergency_contact,emergencry_contact_phone_nr = item.split(",")
+            if destination in item:
+                distance_from_ice = updated_dest
+
+
 
     
 """
