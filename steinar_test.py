@@ -1,7 +1,10 @@
-
+from data.destination_data import Destination_data
 from data.data_wrapper import Data_wrapper
 def main():
     
+    air = Destination_data()
+    air.update_destination()
+
     """
     name = Data_wrapper()
     
@@ -34,7 +37,7 @@ def main():
 
     employee.create_employee(new_info)
    """
-   
+"""
     all_employees = employee.get_all_employees()
     for employee in all_employees:
        print(employee)
@@ -44,7 +47,7 @@ def main():
     employees = Employee_data()
 
     print(employees.get_employee_dict())
-    
+    """
     
 if __name__ == "__main__":
     main()

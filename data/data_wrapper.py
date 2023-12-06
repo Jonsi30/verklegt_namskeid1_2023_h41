@@ -31,3 +31,6 @@ class Data_wrapper:
 
     def create_new_aircraft(self, new_aircraft_info):
         return self.aircraft_data.create_aircraft(new_aircraft_info)
+    
+    def get_employee_dict(self):
+        return self.employee_data.get_employee_dict()
