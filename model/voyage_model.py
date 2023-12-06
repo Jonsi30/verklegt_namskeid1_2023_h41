@@ -12,7 +12,7 @@ class Voyage_Model:
         self.head_of_service = head_of_service
         self.flight_attendant = flight_attendant
 
-    # def __str__(self) -> str:
-    #     return f"{self.id},{self.fligh_nr},{self.dep_from},{self.arr_at},{self.departure},{self.arrival},{self.plane_insignia},{self.captain},{self.copilot},{self.head_of_service},{self.flight_attendant}"
+    def __str__(self):
+        return f"Voyage: Id{self.id},Fligh number:{self.fligh_nr},Departing:{self.dep_from},Arrival:{self.arr_at},Departure time:{self.departure},Arrival time:{self.arrival},Plane insignia:{self.plane_insignia},Captain:{self.captain},Copilot:{self.copilot},Head of service:{self.head_of_service},Flight attendant:{self.flight_attendant}"
     
 

@@ -15,29 +15,25 @@ class destination:
         dest_input = input("-> ").lower()
 
         distance = """ 
-        Please Input The Following Details
-        ----------------------------------
+        
         distance from iceland (km)"""
         print(distance)
         dist_input = input("-> ").lower()
 
         duration = """
-        Please Input The Following Details
-        ----------------------------------
+        
         Duration (hrs:minutes)"""
         print(duration)
         dura_input = input("-> ").lower()
 
         Contact = """
-        Please Input The Following Details
-        ----------------------------------
+        
         Emergency contact"""
         print(Contact)
         contact_input = input("-> ").lower()
 
         Number = """
-        Please Input The Following Details
-        ----------------------------------
+        
         emergency contact phone_nr"""
         print(Number)
         contact_nr_input = input("-> ").lower()
@@ -46,6 +42,8 @@ class destination:
 
     def get_all_destinations(self):
         os.system("cls" if os.name == "nt" else "clear")
+        print("Here Are All Destinations")
+        print("-----------------------")
         print("all destinations")
         get_all_destinations = """
         [N]EW 

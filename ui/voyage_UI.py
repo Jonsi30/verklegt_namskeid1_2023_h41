@@ -8,8 +8,8 @@ class voyage:
     def create_new_voyage(self):
         return
 
-    def get_all_voyages(self):
-        flight_dict = self.get_all_voyages()
+    def format_voyages(self):
+        flight_dict = self.get_voyages.get_all_voyages()
         voyage_dict = dict()
         flight_keys = list(flight_dict.keys())
         for i in range(0, len(flight_keys), 2):
