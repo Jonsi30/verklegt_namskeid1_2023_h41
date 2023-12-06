@@ -54,10 +54,7 @@ class Employee_data:
         #User can update information about an employee
         pass
 
-    def create_employee(self):
-        #User can create employee
-        pass
-
+    
     def read_employee_schedule(self):
         #User can read schedule for a given employee
         pass
