@@ -19,6 +19,7 @@ def main():
         print(destination)
     
      """
+    """
     employee = Data_wrapper()
     
     name = input("Enter employee name: ")
@@ -37,8 +38,14 @@ def main():
     all_employees = employee.get_all_employees()
     for employee in all_employees:
        print(employee)
-    
-    
+    """
 
+    from data.employee_data import Employee_data
+
+    employees = Employee_data()
+
+    print(employees.get_employee_dict())
+    
+    
 if __name__ == "__main__":
     main()

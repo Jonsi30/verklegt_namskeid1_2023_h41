@@ -20,11 +20,32 @@ class Employee_data:
         with open(self.file_name, 'a', newline='', encoding="utf-8") as csvfile:
             fieldnames = ["name", "role", "rank", "license", "phone_nr", "adress", "ssn"]
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            
 
             writer.writerow({'name': employee_info[0],'role': employee_info[1], 'rank': employee_info[2], 'license': employee_info[3], 'phone_nr': employee_info[4], 'adress': employee_info[5], 'ssn': employee_info[6]})
+            
+    def get_employee_dict(self):
+        ret_dict = {}
         
-    def edit_employee(self,):
-        pass
+        with open(self.file_name, newline='', encoding="utf-8") as csvfile:
+            for row in csvfile:
+                name, role, rank, license, phone_number, address, ssn = row.split(",")
+                if name not in ret_dict.keys():
+                    
+                    ret_dict[name] = [role, rank, license, phone_number, address, ssn.strip()]
+
+        return ret_dict 
+    
+
+    def update_employee_info(self, employee_dict: dict):
+        user_input = input("enter name: ")
+
+        employee_dict[user_input]
+
+
+
+
+
 
     """
     def print_most_experienced_pilot(self):
