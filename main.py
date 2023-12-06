@@ -1,6 +1,6 @@
 from ui.main_UI import main_UI
 
-from logic.logic_wrapper import logic_wrapper
+from logic.logic_wrapper import Logic_wrapper
 
 
 def main():
@@ -11,7 +11,7 @@ def main():
     elif user_input == "d":
         director_input = main_UI.director_menu()
         if director_input == "0":
-            all_voyages = logic_wrapper().get_all_voyages()
+            all_voyages = Logic_wrapper().get_all_voyages()
             for voyage in all_voyages:
                 print(voyage)
 

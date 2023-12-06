@@ -1,12 +1,12 @@
 import os
 
-from logic.logic_wrapper import logic_wrapper
+from logic.logic_wrapper import Logic_wrapper
 
 
 class main_UI:
     def __init__(self):
         """Constructor for Main_menu"""
-        self.logicwrapper = logic_wrapper()
+        self.logicwrapper = Logic_wrapper()
         pass
 
     def landing_page(self):
