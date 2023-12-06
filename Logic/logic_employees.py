@@ -12,5 +12,5 @@ class LogicEmployees:
     
 
     def get_all_employees(self):
-        return self.employee_data.get_all_employees()
+        return self.employee.get_all_employees()
         
