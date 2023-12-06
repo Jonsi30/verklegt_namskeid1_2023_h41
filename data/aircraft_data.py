@@ -27,9 +27,7 @@ class Aircraft_Data:
 
     
     """
-    def create_aircraft(self):
-        #User can Create/assign airplane
-        pass
+    
 
     def display_plane_status(self):
         #User can read plane status with a given time and date.
