@@ -9,3 +9,6 @@ class logic_wrapper:
 
     def get_all_voyages(self):
         return self.voyage_logic.get_all_voyages()
+
+    def format_voyage(self):
+        return self.voyage_logic.format_voyage()
