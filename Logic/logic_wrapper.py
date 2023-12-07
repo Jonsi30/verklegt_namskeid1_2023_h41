@@ -11,7 +11,7 @@ class Logic_wrapper:
         self.data_wrapper = Data_wrapper()
         self.voyage_logic = VoyageLogic()
         self.logic_employees = LogicEmployees()
-        self.logic_aircraft = LogicAircraft
+        self.logic_aircraft = LogicAircraft()
 
     def create_destination(self):
         return self.logic_destinations.create_destination()

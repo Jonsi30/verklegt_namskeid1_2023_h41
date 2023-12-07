@@ -31,7 +31,7 @@ class Voyage_Data:
             writer.writerow({'id': new_voyage[0],'flight_nr': new_voyage[1], 'dep_from': new_voyage[2], 'arr_at': new_voyage[3], 'dep_time': new_voyage[4], 'arr_time': new_voyage[5], 'dep_time_back': new_voyage[6], 'arr_time_back': new_voyage[7], 'plane_insignia': new_voyage[8], 'captain': new_voyage[9], 'copilot': new_voyage[10], 'head_of_service': new_voyage[11], 'flight_attendant': new_voyage[12] })
 
     def update_voyage(self, updated_info):
-        all_dest = GetData()
+        all_dest = Voyage_Data()
         every_voayge = all_dest.get_all_voyage()
         new_list = []
         for item in every_voayge:
@@ -51,4 +51,4 @@ class Voyage_Data:
             writer.writeheader()
 
         for item in new_list:
-            GetData().create_voyage(item)
+            Voyage_Data().create_voyage(item)
