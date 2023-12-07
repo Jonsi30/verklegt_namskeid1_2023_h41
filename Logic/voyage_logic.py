@@ -15,8 +15,8 @@ class VoyageLogic:
     def get_specific_week_voyage(self):
         pass
 
-    def get_voyage_by_flight_nr(self):
-        pass
+    # def get_voyage_by_flight_nr(self): MAAAYBE
+    #     pass
 
     def update_voyage(self):
         pass
