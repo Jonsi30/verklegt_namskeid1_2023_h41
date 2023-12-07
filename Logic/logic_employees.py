@@ -5,8 +5,8 @@ class LogicEmployees:
     def __init__(self):
         self.employee = Data_wrapper()
 
-    def create_employee(self,name,role,rank,license,phone,address,ssn):
-        new_info = name, role, rank, license, phone, address, ssn
+    def create_employee(self,name,role,rank,license,phone,address,email,ssn):
+        new_info = name, role, rank, license, phone, address, email, ssn
         
         return self.employee.create_employee(new_info)
     
