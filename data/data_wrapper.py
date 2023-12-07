@@ -25,6 +25,9 @@ class Data_wrapper:
 
     def create_employee(self, employee_info):
         return self.employee_data.create_employee(employee_info)
+    
+    def update_employee(self, new_info):
+        return self.employee_data.update_employee_info(new_info)
 
     def get_all_aircrafts(self):
         return self.aircraft_data.get_all_aircrafts()
@@ -34,3 +37,6 @@ class Data_wrapper:
     
     def get_employee_dict(self):
         return self.employee_data.get_employee_dict()
+
+    def update_destination(self, new_info):
+        return self.destination_data.update_destination(new_info)
