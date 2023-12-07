@@ -4,7 +4,7 @@ from model.destination import Destination
 from logic.logic_wrapper import Logic_wrapper
 from model.employee import Employee
 from model.voyage_model import Voyage_Model
-from data.voyage_data import GetData
+from data.voyage_data import Voyage_Data
 def main():
     #destination,distance_from_ice,flight time,emergency contact,emergency_contact_phone_nr
     #Nuuk,666,3:30,Kuupik Kleist,3334141
@@ -65,7 +65,7 @@ def main():
     #new_info.create_voyage()
 
     updated_voyage = Voyage_Model('1111', 'MA40', 'USA', 'TOR', '06:00 16.12.2023', '12:00 16.12.2023', '15:00 16.12.2023', '21:00 16.12.2023', 'TF-20', 'Einar', 'John ', 'Jón Ágústsson Alba', 'Jamie Robert')
-    GetData().update_voyage(updated_voyage)
+    Voyage_Data().update_voyage(updated_voyage)
 """
     all_employees = employee.get_all_employees()
     for employee in all_employees:
