@@ -19,6 +19,6 @@ class Voyage_Model:
         return getattr(self, key)
 
     def __str__(self):
-        return f"Voyage: Id{self.id},Fligh number:{self.fligh_nr},Departing:{self.dep_from},Arrival:{self.arr_at},Departure time:{self.departure},Arrival time:{self.arrival},Plane insignia:{self.plane_insignia},Captain:{self.captain},Copilot:{self.copilot},Head of service:{self.head_of_service},Flight attendant:{self.flight_attendant}"
+        return f"Voyage: Id {self.id}, Flight number:{self.flight_nr}, Departing:{self.dep_from}, Arrival:{self.arr_at}, Departure time: {self.dep_time}, Arrival time: {self.arr_time}, Departure time back: {self.dep_time_back}, Arrival time back: {self.arr_time_back}, Plane insignia:{self.plane_insignia}, Captain:{self.captain}, Copilot:{self.copilot}, Head of service:{self.head_of_service}, Flight attendant:{self.flight_attendant}"
     
 

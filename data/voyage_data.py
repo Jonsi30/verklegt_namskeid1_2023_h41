@@ -3,7 +3,7 @@ import csv
 from model.voyage_model import Voyage_Model
 
 
-class GetData:
+class Voyage_Data:
     def __init__(self) -> None:
         self.file_name = "../verklegt_namskeid1_2023_h41/files/voyage.csv"
 
