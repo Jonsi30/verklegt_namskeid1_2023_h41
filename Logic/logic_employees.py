@@ -40,9 +40,14 @@ class LogicEmployees:
     def get_available_staff(self):
         pass
     
-    def get_by_ssn(self,ssn):
-        get_ssn = ssn
-        return self.employee.get_by_ssn(get_ssn)
+    def get_by_ssn(self,employee_dict,ssn):
+        
+        for employee in employee_dict:
+            if employee ["ssn"] == ssn:
+                return employee
+            else:
+                pass
+        return None
 
     def check_if_available(self):
         pass
