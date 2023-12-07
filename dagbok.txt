@@ -148,8 +148,29 @@ mættir:
 Tómas, Steinar, Jón, Helgi, Sindri
 
 morgunfundur klukkan 9:00:
-Ákveðið var að skipta okkur upp í hópa. Jón og Steinar myndu vinna í Data layernum, Tómas í UI og
+Ákveðið var að skipta okkur upp í hópa. 
+
+Hver er að gera hvað:
+Jón og Steinar myndu vinna í Data layernum, Tómas í UI og
 Helgi og Sindri þá í logicinum.
+
+Síðdegisfundur:
+Ákveðið hvenær átti að hittast á morgun.
+
+
+7. Desember, dagur 9.
+mættir:
+Tómas, Steinar, Jón, Helgi, Sindri.
+
+morgunfundur:
+Ákveðið var hvað ætti að vinna að í dag. 
+
+Hver er að gera hvað:
+Jón og Steinar eru að vinna í data layernum
+Sindri og Helgi eru að vinna í logic layernum
+Tómas í UI
+
+
 
 
 
