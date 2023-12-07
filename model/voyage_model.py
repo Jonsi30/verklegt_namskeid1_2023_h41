@@ -12,6 +12,10 @@ class Voyage_Model:
         self.head_of_service = head_of_service
         self.flight_attendant = flight_attendant
 
+
+    def __getitem__(self, key):
+        return getattr(self, key)
+
     def __str__(self):
         return f"Voyage: Id{self.id},Fligh number:{self.fligh_nr},Departing:{self.dep_from},Arrival:{self.arr_at},Departure time:{self.departure},Arrival time:{self.arrival},Plane insignia:{self.plane_insignia},Captain:{self.captain},Copilot:{self.copilot},Head of service:{self.head_of_service},Flight attendant:{self.flight_attendant}"
     

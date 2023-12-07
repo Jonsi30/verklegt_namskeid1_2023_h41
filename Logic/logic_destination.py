@@ -1,5 +1,5 @@
 from data.data_wrapper import Data_wrapper
-
+from model.destination import Destination
 class LogicDestination:
     def __init__(self) -> None:
         self.destination = Data_wrapper()
@@ -19,6 +19,12 @@ class LogicDestination:
         updated_info = emergency_contact, emergency_contact_phone_nr
 
         return self.destination.update_emergency_contact(updated_info)
+    
+    def update_destination_info(self, new_info):
+        
+        
+        
+        return self.destination.update_destination(new_info)
     
 
 
