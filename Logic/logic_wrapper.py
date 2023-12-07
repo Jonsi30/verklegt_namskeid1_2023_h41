@@ -28,7 +28,10 @@ class Logic_wrapper:
 
     def get_all_employees(self):
         return self.logic_employees.get_all_employees()
-
+    
+    def get_employee_dict(self,ret_dict):
+        return self.logic_employees.get_employee_dict(ret_dict)
+    
     def update_employee(self, updated_info):
         return self.logic_employees.update_employee(updated_info)
 
