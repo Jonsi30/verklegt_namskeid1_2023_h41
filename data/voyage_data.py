@@ -36,20 +36,20 @@ class GetData:
         every_voayge = all_dest.get_all_voyage()
         new_list = []
         for item in every_voayge:
-            if item["flight_nr"] == updated_info["flight_nr"]:
-                new_list.append((item["id"], updated_info["distance_from_ice"], updated_info["flight_time"], updated_info["emergency_contact"], updated_info["emergency_contact_phone_nr"]))
+            if item["id"] == updated_info["id"]:
+                new_list.append((item["id"], item["flight_nr"], item["dep_from"], item["arr_at"], item["departure"], item["arrival"], item["plane_insignia"], updated_info["captain"], updated_info["copilot"], updated_info["head_of_service"], updated_info["flight_attendant"]))
             else:
-                new_list.append((item["destination"], item["distance_from_ice"], item["flight_time"], item["emergency_contact"], item["emergency_contact_phone_nr"]))
+                new_list.append((item["id"], item["flight_nr"], item["dep_from"], item["arr_at"], item["departure"], item["arrival"], item["plane_insignia"], updated_info["captain"], updated_info["copilot"], updated_info["head_of_service"], updated_info["flight_attendant"]))
        
         f = open(self.file_name, "w")
         f.truncate()
         f.close()
 
         with open(self.file_name, 'w', newline='') as self.file_name:
-            fields = ["destination", "distance_from_ice", "flight_time", "emergency_contact", "emergency_contact_phone_nr"]
+            fields = ["id", "flight_nr", "dep_from", "arr_at", "departure", "arrival", "plane_insignia", "captain", "copilot", "head_of_service", "flight_attendant"]
             writer = csv.DictWriter(self.file_name, fieldnames=fields)
             
             writer.writeheader()
 
         for item in new_list:
-            Destination_data().create_destination(item)
+            GetData().create_voayge(item)
