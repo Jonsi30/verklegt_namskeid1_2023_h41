@@ -16,6 +16,9 @@ class Data_wrapper:
 
     def create_destination(self, new_destination):
         return self.destination_data.create_destination(new_destination)
+    
+    def create_voyage(self, new_info):
+        return self.voyage_data.create_voayge(new_info)
 
     def get_voyage_data(self):
         """EKKI SNERTA"""
