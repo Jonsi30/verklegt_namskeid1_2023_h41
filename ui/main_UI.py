@@ -66,7 +66,7 @@ class main_UI:
             else:
                 print("invalid input!")
 
-    def manager_menu():
+    def manager_menu(self):
         """Prints the manager menu for the user"""
         os.system("cls" if os.name == "nt" else "clear")
         manager_ui = """
@@ -81,8 +81,8 @@ class main_UI:
         print(manager_ui)
 
     def manager_menu_input_prompt(self):
-        self.manager_menu()
         while True:
+            self.manager_menu()
             command = input("Enter yer command sire!: ")
             command = command.lower()
             if command == "q":
@@ -99,8 +99,7 @@ class main_UI:
 
     def director_menu(self):
         """prints director page and asks for input"""
-
-        # os.system("cls" if os.name == "nt" else "clear")
+        os.system("cls" if os.name == "nt" else "clear")
         director_ui = """
     Welcome Director 
 

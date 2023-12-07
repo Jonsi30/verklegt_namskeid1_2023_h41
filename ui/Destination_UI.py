@@ -41,7 +41,7 @@ class destination:
         return dest_input, dist_input, dura_input, contact_input, contact_nr_input
 
     def get_all_destinations(self):
-        # os.system("cls" if os.name == "nt" else "clear")
+        # vos.system("cls" if os.name == "nt" else "clear")
         print("Here Are All Destinations")
         print("-----------------------")
         print("all destinations")
