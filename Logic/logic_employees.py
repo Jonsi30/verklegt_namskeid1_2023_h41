@@ -7,26 +7,32 @@ class LogicEmployees:
 
     def create_employee(self,name,role,rank,license,phone,address,email,ssn):
         new_info = name, role, rank, license, phone, address, email, ssn
-        
         return self.employee.create_employee(new_info)
     
     def get_all_employees(self):
         return self.employee.get_all_employees()
     
     def update_employee(self, new_info):
-        
-
         return self.employee.update_employee(new_info)
     
-    def get_all_pilots(self,name,role,license):
-        pilot_info = name, role, license
+    def get_all_pilots(self,employee_dict):
+        pilot_dict = []
+        
+        for employee in employee_dict:
+            if employee ["role"] == "pilot":
+                pilot_dict[employee["name"]] = employee["rank"]
+        
+        return pilot_dict
 
-        return self.employee.get_all_pilots(pilot_info)
     
-    def get_all_crew(self,name,role,rank):
-        crew_info = name, role, rank
+    def get_all_crew(self,employee_dict):
+        crew_dict = []
 
-        return self.employee.get_all_crew(crew_info)
+        for employee in employee_dict:
+            if employee ["role"] == "cabin crew":
+                crew_dict[employee["name"]] = employee["rank"]
+        
+        return crew_dict
     
     def get_occupied_staff(self):
         pass
@@ -36,12 +42,12 @@ class LogicEmployees:
     
     def get_by_ssn(self,ssn):
         get_ssn = ssn
-        
         return self.employee.get_by_ssn(get_ssn)
 
     def check_if_available(self):
         pass
 
-    
+    def get_employee_dict(self, ret_dict):
+        return self.employee.get_employee_dict(ret_dict)
 
         
