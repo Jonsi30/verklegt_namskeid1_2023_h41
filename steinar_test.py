@@ -9,6 +9,7 @@ def main():
     #destination,distance_from_ice,flight time,emergency contact,emergency_contact_phone_nr
     #Nuuk,666,3:30,Kuupik Kleist,3334141
     
+    Voyage_Data().create_new_flights()
 
     
     
@@ -60,13 +61,15 @@ def main():
 
     employee.create_employee(new_info)
    """
+    """
     new_voyage = ('1111', 'MA40', 'RVK', 'TOR', '06:00 16.12.2023', '12:00 16.12.2023', '15:00 16.12.2023', '21:00 16.12.2023', 'TF-20', 'Scarlett Johanson', 'John Johnson', 'Jessica Alba', 'Jamie Robert')
     #new_info = GetData().create_voyage(new_voyage)
     #new_info.create_voyage()
-
+    """ 
+    """
     updated_voyage = Voyage_Model('1111', 'MA40', 'USA', 'TOR', '06:00 16.12.2023', '12:00 16.12.2023', '15:00 16.12.2023', '21:00 16.12.2023', 'TF-20', 'Einar', 'John ', 'Jón Ágústsson Alba', 'Jamie Robert')
     Voyage_Data().update_voyage(updated_voyage)
-"""
+
     all_employees = employee.get_all_employees()
     for employee in all_employees:
        print(employee)
