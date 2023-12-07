@@ -64,7 +64,7 @@ def main():
     #new_info = GetData().create_voyage(new_voyage)
     #new_info.create_voyage()
 
-    updated_voyage = Voyage_Model('1111', 'MA40', 'RVK', 'TOR', '06:00 16.12.2023', '12:00 16.12.2023', '15:00 16.12.2023', '21:00 16.12.2023', 'TF-20', 'Steinar', 'John ', 'Jón Ágústsson Alba', 'Jamie Robert')
+    updated_voyage = Voyage_Model('1111', 'MA40', 'USA', 'TOR', '06:00 16.12.2023', '12:00 16.12.2023', '15:00 16.12.2023', '21:00 16.12.2023', 'TF-20', 'Einar', 'John ', 'Jón Ágústsson Alba', 'Jamie Robert')
     GetData().update_voyage(updated_voyage)
 """
     all_employees = employee.get_all_employees()

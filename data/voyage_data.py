@@ -45,7 +45,7 @@ class GetData:
         f.close()
 
         with open(self.file_name, 'w', newline='') as self.file_name:
-            fields = ["id", "flight_nr", "dep_from", "arr_at", "dep_time", "arr_time", "dep_time_back", "arr_time_back" "plane_insignia", "captain", "copilot", "head_of_service", "flight_attendant"]
+            fields = ["id", "flight_nr", "dep_from", "arr_at", "dep_time", "arr_time", "dep_time_back", "arr_time_back", "plane_insignia", "captain", "copilot", "head_of_service", "flight_attendant"]
             writer = csv.DictWriter(self.file_name, fieldnames=fields)
 
             writer.writeheader()
