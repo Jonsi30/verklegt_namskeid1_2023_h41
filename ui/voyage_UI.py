@@ -3,13 +3,13 @@ from logic.logic_wrapper import Logic_wrapper
 
 class voyage:
     def __init__(self):
-        self.get_voyages = Logic_wrapper()
+        self.get_all_voyages = Logic_wrapper()
 
     def create_new_voyage(self):
         return
 
     def format_voyages(self):
-        flight_dict = self.get_voyages.get_all_voyages()
+        flight_dict = self.get_all_voyages.get_all_voyages()
         voyage_dict = dict()
         flight_keys = list(flight_dict.keys())
         for i in range(0, len(flight_keys), 2):

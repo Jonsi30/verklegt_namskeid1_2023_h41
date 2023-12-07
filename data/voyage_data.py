@@ -1,6 +1,7 @@
 FLIGHT_FILE = "../VERKLEGT_NAMSKEID1_2023_H41/Files/flight_list.csv"
-import csv 
+import csv
 from model.voyage_model import Voyage_Model
+
 
 class GetData:
     def __init__(self) -> None:
@@ -10,11 +11,11 @@ class GetData:
         file_name = FLIGHT_FILE
         file = open(file_name, "r", encoding="utf-8")
         return file
-    
+
     def get_all_voyage(self):
-        #Display every new_voyage
+        # Display every voyage
         ret_list = []
-        with open(self.file_name, newline='', encoding="utf-8") as csvfile:
+        with open(self.file_name, newline="", encoding="utf-8") as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
                 ret_list.append(Voyage_Model(row["id"], row["flight_nr"], row["dep_from"], row["arr_at"], row["dep_time"], row["arr_time"],row["dep_time_back"], row["arr_time_back"], row["plane_insignia"], row["captain"], row["copilot"], row["head_of_service"], row["flight_attendant"]))
@@ -48,7 +49,7 @@ class GetData:
         with open(self.file_name, 'w', newline='') as self.file_name:
             fields = ["id", "flight_nr", "dep_from", "arr_at", "dep_time", "arr_time", "plane_insignia", "captain", "copilot", "head_of_service", "flight_attendant"]
             writer = csv.DictWriter(self.file_name, fieldnames=fields)
-            
+
             writer.writeheader()
 
         for item in new_list:
