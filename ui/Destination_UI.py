@@ -51,9 +51,10 @@ class destination:
         [B]ACK
         """
         print(get_all_destinations)
-        from main_UI import main_UI
 
         while True:
+            from main_UI import main_UI
+
             command = input("select action: ").lower()
             if command == "n":
                 self.create_new_destination

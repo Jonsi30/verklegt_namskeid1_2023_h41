@@ -18,6 +18,7 @@ class Data_wrapper:
         return self.destination_data.create_destination(new_destination)
 
     def get_voyage_data(self):
+        """EKKI SNERTA"""
         return self.voyage_data.get_voyage_data()
 
     def get_all_employees(self):
@@ -25,7 +26,7 @@ class Data_wrapper:
 
     def create_employee(self, employee_info):
         return self.employee_data.create_employee(employee_info)
-    
+
     def update_employee(self, new_info):
         return self.employee_data.update_employee_info(new_info)
 
@@ -34,7 +35,7 @@ class Data_wrapper:
 
     def create_new_aircraft(self, new_aircraft_info):
         return self.aircraft_data.create_aircraft(new_aircraft_info)
-    
+
     def get_employee_dict(self):
         return self.employee_data.get_employee_dict()
 

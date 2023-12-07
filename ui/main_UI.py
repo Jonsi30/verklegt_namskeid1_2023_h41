@@ -131,8 +131,8 @@ class main_UI:
             elif command == "1":
                 pass
             elif command == "2":
-                Aircraft().get_all_aircrafts
+                Aircraft().get_all_aircrafts()
             elif command == "3":
-                destination().get_all_destinations
+                destination().get_all_destinations()
             else:
                 print("invalid input!")

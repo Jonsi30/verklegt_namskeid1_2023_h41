@@ -3,7 +3,7 @@ from data.data_wrapper import Data_wrapper
 
 class VoyageLogic:
     def __init__(self):
-        self.voyage = Data_wrapper
+        self.voyage = Data_wrapper()
 
     def create_voyage(
         self,
@@ -48,8 +48,9 @@ class VoyageLogic:
         pass
 
     def get_flight(self):
+        """EKKI SNERTA"""
         flight_dict = dict()
-        lines = self.file.readlines()[1:]
+        lines = self.voyage.get_voyage_data().readlines()[1:]
         for line in lines:
             values = line.split(",")
             if len(values) != 6:
