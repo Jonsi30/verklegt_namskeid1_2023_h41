@@ -18,7 +18,7 @@ class GetData:
         with open(self.file_name, newline="", encoding="utf-8") as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
-                ret_list.append(Voyage_Model(row["id"], row["flight_nr"], row["dep_from"], row["arr_at"], row["dep_time"], row["arr_time"],row["dep_time_back"], row["arr_time_back"], row["plane_insignia"], row["captain"], row["copilot"], row["head_of_service"], row["flight_attendant"]))
+                ret_list.append(Voyage_Model(row["id"], row["flight_nr"], row["dep_from"], row["arr_at"], row["dep_time"], row["arr_time"], row["dep_time_back"], row["arr_time_back"], row["plane_insignia"], row["captain"], row["copilot"], row["head_of_service"], row["flight_attendant"]))
         
         return ret_list
 

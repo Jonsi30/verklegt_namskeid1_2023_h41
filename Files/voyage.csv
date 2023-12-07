@@ -1,2 +1,2 @@
-id,flight_nr,dep_from,arr_at,dep_time,arr_time,plane_insignia,captain,copilot,head_of_service,flight_attendant
-1111,MA40,RVK,TOR,06:00 16.12.2023,12:00 16.12.2023,15:00 16.12.2023,21:00 16.12.2023,TF-20,Scarlett Johanson,John Johnson,Jessica Alba,Jamie Robert
+id,flight_nr,dep_from,arr_at,dep_time,arr_time,dep_time_back,arr_time_backplane_insignia,captain,copilot,head_of_service,flight_attendant
+1111,MA40,RVK,TOR,06:00 16.12.2023,12:00 16.12.2023,15:00 16.12.2023,21:00 16.12.2023,TF-20,Steinar,John ,Jón Ágústsson Alba,Jamie Robert
