@@ -1,5 +1,5 @@
 class Destination:
-    def init(self,destination ="",distance_from_ice ="",flight_time ="",emergency_contact ="",emergency_contact_phone_nr =""):
+    def __init__(self,destination ="",distance_from_ice ="",flight_time ="",emergency_contact ="",emergency_contact_phone_nr =""):
         self.destination = destination
         self.distance_from_ice = distance_from_ice
         self.flight_time = flight_time
