@@ -37,6 +37,9 @@ class Logic_wrapper:
     def get_all_crew(self):
         return self.logic_employees.get_all_crew()
     
+    def update_destination(self, new_info):
+        return self.logic_destinations.update_destination_info(new_info)
+    
     def get_occupied_staff(self):
         pass
 
