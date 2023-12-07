@@ -1,7 +1,7 @@
 class Voyage_Model:
     def __init__(self, id="",flight_nr="",dep_from="",arr_at="",dep_time="",arr_time="", dep_time_back="", arr_time_back="", plane_insignia="",captain="",copilot="",head_of_service="",flight_attendant=""):
         self.id = id
-        self.fligh_nr = flight_nr
+        self.flight_nr = flight_nr
         self.dep_from = dep_from
         self.arr_at = arr_at
         self.dep_time = dep_time

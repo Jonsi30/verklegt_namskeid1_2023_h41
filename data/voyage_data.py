@@ -5,7 +5,7 @@ from model.voyage_model import Voyage_Model
 
 class GetData:
     def __init__(self) -> None:
-        self.file_name = "../verklegt_namskeid1_2023_h41/files/new_voyage.csv"
+        self.file_name = "../verklegt_namskeid1_2023_h41/files/voyage.csv"
 
     def get_voyage_data(self):
         file_name = FLIGHT_FILE
@@ -22,15 +22,13 @@ class GetData:
         
         return ret_list
 
-    def create_voayge(self, new_voyage):
+    def create_voyage(self, new_voyage):
         #User can Create Voayge
         with open(self.file_name, 'a', newline='', encoding="utf-8") as csvfile:
-            fieldnames = ["id", "flight_nr", "dep_from", "arr_at", "dep_time", "arr_time", "dep_time_back", "arr_time_back" "plane_insignia", "captain", "copilot", "head_of_service", "flight_attendant"]
+            fieldnames = ["id", "flight_nr", "dep_from", "arr_at", "dep_time", "arr_time", "dep_time_back", "arr_time_back", "plane_insignia", "captain", "copilot", "head_of_service", "flight_attendant"]
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
-            writer.writerow({'id': new_voyage[0],'flight_nr': new_voyage[1], 'dep_from': new_voyage[2],
-            'arr_at': new_voyage[3], 'dep_time': new_voyage[4], 'arr_time': new_voyage[5], 'dep_time_back': new_voyage[6], 'arr_time_back': new_voyage[7], 'dep_time_back': new_voyage[8], 'arr_time_back': new_voyage[9], 'plane_insignia': new_voyage[10],
-            'captain': new_voyage[11], 'copilot': new_voyage[12], 'head_of_service': new_voyage[13], 'flight_attendant': new_voyage[14] })
+            writer.writerow({'id': new_voyage[0],'flight_nr': new_voyage[1], 'dep_from': new_voyage[2], 'arr_at': new_voyage[3], 'dep_time': new_voyage[4], 'arr_time': new_voyage[5], 'dep_time_back': new_voyage[6], 'arr_time_back': new_voyage[7], 'plane_insignia': new_voyage[8], 'captain': new_voyage[9], 'copilot': new_voyage[10], 'head_of_service': new_voyage[11], 'flight_attendant': new_voyage[12] })
 
     def update_voyage(self, updated_info):
         all_dest = GetData()
@@ -38,19 +36,19 @@ class GetData:
         new_list = []
         for item in every_voayge:
             if item["id"] == updated_info["id"]:
-                new_list.append((item["id"], item["flight_nr"], item["dep_from"], item["arr_at"], item["dep_time"], item["arr_time"], item["plane_insignia"], updated_info["captain"], updated_info["copilot"], updated_info["head_of_service"], updated_info["flight_attendant"]))
+                new_list.append((item["id"], item["flight_nr"], item["dep_from"], item["arr_at"], item["dep_time"], item["arr_time"], item["dep_time_back"], item["arr_time_back"], item["plane_insignia"], updated_info["captain"], updated_info["copilot"], updated_info["head_of_service"], updated_info["flight_attendant"]))
             else:
-                new_list.append((item["id"], item["flight_nr"], item["dep_from"], item["arr_at"], item["dep_time"], item["arr_time"], item["plane_insignia"], updated_info["captain"], updated_info["copilot"], updated_info["head_of_service"], updated_info["flight_attendant"]))
+                new_list.append((item["id"], item["flight_nr"], item["dep_from"], item["arr_at"], item["dep_time"], item["arr_time"], item["dep_time_back"], item["arr_time_back"], item["plane_insignia"], updated_info["captain"], updated_info["copilot"], updated_info["head_of_service"], updated_info["flight_attendant"]))
        
         f = open(self.file_name, "w")
         f.truncate()
         f.close()
 
         with open(self.file_name, 'w', newline='') as self.file_name:
-            fields = ["id", "flight_nr", "dep_from", "arr_at", "dep_time", "arr_time", "plane_insignia", "captain", "copilot", "head_of_service", "flight_attendant"]
+            fields = ["id", "flight_nr", "dep_from", "arr_at", "dep_time", "arr_time", "dep_time_back", "arr_time_back" "plane_insignia", "captain", "copilot", "head_of_service", "flight_attendant"]
             writer = csv.DictWriter(self.file_name, fieldnames=fields)
 
             writer.writeheader()
 
         for item in new_list:
-            GetData().create_voayge(item)
+            GetData().create_voyage(item)
