@@ -52,6 +52,7 @@ class main_UI:
 
     def landing_page_input_prompt(self):
         self.landing_page()
+        m = main_UI()
         while True:
             command = input("Enter yer command sire!: ")
             command = command.lower()
@@ -59,9 +60,9 @@ class main_UI:
                 print("shutting down")
                 break
             elif command == "m":
-                main_UI.manager_menu_input_prompt()
+                m.manager_menu_input_prompt()
             elif command == "d":
-                main_UI.director_menu_
+                m.director_menu_input_prompt()
             else:
                 print("invalid input!")
 
@@ -87,17 +88,19 @@ class main_UI:
             if command == "q":
                 print("shutting down")
                 break
-            elif command == "m":
-                main_UI.manager_menu()
-            elif command == "d":
-                main_UI.director_menu
+            elif command == "b":
+                self.landing_page_input_prompt()
+            elif command == "0":
+                voyage.Voyage_list()
+            elif command == "1":
+                pass
             else:
                 print("invalid input!")
 
-    def director_menu():
+    def director_menu(self):
         """prints director page and asks for input"""
 
-        os.system("cls" if os.name == "nt" else "clear")
+        # os.system("cls" if os.name == "nt" else "clear")
         director_ui = """
     Welcome Director 
 
@@ -114,16 +117,23 @@ class main_UI:
         print(director_ui)
 
     def director_menu_input_prompt(self):
-        self.director_menu()
         while True:
+            self.director_menu()
+            v = voyage()
             command = input("Enter yer command sire!: ")
             command = command.lower()
             if command == "q":
                 print("shutting down")
                 break
-            elif command == "m":
-                main_UI.manager_menu()
-            elif command == "d":
-                main_UI.director_menu
+            elif command == "b":
+                self.landing_page_input_prompt()
+            elif command == "0":
+                v.Voyage_list()
+            elif command == "1":
+                pass
+            elif command == "2":
+                Aircraft().get_all_aircrafts
+            elif command == "3":
+                destination().get_all_destinations
             else:
                 print("invalid input!")

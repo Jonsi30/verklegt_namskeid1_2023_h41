@@ -41,7 +41,7 @@ class destination:
         return dest_input, dist_input, dura_input, contact_input, contact_nr_input
 
     def get_all_destinations(self):
-        os.system("cls" if os.name == "nt" else "clear")
+        # os.system("cls" if os.name == "nt" else "clear")
         print("Here Are All Destinations")
         print("-----------------------")
         print("all destinations")
@@ -51,8 +51,14 @@ class destination:
         [B]ACK
         """
         print(get_all_destinations)
-        input_str = input("select action: ").lower()
-        return input_str
+        from main_UI import main_UI
 
-    def update_destination(self):
-        return
+        while True:
+            command = input("select action: ").lower()
+            if command == "n":
+                self.create_new_destination
+            elif command == "q":
+                print("shutting down")
+                break
+            elif command == "b":
+                main_UI().director_menu_input_prompt

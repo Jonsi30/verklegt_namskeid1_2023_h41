@@ -30,6 +30,18 @@ class voyage:
             formatted_voyage += "\n"
         return formatted_voyage
 
+    def Voyage_list(self):
+        from ui.main_UI import main_UI
+
+        while True:
+            self.format_voyages()
+            command = input("Enter yer command sire!: ")
+            if command == "q":
+                print("shutting down")
+                break
+            elif command == "b":
+                main_UI().landing_page_input_prompt()
+
     def get_specific_day_voyages(self):
         return
 
