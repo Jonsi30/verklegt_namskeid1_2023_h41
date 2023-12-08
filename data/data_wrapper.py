@@ -1,5 +1,5 @@
 from data.destination_data import Destination_data
-from data.voyage_data import GetData
+from data.voyage_data import Voyage_Data
 from data.employee_data import Employee_data
 from data.aircraft_data import Aircraft_Data
 
@@ -7,7 +7,7 @@ from data.aircraft_data import Aircraft_Data
 class Data_wrapper:
     def __init__(self):
         self.destination_data = Destination_data()
-        self.voyage_data = GetData()
+        self.voyage_data = Voyage_Data()
         self.employee_data = Employee_data()
         self.aircraft_data = Aircraft_Data()
 
@@ -16,6 +16,9 @@ class Data_wrapper:
 
     def create_destination(self, new_destination):
         return self.destination_data.create_destination(new_destination)
+    
+    def create_voyage(self, new_info):
+        return self.voyage_data.create_voyage(new_info)
 
     def get_voyage_data(self):
         """EKKI SNERTA"""

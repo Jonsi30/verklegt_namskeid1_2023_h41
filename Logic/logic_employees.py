@@ -5,28 +5,51 @@ class LogicEmployees:
     def __init__(self):
         self.employee = Data_wrapper()
 
-    def create_employee(self,name,role,rank,license,phone,address,ssn):
-        new_info = name, role, rank, license, phone, address, ssn
-        
+    def create_employee(self,name,role,rank,license,phone,address,email,ssn):
+        """Returns all the credentials of a new employee."""
+        new_info = name, role, rank, license, phone, address, email, ssn
         return self.employee.create_employee(new_info)
     
     def get_all_employees(self):
+        """Returns all the employees that work for the company NaN air."""
         return self.employee.get_all_employees()
     
     def update_employee(self, new_info):
-        
-
+        """Returns the info needed to update a particular employee"""
         return self.employee.update_employee(new_info)
     
-    def get_all_pilots(self,name,role,license):
-        pilot_info = name, role, license
+    def get_all_pilots(self,employee_dict: dict):
+        """Returns a dictionary with all the pilots working for the company NaN air."""
+        pilot_dict = {}
+        
+        for employee in employee_dict:
+            if employee["role"] == "pilot":
+                pilot_dict[employee["name"]] = employee["rank"]
+        
+        return pilot_dict
 
-        return self.employee.get_all_pilots(pilot_info)
     
-    def get_all_crew(self,name,role,rank):
-        crew_info = name, role, rank
+    def get_all_crew(self,employee_dict: dict):
+        """Returns a dictionary with all the crew members working for the company NaN air."""
+        crew_dict = {}
 
-        return self.employee.get_all_crew(crew_info)
+        for employee in employee_dict:
+            if employee["role"] == "cabin crew":
+                crew_dict[employee["name"]] = employee["rank"]
+        
+        return crew_dict
+    
+    def get_employee_info(self, employee_dict: dict, employee_name: str):
+        """Returns a particlar employee and his attributes in a list. If the list is empty then no employee name matched the employess in the company"""
+        employee_list = []
+
+        for employee in employee_dict:
+            if employee["name"] == employee_name:
+                employee_list.append(employee)
+            else:
+                pass
+
+        return employee_list
     
     def get_occupied_staff(self):
         pass
@@ -34,14 +57,22 @@ class LogicEmployees:
     def get_available_staff(self):
         pass
     
-    def get_by_ssn(self,ssn):
-        get_ssn = ssn
+    def get_by_ssn(self,employee_dict: dict, ssn: int):
+        """Returns the employee with the ssn that the user put in. If no employee has that ssn, the function returns None"""
         
-        return self.employee.get_by_ssn(get_ssn)
+        for employee in employee_dict:
+            if employee["ssn"] == ssn:
+                return employee
+            else:
+                pass
+        
+        return None
 
     def check_if_available(self):
         pass
 
-    
+    def get_employee_dict(self, ret_dict):
+        """Returns a dictionary with all the employees that work for the company NaN air."""
+        return self.employee.get_employee_dict(ret_dict)
 
         
