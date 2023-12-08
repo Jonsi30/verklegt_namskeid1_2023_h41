@@ -140,7 +140,9 @@ Síðdegisfundur 19:30:
 Skipulagt hvar og hvenær á að hittast á morgun 
 
 Forgangsverkefni:
-Halda áfram að vinna í data og model og logic
+Útlit á UI
+Þörf er á því að útfæra hvernig á að bæta inn í Csv skrárnar.
+halda áfram að útfæra wrappers
 
 
 6. Desember, dagur 8.
@@ -157,6 +159,10 @@ Helgi og Sindri þá í logicinum.
 Síðdegisfundur:
 Ákveðið hvenær átti að hittast á morgun.
 
+Forgangsverkefni:
+Það þarf að klára að útfæra Update function til að uppfæra csv skrárnar
+UI
+
 
 7. Desember, dagur 9.
 mættir:
@@ -169,6 +175,30 @@ Hver er að gera hvað:
 Jón og Steinar eru að vinna í data layernum
 Sindri og Helgi eru að vinna í logic layernum
 Tómas í UI
+
+Síðdegisfundur:
+Ákveðið hvar og hvenær ætti að hittast á morgun
+
+
+8. Desember, dagur 10. 
+Mættir:
+Tómas, Steinar, Jón, Helgi, Sindri
+
+morgunfundur: 
+Á morgunfundi var ákveðið hvað ætti að vinna í dag. 
+
+Hver er að gera hvað:
+Jón og Steinar að vinna í Data.
+Sindri og Helgi að vinna í Logic.
+Tómas að vinna í UI.
+
+Síðdegisfundur:
+Ákveðið var hvað þyrfti að útfæra í næstu viku
+
+Forgangsverkefni:
+UI
+Logic layer
+
 
 
 
