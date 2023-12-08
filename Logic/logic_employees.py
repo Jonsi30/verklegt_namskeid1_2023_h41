@@ -26,7 +26,7 @@ class LogicEmployees:
 
     
     def get_all_crew(self,employee_dict):
-        crew_dict = []
+        crew_dict = {}
 
         for employee in employee_dict:
             if employee ["role"] == "cabin crew":
