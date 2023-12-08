@@ -34,7 +34,7 @@ class Aircraft:
 
         return insigna_input, type_input, manu_input, seat_input
 
-    def input_for_create_new_daircraft(self):
+    def input_for_create_new_aircraft(self):
         self.create_new_aircraft()
         while True:
             command = input("select action: ").lower()
@@ -59,7 +59,7 @@ class Aircraft:
         while True:
             command = input("select action: ").lower()
             if command == "n":
-                self.input_for_create_new_daircraftcreate_new_aircraft()
+                self.input_for_create_new_aircraft()
             elif command == "q":
                 print("shutting down")
                 break
