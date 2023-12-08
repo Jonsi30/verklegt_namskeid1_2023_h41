@@ -42,7 +42,7 @@ class VoyageLogic:
     def get_specific_day_voyage(self):
         pass
 
-    def get_week_number(self, year_number:int, week_number:int) -> str:
+    def get_week_number(self, year_number:int, week_number:int) -> list:
                    
         listi = (self.voyage.get_all_voyages())
         voyage_list = []
@@ -50,6 +50,7 @@ class VoyageLogic:
         for item in listi:
             date = (item["arr_time_back"][6::])
             year = date[6::]
+            year = int(year)
             if year == year_number:
                 month = date[3:5]
                 day = date[:2]

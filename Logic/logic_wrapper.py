@@ -43,6 +43,10 @@ class Logic_wrapper:
 
     def update_destination(self, new_info):
         return self.logic_destinations.update_destination_info(new_info)
+    
+    def get_voyagelists_from_week(self, year_number, week_number):
+        """Takes in a year, and a week for that given year, returns all the voyages in a given week"""
+        return self.voyage_logic.get_week_number(year_number, week_number)
 
     def get_occupied_staff(self):
         pass
