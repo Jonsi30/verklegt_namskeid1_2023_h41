@@ -16,7 +16,7 @@ class LogicEmployees:
         return self.employee.update_employee(new_info)
     
     def get_all_pilots(self,employee_dict):
-        pilot_dict = []
+        pilot_dict = {}
         
         for employee in employee_dict:
             if employee ["role"] == "pilot":
