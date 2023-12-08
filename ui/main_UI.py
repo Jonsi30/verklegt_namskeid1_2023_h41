@@ -89,7 +89,7 @@ class main_UI:
                 print("shutting down")
                 break
             elif command == "b":
-                self.landing_page_input_prompt()
+                return
             elif command == "0":
                 voyage.Voyage_list()
             elif command == "1":
@@ -125,7 +125,7 @@ class main_UI:
                 print("shutting down")
                 break
             elif command == "b":
-                self.landing_page_input_prompt()
+                return
             elif command == "0":
                 v.Voyage_list()
             elif command == "1":
