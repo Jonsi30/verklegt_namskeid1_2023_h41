@@ -9,7 +9,7 @@ def main():
     #destination,distance_from_ice,flight time,emergency contact,emergency_contact_phone_nr
     #Nuuk,666,3:30,Kuupik Kleist,3334141
     
-    Voyage_Data().create_new_flights()
+    #Voyage_Data().create_new_flights()
 
     
     

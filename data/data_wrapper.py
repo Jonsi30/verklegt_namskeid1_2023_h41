@@ -19,6 +19,9 @@ class Data_wrapper:
     
     def create_voyage(self, new_info):
         return self.voyage_data.create_voyage(new_info)
+    
+    def updated_voyage(self, new_info):
+        return self.voyage_data.update_voyage(new_info)
 
     def get_voyage_data(self):
         """EKKI SNERTA"""
@@ -44,3 +47,6 @@ class Data_wrapper:
 
     def update_destination(self, new_info):
         return self.destination_data.update_destination(new_info)
+    
+    def get_all_voyages(self):
+        return self.voyage_data.get_all_voyage()

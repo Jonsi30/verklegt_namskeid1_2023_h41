@@ -36,7 +36,7 @@ class Employee_data:
 
         return ret_dict 
     
-    #name,role,rank,license,phone_nr,adress,ssn
+    
     def update_employee_info(self, updated_employee):
         all_dest = Employee_data()
         every_employee = all_dest.get_all_employees()
