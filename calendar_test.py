@@ -30,12 +30,14 @@ for item in listi:
 """
 
 from logic.logic_wrapper import Logic_wrapper
+name = "Einar"
 
 dt = Logic_wrapper()
 voyage = dt.get_voyagelists_from_week(2023, 50)#Year, week_number
 for item in voyage:
-    print(item)
-    print()
+    if name in item["captain"]:
+        print(item)
+    
 
 
 #print(datetime.date(voayge))
