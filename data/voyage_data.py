@@ -51,8 +51,8 @@ class Voyage_Data:
                 new_list.append((item["id"], item["flight_nr"], item["dep_from"],
                                   item["arr_at"], item["dep_time"], item["arr_time"],
                                     item["dep_time_back"], item["arr_time_back"], item["plane_insignia"],
-                                      updated_info["captain"], updated_info["copilot"],
-                                        updated_info["head_of_service"], updated_info["flight_attendant"]))
+                                      item["captain"], item["copilot"],
+                                        item["head_of_service"], item["flight_attendant"]))
        
         f = open(self.file_name, "w")
         f.truncate()

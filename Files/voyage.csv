@@ -1,2 +1,3 @@
 id,flight_nr,dep_from,arr_at,dep_time,arr_time,dep_time_back,arr_time_back,plane_insignia,captain,copilot,head_of_service,flight_attendant
 1111,MA40,RVK,TOR,06:00 16.12.2023,12:00 16.12.2023,15:00 16.12.2023,21:00 16.12.2023,TF-20,Einar,John ,Jón Ágústsson Alba,Jamie Robert
+1111,MA40,RVK,TOR,06:00 16.12.2023,12:00 16.12.2023,15:00 16.12.2023,21:00 16.12.2023,TF-20,Einar,John ,Jón Ágústsson Alba,Jamie Robert
