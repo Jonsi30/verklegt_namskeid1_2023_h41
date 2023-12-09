@@ -11,16 +11,16 @@ from prettytable import PrettyTable
 def main():
     #destination,distance_from_ice,flight time,emergency contact,emergency_contact_phone_nr
     #Nuuk,666,3:30,Kuupik Kleist,3334141
-    
+    """
     #Voyage_Data().create_new_flights()
-    test = Employee_data().get_all_employees()
+    test = Logic_wrapper().get_all_employees()
     fieldnames = ["Name", "Role", "Rank", "License", "Phone Number", "Address", "Email Adress", "Social Security Number"]
     table = PrettyTable()
     table.field_names = fieldnames
     for employee in test:
         table.add_row([employee.name, employee.role, employee.rank, employee.license, employee.phone_nr, employee.address, employee.email, employee.ssn])
     print((table))
-
+    """
     """
     for item in test:
         name = item["name"]
@@ -42,12 +42,12 @@ def main():
     """
     #John Johnson,Pilot,Captain,NAFokker50,8203341,Engihjalli 30,0404952139
 
-    """
-    model_info = Employee('John Johnson', 'Pilot', 'Copilot', 'NAFokker50', '5812345', 'Engihjalli 30', '0404952139')
+    
+    model_info = Employee('John Johnson', 'Pilot', 'Copilot', 'NAFokker50', '5812345', 'Engihjalli 30', 'john@email.com', '0404952139')
     new_info = Logic_wrapper()
     new_info.update_employee(model_info)
-    """
-    #updated_dest = Destination_data().update_destination(new_info)
+    
+    #updated_dest = Logic_wrapper().update_destination(new_info)
     
 
     """
