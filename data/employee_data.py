@@ -12,17 +12,17 @@ class Employee_data:
         with open(self.file_name, newline='', encoding="utf-8") as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
-                ret_list.append(Employee(row["name"], row["role"], row["rank"], row["license"], row["phone_nr"], row["address"], row["ssn"]))
+                ret_list.append(Employee(row["Name"], row["Role"], row["Rank"], row["License"], row["Phone Number"], row["Address"], row["Email Address"], row["Social Security Number"]))
         return ret_list
 
-    def create_employee(self, employee_info):
+    def create_employee(self, employee):
         #User can Create Employee
         with open(self.file_name, 'a', newline='', encoding="utf-8") as csvfile:
-            fieldnames = ["name", "role", "rank", "license", "phone_nr", "address", "ssn"]
+            fieldnames = ["Name", "Role", "Rank", "License", "Phone Number", "Address", "Email Address", "Social Security Number"]
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             
 
-            writer.writerow({'name': employee_info[0],'role': employee_info[1], 'rank': employee_info[2], 'license': employee_info[3], 'phone_nr': employee_info[4], 'address': employee_info[5], 'ssn': employee_info[6]})
+            writer.writerow({'Name': employee.name,'Role': employee.role, 'Rank': employee.rank, 'License': employee.license, 'Phone Number': employee.phone_nr, 'Address': employee.address, 'Email Address': employee.email, 'Social Security Number': employee.ssn})
             
     def get_employee_dict(self):
         ret_dict = {}
@@ -37,7 +37,7 @@ class Employee_data:
         return ret_dict 
     
     
-    def update_employee_info(self, updated_employee):
+    def update_employee(self, updated_employee):
         all_dest = Employee_data()
         every_employee = all_dest.get_all_employees()
         new_list = []
@@ -83,7 +83,7 @@ class Employee_data:
         #User can read pilot license
         pass
 
-    def display_employee_info(self):
+    def display_employee(self):
         #User can read information about an employee
         pass
 

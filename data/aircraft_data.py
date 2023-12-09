@@ -14,13 +14,13 @@ class Aircraft_Data:
                 ret_list.append(Aircraft_Model(row["plane_insignia"], row["plane_type_id"], row["manufacturer"], row["seat_capacity"]))
         return ret_list
 
-    def create_aircraft(self, aircraft_info):
+    def create_aircraft(self, aircraft):
         #User can Create Aircraft
         with open(self.file_name, 'a', newline='', encoding="utf-8") as csvfile:
             fieldnames = ["plane_insignia", "plane_type_id", "manufacturer", "seat_capacity"]
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             
-            writer.writerow({'plane_insignia': aircraft_info[0],'plane_type_id': aircraft_info[1], 'manufacturer': aircraft_info[2], 'seat_capacity': aircraft_info[3]})
+            writer.writerow({'plane_insignia': aircraft.plane_insignia,'plane_type_id': aircraft.plane_type_id, 'manufacturer': aircraft.manufacturer, 'seat_capacity': aircraft.seat_capacity})
             
         
 
