@@ -1,4 +1,5 @@
 import os
+from ui.ASCII import ascii
 
 
 class Aircraft:
@@ -46,9 +47,8 @@ class Aircraft:
 
     def get_all_aircrafts(self):
         os.system("cls" if os.name == "nt" else "clear")
-        print("Here Are All Aircrafts")
+        print(ascii().Aircraft_list_art())
         print("-----------------------")
-        print("all aircrafts")
         options = """
         [N]EW 
         [Q]UIT

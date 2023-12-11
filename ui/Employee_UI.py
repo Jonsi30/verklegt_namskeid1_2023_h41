@@ -1,3 +1,7 @@
+import os
+from ASCII import ascii
+
+
 class employee:
     def __init__(self):
         pass
@@ -12,6 +16,8 @@ class employee:
         return
 
     def get_all_crew(self):
+        os.system("cls" if os.name == "nt" else "clear")
+        print(ascii().employee_list_art())
         return
 
     def get_all_available_employees(self):
