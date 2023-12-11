@@ -98,7 +98,7 @@ class Destination_data:
         #User can read popular destinations
         pass
 
-    def change_security_info(self):
+    def update_emergency_contact(self):
         #User can update emergency contact info
         pass
 
