@@ -22,10 +22,12 @@ class employee:
         while True:
             os.system("cls" if os.name == "nt" else "clear")
             ascii().employee_list_art()
-            print("maggi faggi")
+            print("AVAILABLE EMPLOYEES")
+            print("-------------------")
             options = """
-        [P]ILOTS
-        [C]ABIN CREW
+        [P]ILOTS (see all)
+        [C]ABIN CREW (see all)
+        [O]CCUPIED STAFF
         [N]EW EMPLOYEE
 
         [Q]UIT
