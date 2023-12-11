@@ -1,5 +1,5 @@
 import os
-from ASCII import ascii
+from ui.ASCII import ascii
 
 
 class employee:
