@@ -18,7 +18,7 @@ class employee:
     def get_all_crew(self):
         while True:
             os.system("cls" if os.name == "nt" else "clear")
-            print(ascii().employee_list_art())
+            ascii().employee_list_art()
             print("maggi faggi")
             options = """
         [P]ILOTS
