@@ -49,10 +49,10 @@ class Logic_wrapper:
         return self.voyage_logic.get_week_number(year_number, week_number)
 
     def get_occupied_staff(self):
-        pass
+        return self.logic_employees.get_occupied_staff()
 
     def get_available_staff(self):
-        pass
+        return self.logic_employees.get_available_staff()
 
     def get_by_ssn(self, get_ssn):
         return self.logic_employees.get_by_ssn(get_ssn)
