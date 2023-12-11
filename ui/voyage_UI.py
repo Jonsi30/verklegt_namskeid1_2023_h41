@@ -104,7 +104,7 @@ class voyage:
             elif command == "b":
                 return
 
-    def Voyage_list(self):
+    def Voyage_list_director(self):
         while True:
             os.system("cls" if os.name == "nt" else "clear")
             print(ascii().voyage_list_art())
@@ -115,6 +115,24 @@ class voyage:
                 break
             elif command == "b":
                 return
+            
+    def Voyage_list_manager(self):
+        while True:
+            os.system("cls" if os.name == "nt" else "clear")
+            print(ascii().voyage_list_art())
+            Logic_wrapper().display_voyage()
+            print("[A]DD EMPLOYEES")
+            command = input("Enter yer command sire!: ")
+            if command == "q":
+                print("shutting down")
+                break
+            elif command == "b":
+                return
+            elif command == "a":
+                self.add_crew()
+                
+
+    def add_crew(self)
 
     def get_specific_day_voyages(self):
         return
