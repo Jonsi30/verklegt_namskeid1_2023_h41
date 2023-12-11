@@ -25,7 +25,7 @@ class Data_wrapper:
 
     def get_voyage_data(self):
         """EKKI SNERTA"""
-        return self.voyage_data.get_voyage_data()
+        return self.voyage_data.get_all_voyage()
 
     def get_all_employees(self):
         return self.employee_data.get_all_employees()
