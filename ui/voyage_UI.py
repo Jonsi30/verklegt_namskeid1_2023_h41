@@ -130,9 +130,11 @@ class voyage:
             os.system("cls" if os.name == "nt" else "clear")
             print("Here Are All Voyages")
             print("-----------------------------------")
+            print(Logic_wrapper().get_all_voyages())
             print(self.format_voyages())
             options = """
-[N]EW   [Q]UIT  [B]ACK
+    Select a fligth
+[N]EW   [Q]UIT  [B]ACK 
             """
             print(options)
             command = input("Enter yer command sire!: ")
