@@ -115,7 +115,7 @@ class voyage:
                 break
             elif command == "b":
                 return
-            
+
     def Voyage_list_manager(self):
         while True:
             os.system("cls" if os.name == "nt" else "clear")
@@ -130,9 +130,9 @@ class voyage:
                 return
             elif command == "a":
                 self.add_crew()
-                
 
-    def add_crew(self)
+    def add_crew(self):
+        pass
 
     def get_specific_day_voyages(self):
         return
