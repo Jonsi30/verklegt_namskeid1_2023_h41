@@ -48,6 +48,7 @@ class Aircraft:
     def get_all_aircrafts(self):
         os.system("cls" if os.name == "nt" else "clear")
         print(ascii().Aircraft_list_art())
+        print("aircrafts")
         print("-----------------------")
         options = """
         [N]EW 
