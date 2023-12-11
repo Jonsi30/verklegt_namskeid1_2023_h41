@@ -1,6 +1,6 @@
 from logic.logic_wrapper import Logic_wrapper
 import os
-from ui.ASCII import ascii
+from ui.main_UI import main_UI
 
 
 class voyage:
@@ -105,6 +105,8 @@ class voyage:
                 return
 
     def Voyage_list(self):
+        from ui.main_UI import main_UI
+
         while True:
             os.system("cls" if os.name == "nt" else "clear")
             print(ascii().voyage_list_art())
