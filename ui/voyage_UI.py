@@ -1,6 +1,6 @@
 from logic.logic_wrapper import Logic_wrapper
 import os
-from ui.main_UI import main_UI
+from ui.ASCII import ascii
 
 
 class voyage:
@@ -53,6 +53,71 @@ class voyage:
         print(plane_insignia)
         plane_insignia_input = input("->: ").lower
 
+        options = """
+        [Q]UIT
+        [B]ACK
+        """
+
+        print(options)
+
+        return (
+            id_input,
+            flight_nr_input,
+            dep_from_input,
+            arr_at_input,
+            dep_time_input,
+            dep_time_back_input,
+            arr_time_input,
+            arr_time_back_input,
+            plane_insignia_input,
+        )
+
+    def input_for_create_new_voyage(self):
+        self.create_new_voyage()
+        while True:
+            command = input("select action: ").lower()
+            if command == "q":
+                print("shutting down")
+                break
+            elif command == "b":
+                return
+
+    def Voyage_list_director(self):
+        while True:
+            os.system("cls" if os.name == "nt" else "clear")
+            print(ascii().voyage_list_art())
+            Logic_wrapper().display_voyage()
+            command = input("Enter yer command sire!: ")
+            if command == "q":
+                print("shutting down")
+                break
+            elif command == "b":
+                return
+
+    def Voyage_list_manager(self):
+        while True:
+            os.system("cls" if os.name == "nt" else "clear")
+            print(ascii().voyage_list_art())
+            Logic_wrapper().display_voyage()
+            print("[A]DD EMPLOYEES")
+            command = input("Enter yer command sire!: ")
+            if command == "q":
+                print("shutting down")
+                break
+            elif command == "b":
+                return
+            elif command == "a":
+                self.add_crew_to_voyage()
+
+    def get_specific_day_voyages(self):
+        return
+
+    def add_crew_to_voyage(self):
+        voyage_id = """
+        input voyage id kongsi og jon fokkkkkkaðu þer"""
+        print(voyage_id)
+        voyage_id_input = input("->: ").lower
+
         captain = """
         captain(fx. John Johnson)"""
         print(captain)
@@ -77,67 +142,7 @@ class voyage:
         [Q]UIT
         [B]ACK
         """
+
         print(options)
 
-        return (
-            id_input,
-            flight_nr_input,
-            dep_from_input,
-            arr_at_input,
-            dep_time_input,
-            dep_time_back_input,
-            arr_time_input,
-            arr_time_back_input,
-            plane_insignia_input,
-            captain_input,
-            copilot_input,
-            flight_attendant_input,
-        )
-
-    def input_for_create_new_voyage(self):
-        self.create_new_voyage()
-        while True:
-            command = input("select action: ").lower()
-            if command == "q":
-                print("shutting down")
-                break
-            elif command == "b":
-                return
-
-    def format_voyages(self):
-        flight_dict = self.get_all_voyages.get_all_voyages()
-        voyage_dict = dict()
-        flight_keys = list(flight_dict.keys())
-        for i in range(0, len(flight_keys), 2):
-            flight1 = flight_dict[flight_keys[i]]
-            flight2 = flight_dict[flight_keys[i + 1]]
-            voyage_dict[i // 2] = {"flight1": flight1, "flight2": flight2}
-
-        formatted_voyage = ""
-        for key, voyage in voyage_dict.items():
-            formatted_voyage += f"Voyage {key + 1}:\n"
-            for flight_key, flight_value in voyage.items():
-                formatted_voyage += f"{flight_key}: "
-                formatted_voyage += ", ".join(
-                    f"{item_key}: {item_value}"
-                    for item_key, item_value in flight_value.items()
-                )
-                formatted_voyage += "\n"
-            formatted_voyage += "\n"
-        return formatted_voyage
-
-    def Voyage_list(self):
-        while True:
-            Logic_wrapper().display_voyage()
-            command = input("Enter yer command sire!: ")
-            if command == "q":
-                print("shutting down")
-                break
-            elif command == "b":
-                main_UI().landing_page_input_prompt()
-
-    def get_specific_day_voyages(self):
-        return
-
-    def update_voyage(self):
-        return
+        return voyage_id_input, captain_input, copilot_input, flight_attendant_input

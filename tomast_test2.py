@@ -60,3 +60,30 @@ class Voyage_details:
                 formatted_voyage += "\n"
             formatted_voyage += "\n"
         return formatted_voyage
+
+
+
+captain = """
+        captain(fx. John Johnson)"""
+        print(captain)
+        captain_input = input("->: ").lower
+
+        copilot = """
+        copilot(fx. John Mikeson)"""
+        print(copilot)
+        copilot_input = input("->: ").lower
+
+        head_of_service = """
+        head_of_service(fx. Mike Johnson)"""
+        print(head_of_service)
+        copilot_input = input("->: ").lower
+
+        flight_attendant = """
+        flight_attendant(fx. Mike Mikeson)"""
+        print(flight_attendant)
+        flight_attendant_input = input("->: ").lower
+
+
+captain_input,
+            copilot_input,
+            flight_attendant_input,

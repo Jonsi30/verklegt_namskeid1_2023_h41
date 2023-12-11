@@ -1,4 +1,5 @@
 import os
+from ui.ASCII import ascii
 
 
 class destination:
@@ -58,7 +59,7 @@ class destination:
 
     def get_all_destinations(self):
         os.system("cls" if os.name == "nt" else "clear")
-        print("Here Are All Destinations")
+        print(ascii().destination_list_art())
         print("-----------------------")
         print("all destinations")
         get_all_destinations = """

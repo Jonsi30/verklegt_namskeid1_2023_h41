@@ -4,6 +4,7 @@ from logic.logic_wrapper import Logic_wrapper
 from ui.voyage_UI import voyage
 from ui.Destination_UI import destination
 from ui.Aircraft_UI import Aircraft
+from ui.ASCII import ascii
 
 
 class main_UI:
@@ -12,46 +13,9 @@ class main_UI:
         self.logicwrapper = Logic_wrapper()
         pass
 
-    def landing_page(self):
-        """Prints the landing page for the user"""
-        landing_ui = """
-
-
-                                   _
-                                __~a~_
-                                ~~;  ~_
-                  _                ~  ~_                _
-                 '_\;__._._._._._._]   ~_._._._._._.__;/_`
-                 '(/'/'/'/'|'|'|'| (    )|'|'|'|'\'\'\'\)'
-                 (/ / / /, | | | |(/    \) | | | ,\ \ \ \)
-                (/ / / / / | | | ~(/    \) ~ | | \ \ \ \ \)
-               (/ / / / /  ~ ~ ~   (/  \)    ~ ~  \ \ \ \ \)
-              (/ / / / ~          / (||)|          ~ \ \ \ \)
-              ~ / / ~            M  /||\M             ~ \ \ ~
-               ~ ~                  /||\                 ~ ~
-                                   //||\\
-                                   //||\\
-                                   //||\\
-                                   '/||\'                                                                     
-                                                                      
-        /|    / /                /|    / /                                
-       //|   / /      ___       //|   / /        ___       ( )      __    
-      // |  / /     //   ) )   // |  / /       //   ) )   / /     //  ) ) 
-     //  | / /     //   / /   //  | / /       //   / /   / /     //       
-    //   |/ /     ((___( (   //   |/ /       ((___( (   / /     //        
-
-
-                                Please Login
-                        [m] Manager  [d] director
-
-                                or [q] quit
-                    """
-
-        print(landing_ui)
-        """Returns the input from the user"""
-
     def landing_page_input_prompt(self):
-        self.landing_page()
+        lp = ascii.landing_page(self)
+        print(lp)
         m = main_UI()
         while True:
             command = input("Enter yer command sire!: ")
@@ -68,7 +32,6 @@ class main_UI:
 
     def manager_menu(self):
         """Prints the manager menu for the user"""
-        os.system("cls" if os.name == "nt" else "clear")
         manager_ui = """
     Welcome Manager 
 
@@ -82,6 +45,8 @@ class main_UI:
 
     def manager_menu_input_prompt(self):
         while True:
+            os.system("cls" if os.name == "nt" else "clear")
+            print(ascii().manager_menu_art())
             self.manager_menu()
             command = input("Enter yer command sire!: ")
             command = command.lower()
@@ -91,7 +56,7 @@ class main_UI:
             elif command == "b":
                 return
             elif command == "0":
-                voyage.Voyage_list()
+                voyage().Voyage_list_manager()
             elif command == "1":
                 pass
             else:
@@ -99,7 +64,6 @@ class main_UI:
 
     def director_menu(self):
         """prints director page and asks for input"""
-        os.system("cls" if os.name == "nt" else "clear")
         director_ui = """
     Welcome Director 
 
@@ -117,6 +81,8 @@ class main_UI:
 
     def director_menu_input_prompt(self):
         while True:
+            os.system("cls" if os.name == "nt" else "clear")
+            print(ascii().director_menu_art())
             self.director_menu()
             v = voyage()
             command = input("Enter yer command sire!: ")
@@ -127,7 +93,7 @@ class main_UI:
             elif command == "b":
                 return
             elif command == "0":
-                v.Voyage_list()
+                v.Voyage_list_director()
             elif command == "1":
                 pass
             elif command == "2":
