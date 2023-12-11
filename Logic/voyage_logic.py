@@ -79,6 +79,6 @@ class VoyageLogic:
             flight_nr_back = f"NA{flight_nr_back}"
             
             result = f"\nVoyage_id = {id}\n\nFlight from Iceland:\nDeparture from: {dep_from}\tDeparting time: {dep_time}\nArriving too: {arr_at}\tArrival time: {arr_time}\n\n"
-            result += f"Flight to Iceland:\nDeparture from: {arr_at}\nDeparting time: {dep_time_back}\nArriving too: {dep_from}\tArrival time: {arr_time_back}\n"
+            result += f"Flight to Iceland:\nDeparture from: {arr_at}\nDeparting time: {dep_time_back}\nArriving too: {dep_from}\tArrival time: {arr_time_back}\n\n"
 
         print(result)
