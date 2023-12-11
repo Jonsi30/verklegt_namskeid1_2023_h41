@@ -1,5 +1,5 @@
 from data.data_wrapper import Data_wrapper
-
+from model.employee import Employee
 
 class LogicEmployees:
     def __init__(self):
@@ -7,7 +7,7 @@ class LogicEmployees:
 
     def create_employee(self,name,role,rank,license,phone,address,email,ssn):
         """Returns all the credentials of a new employee."""
-        new_info = name, role, rank, license, phone, address, email, ssn
+        new_info = Employee(name, role, rank, license, phone, address, email, ssn)
         return self.employee.create_employee(new_info)
     
     def get_all_employees(self):

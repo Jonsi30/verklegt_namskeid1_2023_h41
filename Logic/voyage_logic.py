@@ -1,27 +1,13 @@
 from data.data_wrapper import Data_wrapper
 import datetime
+from model.voyage_model import Voyage_Model
 
 class VoyageLogic:
     def __init__(self):
         self.voyage = Data_wrapper()
 
-    def create_voyage(
-        self,
-        id,
-        flight_nr,
-        dep_from,
-        arr_at,
-        dep_time,
-        arr_time,
-        dep_time_back,
-        arr_time_back,
-        plane_insignia,
-        captain="",
-        copilot="",
-        head_of_service="",
-        flight_attendant="",
-    ):
-        voyage_info = (
+    def create_voyage(self,id,flight_nr,dep_from,arr_at,dep_time,arr_time,dep_time_back,arr_time_back,plane_insignia,captain="",copilot="",head_of_service="",flight_attendant="",):
+        voyage_info = Voyage_Model(
             id,
             flight_nr,
             dep_from,
@@ -36,6 +22,7 @@ class VoyageLogic:
             head_of_service,
             flight_attendant,
         )
+
 
         return self.voyage.create_voyage(voyage_info)
 
