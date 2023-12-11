@@ -56,7 +56,7 @@ class main_UI:
             elif command == "b":
                 return
             elif command == "0":
-                voyage().Voyage_list()
+                voyage().Voyage_list_manager()
             elif command == "1":
                 pass
             else:
