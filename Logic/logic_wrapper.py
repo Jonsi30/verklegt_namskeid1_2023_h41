@@ -70,3 +70,4 @@ class Logic_wrapper:
         return self.logic_aircraft.get_all_aircrafts()
     
     
+        return self.voyage_logic.display_voyage_manager()

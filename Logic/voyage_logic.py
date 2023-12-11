@@ -57,7 +57,7 @@ class VoyageLogic:
     def update_voyage(self, id, rankn):
         pass
 
-    def display_voyage(self):
+    def display_voyage_director(self):
         """EKKI SNERTA"""
         voyage_list = self.voyage.get_voyage_data()
         for voyage in voyage_list:
@@ -81,4 +81,29 @@ class VoyageLogic:
             result = f"\nVoyage_id = {id}\n\nFlight from Iceland:\nDeparture from: {dep_from}\tDeparting time: {dep_time}\nArriving too: {arr_at}\tArrival time: {arr_time}\n\n"
             result += f"Flight to Iceland:\nDeparture from: {arr_at}\nDeparting time: {dep_time_back}\nArriving too: {dep_from}\tArrival time: {arr_time_back}\n\n"
 
+        print(result)
+
+    def display_voyage_manager(self):
+        """EKKI SNERTA"""
+        voyage_list = self.voyage.get_voyage_data()
+        for voyage in voyage_list:
+            id = voyage["id"]
+            dep_from = voyage["dep_from"]
+            arr_at = voyage["arr_at"]
+            dep_time = voyage["dep_time"]
+            arr_time = voyage["arr_time"]
+            dep_time_back = voyage["dep_time_back"]
+            arr_time_back = voyage["arr_time_back"]
+            plane_insignia = voyage["plane_insignia"]
+            captain = voyage["captain"]
+            copilot = voyage["copilot"]
+            flight_attendant = voyage["flight_attendant"]
+            flight_nr = voyage["flight_nr"]
+            flight_nr = flight_nr[2::]
+            flight_nr = int(flight_nr)
+            flight_nr_back = flight_nr + 1
+            flight_nr_back = f"NA{flight_nr_back}"
+            
+            result = f"\nVoyage ID: {id}\n\nFlight from Iceland:\nDeparture from: {dep_from}\tDeparting time: {dep_time}\nArriving too: {arr_at}\tArrival time: {arr_time}\n\n"
+            result += f"Flight to Iceland:\nDeparture from: {arr_at}\nDeparting time: {dep_time_back}\nArriving too: {dep_from}\tArrival time: {arr_time_back}\n\nEMPLOYEES:\nCaptain: {captain}\nCopilot: {copilot}\nFlight Attendant: {flight_attendant}\nPlane insignia: {plane_insignia}\n\n"
         print(result)
