@@ -14,7 +14,7 @@ class LogicDestination:
         emergency_contact,
         emergency_contact_phone_nr,
     ):
-        new_info = (
+        new_info = Destination(
             destination,
             distance_from_ice,
             flight_time,
