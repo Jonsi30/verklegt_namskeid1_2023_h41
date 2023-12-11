@@ -26,8 +26,11 @@ class employee:
             options = """
         [P]ILOTS
         [C]ABIN CREW
+        [N]EW EMPLOYEE
+
         [Q]UIT
         [B]ACK
+
         """
             print(options)
             command = input("Enter yer command sire!: ")
@@ -40,7 +43,7 @@ class employee:
             elif command == "p":
                 self.get_all_pilots
             elif command == "c":
-                sel
+                self.get_all_cabin_crew
             else:
                 print("invalid input!")
 
