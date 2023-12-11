@@ -1,6 +1,10 @@
 FLIGHT_FILE = "../VERKLEGT_NAMSKEID1_2023_H41/Files/flight_list.csv"
 import csv
 from model.voyage_model import Voyage_Model
+VOYAGE_FIELDNAMES = ["Id", "Flight Number", "Departure From", "Arrival at","Departure Time", "Arrival Time",
+"Departure Time Back","Arrival Time Back","Plane Insignia","Captain","Copilot","Head of Service","Flight Attendant"]
+
+FLIGHT_LIST_FIELDNAMES = ["Flight Number", "Departure From", "Arrival At", "Departure Time", "Arrival Time", "Plane Insignia"]
 
 
 class Voyage_Data:
@@ -33,89 +37,75 @@ class Voyage_Data:
                         row["captain"],
                         row["copilot"],
                         row["head_of_service"],
-                        row["flight_attendant"],
+                        row["flight_attendant"]
                     )
                 )
 
         return ret_list
 
-    def create_voyage(self, voyage):
+    def create_voyage(self, voyage: Voyage_Model):
         # User can Create Voayge
         with open(self.file_name, "a", newline="", encoding="utf-8") as csvfile:
-            fieldnames = [
-                "Id",
-                "Flight Number",
-                "Departure From",
-                "Arrival at",
-                "Departure Time",
-                "Arrival Time",
-                "Departure Time Back",
-                "Arrival Time Back",
-                "Plane Insignia",
-                "Captain",
-                "Copilot",
-                "Head of Service",
-                "Flight Attendant",
-            ]
+            fieldnames = VOYAGE_FIELDNAMES
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
             writer.writerow(
                 {
-                    "id": voyage[0],
-                    "flight_nr": voyage[1],
-                    "dep_from": voyage[2],
-                    "arr_at": voyage[3],
-                    "dep_time": voyage[4],
-                    "arr_time": voyage[5],
-                    "dep_time_back": voyage[6],
-                    "arr_time_back": voyage[7],
-                    "plane_insignia": voyage[8],
-                    "captain": voyage[9],
-                    "copilot": voyage[10],
-                    "head_of_service": voyage[11],
-                    "flight_attendant": voyage[12],
+                    "Id": voyage.id,
+                    "Flight Number": voyage.flight_nr,
+                    "Departure From": voyage.dep_from,
+                    "Arrival at": voyage.arr_at,
+                    "Departure Time": voyage.dep_time,
+                    "Arrival Time": voyage.arr_time,
+                    "Departure Time Back": voyage.dep_time_back,
+                    "Arrival Time Back": voyage.arr_time_back,
+                    "Plane Insignia": voyage.plane_insignia,
+                    "Captain": voyage.captain,
+                    "Copilot": voyage.copilot,
+                    "Head of Service": voyage.head_of_service,
+                    "Flight Attendant": voyage.flight_attendant
                 }
             )
 
-    def update_voyage(self, updated_info):
+    def update_voyage(self, updated_info: Voyage_Model):
         all_dest = Voyage_Data()
         every_voayge = all_dest.get_all_voyage()
         new_list = []
         for item in every_voayge:
-            if item["id"] == updated_info["id"]:
+            if item.id == updated_info.id:
                 new_list.append(
                     (
-                        item["id"],
-                        item["flight_nr"],
-                        item["dep_from"],
-                        item["arr_at"],
-                        item["dep_time"],
-                        item["arr_time"],
-                        item["dep_time_back"],
-                        item["arr_time_back"],
-                        item["plane_insignia"],
-                        updated_info["captain"],
-                        updated_info["copilot"],
-                        updated_info["head_of_service"],
-                        updated_info["flight_attendant"],
+                        item.id,
+                        item.flight_nr,
+                        item.dep_from,
+                        item.arr_at,
+                        item.dep_time,
+                        item.arr_time,
+                        item.dep_time_back,
+                        item.arr_time_back,
+                        item.plane_insignia,
+                        updated_info.captain,
+                        updated_info.copilot,
+                        updated_info.head_of_service,
+                        updated_info.flight_attendant
                     )
                 )
             else:
                 new_list.append(
                     (
-                        item["id"],
-                        item["flight_nr"],
-                        item["dep_from"],
-                        item["arr_at"],
-                        item["dep_time"],
-                        item["arr_time"],
-                        item["dep_time_back"],
-                        item["arr_time_back"],
-                        item["plane_insignia"],
-                        item["captain"],
-                        item["copilot"],
-                        item["head_of_service"],
-                        item["flight_attendant"],
+                        item.id,
+                        item.flight_nr,
+                        item.dep_from,
+                        item.arr_at,
+                        item.dep_time,
+                        item.arr_time,
+                        item.dep_time_back,
+                        item.arr_time_back,
+                        item.plane_insignia,
+                        item.captain,
+                        item.copilot,
+                        item.head_of_service,
+                        item.flight_attendant
                     )
                 )
 
@@ -124,21 +114,8 @@ class Voyage_Data:
         f.close()
 
         with open(self.file_name, "w", newline="") as self.file_name:
-            fields = [
-                "id",
-                "flight_nr",
-                "dep_from",
-                "arr_at",
-                "dep_time",
-                "arr_time",
-                "dep_time_back",
-                "arr_time_back",
-                "plane_insignia",
-                "captain",
-                "copilot",
-                "head_of_service",
-                "flight_attendant",
-            ]
+            fields = VOYAGE_FIELDNAMES
+            
             writer = csv.DictWriter(self.file_name, fieldnames=fields)
 
             writer.writeheader()
@@ -150,41 +127,32 @@ class Voyage_Data:
         all_voyages = Voyage_Data().get_all_voyage()
 
         with open(self.flight_list, "a", newline="", encoding="utf-8") as csvfile:
-            fieldnames = [
-                "flight_nr",
-                "dep_from",
-                "arr_at",
-                "departure",
-                "arrival",
-                "plane_insignia",
-            ]
+            fieldnames = FLIGHT_LIST_FIELDNAMES
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
             for voyage in all_voyages:
-                flight_number = voyage["flight_nr"]
-                flight_nr_back = flight_number_back(
-                    flight_number
-                )  # Gets the flight number for the returning flight
+                flight_number = voyage.flight_nr
+                flight_nr_back = flight_number_back(flight_number)  # Gets the flight number for the returning flight
 
                 writer.writerow(
                     {
-                        "flight_nr": voyage["flight_nr"],
-                        "dep_from": voyage["dep_from"],
-                        "arr_at": voyage["arr_at"],
-                        "departure": voyage["dep_time"],
-                        "arrival": voyage["arr_time"],
-                        "plane_insignia": voyage["plane_insignia"],
+                        "Flight Number": voyage.flight_nr,
+                        "Departure From": voyage.dep_from,
+                        "Arrival At": voyage.arr_at,
+                        "Departure": voyage.dep_time,
+                        "Arrival": voyage.arr_time,
+                        "Plane Insignia": voyage.plane_insignia
                     }
                 )
 
                 writer.writerow(
                     {
-                        "flight_nr": flight_nr_back,
-                        "dep_from": voyage["arr_at"],
-                        "arr_at": voyage["dep_from"],
-                        "departure": voyage["dep_time_back"],
-                        "arrival": voyage["arr_time_back"],
-                        "plane_insignia": voyage["plane_insignia"],
+                        "Flight Number": flight_nr_back,
+                        "Departure From": voyage.arr_at,
+                        "Arrival At": voyage.dep_from,
+                        "Departure": voyage.dep_time_back,
+                        "Arrival": voyage.arr_time_back,
+                        "Plane Insignia": voyage.plane_insignia
                     }
                 )
 
