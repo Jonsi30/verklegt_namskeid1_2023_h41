@@ -1,5 +1,6 @@
 from logic.logic_wrapper import Logic_wrapper
 import os
+from ui.main_UI import main_UI
 
 
 class voyage:
@@ -127,24 +128,13 @@ class voyage:
 
     def Voyage_list(self):
         while True:
-            os.system("cls" if os.name == "nt" else "clear")
-            print("Here Are All Voyages")
-            print("-----------------------------------")
-            print(Logic_wrapper().get_all_voyages())
-            print(self.format_voyages())
-            options = """
-    Select a fligth
-[N]EW   [Q]UIT  [B]ACK 
-            """
-            print(options)
+            Logic_wrapper().display_voyage()
             command = input("Enter yer command sire!: ")
-            if command == "n":
-                self.input_for_create_new_voyage()
             if command == "q":
                 print("shutting down")
                 break
             elif command == "b":
-                return
+                main_UI().landing_page_input_prompt()
 
     def get_specific_day_voyages(self):
         return
