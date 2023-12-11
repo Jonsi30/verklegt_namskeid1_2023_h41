@@ -5,13 +5,16 @@ from ui.voyage_UI import voyage
 from ui.Destination_UI import destination
 from ui.Aircraft_UI import Aircraft
 from ui.ASCII import ascii
+from ui.Employee_UI import employee
 
 
+# Class for the landing page and main menus
 class main_UI:
     def __init__(self):
-        """Constructor for Main_menu"""
         self.logicwrapper = Logic_wrapper()
         pass
+
+        # prints out and asks for input for the landing page
 
     def landing_page_input_prompt(self):
         lp = ascii.landing_page(self)
@@ -30,8 +33,8 @@ class main_UI:
             else:
                 print("invalid input!")
 
+    # Prints the manager menu for the user
     def manager_menu(self):
-        """Prints the manager menu for the user"""
         manager_ui = """
     Welcome Manager 
 
@@ -43,6 +46,7 @@ class main_UI:
     """
         print(manager_ui)
 
+    # gets input for manager menu
     def manager_menu_input_prompt(self):
         while True:
             os.system("cls" if os.name == "nt" else "clear")
@@ -58,10 +62,11 @@ class main_UI:
             elif command == "0":
                 voyage().Voyage_list_manager()
             elif command == "1":
-                pass
+                employee().get_all_crew()
             else:
                 print("invalid input!")
 
+    # prints the director menu for the user
     def director_menu(self):
         """prints director page and asks for input"""
         director_ui = """
@@ -79,6 +84,7 @@ class main_UI:
 
         print(director_ui)
 
+    # gets input for director menu
     def director_menu_input_prompt(self):
         while True:
             os.system("cls" if os.name == "nt" else "clear")
