@@ -50,7 +50,7 @@ class main_UI:
     def manager_menu_input_prompt(self):
         while True:
             os.system("cls" if os.name == "nt" else "clear")
-            print(ascii().manager_menu_art())
+            ascii().manager_menu_art()
             self.manager_menu()
             command = input("Enter yer command sire!: ")
             command = command.lower()

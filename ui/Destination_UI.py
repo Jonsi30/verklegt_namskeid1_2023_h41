@@ -59,7 +59,7 @@ class destination:
 
     def get_all_destinations(self):
         os.system("cls" if os.name == "nt" else "clear")
-        print(ascii().destination_list_art())
+        ascii().destination_list_art()
         print("-----------------------")
         print("all destinations")
         get_all_destinations = """
