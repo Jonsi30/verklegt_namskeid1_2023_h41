@@ -1,4 +1,4 @@
-flight_nr,dep_from,arr_at,departure,arrival,plane_insignia,
+Flight Number,Departure From,Arrival At,Departure Time,Arrival Time,Plane Insignia
 NA010,RKV,TOR,06:00 16.12.2023,11:23 16.12.2023,TF-SMJ
 NA011,TOR,RKV,13:00 16.12.2023,18:23 16.12.2023,TF-SMJ
 NA020,RKV,NUK,10:00 17.12.2023,13:37 17.12.2023,TF-SÞS

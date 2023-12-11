@@ -51,11 +51,27 @@ class LogicEmployees:
 
         return employee_list
     
-    def get_occupied_staff(self):
-        pass
+    def get_occupied_staff(self, employee_dict: dict, employee_status: str):
+        """Returns all occupied staff. Staff that cannot go on more voyages at the given time"""
+        occupied_list = []
 
-    def get_available_staff(self):
-        pass
+        for employee in employee_dict:
+            if employee["occupied"] == employee_status:
+                occupied_list.append(employee)
+            else:
+                pass
+        return occupied_list
+
+    def get_available_staff(self, employee_dict: dict, employee_status):
+        """Returns all available staff. Staff that can go on voyages at the given time"""
+        available_staff_list = []
+
+        for employee in employee_dict:
+            if employee["avialable"] == employee_status:
+                available_staff_list.append(employee)
+            else:
+                pass
+        return available_staff_list
     
     def get_by_ssn(self,employee_dict: dict, ssn: int):
         """Returns the employee with the ssn that the user put in. If no employee has that ssn, the function returns None"""
