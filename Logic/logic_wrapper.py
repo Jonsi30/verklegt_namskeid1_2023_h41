@@ -64,4 +64,4 @@ class Logic_wrapper:
         return self.voyage_logic.get_flight()
     
     def display_voyage(self):
-        return self.voyage_logic.display_voyage()
+        return self.voyage_logic.display_voyage_manager()
