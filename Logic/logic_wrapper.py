@@ -61,7 +61,12 @@ class Logic_wrapper:
         pass
 
     def get_all_voyages(self):
-        return self.voyage_logic.get_flight()
+        return self.voyage_logic.display_voyage()
     
     def display_voyage(self):
         return self.voyage_logic.display_voyage()
+
+    def get_all_aircraft(self):
+        return self.logic_aircraft.get_all_aircrafts()
+    
+    
