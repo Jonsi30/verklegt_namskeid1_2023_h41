@@ -13,7 +13,10 @@ class employee:
         return
 
     def get_all_pilots(self):
-        return
+        pass
+
+    def get_all_cabin_crew(self):
+        pass
 
     def get_all_crew(self):
         while True:
@@ -34,10 +37,10 @@ class employee:
                 break
             elif command == "b":
                 return
-            elif command == "0":
-                pass
-            elif command == "1":
-                pass
+            elif command == "p":
+                self.get_all_pilots
+            elif command == "c":
+                sel
             else:
                 print("invalid input!")
 
