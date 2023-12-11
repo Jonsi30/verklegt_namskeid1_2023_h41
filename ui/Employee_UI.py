@@ -7,7 +7,82 @@ class employee:
         pass
 
     def create_new_employee(self):
-        return
+        # os.system("cls" if os.name == "nt" else "clear")
+        name = """
+        Please Input The Following Details
+        ----------------------------------
+        name"""
+        print(name)
+        name_input = input("-> ").lower()
+
+        role = """ 
+        
+        role"""
+        print(role)
+        role_input = input("-> ").lower()
+
+        rank = """
+        
+        Duration (hrs:minutes)"""
+        print(rank)
+        rank_input = input("-> ").lower()
+
+        License = """
+        
+        License"""
+        print(License)
+        License_input = input("-> ").lower()
+
+        phone = """
+        
+        phone"""
+        print(phone)
+        phone_input = input("-> ").lower()
+
+        address = """
+        
+        address"""
+        print(address)
+        address_input = input("-> ").lower()
+
+        email = """
+        
+        email"""
+        print(phone)
+        email_input = input("-> ").lower()
+
+        ssn = """
+        
+        ssn"""
+        print(ssn)
+        ssn_input = input("-> ").lower()
+
+        options = """
+        [Q]UIT
+        [B]ACK
+        """
+        print(options)
+
+        return (
+            name_input,
+            role_input,
+            rank_input,
+            License_input,
+            phone_input,
+            address_input,
+            email_input,
+            ssn_input,
+        )
+
+    def input_for_create_new_destination(self):
+        self.create_new_destination()
+        while True:
+            command = input("select action: ").lower()
+            if command == "q":
+                print("shutting down")
+                break
+            elif command == "b":
+                return
 
     def get_all_employees(self):
         return
