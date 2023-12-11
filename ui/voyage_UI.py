@@ -1,6 +1,6 @@
 from logic.logic_wrapper import Logic_wrapper
 import os
-from ui.main_UI import main_UI
+
 
 
 class voyage:
@@ -127,6 +127,7 @@ class voyage:
         return formatted_voyage
 
     def Voyage_list(self):
+        from ui.main_UI import main_UI
         while True:
             Logic_wrapper().display_voyage()
             command = input("Enter yer command sire!: ")
