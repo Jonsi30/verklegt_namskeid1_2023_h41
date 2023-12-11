@@ -53,30 +53,11 @@ class voyage:
         print(plane_insignia)
         plane_insignia_input = input("->: ").lower
 
-        captain = """
-        captain(fx. John Johnson)"""
-        print(captain)
-        captain_input = input("->: ").lower
-
-        copilot = """
-        copilot(fx. John Mikeson)"""
-        print(copilot)
-        copilot_input = input("->: ").lower
-
-        head_of_service = """
-        head_of_service(fx. Mike Johnson)"""
-        print(head_of_service)
-        copilot_input = input("->: ").lower
-
-        flight_attendant = """
-        flight_attendant(fx. Mike Mikeson)"""
-        print(flight_attendant)
-        flight_attendant_input = input("->: ").lower
-
         options = """
         [Q]UIT
         [B]ACK
         """
+
         print(options)
 
         return (
@@ -89,9 +70,6 @@ class voyage:
             arr_time_input,
             arr_time_back_input,
             plane_insignia_input,
-            captain_input,
-            copilot_input,
-            flight_attendant_input,
         )
 
     def input_for_create_new_voyage(self):
@@ -129,13 +107,42 @@ class voyage:
             elif command == "b":
                 return
             elif command == "a":
-                self.add_crew()
-
-    def add_crew(self):
-        pass
+                self.add_crew_to_voyage()
 
     def get_specific_day_voyages(self):
         return
 
-    def update_voyage(self):
-        return
+    def add_crew_to_voyage(self):
+        voyage_id = """
+        input voyage id kongsi og jon fokkkkkkaðu þer"""
+        print(voyage_id)
+        voyage_id_input = input("->: ").lower
+
+        captain = """
+        captain(fx. John Johnson)"""
+        print(captain)
+        captain_input = input("->: ").lower
+
+        copilot = """
+        copilot(fx. John Mikeson)"""
+        print(copilot)
+        copilot_input = input("->: ").lower
+
+        head_of_service = """
+        head_of_service(fx. Mike Johnson)"""
+        print(head_of_service)
+        copilot_input = input("->: ").lower
+
+        flight_attendant = """
+        flight_attendant(fx. Mike Mikeson)"""
+        print(flight_attendant)
+        flight_attendant_input = input("->: ").lower
+
+        options = """
+        [Q]UIT
+        [B]ACK
+        """
+
+        print(options)
+
+        return voyage_id_input, captain_input, copilot_input, flight_attendant_input

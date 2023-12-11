@@ -93,7 +93,7 @@ class main_UI:
             elif command == "b":
                 return
             elif command == "0":
-                v.Voyage_list()
+                v.Voyage_list_director()
             elif command == "1":
                 pass
             elif command == "2":
