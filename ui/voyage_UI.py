@@ -70,6 +70,10 @@ class voyage:
             arr_time_input,
             arr_time_back_input,
             plane_insignia_input,
+            "unassigned",
+            "unassigned",
+            "unassigned",
+            "unassigned"
         )
 
     def input_for_create_new_voyage(self):
