@@ -1,5 +1,5 @@
 import os
-from ASCII import ascii
+from ui.ASCII import ascii
 
 
 class employee:
@@ -17,7 +17,8 @@ class employee:
 
     def get_all_crew(self):
         os.system("cls" if os.name == "nt" else "clear")
-        print(ascii().employee_list_art())
+        # ascii = ascii()
+        print(ascii().employee_list_art)
         return
 
     def get_all_available_employees(self):
