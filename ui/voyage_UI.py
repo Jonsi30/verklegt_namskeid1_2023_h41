@@ -11,47 +11,47 @@ class voyage:
         id = """
         id(fx. 1111)"""
         print(id)
-        id_input = input("->: ").lower
+        id_input = input("->: ")
 
         flight_nr = """
         flight_nr(fx. NA010)"""
         print(flight_nr)
-        flight_nr_input = input("->: ").lower
+        flight_nr_input = input("->: ")
 
         dep_from = """
         dep_from(fx. RKV)"""
         print(dep_from)
-        dep_from_input = input("->: ").lower
+        dep_from_input = input("->: ")
 
         arr_at = """
         arr_at(fx. TOR)"""
         print(arr_at)
-        arr_at_input = input("->: ").lower
+        arr_at_input = input("->: ")
 
         dep_time = """
         dep_time(fx. 00:00 16.12.2023)"""
         print(dep_time)
-        dep_time_input = input("->: ").lower
+        dep_time_input = input("->: ")
 
         dep_time_back = """
         dep_time_back(12:00 16.12.2023)"""
         print(dep_time_back)
-        dep_time_back_input = input("->: ").lower
+        dep_time_back_input = input("->: ")
 
         arr_time = """
         arr_time(05:00 16.12.2023)"""
         print(arr_time)
-        arr_time_input = input("->: ").lower
+        arr_time_input = input("->: ")
 
         arr_time_back = """
         arr_time_back(17:00 16.12.2023)"""
         print(arr_time_back)
-        arr_time_back_input = input("->: ").lower
+        arr_time_back_input = input("->: ")
 
         plane_insignia = """
         plane_insignia(TF-XXX)"""
         print(plane_insignia)
-        plane_insignia_input = input("->: ").lower
+        plane_insignia_input = input("->: ")
 
         options = """
         [Q]UIT
@@ -60,7 +60,7 @@ class voyage:
 
         print(options)
 
-        return (
+        return Logic_wrapper().create_voyage(
             id_input,
             flight_nr_input,
             dep_from_input,
