@@ -1,7 +1,7 @@
 import os
 from ui.ASCII import ascii
 from logic.logic_wrapper import Logic_wrapper
-
+from prettytable import PrettyTable
 
 class employee:
     def __init__(self):
@@ -98,8 +98,16 @@ class employee:
     def get_all_pilots(self):
         while True:
             os.system("cls" if os.name == "nt" else "clear")
-            print(Logic_wrapper().get_all_pilots())
-            
+            #for pilot in (Logic_wrapper().get_all_pilots()):
+                #print(pilot)
+            pilots = (Logic_wrapper().get_all_pilots())
+            table = PrettyTable()
+            fieldnames = ["Pilot Name", "Rank"]
+            table.field_names = fieldnames
+            for pilot, rank in pilots:
+                table.add_row([pilot, rank])
+            print(table)
+
             options = """ 
             [B]ACK
 

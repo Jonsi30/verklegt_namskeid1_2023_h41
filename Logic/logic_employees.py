@@ -1,6 +1,6 @@
 from data.data_wrapper import Data_wrapper
 from model.employee import Employee
-
+from prettytable import PrettyTable
 
 class LogicEmployees:
     def __init__(self):
@@ -22,10 +22,12 @@ class LogicEmployees:
     def get_all_pilots(self: dict):
         """Returns a list with all the pilots working for the company NaN air."""
         pilot_list = []
+        fieldnames = ["Employee", "Rank"]
+        table = PrettyTable()
         all_employees = Data_wrapper().get_all_employees()
         for employee in all_employees:
             if employee.role == "Pilot":
-                pilot_list.append(employee.name)
+                pilot_list.append([employee.name, employee.rank])
 
         return pilot_list
         
