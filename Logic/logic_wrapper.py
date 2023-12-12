@@ -22,6 +22,7 @@ class Logic_wrapper:
         return self.logic_destinations.get_all_destinations()
 
     def update_emergency_contact(self, updated_info):
+        """Returns an upadated emergency contact for a destination"""
         return self.logic_destinations.update_emergency_contact(updated_info)
 
     def create_employee(self, new_info):
@@ -65,7 +66,7 @@ class Logic_wrapper:
         return self.logic_employees.get_available_staff()
 
     def get_by_ssn(self, get_ssn):
-        """Returns the employ of given social security number"""
+        """Returns the employee of given social security number"""
         return self.logic_employees.get_by_ssn(get_ssn)
 
     def check_if_available(self):
