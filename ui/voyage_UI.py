@@ -59,7 +59,7 @@ class voyage:
 
         print(options)
 
-        return (
+        return Logic_wrapper().create_voyage(
             id_input,
             flight_nr_input,
             dep_from_input,
