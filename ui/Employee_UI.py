@@ -104,7 +104,7 @@ class employee:
 
             """
             print(options)
-            command = input("Enter yer command sire!: ")
+            command = input("=> ")
             command = command.lower()
             if command == "b":
                 return
