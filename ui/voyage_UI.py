@@ -73,12 +73,13 @@ class voyage:
             "unassigned",
             "unassigned",
             "unassigned",
-            "unassigned"
+            "unassigned",
         )
 
     def input_for_create_new_voyage(self):
-        self.create_new_voyage()
         while True:
+            os.system("cls" if os.name == "nt" else "clear")
+            self.create_new_voyage()
             command = input("select action: ").lower()
             if command == "q":
                 print("shutting down")
