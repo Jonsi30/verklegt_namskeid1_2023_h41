@@ -116,8 +116,21 @@ class Employee_data:
 
             writer.writeheader()
 
-        for person in new_list:
+        for i, person in enumerate(new_list):
             name, role, rank, license, phone_nr, address, email, ssn = person
+            if role == '':
+                role = every_employee[i].role
+            if rank == '':
+                rank = every_employee[i].rank
+            if license == '':
+                license = every_employee[i].license
+            if phone_nr == '':
+                phone_nr = every_employee[i].phone_nr
+            if address == '':
+                address = every_employee[i].address
+            if email == '':
+                email = every_employee[i].email
+                
             Employee_data().create_employee(Employee(name, role, rank, license, phone_nr, address, email, ssn))
 
     """
