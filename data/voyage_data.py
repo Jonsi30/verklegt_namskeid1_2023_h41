@@ -1,10 +1,31 @@
-FLIGHT_FILE = "../VERKLEGT_NAMSKEID1_2023_h41/Files/flight_list.csv"
+FLIGHT_FILE = "../VERKLEGT_NAMSKEID1_2023_H41/Files/flight_list.csv"
 import csv
 from model.voyage_model import Voyage_Model
-VOYAGE_FIELDNAMES = ["Id", "Flight Number", "Departure From", "Arrival at","Departure Time", "Arrival Time",
-"Departure Time Back","Arrival Time Back","Plane Insignia","Captain","Copilot","Head of Service","Flight Attendant"]
 
-FLIGHT_LIST_FIELDNAMES = ["Flight Number", "Departure From", "Arrival At", "Departure Time", "Arrival Time", "Plane Insignia"]
+VOYAGE_FIELDNAMES = [
+    "Id",
+    "Flight Number",
+    "Departure From",
+    "Arrival at",
+    "Departure Time",
+    "Arrival Time",
+    "Departure Time Back",
+    "Arrival Time Back",
+    "Plane Insignia",
+    "Captain",
+    "Copilot",
+    "Head of Service",
+    "Flight Attendant",
+]
+
+FLIGHT_LIST_FIELDNAMES = [
+    "Flight Number",
+    "Departure From",
+    "Arrival At",
+    "Departure Time",
+    "Arrival Time",
+    "Plane Insignia",
+]
 
 
 class Voyage_Data:
@@ -37,7 +58,7 @@ class Voyage_Data:
                         row["Captain"],
                         row["Copilot"],
                         row["Head of Service"],
-                        row["Flight Attendant"]
+                        row["Flight Attendant"],
                     )
                 )
 
@@ -63,7 +84,7 @@ class Voyage_Data:
                     "Captain": voyage.captain,
                     "Copilot": voyage.copilot,
                     "Head of Service": voyage.head_of_service,
-                    "Flight Attendant": voyage.flight_attendant
+                    "Flight Attendant": voyage.flight_attendant,
                 }
             )
 
@@ -122,6 +143,7 @@ class Voyage_Data:
 
             Voyage_Data().create_voyage(Voyage_Model(Id, Flight_Number, Departure_From, Arrival_at ,Departure_Time, Arrival_Time, Departure_Time_Back, Arrival_Time_Back, Plane_Insignia, Captain, Copilot, Head_of_Service , Flight_Attendant))
 
+
     def create_new_flights(self):
         all_voyages = Voyage_Data().get_all_voyage()
 
@@ -131,7 +153,9 @@ class Voyage_Data:
 
             for voyage in all_voyages:
                 flight_number = voyage.flight_nr
-                flight_nr_back = flight_number_back(flight_number)  # Gets the flight number for the returning flight
+                flight_nr_back = flight_number_back(
+                    flight_number
+                )  # Gets the flight number for the returning flight
 
                 writer.writerow(
                     {
@@ -140,7 +164,7 @@ class Voyage_Data:
                         "Arrival At": voyage.arr_at,
                         "Departure": voyage.dep_time,
                         "Arrival": voyage.arr_time,
-                        "Plane Insignia": voyage.plane_insignia
+                        "Plane Insignia": voyage.plane_insignia,
                     }
                 )
 
@@ -151,7 +175,7 @@ class Voyage_Data:
                         "Arrival At": voyage.dep_from,
                         "Departure": voyage.dep_time_back,
                         "Arrival": voyage.arr_time_back,
-                        "Plane Insignia": voyage.plane_insignia
+                        "Plane Insignia": voyage.plane_insignia,
                     }
                 )
 
