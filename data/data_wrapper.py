@@ -66,8 +66,9 @@ class Data_wrapper:
     def create_employee(self, employee_info):
         return self.employee_data.create_employee(employee_info)
 
-    def update_employee(self, new_info):
-        return self.employee_data.update_employee(new_info)
+    def update_employee(self, ssn_input, role_input, rank_input, License_input, phone_input, address_input, email_input):
+        from model.employee import Employee
+        return self.employee_data.update_employee(Employee("irr", role_input, rank_input, License_input, phone_input, address_input, email_input, ssn_input))
 
     def get_all_aircrafts(self):
         return self.aircraft_data.get_all_aircrafts()

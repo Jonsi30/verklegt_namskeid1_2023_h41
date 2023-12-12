@@ -157,7 +157,7 @@ class employee:
             elif command == "n":
                 self.create_new_employee()
             elif command == "e":
-                self.input_for_create_new_employee()
+                self.input_for_edit_employee()
             else:
                 print("invalid input!")
 
@@ -206,48 +206,55 @@ class employee:
         """
         print(bang)
 
+        ssn = """ 
+        
+        SSN"""
+        print(ssn)
+        ssn_input = input("=> ")
+
         role = """ 
         
         role"""
         print(role)
-        role_input = input("=> ").lower()
+        role_input = input("=> ")
 
         rank = """
         
-        Duration (hrs:minutes)"""
+        Rank"""
         print(rank)
-        rank_input = input("=> ").lower()
+        rank_input = input("=> ")
 
         License = """
         
         License"""
         print(License)
-        License_input = input("=> ").lower()
+        License_input = input("=> ")
 
         phone = """
         
         phone"""
         print(phone)
-        phone_input = input("=> ").lower()
+        phone_input = input("=> ")
 
         address = """
         
         address"""
         print(address)
-        address_input = input("=> ").lower()
+        address_input = input("=> ")
 
         email = """
         
         email"""
         print(email)
-        email_input = input("=> ").lower()
+        email_input = input("=> ")
 
         options = """
         [B]ACK
         """
         print(options)
 
-        return (
+        return Logic_wrapper().update_employee(
+            ssn_input,
             role_input,
             rank_input,
             License_input,
@@ -256,7 +263,7 @@ class employee:
             email_input,
         )
 
-    def input_for_edit_employee(self):
+    def input_for_edit_employee_(self):
         while True:
             os.system("cls" if os.name == "nt" else "clear")
             print("INPUT SSN:")
@@ -273,3 +280,10 @@ class employee:
                 return
 
             return date
+        
+    def input_for_edit_employee(self):
+        self.edit_employee()
+        while True:
+            command = input("=> ").lower()
+            if command == "b":
+                return
