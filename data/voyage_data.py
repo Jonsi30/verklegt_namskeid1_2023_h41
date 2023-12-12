@@ -1,31 +1,10 @@
-FLIGHT_FILE = "../VERKLEGT_NAMSKEID1_2023_H41/Files/flight_list.csv"
+FLIGHT_FILE = "../VERKLEGT_NAMSKEID1_2023_h41/Files/flight_list.csv"
 import csv
 from model.voyage_model import Voyage_Model
+VOYAGE_FIELDNAMES = ["Id", "Flight Number", "Departure From", "Arrival at","Departure Time", "Arrival Time",
+"Departure Time Back","Arrival Time Back","Plane Insignia","Captain","Copilot","Head of Service","Flight Attendant"]
 
-VOYAGE_FIELDNAMES = [
-    "Id",
-    "Flight Number",
-    "Departure From",
-    "Arrival at",
-    "Departure Time",
-    "Arrival Time",
-    "Departure Time Back",
-    "Arrival Time Back",
-    "Plane Insignia",
-    "Captain",
-    "Copilot",
-    "Head of Service",
-    "Flight Attendant",
-]
-
-FLIGHT_LIST_FIELDNAMES = [
-    "Flight Number",
-    "Departure From",
-    "Arrival At",
-    "Departure Time",
-    "Arrival Time",
-    "Plane Insignia",
-]
+FLIGHT_LIST_FIELDNAMES = ["Flight Number", "Departure From", "Arrival At", "Departure Time", "Arrival Time", "Plane Insignia"]
 
 
 class Voyage_Data:
@@ -46,19 +25,19 @@ class Voyage_Data:
             for row in reader:
                 ret_list.append(
                     Voyage_Model(
-                        row["id"],
-                        row["flight_nr"],
-                        row["dep_from"],
-                        row["arr_at"],
-                        row["dep_time"],
-                        row["arr_time"],
-                        row["dep_time_back"],
-                        row["arr_time_back"],
-                        row["plane_insignia"],
-                        row["captain"],
-                        row["copilot"],
-                        row["head_of_service"],
-                        row["flight_attendant"],
+                        row["Id"],
+                        row["Flight Number"],
+                        row["Departure From"],
+                        row["Arrival at"],
+                        row["Departure Time"],
+                        row["Arrival Time"],
+                        row["Departure Time Back"],
+                        row["Arrival Time Back"],
+                        row["Plane Insignia"],
+                        row["Captain"],
+                        row["Copilot"],
+                        row["Head of Service"],
+                        row["Flight Attendant"]
                     )
                 )
 
@@ -84,7 +63,7 @@ class Voyage_Data:
                     "Captain": voyage.captain,
                     "Copilot": voyage.copilot,
                     "Head of Service": voyage.head_of_service,
-                    "Flight Attendant": voyage.flight_attendant,
+                    "Flight Attendant": voyage.flight_attendant
                 }
             )
 
@@ -94,8 +73,7 @@ class Voyage_Data:
         new_list = []
         for item in every_voayge:
             if item.id == updated_info.id:
-                new_list.append(
-                    (
+                new_list.append([
                         item.id,
                         item.flight_nr,
                         item.dep_from,
@@ -108,12 +86,11 @@ class Voyage_Data:
                         updated_info.captain,
                         updated_info.copilot,
                         updated_info.head_of_service,
-                        updated_info.flight_attendant,
-                    )
-                )
+                        updated_info.flight_attendant    
+                ])
             else:
-                new_list.append(
-                    (
+                new_list.append([
+                    
                         item.id,
                         item.flight_nr,
                         item.dep_from,
@@ -126,9 +103,8 @@ class Voyage_Data:
                         item.captain,
                         item.copilot,
                         item.head_of_service,
-                        item.flight_attendant,
-                    )
-                )
+                        item.flight_attendant     
+                ])
 
         f = open(self.file_name, "w")
         f.truncate()
@@ -136,13 +112,15 @@ class Voyage_Data:
 
         with open(self.file_name, "w", newline="") as self.file_name:
             fields = VOYAGE_FIELDNAMES
-
+            
             writer = csv.DictWriter(self.file_name, fieldnames=fields)
 
             writer.writeheader()
 
         for item in new_list:
-            Voyage_Data().create_voyage(item)
+            Id, Flight_Number, Departure_From, Arrival_at ,Departure_Time, Arrival_Time, Departure_Time_Back, Arrival_Time_Back, Plane_Insignia, Captain, Copilot, Head_of_Service , Flight_Attendant = item
+
+            Voyage_Data().create_voyage(Voyage_Model(Id, Flight_Number, Departure_From, Arrival_at ,Departure_Time, Arrival_Time, Departure_Time_Back, Arrival_Time_Back, Plane_Insignia, Captain, Copilot, Head_of_Service , Flight_Attendant))
 
     def create_new_flights(self):
         all_voyages = Voyage_Data().get_all_voyage()
@@ -153,9 +131,7 @@ class Voyage_Data:
 
             for voyage in all_voyages:
                 flight_number = voyage.flight_nr
-                flight_nr_back = flight_number_back(
-                    flight_number
-                )  # Gets the flight number for the returning flight
+                flight_nr_back = flight_number_back(flight_number)  # Gets the flight number for the returning flight
 
                 writer.writerow(
                     {
@@ -164,7 +140,7 @@ class Voyage_Data:
                         "Arrival At": voyage.arr_at,
                         "Departure": voyage.dep_time,
                         "Arrival": voyage.arr_time,
-                        "Plane Insignia": voyage.plane_insignia,
+                        "Plane Insignia": voyage.plane_insignia
                     }
                 )
 
@@ -175,7 +151,7 @@ class Voyage_Data:
                         "Arrival At": voyage.dep_from,
                         "Departure": voyage.dep_time_back,
                         "Arrival": voyage.arr_time_back,
-                        "Plane Insignia": voyage.plane_insignia,
+                        "Plane Insignia": voyage.plane_insignia
                     }
                 )
 
