@@ -201,16 +201,34 @@ Logic layer
 
 11. Desember, dagur 11.
 Mættir:
-Jón, Steinar, Sindri, Helgi, Tómas
+Jón, Steinar, Sindri, Helgi, Tómas.
 
 Morgunfundur:
 Ákveðið var hvaða markmið við höfum fyrir deginum í dag. 
 
 Hver er að gera hvað: 
-Já
+Tómas er að vinna í UI.
+Sindri og Helgi, eru að vinna í Logic layer.
+Steinar og jón eru að vinna í data layernum. 
 
 Forgangsverkefni:
-Klára að útfæra a kröfurnar í dag. 
+Klára að útfæra að kröfurnar í dag. 
+
+
+12. Desember, dagur 12.
+mættir:
+Jón, Steinar, Sindri, Helgi, Tómas. 
+
+Morgunfundur:
+Ákveðið var hvaða markmið við höfum fyrir deginum í dag. 
+
+Hver er að gera hvað: 
+Tómas er að vinna í UI.
+Sindri og Helgi, eru að vinna í Logic layer.
+Steinar og jón eru að vinna í data layernum. 
+
+Forgangsverkefni: 
+Klára
 
 
 
