@@ -16,11 +16,43 @@ class Data_wrapper:
 
     def create_destination(self, new_destination):
         return self.destination_data.create_destination(new_destination)
-    
-    def create_voyage(self, id_input, flight_nr_input, dep_from_input, arr_at_input, dep_time_input, dep_time_back_input, arr_time_input, arr_time_back_input, plane_insignia_input, captain, copilot, head_of_service, flight_attendant):
+
+    def create_voyage(
+        self,
+        id_input,
+        flight_nr_input,
+        dep_from_input,
+        arr_at_input,
+        dep_time_input,
+        dep_time_back_input,
+        arr_time_input,
+        arr_time_back_input,
+        plane_insignia_input,
+        captain,
+        copilot,
+        head_of_service,
+        flight_attendant,
+    ):
         from model.voyage_model import Voyage_Model
-        return self.voyage_data.create_voyage(Voyage_Model(id_input, flight_nr_input, dep_from_input, arr_at_input, dep_time_input, dep_time_back_input, arr_time_input, arr_time_back_input, plane_insignia_input, captain, copilot, head_of_service, flight_attendant))
-    
+
+        return self.voyage_data.create_voyage(
+            Voyage_Model(
+                id_input,
+                flight_nr_input,
+                dep_from_input,
+                arr_at_input,
+                dep_time_input,
+                dep_time_back_input,
+                arr_time_input,
+                arr_time_back_input,
+                plane_insignia_input,
+                captain,
+                copilot,
+                head_of_service,
+                flight_attendant,
+            )
+        )
+
     def updated_voyage(self, new_info):
         return self.voyage_data.update_voyage(new_info)
 
@@ -48,6 +80,6 @@ class Data_wrapper:
 
     def update_destination(self, new_info):
         return self.destination_data.update_destination(new_info)
-    
+
     def get_all_voyages(self):
         return self.voyage_data.get_all_voyage()

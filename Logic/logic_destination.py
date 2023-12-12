@@ -28,7 +28,9 @@ class LogicDestination:
         all_destinations = self.destination.get_all_destinations()
 
         for i in all_destinations:
-            print(i)
+            return i
 
-    def update_destination_info(self, new_info):#new info er model af destination klasanum
+    def update_destination_info(
+        self, new_info
+    ):  # new info er model af destination klasanum
         return self.destination.update_destination(new_info)
