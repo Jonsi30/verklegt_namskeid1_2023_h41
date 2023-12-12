@@ -30,10 +30,5 @@ class LogicDestination:
         for i in all_destinations:
             print(i)
 
-    def update_emergency_contact(self, emergency_contact, emergency_contact_phone_nr):
-        updated_info = emergency_contact, emergency_contact_phone_nr
-
-        return self.destination.update_emergency_contact(updated_info)
-
     def update_destination_info(self, new_info):#new info er model af destination klasanum
         return self.destination.update_destination(new_info)
