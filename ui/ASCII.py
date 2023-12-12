@@ -4,6 +4,7 @@ class ascii:
 
     def landing_page(self):
         """Prints the landing page for the user"""
+
         landing_ui = """
 
 
@@ -30,11 +31,13 @@ class ascii:
      //  | / /     //   / /   //  | / /       //   / /   / /     //       
     //   |/ /     ((___( (   //   |/ /       ((___( (   / /     //        
 
+                      <<<DIVIDING BY ZERO EVERY DAY>>>
 
-                                Please Login
-                        [m] Manager  [d] director
+                      
+                                   Login
+                     [M]ANAGER   [D]IRECTOR   [E]MPLOYEE
 
-                                or [q] quit
+                                   [Q]UIT
                     """
         return landing_ui
 

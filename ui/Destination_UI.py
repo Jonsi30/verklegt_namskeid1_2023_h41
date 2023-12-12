@@ -7,7 +7,7 @@ class destination:
         pass
 
     def create_new_destination(self):
-        # os.system("cls" if os.name == "nt" else "clear")
+        print("\033[2J\033[H")
         new_destination = """
         Please Input The Following Details
         ----------------------------------
@@ -54,7 +54,7 @@ class destination:
                 return
 
     def get_all_destinations(self):
-        os.system("cls" if os.name == "nt" else "clear")
+        print("\033[2J\033[H")
         ascii().destination_list_art()
         print("-----------------------")
         print("all destinations")

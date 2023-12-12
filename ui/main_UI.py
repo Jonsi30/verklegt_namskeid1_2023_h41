@@ -43,8 +43,8 @@ class main_UI:
     [1] View All Employees
 
     [Q]UIT
-    [B]ACK
     """
+
         print(manager_ui)
 
     # gets input for manager menu
@@ -59,8 +59,6 @@ class main_UI:
                 os.system("cls" if os.name == "nt" else "clear")
                 print("shutting down")
                 break
-            elif command == "b":
-                return
             elif command == "0":
                 voyage().Voyage_list_manager()
             elif command == "1":
@@ -81,7 +79,6 @@ class main_UI:
 
 
     [Q]UIT 
-    [B]ACK
     """
 
         print(director_ui)
@@ -99,8 +96,6 @@ class main_UI:
                 os.system("cls" if os.name == "nt" else "clear")
                 print("shutting down")
                 break
-            elif command == "b":
-                return
             elif command == "0":
                 v.Voyage_list_director()
             elif command == "1":
@@ -111,3 +106,8 @@ class main_UI:
                 destination().get_all_destinations()
             else:
                 print("invalid input!")
+
+    def employee_menu(self):
+        print("Please Enter Your SSN:")
+        ssn = input("=> ")
+        return ssn

@@ -87,3 +87,45 @@ captain = """
 captain_input,
             copilot_input,
             flight_attendant_input,
+
+class ascii:
+    def __init__(self):
+        pass
+
+    def landing_page(self):
+        """Prints the landing page for the user"""
+        reset = "\033[0m"
+        orange = "\033[38;5;202m"
+        landing_ui = f"""{orange}
+
+
+                                   _
+                                __~a~_
+                                ~~;  ~_
+                  _                ~  ~_                _
+                 '_\;__._._._._._._]   ~_._._._._._.__;/_`
+                 '(/'/'/'/'|'|'|'| (    )|'|'|'|'\'\'\'\)'
+                 (/ / / /, | | | |(/    \) | | | ,\ \ \ \)
+                (/ / / / / | | | ~(/    \) ~ | | \ \ \ \ \)
+               (/ / / / /  ~ ~ ~   (/  \)    ~ ~  \ \ \ \ \)
+              (/ / / / ~          / (||)|          ~ \ \ \ \)
+              ~ / / ~            M  /||\M             ~ \ \ ~
+               ~ ~                  /||\                 ~ ~
+                                   //||\\
+                                   //||\\
+                                   //||\\
+                                   '/||\'                                                                     
+                                                                      
+        /|    / /                /|    / /                                
+       //|   / /      ___       //|   / /        ___       ( )      __    
+      // |  / /     //   ) )   // |  / /       //   ) )   / /     //  ) ) 
+     //  | / /     //   / /   //  | / /       //   / /   / /     //       
+    //   |/ /     ((___( (   //   |/ /       ((___( (   / /     //        
+
+{reset}
+                                Please Login
+                        [m] Manager  [d] director
+
+                                or [q] quit
+                    """
+        return landing_ui
