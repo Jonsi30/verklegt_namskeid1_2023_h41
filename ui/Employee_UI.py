@@ -99,7 +99,7 @@ class employee:
         while True:
             os.system("cls" if os.name == "nt" else "clear")
             print(Logic_wrapper().get_all_pilots())
-            
+
             options = """ 
             [B]ACK
 
@@ -156,7 +156,8 @@ class employee:
                 self.get_certain_employee_schedule()
             elif command == "n":
                 self.create_new_employee()
-            elif command == "e"
+            elif command == "e":
+                self.input_for_create_new_employee()
             else:
                 print("invalid input!")
 
@@ -178,10 +179,9 @@ class employee:
                 return
 
             return ssn
-        
+
     def get_available_staff(self):
         while True:
-  
             os.system("cls" if os.name == "nt" else "clear")
             print("INPUT DATE (DD.MM.YYYY):")
             date = input("=> ")
@@ -197,7 +197,7 @@ class employee:
                 return
 
             return date
-        
+
     def edit_employee(self):
         os.system("cls" if os.name == "nt" else "clear")
         bang = """
@@ -205,7 +205,6 @@ class employee:
         ----------------------------------
         """
         print(bang)
-        
 
         role = """ 
         
@@ -257,10 +256,8 @@ class employee:
             email_input,
         )
 
-
     def input_for_edit_employee(self):
         while True:
-  
             os.system("cls" if os.name == "nt" else "clear")
             print("INPUT SSN:")
             date = input("=> ")
