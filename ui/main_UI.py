@@ -21,9 +21,10 @@ class main_UI:
         print(lp)
         m = main_UI()
         while True:
-            command = input("Enter yer command sire!: ")
+            command = input("=> ")
             command = command.lower()
             if command == "q":
+                os.system("cls" if os.name == "nt" else "clear")
                 print("shutting down")
                 break
             elif command == "m":
@@ -52,9 +53,10 @@ class main_UI:
             os.system("cls" if os.name == "nt" else "clear")
             ascii().manager_menu_art()
             self.manager_menu()
-            command = input("Enter yer command sire!: ")
+            command = input("=> ")
             command = command.lower()
             if command == "q":
+                os.system("cls" if os.name == "nt" else "clear")
                 print("shutting down")
                 break
             elif command == "b":
@@ -91,9 +93,10 @@ class main_UI:
             print(ascii().director_menu_art())
             self.director_menu()
             v = voyage()
-            command = input("Enter yer command sire!: ")
+            command = input("=> ")
             command = command.lower()
             if command == "q":
+                os.system("cls" if os.name == "nt" else "clear")
                 print("shutting down")
                 break
             elif command == "b":

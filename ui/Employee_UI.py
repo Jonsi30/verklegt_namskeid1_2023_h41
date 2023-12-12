@@ -14,43 +14,43 @@ class employee:
         ----------------------------------
         name"""
         print(name)
-        name_input = input("-> ").lower()
+        name_input = input("=> ").lower()
 
         role = """ 
         
         role"""
         print(role)
-        role_input = input("-> ").lower()
+        role_input = input("=> ").lower()
 
         rank = """
         
         Duration (hrs:minutes)"""
         print(rank)
-        rank_input = input("-> ").lower()
+        rank_input = input("=> ").lower()
 
         License = """
         
         License"""
         print(License)
-        License_input = input("-> ").lower()
+        License_input = input("=> ").lower()
 
         phone = """
         
         phone"""
         print(phone)
-        phone_input = input("-> ").lower()
+        phone_input = input("=> ").lower()
 
         address = """
         
         address"""
         print(address)
-        address_input = input("-> ").lower()
+        address_input = input("=> ").lower()
 
         email = """
         
         email"""
         print(email)
-        email_input = input("-> ").lower()
+        email_input = input("=> ").lower()
 
         ssn = """
         
@@ -59,7 +59,6 @@ class employee:
         ssn_input = input("-> ").lower()
 
         options = """
-        [Q]UIT
         [B]ACK
         """
         print(options)
@@ -78,11 +77,8 @@ class employee:
     def input_for_create_new_destination(self):
         self.create_new_destination()
         while True:
-            command = input("select action: ").lower()
-            if command == "q":
-                print("shutting down")
-                break
-            elif command == "b":
+            command = input("=> ").lower()
+            if command == "b":
                 return
 
     def get_all_employees(self):
@@ -90,17 +86,13 @@ class employee:
             os.system("cls" if os.name == "nt" else "clear")
             print("ALL EMPLOYEES")
             options = """ 
-            [Q]UIT
             [B]ACK
 
             """
             print(options)
-            command = input("Enter yer command sire!: ")
+            command = input("=> ")
             command = command.lower()
-            if command == "q":
-                print("shutting down")
-                break
-            elif command == "b":
+            if command == "b":
                 return
 
     def get_all_pilots(self):
@@ -108,17 +100,13 @@ class employee:
             os.system("cls" if os.name == "nt" else "clear")
             print("ALL PILOTS")
             options = """ 
-            [Q]UIT
             [B]ACK
 
             """
             print(options)
             command = input("Enter yer command sire!: ")
             command = command.lower()
-            if command == "q":
-                print("shutting down")
-                break
-            elif command == "b":
+            if command == "b":
                 return
 
     def get_all_cabin_crew(self):
@@ -126,17 +114,13 @@ class employee:
             os.system("cls" if os.name == "nt" else "clear")
             print("CREW")
             options = """ 
-            [Q]UIT
             [B]ACK
 
             """
             print(options)
-            command = input("Enter yer command sire!: ")
+            command = input("=> ")
             command = command.lower()
-            if command == "q":
-                print("shutting down")
-                break
-            elif command == "b":
+            if command == "b":
                 return
 
     def get_all_crew(self):
@@ -152,17 +136,13 @@ class employee:
         [S]CHEDULE FOR EMPLOYEE
         [N]EW EMPLOYEE
 
-        [Q]UIT
         [B]ACK
 
         """
             print(options)
-            command = input("Enter yer command sire!: ")
+            command = input("=> ")
             command = command.lower()
-            if command == "q":
-                print("shutting down")
-                break
-            elif command == "b":
+            if command == "b":
                 return
             elif command == "p":
                 self.get_all_pilots()
@@ -180,20 +160,16 @@ class employee:
             logic = Logic_wrapper()
             os.system("cls" if os.name == "nt" else "clear")
             print("INPUT EMPLOYEE SSN:")
-            ssn = input("")
+            ssn = input("=> ")
             logic.get_by_ssn()
             options = """ 
-            [Q]UIT
             [B]ACK
 
             """
             print(options)
-            command = input("Enter yer command sire!: ")
+            command = input("=> ")
             command = command.lower()
-            if command == "q":
-                print("shutting down")
-                break
-            elif command == "b":
+            if command == "b":
                 return
 
             return ssn

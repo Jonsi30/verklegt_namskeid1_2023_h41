@@ -68,3 +68,6 @@ class Logic_wrapper:
 
     def get_all_aircraft(self):
         return self.logic_aircraft.get_all_aircrafts()
+
+    def get_get_certain_employee_schedule(self):
+        return self
