@@ -74,8 +74,8 @@ class employee:
             ssn_input,
         )
 
-    def input_for_create_new_destination(self):
-        self.create_new_destination()
+    def input_for_create_new_employee(self):
+        self.create_new_employee()
         while True:
             command = input("=> ").lower()
             if command == "b":
@@ -128,13 +128,14 @@ class employee:
         while True:
             os.system("cls" if os.name == "nt" else "clear")
             ascii().employee_list_art()
-            print("AVAILABLE EMPLOYEES")
-            print("-------------------")
             options = """
+        
+        [A]VAILABLE EMPLOYEES
         [P]ILOTS (see all)
         [C]ABIN CREW (see all)
-        [O]CCUPIED STAFF
         [S]CHEDULE FOR EMPLOYEE
+
+        [E]DIT EMPLOYEE
         [N]EW EMPLOYEE
 
         [B]ACK
@@ -145,6 +146,8 @@ class employee:
             command = command.lower()
             if command == "b":
                 return
+            elif command == "a":
+                self.get_available_staff()
             elif command == "p":
                 self.get_all_pilots()
             elif command == "c":
@@ -153,6 +156,7 @@ class employee:
                 self.get_certain_employee_schedule()
             elif command == "n":
                 self.create_new_employee()
+            elif command == "e"
             else:
                 print("invalid input!")
 
@@ -174,12 +178,101 @@ class employee:
                 return
 
             return ssn
+        
+    def get_available_staff(self):
+        while True:
+  
+            os.system("cls" if os.name == "nt" else "clear")
+            print("INPUT DATE (DD.MM.YYYY):")
+            date = input("=> ")
+            print("employees")
+            options = """ 
+            [B]ACK
 
-    def get_all_available_employees(self):
-        return
+            """
+            print(options)
+            command = input("=> ")
+            command = command.lower()
+            if command == "b":
+                return
 
-    def get_all_occupied_employees(self):
-        return
+            return date
+        
+    def edit_employee(self):
+        os.system("cls" if os.name == "nt" else "clear")
+        bang = """
+        PRESS ENTER IF ITEM SHOULD NOT CHANGE
+        ----------------------------------
+        """
+        print(bang)
+        
 
-    def update_employee(self):
-        return
+        role = """ 
+        
+        role"""
+        print(role)
+        role_input = input("=> ").lower()
+
+        rank = """
+        
+        Duration (hrs:minutes)"""
+        print(rank)
+        rank_input = input("=> ").lower()
+
+        License = """
+        
+        License"""
+        print(License)
+        License_input = input("=> ").lower()
+
+        phone = """
+        
+        phone"""
+        print(phone)
+        phone_input = input("=> ").lower()
+
+        address = """
+        
+        address"""
+        print(address)
+        address_input = input("=> ").lower()
+
+        email = """
+        
+        email"""
+        print(email)
+        email_input = input("=> ").lower()
+
+        options = """
+        [B]ACK
+        """
+        print(options)
+
+        return (
+            role_input,
+            rank_input,
+            License_input,
+            phone_input,
+            address_input,
+            email_input,
+        )
+
+
+    def input_for_edit_employee(self):
+        while True:
+  
+            os.system("cls" if os.name == "nt" else "clear")
+            print("INPUT SSN:")
+            date = input("=> ")
+            self.edit_employee()
+            options = """ 
+            [B]ACK
+
+            """
+            print(options)
+            command = input("=> ")
+            command = command.lower()
+            if command == "b":
+                return
+
+            return date
