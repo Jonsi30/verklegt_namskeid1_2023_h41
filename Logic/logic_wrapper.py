@@ -32,11 +32,11 @@ class Logic_wrapper:
     def get_all_employees(self):
         """Returns all employess"""
         return self.logic_employees.get_all_employees()
-    
-    def get_employee_dict(self,ret_dict):
+
+    def get_employee_dict(self, ret_dict):
         """Returns all employess in the employee dict"""
         return self.logic_employees.get_employee_dict(ret_dict)
-    
+
     def update_employee(self, updated_info):
         """Returns an updated employee to the employee list"""
         return self.logic_employees.update_employee(updated_info)
@@ -52,7 +52,7 @@ class Logic_wrapper:
     def update_destination(self, new_info):
         """Returns an updated list of destinations"""
         return self.logic_destinations.update_destination_info(new_info)
-    
+
     def get_voyagelists_from_week(self, year_number, week_number):
         """Takes in a year, and a week for that given year, returns a list of all the voyages in a given week"""
         return self.voyage_logic.get_week_number(year_number, week_number)
@@ -74,7 +74,7 @@ class Logic_wrapper:
 
     # def get_all_voyages(self):
     #     return self.voyage_logic.display_voyage_manager()
-    
+
     def display_voyage(self):
         """Returns all voyages for the managers so the manager can put staff on voyage"""
         return self.voyage_logic.display_voyage_manager()
@@ -82,12 +82,38 @@ class Logic_wrapper:
     def get_all_aircraft(self):
         """Returns all aircrafts and the info about the aircrafts"""
         return self.logic_aircraft.get_all_aircrafts()
-<<<<<<< HEAD
 
     def get_get_certain_employee_schedule(self):
         return self
-=======
-    
-    def create_voyage(self, id_input, flight_nr_input, dep_from_input, arr_at_input, dep_time_input, dep_time_back_input, arr_time_input, arr_time_back_input, plane_insignia_input, captain, copilot, head_of_service, flight_attendant):
-        return Data_wrapper().create_voyage(id_input, flight_nr_input, dep_from_input, arr_at_input, dep_time_input, dep_time_back_input, arr_time_input, arr_time_back_input, plane_insignia_input, captain, copilot, head_of_service, flight_attendant)
->>>>>>> 2e5efc630464ac81f969106dae7a8e9513bf8a3a
+
+    def create_voyage(
+        self,
+        id_input,
+        flight_nr_input,
+        dep_from_input,
+        arr_at_input,
+        dep_time_input,
+        dep_time_back_input,
+        arr_time_input,
+        arr_time_back_input,
+        plane_insignia_input,
+        captain,
+        copilot,
+        head_of_service,
+        flight_attendant,
+    ):
+        return Data_wrapper().create_voyage(
+            id_input,
+            flight_nr_input,
+            dep_from_input,
+            arr_at_input,
+            dep_time_input,
+            dep_time_back_input,
+            arr_time_input,
+            arr_time_back_input,
+            plane_insignia_input,
+            captain,
+            copilot,
+            head_of_service,
+            flight_attendant,
+        )
