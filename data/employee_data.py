@@ -58,17 +58,18 @@ class Employee_data:
     def get_employee_dict(self):
         ret_dict = {}
 
-        with open(self.file_name, newline="", encoding="utf-8") as csvfile:
-            for row in csvfile:
-                name, role, rank, license, phone_number, address, ssn = row.split(",")
+        with open(self.file_name, "r", newline="", encoding="utf-8") as csvfile:
+            for employee in csvfile:
+                name = employee.name
+                #name, role, rank, license, phone_number, address, ssn = row.split(",")
                 if name not in ret_dict.keys():
                     ret_dict[name] = [
-                        role,
-                        rank,
-                        license,
-                        phone_number,
-                        address,
-                        ssn.strip(),
+                        employee.role,
+                        employee.rank,
+                        employee.license,
+                        employee.phone_number,
+                        employee.address,
+                        employee.ssn
                     ]
 
         return ret_dict

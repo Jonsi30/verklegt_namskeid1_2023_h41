@@ -1,9 +1,18 @@
 from data.voyage_data import Voyage_Data
+from model.voyage_model import Voyage_Model
+from data.employee_data import Employee_data
+from data.employee_data import Employee
+test = Employee_data().get_all_employees()
 
-test = Voyage_Data()
-listi = (test.get_all_voyage())
+for employee in test:
+    if employee.role == "Pilot":
+        print(employee.name)
 
-for item in listi:
-    date = (item["arr_time_back"])
-    print(date[6::])
+
+
+
+#voyage = test.create_voyage(new_voyage)
+
+
+
     
