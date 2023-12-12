@@ -88,7 +88,8 @@ class voyage:
         while True:
             os.system("cls" if os.name == "nt" else "clear")
             print(ascii().voyage_list_art())
-            Logic_wrapper().display_voyage()
+            for voyage in Logic_wrapper().display_voyage():
+                print(voyage)
             options = """
         [B]ACK
         """
@@ -103,7 +104,8 @@ class voyage:
         while True:
             os.system("cls" if os.name == "nt" else "clear")
             print(ascii().voyage_list_art())
-            Logic_wrapper().display_voyage()
+            for voyage in Logic_wrapper().display_voyage():
+                print(voyage)
             print("[A]DD EMPLOYEES")
             options = """
         [B]ACK

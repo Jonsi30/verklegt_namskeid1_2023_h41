@@ -74,6 +74,7 @@ class VoyageLogic:
     def display_voyage_director(self):
         """EKKI SNERTA"""
         voyage_list = self.voyage.get_voyage_data()
+        results = []
         for voyage in voyage_list:
             id = voyage["id"]
             dep_from = voyage["dep_from"]
@@ -94,12 +95,13 @@ class VoyageLogic:
 
             result = f"\nVoyage_id = {id}\n\nFlight from Iceland:\nDeparture from: {dep_from}\tDeparting time: {dep_time}\nArriving too: {arr_at}\tArrival time: {arr_time}\n\n"
             result += f"Flight to Iceland:\nDeparture from: {arr_at}\nDeparting time: {dep_time_back}\nArriving too: {dep_from}\tArrival time: {arr_time_back}\n\n"
-
-        return result
+            results.append(result)
+        return results
 
     def display_voyage_manager(self):
         """EKKI SNERTA"""
         voyage_list = self.voyage.get_voyage_data()
+        results = []
         for voyage in voyage_list:
             id = voyage["id"]
             dep_from = voyage["dep_from"]
@@ -120,4 +122,5 @@ class VoyageLogic:
 
             result = f"\nVoyage ID: {id}\n\nFlight from Iceland:\nDeparture from: {dep_from}\tDeparting time: {dep_time}\nArriving too: {arr_at}\tArrival time: {arr_time}\n\n"
             result += f"Flight to Iceland:\nDeparture from: {arr_at}\nDeparting time: {dep_time_back}\nArriving too: {dep_from}\tArrival time: {arr_time_back}\n\nEMPLOYEES:\nCaptain: {captain}\nCopilot: {copilot}\nFlight Attendant: {flight_attendant}\nPlane insignia: {plane_insignia}\n\n"
-            return result
+            results.append(result)
+            return results
