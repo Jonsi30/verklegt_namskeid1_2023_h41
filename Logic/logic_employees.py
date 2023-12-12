@@ -92,3 +92,16 @@ class LogicEmployees:
         return self.employee.get_employee_dict(ret_dict)
 
         
+    def get_certain_employee_scedule(self, past_flights):
+        employee_schedule = []
+        ssn_input = 1905813249
+        for employee in past_flights:
+            if employee["ssn"] == ssn_input:
+                employee_schedule.append["blah"]
+        print(employee_schedule)
+
+
+        
+
+        
+
