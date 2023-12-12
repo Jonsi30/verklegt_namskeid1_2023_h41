@@ -1,5 +1,6 @@
 import os
 from ui.ASCII import ascii
+from logic.logic_wrapper import Logic_wrapper
 
 
 class employee:
@@ -7,7 +8,7 @@ class employee:
         pass
 
     def create_new_employee(self):
-        # os.system("cls" if os.name == "nt" else "clear")
+        os.system("cls" if os.name == "nt" else "clear")
         name = """
         Please Input The Following Details
         ----------------------------------
@@ -48,7 +49,7 @@ class employee:
         email = """
         
         email"""
-        print(phone)
+        print(email)
         email_input = input("-> ").lower()
 
         ssn = """
@@ -169,15 +170,18 @@ class employee:
                 self.get_all_cabin_crew()
             elif command == "s":
                 self.get_certain_employee_schedule()
+            elif command == "n":
+                self.create_new_employee()
             else:
                 print("invalid input!")
 
     def get_certain_employee_schedule(self):
         while True:
+            logic = Logic_wrapper()
             os.system("cls" if os.name == "nt" else "clear")
             print("INPUT EMPLOYEE SSN:")
             ssn = input("")
-            print("emplyee schedule")
+            logic.get_by_ssn()
             options = """ 
             [Q]UIT
             [B]ACK

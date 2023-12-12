@@ -28,10 +28,10 @@ class Logic_wrapper:
 
     def get_all_employees(self):
         return self.logic_employees.get_all_employees()
-    
-    def get_employee_dict(self,ret_dict):
+
+    def get_employee_dict(self, ret_dict):
         return self.logic_employees.get_employee_dict(ret_dict)
-    
+
     def update_employee(self, updated_info):
         return self.logic_employees.update_employee(updated_info)
 
@@ -43,7 +43,7 @@ class Logic_wrapper:
 
     def update_destination(self, new_info):
         return self.logic_destinations.update_destination_info(new_info)
-    
+
     def get_voyagelists_from_week(self, year_number, week_number):
         """Takes in a year, and a week for that given year, returns a list of all the voyages in a given week"""
         return self.voyage_logic.get_week_number(year_number, week_number)
@@ -54,15 +54,15 @@ class Logic_wrapper:
     def get_available_staff(self):
         return self.logic_employees.get_available_staff()
 
-    def get_by_ssn(self, get_ssn):
-        return self.logic_employees.get_by_ssn(get_ssn)
+    def get_by_ssn(self):
+        return self.logic_employees.get_by_ssn()
 
     def check_if_available(self):
         pass
 
     def get_all_voyages(self):
         return self.voyage_logic.display_voyage_manager()
-    
+
     def display_voyage(self):
         return self.voyage_logic.display_voyage_manager()
 
