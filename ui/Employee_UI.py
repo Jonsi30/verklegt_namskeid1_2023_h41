@@ -85,13 +85,58 @@ class employee:
                 return
 
     def get_all_employees(self):
-        return
+        while True:
+            os.system("cls" if os.name == "nt" else "clear")
+            print("ALL EMPLOYEES")
+            options = """ 
+            [Q]UIT
+            [B]ACK
+
+            """
+            print(options)
+            command = input("Enter yer command sire!: ")
+            command = command.lower()
+            if command == "q":
+                print("shutting down")
+                break
+            elif command == "b":
+                return
 
     def get_all_pilots(self):
-        pass
+        while True:
+            os.system("cls" if os.name == "nt" else "clear")
+            print("ALL PILOTS")
+            options = """ 
+            [Q]UIT
+            [B]ACK
+
+            """
+            print(options)
+            command = input("Enter yer command sire!: ")
+            command = command.lower()
+            if command == "q":
+                print("shutting down")
+                break
+            elif command == "b":
+                return
 
     def get_all_cabin_crew(self):
-        pass
+        while True:
+            os.system("cls" if os.name == "nt" else "clear")
+            print("CREW")
+            options = """ 
+            [Q]UIT
+            [B]ACK
+
+            """
+            print(options)
+            command = input("Enter yer command sire!: ")
+            command = command.lower()
+            if command == "q":
+                print("shutting down")
+                break
+            elif command == "b":
+                return
 
     def get_all_crew(self):
         while True:
@@ -103,6 +148,7 @@ class employee:
         [P]ILOTS (see all)
         [C]ABIN CREW (see all)
         [O]CCUPIED STAFF
+        [S]CHEDULE FOR EMPLOYEE
         [N]EW EMPLOYEE
 
         [Q]UIT
@@ -118,11 +164,35 @@ class employee:
             elif command == "b":
                 return
             elif command == "p":
-                self.get_all_pilots
+                self.get_all_pilots()
             elif command == "c":
-                self.get_all_cabin_crew
+                self.get_all_cabin_crew()
+            elif command == "s":
+                self.get_certain_employee_schedule()
             else:
                 print("invalid input!")
+
+    def get_certain_employee_schedule(self):
+        while True:
+            os.system("cls" if os.name == "nt" else "clear")
+            print("INPUT EMPLOYEE SSN:")
+            ssn = input("")
+            print("emplyee schedule")
+            options = """ 
+            [Q]UIT
+            [B]ACK
+
+            """
+            print(options)
+            command = input("Enter yer command sire!: ")
+            command = command.lower()
+            if command == "q":
+                print("shutting down")
+                break
+            elif command == "b":
+                return
+
+            return ssn
 
     def get_all_available_employees(self):
         return

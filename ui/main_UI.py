@@ -101,7 +101,7 @@ class main_UI:
             elif command == "0":
                 v.Voyage_list_director()
             elif command == "1":
-                pass
+                v.input_for_create_new_voyage()
             elif command == "2":
                 Aircraft().get_all_aircrafts()
             elif command == "3":
