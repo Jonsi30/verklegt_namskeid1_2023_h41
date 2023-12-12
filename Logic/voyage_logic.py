@@ -113,6 +113,7 @@ class VoyageLogic:
             plane_insignia = voyage["plane_insignia"]
             captain = voyage["captain"]
             copilot = voyage["copilot"]
+            head_of_service = voyage["head_of_service"]
             flight_attendant = voyage["flight_attendant"]
             flight_nr = voyage["flight_nr"]
             flight_nr = flight_nr[2::]
@@ -120,7 +121,7 @@ class VoyageLogic:
             flight_nr_back = flight_nr + 1
             flight_nr_back = f"NA{flight_nr_back}"
 
-            result = f"\nVoyage ID: {id}\n\nFlight from Iceland:\nDeparture from: {dep_from}\tDeparting time: {dep_time}\nArriving too: {arr_at}\tArrival time: {arr_time}\n\nFlight to Iceland:\nDeparture from: {arr_at}\nDeparting time: {dep_time_back}\nArriving too: {dep_from}\tArrival time: {arr_time_back}\n\nEMPLOYEES:\nCaptain: {captain}\nCopilot: {copilot}\nFlight Attendant: {flight_attendant}\nPlane insignia: {plane_insignia}\n\n"
+            result = f"\nVoyage ID: {id}\n\nFlight from Iceland:\nDeparture from: {dep_from}\tDeparting time: {dep_time}\nArriving too: {arr_at}\tArrival time: {arr_time}\n\nFlight to Iceland:\nDeparture from: {arr_at}\nDeparting time: {dep_time_back}\nArriving too: {dep_from}\tArrival time: {arr_time_back}\n\nEMPLOYEES:\nCaptain: {captain}\nCopilot: {copilot}\nHead of Service: {head_of_service}\nFlight Attendant: {flight_attendant}\nPlane insignia: {plane_insignia}\n\n"
             results.append(result)
         
         return results
