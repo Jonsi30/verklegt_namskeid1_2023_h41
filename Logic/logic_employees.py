@@ -90,7 +90,6 @@ class LogicEmployees:
     def get_employee_dict(self, ret_dict):
         """Returns a dictionary with all the employees that work for the company NaN air."""
         return self.employee.get_employee_dict(ret_dict)
-<<<<<<< HEAD
 
         
     def get_certain_employee_scedule(self, past_flights):
@@ -106,5 +105,3 @@ class LogicEmployees:
 
         
 
-=======
->>>>>>> 5d539d6751f80b60107bc61e66241701ecebc3ad
