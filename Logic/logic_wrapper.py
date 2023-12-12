@@ -79,5 +79,12 @@ class Logic_wrapper:
         return self.voyage_logic.display_voyage_manager()
 
     def get_all_aircraft(self):
+<<<<<<< HEAD
         """Returns all aircrafts and the info about the aircrafts"""
         return self.logic_aircraft.get_all_aircrafts()
+=======
+        return self.logic_aircraft.get_all_aircrafts()
+    
+    def create_voyage(self, id_input, flight_nr_input, dep_from_input, arr_at_input, dep_time_input, dep_time_back_input, arr_time_input, arr_time_back_input, plane_insignia_input, captain, copilot, head_of_service, flight_attendant):
+        return Data_wrapper().create_voyage(id_input, flight_nr_input, dep_from_input, arr_at_input, dep_time_input, dep_time_back_input, arr_time_input, arr_time_back_input, plane_insignia_input, captain, copilot, head_of_service, flight_attendant)
+>>>>>>> e384167d9fab0627ef0c15e963de1c66e6e98f01
