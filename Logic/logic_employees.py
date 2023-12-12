@@ -19,15 +19,16 @@ class LogicEmployees:
         """Returns the info needed to update a particular employee"""
         return self.employee.update_employee(new_info)
 
-    def get_all_pilots(self, employee_dict: dict):
-        """Returns a dictionary with all the pilots working for the company NaN air."""
-        pilot_dict = {}
+    def get_all_pilots(self: dict):
+        """Returns a list with all the pilots working for the company NaN air."""
+        pilot_list = []
+        all_employees = Data_wrapper().get_all_employees()
+        for employee in all_employees:
+            if employee.role == "Pilot":
+                pilot_list.append(employee.name)
 
-        for employee in employee_dict:
-            if employee["role"] == "pilot":
-                pilot_dict[employee["name"]] = employee["rank"]
-
-        return pilot_dict
+        return pilot_list
+        
 
     def get_all_crew(self, employee_dict: dict):
         """Returns a dictionary with all the crew members working for the company NaN air."""
