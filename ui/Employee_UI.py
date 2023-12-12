@@ -98,7 +98,7 @@ class employee:
     def get_all_pilots(self):
         while True:
             os.system("cls" if os.name == "nt" else "clear")
-            print("ALL PILOTS")
+            print(Logic_wrapper().get_all_pilots())
             options = """ 
             [B]ACK
 
