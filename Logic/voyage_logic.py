@@ -105,6 +105,7 @@ class VoyageLogic:
         """EKKI SNERTA"""
         voyage_list = self.voyage.get_voyage_data()
         results = []
+        voyage_sep = ("-" * 56)
         for voyage in voyage_list:
             id = voyage["id"]
             dep_from = voyage["dep_from"]
@@ -119,12 +120,12 @@ class VoyageLogic:
             head_of_service = voyage["head_of_service"]
             flight_attendant = voyage["flight_attendant"]
             flight_nr = voyage["flight_nr"]
-            flight_nr = flight_nr[2::]
-            flight_nr = int(flight_nr)
-            flight_nr_back = flight_nr + 1
-            flight_nr_back = f"NA{flight_nr_back}"
+            flight_nr_new = flight_nr[2::]
+            flight_nr_new = int(flight_nr_new)
+            flight_nr_back = flight_nr_new + 1
+            flight_nr_back = f"NA0{flight_nr_back}"
 
-            result = f"\nVoyage ID: {id}\n\nFlight from Iceland:\nDeparture from: {dep_from}\tDeparting time: {dep_time}\nArriving too: {arr_at}\tArrival time: {arr_time}\n\nFlight to Iceland:\nDeparture from: {arr_at}\nDeparting time: {dep_time_back}\nArriving too: {dep_from}\tArrival time: {arr_time_back}\n\nEMPLOYEES:\nCaptain: {captain}\nCopilot: {copilot}\nHead of Service: {head_of_service}\nFlight Attendant: {flight_attendant}\nPlane insignia: {plane_insignia}\n\n"
+            result = f"Voyage ID: {id}\n\nFlight from Iceland: {flight_nr}\nDeparture from: {dep_from}\tDeparting time: {dep_time}\nArriving too: {arr_at}\tArrival time: {arr_time}\n\nFlight to Iceland: {flight_nr_back}\nDeparture from: {arr_at}\nDeparting time: {dep_time_back}\nArriving too: {dep_from}\tArrival time: {arr_time_back}\n\nEMPLOYEES:\nCaptain: {captain}\nCopilot: {copilot}\nHead of Service: {head_of_service}\nFlight Attendant: {flight_attendant}\nPlane insignia: {plane_insignia}\n\n{voyage_sep}\n"
             results.append(result)
         
         return results

@@ -179,7 +179,6 @@ class Voyage_Data:
                     }
                 )
 
-
 def flight_number_back(flight_nr):
     """This function takes in a flight number, returns a returning flight number"""
     flight_nr = flight_nr[2::]

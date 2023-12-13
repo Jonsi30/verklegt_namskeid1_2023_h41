@@ -229,6 +229,10 @@ class voyage:
     def input_for_create_add_crew(self):
         self.add_crew_to_voyage()
         while True:
+            options = """
+        [B]ACK
+        """
+            print(options)
             command = input("=> ").lower()
             if command == "b":
                 return
