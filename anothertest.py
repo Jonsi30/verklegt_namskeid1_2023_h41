@@ -29,7 +29,7 @@ test = LogicEmployees().get_by_ssn('1910702559')
 for i in test:
     print(i)
 """
-
+"""
 pilots = LogicEmployees().get_all_pilots()
             
 fieldnames = ["Name", "Role"]
@@ -39,3 +39,9 @@ for employee in pilots:
     name, role = employee
     table.add_row([name, role])
 print((table))
+"""
+
+cabin_crew = LogicEmployees().get_all_cabin_crew()
+
+for i in cabin_crew:
+    print(i)

@@ -44,6 +44,10 @@ class Logic_wrapper:
     def get_all_pilots(self):
         """Returns all pilots"""
         return self.logic_employees.get_all_pilots()
+    
+    def get_all_cabincrew(self):
+        """Return all the cabin crew"""
+        return self.logic_employees.get_all_cabin_crew()
 
     def get_all_crew(self):
         """Returns all crew members"""

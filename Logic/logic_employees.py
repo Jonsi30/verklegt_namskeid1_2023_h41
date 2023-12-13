@@ -30,6 +30,15 @@ class LogicEmployees:
 
         return pilot_list
         
+    def get_all_cabin_crew(self):
+        "Returns a list with all the cabin crew working for the company Nan Air"
+        cabin_crew = []
+        all_employees = Data_wrapper().get_all_employees()
+        for employee in all_employees:
+            if employee.role == "Cabincrew":
+                cabin_crew.append([employee.name, employee.rank])
+        
+        return cabin_crew
 
     def get_all_crew(self):
         """Returns a list with all the crew members working for the company NaN air."""
