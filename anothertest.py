@@ -70,17 +70,18 @@ for voyage in upcoming_voyage_list:
     table.add_row([voyage.id, voyage.flight_nr, voyage.plane_insignia, voyage.captain, voyage.copilot, voyage.head_of_service, voyage.flight_attendant])
 
 voyage_in_work = []
-run = True
-while run == True:
+run = 0
+while run == 0:
     print((table))
     id_number = (input("Input an Id from the list above, that you want to work with: "))
     for voyage in upcoming_voyage_list:
         if voyage.id == id_number:
             voyage_in_work.append(voyage)
-            run == False
-            pass
-        elif id_number not in voyage.id:
-            print("You inputted a number id that isn't in the list")   
+            run += 1
+            break
+    if run == 0:    
+        print("That id is not in the list above! Try again") 
+        print() 
         
             
     
@@ -98,5 +99,10 @@ for voyage in voyage_in_work:
     
     print(f"You will work with the voyage with the id: {id_number}")
     print((table))
+
+
+
+available = Logic_wrapper().get_available_staff()
+
 
 
