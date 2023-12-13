@@ -9,6 +9,7 @@ class LogicDestination:
     def create_destination(
         self,
         destination,
+        destination_id,
         distance_from_ice,
         flight_time,
         emergency_contact,
@@ -16,6 +17,7 @@ class LogicDestination:
     ):
         new_info = Destination(
             destination,
+            destination_id,
             distance_from_ice,
             flight_time,
             emergency_contact,

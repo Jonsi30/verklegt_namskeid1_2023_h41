@@ -1,6 +1,7 @@
-Destination,Distance from Iceland,Flight Time,Emergency Contact,Emergency Contact Phone Number
-Thorshavn,900,4:30,Gilli Brend I Hoyvik,3332121
-Nuuk,666,3:30,steinar,3334141
-Kulusuk,777,4:00,Anders Hove,3335151
-Tingwall,1463,6:30,Scott Robertson,3336161
-Longyearbyean,1673,7:30,Ola Toivonen,3337171
+Destination,Destination ID,Distance from Iceland,Flight Time,Emergency Contact,Emergency Contact Phone Number
+Reykjavik,RVK,0,0:00,Guðni TH. Jóhannesson,8664132
+Thorshavn,THA,900,4:30,Gilli Brend I Hoyvik,3332121
+Nuuk,NUU,800,3:30,Koale Sar,3334141
+Kulusuk,KUL,750,4:00,Anders Hove,3335151
+Tingwall,TIW,1463,6:30,Scott Robertson,3336161
+Longyearbyean,LYB,1673,7:30,Ola Toivonen,3337171
