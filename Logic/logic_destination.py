@@ -1,6 +1,6 @@
 from data.data_wrapper import Data_wrapper
 from model.destination import Destination
-
+from prettytable import PrettyTable
 
 class LogicDestination:
     def __init__(self) -> None:

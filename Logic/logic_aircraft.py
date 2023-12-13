@@ -1,5 +1,6 @@
 from data.data_wrapper import Data_wrapper
 from model.aircraft_model import Aircraft_Model
+from prettytable import PrettyTable
 
 class LogicAircraft:
     def __init__(self):
