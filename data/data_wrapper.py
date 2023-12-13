@@ -14,8 +14,9 @@ class Data_wrapper:
     def get_all_destinations(self):
         return self.destination_data.get_all_destination()
 
-    def create_destination(self, new_destination):
-        return self.destination_data.create_destination(new_destination)
+    def create_destination(self, dest_input, dist_input, dura_input, contact_input, contact_nr_input):
+        from model.destination import Destination
+        return self.destination_data.create_destination(Destination(dest_input, dist_input, dura_input, contact_input, contact_nr_input))
 
     def create_voyage(
         self,
