@@ -8,10 +8,18 @@ class voyage:
         self.get_all_voyages = Logic_wrapper()
 
     def create_new_voyage(self):
+        voyage_id_list = []
+        for voyage in Logic_wrapper().get_all_voyages():
+            voyage_id_list.append(voyage.id)
+
         id = """
-        Input ID(fx. 1111)"""
+        Input a new ID(fx. 1111)"""
         print(id)
         id_input = input("=>: ")
+        if id_input in voyage_id_list:
+            while id_input in voyage_id_list:
+                print("ID has already been created! Please try again.")
+                id_input = input("=>: ")
 
         flight_nr = """
         Input Flight Number(fx. NA010)"""
