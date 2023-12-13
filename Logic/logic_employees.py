@@ -26,7 +26,7 @@ class LogicEmployees:
         all_employees = Data_wrapper().get_all_employees()
         for employee in all_employees:
             if employee.role == "Pilot":
-                pilot_list.append([employee.name, employee.rank])
+                pilot_list.append([employee.name, employee.role, employee.rank])
 
         return pilot_list
         
@@ -99,7 +99,7 @@ class LogicEmployees:
         all_employees = Data_wrapper().get_all_employees()
         for name in all_employees:
             if name.name not in name_list:
-                availabe_employees.append([name.name, name.role])
+                availabe_employees.append([name.name, name.role, name.rank])
         return availabe_employees
 
     def get_by_ssn(self, ssn):

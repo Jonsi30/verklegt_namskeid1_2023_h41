@@ -80,10 +80,14 @@ class Logic_wrapper:
     def check_if_available(self):
         pass
 
+    def select_position(self, employee_list, table, role, rank):
+        return self.voyage_logic.select_position(employee_list, table, role, rank)
+    
+    def table_making(self, list):
+        return self.voyage_logic.table_making(list)
 
-
-    # def get_all_voyages(self):
-    #     return self.voyage_logic.display_voyage_manager()
+    def get_all_voyages(self):
+        return self.data_wrapper.get_all_voyages()
 
     def display_voyage(self):
         """Returns all voyages for the managers so the manager can put staff on voyage"""

@@ -1,11 +1,14 @@
 from data.data_wrapper import Data_wrapper
 import datetime
 from model.voyage_model import Voyage_Model
+from prettytable import PrettyTable
 
 
 class VoyageLogic:
     def __init__(self):
         self.voyage = Data_wrapper()
+
+        
 
     def create_voyage(
         self,
@@ -126,4 +129,32 @@ class VoyageLogic:
         
         return results
 
+    def select_position(self, employee_list: list, table, role, rank) -> str:
+        employee = ""
+        run = 0
+        while run == 0:
+            print(f"These are the {rank} available for this voyage:")
+            print((table))
+            employee_name = (input(f"Please type in the name of {role} for the voyage: "))
+            print()
+            for pilots in employee_list:
+                name, role, rank = pilots
+                if name.lower() == employee_name.lower():
+                    employee += employee_name
+                    run += 1
+                    break
+            if run == 0:    
+                print("That name is not in the list above! Try again") 
+                print() 
+        return employee
+
+    def table_making(self,list: list):
+        pilot_fieldnames = ["Name", "Role", "Rank"]
+        table = PrettyTable()
+        table.field_names = pilot_fieldnames
+        for employee in list:
+            name, role, rank = employee
+            table.add_row([name, role, rank])
+
+        return table
     

@@ -1,7 +1,7 @@
 from logic.logic_wrapper import Logic_wrapper
 import os
 from ui.ASCII import ascii
-
+from prettytable import PrettyTable
 
 class voyage:
     def __init__(self):
@@ -129,42 +129,91 @@ class voyage:
 
     def add_crew_to_voyage(self):
         
-        voyage_id = """
-        input voyage id"""
-        print(voyage_id)
-        voyage_id_input = input("=> ")
+        
+        upcoming_voyages = Logic_wrapper().get_all_voyages()
 
-        captain = """
-        captain(fx. John Johnson)"""
-        print(captain)
-        captain_input = input("=> ")
+        upcoming_voyage_list = []
+        for voyage in upcoming_voyages:
+            
+            if voyage.captain and voyage.copilot and voyage.head_of_service and voyage.flight_attendant == 'Unassigned':
+                upcoming_voyage_list.append(voyage)
 
-        copilot = """
-        copilot(fx. John Mikeson)"""
-        print(copilot)
-        copilot_input = input("=> ")
+        
+        fieldnames = ["Id", "Flight Nr", "Plane Insignia", "Captain", "Copilot", "Head of Service", "Flight Attendant"]
+        table = PrettyTable()
+        table.field_names = fieldnames
+        for voyage in upcoming_voyage_list:
+            table.add_row([voyage.id, voyage.flight_nr, voyage.plane_insignia, voyage.captain, voyage.copilot, voyage.head_of_service, voyage.flight_attendant])
 
-        head_of_service = """
-        head_of_service(fx. Mike Johnson)"""
-        print(head_of_service)
-        head_of_service_input = input("=> ")
+        voyage_in_work = []
+        run = 0
+        while run == 0:
+            print((table))
+            id_number = (input("Input an Id from the list above, that you want to work with: "))
+            print()
+            for voyage in upcoming_voyage_list:
+                if voyage.id == id_number:
+                    voyage_in_work.append(voyage)
+                    run += 1
+                    break
+            if run == 0:    
+                print("That id is not in the list above! Try again") 
+                print() 
+        
 
-        flight_attendant = """
-        flight_attendant(fx. Mike Mikeson)"""
-        print(flight_attendant)
-        flight_attendant_input = input("=> ")
+        for voyage in voyage_in_work:
+            fieldnames = ["Id", "Flight Nr", "Plane Insignia", "Captain", "Copilot", "Head of Service", "Flight Attendant"]
+            table = PrettyTable()
+            table.field_names = fieldnames
+            date = ""
+            for voayge in voyage_in_work:
+                
+                table.add_row([voyage.id, voyage.flight_nr, voyage.plane_insignia, voyage.captain, voyage.copilot, voyage.head_of_service, voyage.flight_attendant])
+                date += voayge.arr_time_back[6:]
+            print(f"You will work with the voyage with the id: {id_number}")
+            
+            print((table))
+            print()
+            
 
-        options = """
-        [B]ACK
-        """
-        print(options)
+        captain_list = []
+        copilot_list = []
+        head_of_service_list = []
+        flight_attendant_list = []
+
+        available = Logic_wrapper().get_available_staff(date)
+        for i in available:
+            name, role, rank = i
+            if rank == 'Captain':
+                captain_list.append([name, role, rank])
+            elif rank == 'Copilot':
+                copilot_list.append([name, role, rank])
+            elif rank == 'Flight Service Manager':
+                head_of_service_list.append([name, role, rank])
+            elif rank == 'Flight Attendant':
+                flight_attendant_list.append([name, role, rank])
+
+
+        captain_table = Logic_wrapper().table_making(captain_list)
+        copilot_table = Logic_wrapper().table_making(copilot_list)
+        head_of_service_table = Logic_wrapper().table_making(head_of_service_list)
+        flight_attendant_table = Logic_wrapper().table_making(flight_attendant_list)
+
+        captain = Logic_wrapper().select_position(captain_list, captain_table, 'Captain', 'Captains')
+        copilot = Logic_wrapper().select_position(copilot_list, copilot_table, 'Copilot', 'Copilots'  )
+        head_of_service = Logic_wrapper().select_position(head_of_service_list, head_of_service_table, 'Flight Service Manager', 'Flight Service Managers' )
+        flight_attendant = Logic_wrapper().select_position(flight_attendant_list, flight_attendant_table, 'Flight Attendant', 'Flight Attendants')
+        
+
+   
+
 
         return Logic_wrapper().add_voyage_crew(
-            voyage_id_input,
-            captain_input,
-            copilot_input,
-            head_of_service_input,
-            flight_attendant_input,
+            id_number,
+            captain,
+            copilot,
+            head_of_service,
+            flight_attendant,
         )
 
     def input_for_create_add_crew(self):

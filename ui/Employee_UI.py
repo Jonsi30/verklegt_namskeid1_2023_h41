@@ -100,12 +100,12 @@ class employee:
         while True:
             print("\033[2J\033[H")
             pilots = Logic_wrapper().get_all_pilots()
-            fieldnames = ["Name", "Role"]
+            fieldnames = ["Name", "Role", "Rank"]
             table = PrettyTable()
             table.field_names = fieldnames
             for employee in pilots:
-                name, role = employee
-                table.add_row([name, role])
+                name, role, rank = employee
+                table.add_row([name, role, rank])
             print((table))
                         
             
