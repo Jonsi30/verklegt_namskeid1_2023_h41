@@ -1,4 +1,4 @@
 Id,Flight Number,Departure From,Arrival at,Departure Time,Arrival Time,Departure Time Back,Arrival Time Back,Plane Insignia,Captain,Copilot,Head of Service,Flight Attendant
-1111,MA40,RVK,TOR,06:00 16.12.2023,12:00 16.12.2023,15:00 16.12.2023,21:00 16.12.2023,TF-20,Einar,John ,Jón Ágústsson Alba,Jamie Robert
-1112,NA020,RVK,Nuuk,06:00 16.12.2023,09:00 16.12.2023,12:00 16.12.2023,15:00 16.12.2023,TF-20,unassigned,unassigned,unassigned,unassigned
-1113,NA010,BOT,TYU,00:00 16.12.2023,00:00 16.12.2023,00:00 16.12.2023,00:00 16.12.2023,TG-GTY,unassigned,unassigned,unassigned,unassigned
+1111,MA40,RVK,TOR,06:00 16.12.2023,12:00 16.12.2023,15:00 16.12.2023,21:00 16.12.2023,TF-20,Einar,John,Jón Ágústsson Alba,Jamie Robert
+1112,NA020,RVK,Nuuk,06:00 16.12.2023,09:00 16.12.2023,12:00 16.12.2023,15:00 16.12.2023,TF-20,Unassigned,Unassigned,Unassigned,Unassigned
+1113,NA010,BOT,TYU,00:00 16.12.2023,00:00 16.12.2023,00:00 16.12.2023,00:00 16.12.2023,TG-GTY,Unassigned,Unassigned,Unassigned,Unassigned

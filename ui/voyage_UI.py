@@ -127,6 +127,7 @@ class voyage:
         return
 
     def add_crew_to_voyage(self):
+        
         voyage_id = """
         input voyage id"""
         print(voyage_id)
