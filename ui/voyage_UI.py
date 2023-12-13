@@ -33,15 +33,16 @@ class voyage:
         print(dep_time)
         dep_time_input = input("=>: ")
 
+        arr_time = """
+        arr_time(05:00 16.12.2023)"""
+        print(arr_time)
+        arr_time_input = input("=>: ")
+        
         dep_time_back = """
         dep_time_back(12:00 16.12.2023)"""
         print(dep_time_back)
         dep_time_back_input = input("=>: ")
 
-        arr_time = """
-        arr_time(05:00 16.12.2023)"""
-        print(arr_time)
-        arr_time_input = input("=>: ")
 
         arr_time_back = """
         arr_time_back(17:00 16.12.2023)"""
@@ -65,8 +66,8 @@ class voyage:
             dep_from_input,
             arr_at_input,
             dep_time_input,
-            dep_time_back_input,
             arr_time_input,
+            dep_time_back_input,
             arr_time_back_input,
             plane_insignia_input,
             "Unassigned",
