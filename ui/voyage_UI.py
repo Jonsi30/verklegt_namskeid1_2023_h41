@@ -1,5 +1,5 @@
-from logic.logic_wrapper import Logic_wrapper
 import os
+from logic.logic_wrapper import Logic_wrapper
 from ui.ASCII import ascii
 from prettytable import PrettyTable
 
@@ -43,7 +43,6 @@ class voyage:
         print(dep_time_back)
         dep_time_back_input = input("=>: ")
 
-
         arr_time_back = """
         Input Arrival time Back(17:00 16.12.2023)"""
         print(arr_time_back)
@@ -67,7 +66,6 @@ class voyage:
         options = """
         [B]ACK
         """
-
         print(options)
 
         return Logic_wrapper().create_voyage(
@@ -86,6 +84,7 @@ class voyage:
             "Unassigned",
         )
 
+
     def input_for_create_new_voyage(self):
         while True:
             os.system("cls" if os.name == "nt" else "clear")
@@ -94,6 +93,7 @@ class voyage:
 
             if command == "b":
                 return
+
 
     def Voyage_list_director(self):
         while True:
@@ -110,6 +110,7 @@ class voyage:
 
             if command == "b":
                 return
+
 
     def Voyage_list_manager(self):
         while True:
@@ -134,12 +135,9 @@ class voyage:
             elif command == "a":
                 self.input_for_create_add_crew()
 
-    def get_specific_day_voyages(self):
-        return
 
     def add_crew_to_voyage(self):
-        
-        
+        """This function lets the manager add Employees to a particular trip, after that it returns the information that the manager put in and cheanges the voyage data."""
         upcoming_voyages = Logic_wrapper().get_all_voyages()
 
         upcoming_voyage_list = []
@@ -148,7 +146,6 @@ class voyage:
             if voyage.captain and voyage.copilot and voyage.head_of_service and voyage.flight_attendant == 'Unassigned':
                 upcoming_voyage_list.append(voyage)
 
-        
         fieldnames = ["Id", "Flight Nr", "Plane Insignia", "Captain", "Copilot", "Head of Service", "Flight Attendant"]
         table = PrettyTable()
         table.field_names = fieldnames
@@ -170,7 +167,6 @@ class voyage:
                 print("That id is not in the list above! Try again") 
                 print() 
         
-
         for voyage in voyage_in_work:
             fieldnames = ["Id", "Flight Nr", "Plane Insignia", "Captain", "Copilot", "Head of Service", "Flight Attendant"]
             table = PrettyTable()
@@ -185,7 +181,6 @@ class voyage:
             print((table))
             print()
             
-
         captain_list = []
         copilot_list = []
         head_of_service_list = []
@@ -203,7 +198,6 @@ class voyage:
             elif rank == 'Flight Attendant':
                 flight_attendant_list.append([name, role, rank])
 
-
         captain_table = Logic_wrapper().table_making(captain_list)
         copilot_table = Logic_wrapper().table_making(copilot_list)
         head_of_service_table = Logic_wrapper().table_making(head_of_service_list)
@@ -213,11 +207,7 @@ class voyage:
         copilot = Logic_wrapper().select_position(copilot_list, copilot_table, 'Copilot', 'Copilots'  )
         head_of_service = Logic_wrapper().select_position(head_of_service_list, head_of_service_table, 'Flight Service Manager', 'Flight Service Managers' )
         flight_attendant = Logic_wrapper().select_position(flight_attendant_list, flight_attendant_table, 'Flight Attendant', 'Flight Attendants')
-        
-
-   
-
-
+    
         return Logic_wrapper().add_voyage_crew(
             id_number,
             captain,
