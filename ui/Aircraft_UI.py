@@ -2,6 +2,8 @@ import os
 from ui.ASCII import ascii
 from logic.logic_wrapper import LogicAircraft
 from prettytable import PrettyTable
+from logic.logic_wrapper import Logic_wrapper
+
 class Aircraft:
     def __init__(self):
         pass
@@ -37,7 +39,8 @@ class Aircraft:
         [B]ACK"""
         print(options)
 
-        return insigna_input, type_input, manu_input, seat_input
+        return Logic_wrapper().create_aircraft(insigna_input, type_input, manu_input, seat_input)
+
 
     def input_for_create_new_aircraft(self):
         self.create_new_aircraft()

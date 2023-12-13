@@ -9,6 +9,7 @@ class destination:
         pass
 
     def create_new_destination(self):
+        from logic.logic_wrapper import Logic_wrapper
         print("\033[2J\033[H")
         new_destination = """
         Please Input The Following Details
@@ -46,7 +47,7 @@ class destination:
         """
         print(options)
 
-        return dest_input, dist_input, dura_input, contact_input, contact_nr_input
+        return Logic_wrapper().create_destination(dest_input, dist_input, dura_input, contact_input, contact_nr_input)
 
     def input_for_create_new_destination(self):
         self.create_new_destination()
