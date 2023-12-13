@@ -14,7 +14,7 @@ class voyage:
         id_input = input("=>: ")
 
         flight_nr = """
-        Input ID(fx. NA010)"""
+        Input Flight Number(fx. NA010)"""
         print(flight_nr)
         flight_nr_input = input("=>: ")
 
