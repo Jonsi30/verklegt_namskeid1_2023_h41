@@ -204,13 +204,13 @@ class employee:
             date = input("=> ")
             print(f"Employees available for the date: {date}:")
             cabin_crew = Logic_wrapper().get_available_staff(date)
-            fieldnames = ["Name", "Role"]
+            fieldnames = ["Name", "Role", "Rank"]
             table = PrettyTable()
             table.field_names = fieldnames
             
             for employee in cabin_crew:
-                name, role = employee
-                table.add_row([name, role])
+                name, role, rank = employee
+                table.add_row([name, role, rank])
             print((table))
 
             
