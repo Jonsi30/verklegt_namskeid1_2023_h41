@@ -9,48 +9,48 @@ class voyage:
 
     def create_new_voyage(self):
         id = """
-        id(fx. 1111)"""
+        Input ID(fx. 1111)"""
         print(id)
         id_input = input("=>: ")
 
         flight_nr = """
-        flight_nr(fx. NA010)"""
+        Input Flight Number(fx. NA010)"""
         print(flight_nr)
         flight_nr_input = input("=>: ")
 
         dep_from = """
-        dep_from(fx. RKV)"""
+        Input Departure from(fx. RKV)"""
         print(dep_from)
         dep_from_input = input("=>: ")
 
         arr_at = """
-        arr_at(fx. TOR)"""
+        Input Arrival at(fx. TOR)"""
         print(arr_at)
         arr_at_input = input("=>: ")
 
         dep_time = """
-        dep_time(fx. 00:00 16.12.2023)"""
+        Input Departure time(fx. 00:00 16.12.2023)"""
         print(dep_time)
         dep_time_input = input("=>: ")
 
         arr_time = """
-        arr_time(05:00 16.12.2023)"""
+        Input Arrival time(05:00 16.12.2023)"""
         print(arr_time)
         arr_time_input = input("=>: ")
         
         dep_time_back = """
-        dep_time_back(12:00 16.12.2023)"""
+        Input Departure Time Back(12:00 16.12.2023)"""
         print(dep_time_back)
         dep_time_back_input = input("=>: ")
 
 
         arr_time_back = """
-        arr_time_back(17:00 16.12.2023)"""
+        Input Arrival time Back(17:00 16.12.2023)"""
         print(arr_time_back)
         arr_time_back_input = input("=>: ")
 
         plane_insignia = """
-        plane_insignia(TF-XXX)"""
+        Input Plane Insignia(TF-XXX)"""
         print(plane_insignia)
         plane_insignia_input = input("=>: ")
 
