@@ -65,9 +65,9 @@ class Logic_wrapper:
         """Returns a list of occupied staff"""
         return self.logic_employees.get_occupied_staff()
 
-    def get_available_staff(self):
+    def get_available_staff(self, date):
         """Returns a list of available staff"""
-        return self.logic_employees.get_available_staff()
+        return self.logic_employees.display_available_employees(date)
 
     def get_by_ssn(self, get_ssn):
         """Returns the employee of given social security number"""
@@ -76,7 +76,7 @@ class Logic_wrapper:
     def check_if_available(self):
         pass
 
-    
+
 
     # def get_all_voyages(self):
     #     return self.voyage_logic.display_voyage_manager()

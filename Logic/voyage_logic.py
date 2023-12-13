@@ -126,32 +126,4 @@ class VoyageLogic:
         
         return results
 
-    def display_available_employees(date): 
-        """Takes in date in this format: '21:00 16.12.2023'"""
-        """Returns a list of available employees for that particular date"""
-        not_available_employees = []
-        date = date[6:]
-
-        for voyage in Data_wrapper().get_all_voyages():
-            if date == voyage.arr_time_back[6:]:
-                if voyage.captain != 'Unassigned':
-                    not_available_employees.append(voyage.captain)
-                if voyage.copilot != 'Unassigned':
-                    not_available_employees.append(voyage.copilot)
-                if voyage.head_of_service != 'Unassigned':
-                    not_available_employees.append(voyage.head_of_service)
-                if voyage.flight_attendant != 'Unassigned':
-                    not_available_employees.append(voyage.flight_attendant)
-        non_available = list(dict.fromkeys(not_available_employees).keys())
-        available_employees = get_available_employees(non_available)
-       
-        return (available_employees)
-
-def get_available_employees(name_list):
     
-    availabe_employees = []
-    all_employees = Data_wrapper().get_all_employees()
-    for name in all_employees:
-        if name.name not in name_list:
-            availabe_employees.append(name.name)
-    return availabe_employees

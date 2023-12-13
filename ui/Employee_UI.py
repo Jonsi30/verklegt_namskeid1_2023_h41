@@ -202,7 +202,19 @@ class employee:
             print("\033[2J\033[H")
             print("INPUT DATE (DD.MM.YYYY):")
             date = input("=> ")
-            print("employees")
+            print(f"Employees available for the date: {date}:")
+            cabin_crew = Logic_wrapper().get_available_staff(date)
+            fieldnames = ["Name", "Role"]
+            table = PrettyTable()
+            table.field_names = fieldnames
+            
+            for employee in cabin_crew:
+                name, role = employee
+                table.add_row([name, role])
+            print((table))
+
+            
+            
             options = """ 
             [B]ACK
 

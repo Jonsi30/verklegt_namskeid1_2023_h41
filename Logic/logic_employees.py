@@ -72,16 +72,35 @@ class LogicEmployees:
                 pass
         return occupied_list
 
-    def get_available_staff(self, employee_dict: dict, employee_status):
-        """Returns all available staff. Staff that can go on voyages at the given time"""
-        available_staff_list = []
+    def display_available_employees(self, date): 
+        """Takes in date in this format: '21:00 16.12.2023'"""
+        """Returns a list of available employees for that particular date"""
+        not_available_employees = []
+        #date = date[6:]
 
-        for employee in employee_dict:
-            if employee["avialable"] == employee_status:
-                available_staff_list.append(employee)
-            else:
-                pass
-        return available_staff_list
+        for voyage in Data_wrapper().get_all_voyages():
+            if date == voyage.arr_time_back[6:]:
+                if voyage.captain != 'Unassigned':
+                    not_available_employees.append(voyage.captain)
+                if voyage.copilot != 'Unassigned':
+                    not_available_employees.append(voyage.copilot)
+                if voyage.head_of_service != 'Unassigned':
+                    not_available_employees.append(voyage.head_of_service)
+                if voyage.flight_attendant != 'Unassigned':
+                    not_available_employees.append(voyage.flight_attendant)
+        non_available = list(dict.fromkeys(not_available_employees).keys())
+        available_employees = LogicEmployees().get_available_employees(non_available)
+       
+        return (available_employees)
+
+    def get_available_employees(self, name_list):
+        
+        availabe_employees = []
+        all_employees = Data_wrapper().get_all_employees()
+        for name in all_employees:
+            if name.name not in name_list:
+                availabe_employees.append([name.name, name.role])
+        return availabe_employees
 
     def get_by_ssn(self, ssn):
         """Returns the employee with the ssn that the user put in. If no employee has that ssn, the function returns None"""
