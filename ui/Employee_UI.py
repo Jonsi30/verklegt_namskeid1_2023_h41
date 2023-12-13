@@ -121,7 +121,16 @@ class employee:
     def get_all_cabin_crew(self):
         while True:
             os.system("cls" if os.name == "nt" else "clear")
-            print("CREW")
+            cabin_crew = (Logic_wrapper().get_all_cabincrew())
+            fieldnames = ["Name", "Role"]
+            table = PrettyTable()
+            table.field_names = fieldnames
+            for employee in cabin_crew:
+                name, role = employee
+                table.add_row([name, role])
+            print((table))
+
+            
             options = """ 
             [B]ACK
 
