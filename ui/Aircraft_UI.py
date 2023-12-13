@@ -1,7 +1,7 @@
 import os
 from ui.ASCII import ascii
-
-
+from logic.logic_wrapper import LogicAircraft
+from prettytable import PrettyTable
 class Aircraft:
     def __init__(self):
         pass
@@ -51,6 +51,17 @@ class Aircraft:
         ascii().Aircraft_list_art()
         print("aircrafts")
         print("-----------------------")
+        
+
+        all_aircrafts = LogicAircraft().get_all_aircrafts()
+        fieldnames = ["Plane Insignia", "Plane Type", "Manufacturer", "Seat Capacity"]
+        table = PrettyTable()
+        table.field_names = fieldnames
+        for aircraft in all_aircrafts:
+            
+            table.add_row([aircraft.plane_insignia, aircraft.plane_type_id, aircraft.manufacturer, aircraft.seat_capacity])
+        print((table))
+
         options = """
         [N]EW 
         [B]ACK
