@@ -1,6 +1,7 @@
 import os
 from ui.ASCII import ascii
 
+from prettytable import PrettyTable
 
 class destination:
     def __init__(self):
@@ -54,10 +55,22 @@ class destination:
                 return
 
     def get_all_destinations(self):
+        from logic.logic_wrapper import Logic_wrapper
         print("\033[2J\033[H")
         ascii().destination_list_art()
         print("-----------------------")
         print("all destinations")
+
+        all_dest = Logic_wrapper().get_all_destinations()
+        fieldnames = ["Destination", "Distance from Iceland(KM)", "Flight Time", "Emergency Contact", "Emergency Contact Phone Number"]
+        table = PrettyTable()
+        table.field_names = fieldnames
+        for destination in all_dest:
+            table.add_row([destination.destination, destination.distance_from_ice, destination.flight_time, destination.emergency_contact, destination.emergency_contact_phone_nr])
+        print((table))
+
+
+
         get_all_destinations = """
         [N]EW 
         [B]ACK

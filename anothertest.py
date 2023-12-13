@@ -1,6 +1,7 @@
 from logic.logic_employees import LogicEmployees
 from prettytable import PrettyTable
 from logic.logic_wrapper import LogicEmployees
+from logic.logic_wrapper import LogicDestination
 """
 test = LogicEmployees().get_all_crew()
 for i in test:
@@ -41,7 +42,6 @@ for employee in pilots:
 print((table))
 """
 
-cabin_crew = LogicEmployees().get_all_cabin_crew()
-
-for i in cabin_crew:
+dest = LogicDestination().get_all_destinations()
+for i in dest:
     print(i)

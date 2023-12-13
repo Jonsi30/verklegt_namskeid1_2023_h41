@@ -25,10 +25,12 @@ class LogicDestination:
         return self.destination.create_destination(new_info)
 
     def get_all_destinations(self):
-        all_destinations = self.destination.get_all_destinations()
+        destinations = []
 
-        for i in all_destinations:
-            return i
+        for dest in Data_wrapper().get_all_destinations():
+            destinations.append(dest)
+        
+        return destinations
 
     def update_destination_info(
         self, new_info

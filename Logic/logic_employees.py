@@ -51,7 +51,7 @@ class LogicEmployees:
 
     def get_employee_info(self, employee_name: str):
         """Returns a particlar employee and his attributes in a list. If the list is empty then no employee name matched the employess in the company"""
-        employee_list = []
+        employee_list = [] 
 
         for employee in Data_wrapper().get_all_employees():
             if employee_name == employee.name:
