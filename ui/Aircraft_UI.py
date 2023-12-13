@@ -13,25 +13,25 @@ class Aircraft:
         ----------------------------------
         plane_insigna(TF-XXX)"""
         print(new_insigna)
-        insigna_input = input("=> ").lower()
+        insigna_input = input("=> ")
 
         type = """ 
         
         plane_type_id(NAxxxxx)"""
         print(type)
-        type_input = input("=> ").lower()
+        type_input = input("=> ")
 
         manufacturor = """
         
         manufacturor"""
         print(manufacturor)
-        manu_input = input("=> ").lower()
+        manu_input = input("=> ")
 
         seat_capacity = """
         
         number of seats"""
         print(seat_capacity)
-        seat_input = input("=> ").lower()
+        seat_input = input("=> ")
 
         options = """
         [B]ACK"""

@@ -13,31 +13,31 @@ class destination:
         ----------------------------------
         destination"""
         print(new_destination)
-        dest_input = input("=> ").lower()
+        dest_input = input("=> ")
 
         distance = """ 
         
         distance from iceland (km)"""
         print(distance)
-        dist_input = input("=> ").lower()
+        dist_input = input("=> ")
 
         duration = """
         
         Duration (hrs:minutes)"""
         print(duration)
-        dura_input = input("=> ").lower()
+        dura_input = input("=> ")
 
         Contact = """
         
         Emergency contact"""
         print(Contact)
-        contact_input = input("=> ").lower()
+        contact_input = input("=> ")
 
         Number = """
         
         emergency contact phone_nr"""
         print(Number)
-        contact_nr_input = input("=> ").lower()
+        contact_nr_input = input("=> ")
 
         options = """
         [B]ACK

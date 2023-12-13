@@ -3,6 +3,7 @@ from ui.ASCII import ascii
 from logic.logic_wrapper import Logic_wrapper
 from prettytable import PrettyTable
 
+
 class employee:
     def __init__(self):
         pass
@@ -14,49 +15,49 @@ class employee:
         ----------------------------------
         name"""
         print(name)
-        name_input = input("=> ").lower()
+        name_input = input("=> ")
 
         role = """ 
         
         role"""
         print(role)
-        role_input = input("=> ").lower()
+        role_input = input("=> ")
 
         rank = """
         
         Duration (hrs:minutes)"""
         print(rank)
-        rank_input = input("=> ").lower()
+        rank_input = input("=> ")
 
         License = """
         
         License"""
         print(License)
-        License_input = input("=> ").lower()
+        License_input = input("=> ")
 
         phone = """
         
         phone"""
         print(phone)
-        phone_input = input("=> ").lower()
+        phone_input = input("=> ")
 
         address = """
         
         address"""
         print(address)
-        address_input = input("=> ").lower()
+        address_input = input("=> ")
 
         email = """
         
         email"""
         print(email)
-        email_input = input("=> ").lower()
+        email_input = input("=> ")
 
         ssn = """
         
         ssn"""
         print(ssn)
-        ssn_input = input("-> ").lower()
+        ssn_input = input("-> ")
 
         options = """
         [B]ACK
@@ -98,16 +99,9 @@ class employee:
     def get_all_pilots(self):
         while True:
             os.system("cls" if os.name == "nt" else "clear")
-            pilots = (Logic_wrapper().get_all_pilots())
-            
-            fieldnames = ["Name", "Role"]
-            table = PrettyTable()
-            table.field_names = fieldnames
-            for employee in pilots:
-                name, role = employee
-                table.add_row([name, role])
-            print((table))
-            
+            pilots = Logic_wrapper().get_all_pilots()
+            for pilot in pilots:
+                print(pilot)
             options = """ 
             [B]ACK
 
@@ -288,7 +282,7 @@ class employee:
                 return
 
             return date
-        
+
     def input_for_edit_employee(self):
         self.edit_employee()
         while True:
