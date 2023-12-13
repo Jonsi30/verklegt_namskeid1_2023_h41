@@ -99,8 +99,15 @@ class employee:
         while True:
             os.system("cls" if os.name == "nt" else "clear")
             pilots = (Logic_wrapper().get_all_pilots())
-            for pilot in pilots:
-                print(pilot)
+            
+            fieldnames = ["Name", "Role"]
+            table = PrettyTable()
+            table.field_names = fieldnames
+            for employee in pilots:
+                name, role = employee
+                table.add_row([name, role])
+            print((table))
+            
             options = """ 
             [B]ACK
 

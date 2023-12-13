@@ -5,13 +5,13 @@ from data.employee_data import Employee
 #test = Employee_data().get_all_employees()
 
 def main():
-    date = '21:00 16.12.2023'
+    date = '16.12.2023'
 
     display_available_employees(date)
 
 def display_available_employees(date):
     not_available_employees = []
-    date = date[6:]
+    
 
     for voyage in Voyage_Data().get_all_voyage():
         if date == voyage.arr_time_back[6:]:
