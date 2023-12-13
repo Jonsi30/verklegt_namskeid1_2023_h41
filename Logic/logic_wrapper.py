@@ -28,6 +28,10 @@ class Logic_wrapper:
     def create_employee(self, new_info):
         """Returns a new employee to the employee list"""
         return self.logic_employees.create_employee(new_info)
+    
+    def create_aircraft(self, insigna_input, type_input, manu_input, seat_input):
+        """Sends the data from the UI to the Data_wrapper"""
+        return self.data_wrapper.create_new_aircraft(insigna_input, type_input, manu_input, seat_input)
 
     def get_all_employees(self):
         """Returns all employess"""
