@@ -7,31 +7,31 @@ class Aircraft:
         pass
 
     def create_new_aircraft(self):
-        os.system("cls" if os.name == "nt" else "clear")
+        print("\033[2J\033[H")
         new_insigna = """
         Please Input The Following Details
         ----------------------------------
         plane_insigna(TF-XXX)"""
         print(new_insigna)
-        insigna_input = input("=> ").lower()
+        insigna_input = input("=> ")
 
         type = """ 
         
         plane_type_id(NAxxxxx)"""
         print(type)
-        type_input = input("=> ").lower()
+        type_input = input("=> ")
 
         manufacturor = """
         
         manufacturor"""
         print(manufacturor)
-        manu_input = input("=> ").lower()
+        manu_input = input("=> ")
 
         seat_capacity = """
         
         number of seats"""
         print(seat_capacity)
-        seat_input = input("=> ").lower()
+        seat_input = input("=> ")
 
         options = """
         [B]ACK"""
@@ -47,7 +47,7 @@ class Aircraft:
                 return
 
     def get_all_aircrafts(self):
-        os.system("cls" if os.name == "nt" else "clear")
+        print("\033[2J\033[H")
         ascii().Aircraft_list_art()
         print("aircrafts")
         print("-----------------------")

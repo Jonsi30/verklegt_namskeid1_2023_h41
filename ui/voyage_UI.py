@@ -11,47 +11,47 @@ class voyage:
         id = """
         id(fx. 1111)"""
         print(id)
-        id_input = input("=>: ").lower
+        id_input = input("=>: ")
 
         flight_nr = """
         flight_nr(fx. NA010)"""
         print(flight_nr)
-        flight_nr_input = input("=>: ").lower
+        flight_nr_input = input("=>: ")
 
         dep_from = """
         dep_from(fx. RKV)"""
         print(dep_from)
-        dep_from_input = input("=>: ").lower
+        dep_from_input = input("=>: ")
 
         arr_at = """
         arr_at(fx. TOR)"""
         print(arr_at)
-        arr_at_input = input("=>: ").lower
+        arr_at_input = input("=>: ")
 
         dep_time = """
         dep_time(fx. 00:00 16.12.2023)"""
         print(dep_time)
-        dep_time_input = input("=>: ").lower
+        dep_time_input = input("=>: ")
 
         dep_time_back = """
         dep_time_back(12:00 16.12.2023)"""
         print(dep_time_back)
-        dep_time_back_input = input("=>: ").lower
+        dep_time_back_input = input("=>: ")
 
         arr_time = """
         arr_time(05:00 16.12.2023)"""
         print(arr_time)
-        arr_time_input = input("=>: ").lower
+        arr_time_input = input("=>: ")
 
         arr_time_back = """
         arr_time_back(17:00 16.12.2023)"""
         print(arr_time_back)
-        arr_time_back_input = input("=>: ").lower
+        arr_time_back_input = input("=>: ")
 
         plane_insignia = """
         plane_insignia(TF-XXX)"""
         print(plane_insignia)
-        plane_insignia_input = input("=>: ").lower
+        plane_insignia_input = input("=>: ")
 
         options = """
         [B]ACK
@@ -130,35 +130,41 @@ class voyage:
         voyage_id = """
         input voyage id"""
         print(voyage_id)
-        voyage_id_input = input("=>: ")
+        voyage_id_input = input("=> ")
 
         captain = """
         captain(fx. John Johnson)"""
         print(captain)
-        captain_input = input("=>: ")
+        captain_input = input("=> ")
 
         copilot = """
         copilot(fx. John Mikeson)"""
         print(copilot)
-        copilot_input = input("=>: ")
+        copilot_input = input("=> ")
 
         head_of_service = """
         head_of_service(fx. Mike Johnson)"""
         print(head_of_service)
-        head_of_service_input = input("=>: ")
+        head_of_service_input = input("=> ")
 
         flight_attendant = """
         flight_attendant(fx. Mike Mikeson)"""
         print(flight_attendant)
-        flight_attendant_input = input("=>: ")
+        flight_attendant_input = input("=> ")
 
         options = """
         [B]ACK
         """
         print(options)
 
-        return Logic_wrapper().add_voyage_crew(voyage_id_input, captain_input, copilot_input, head_of_service_input, flight_attendant_input)
-        
+        return Logic_wrapper().add_voyage_crew(
+            voyage_id_input,
+            captain_input,
+            copilot_input,
+            head_of_service_input,
+            flight_attendant_input,
+        )
+
     def input_for_create_add_crew(self):
         self.add_crew_to_voyage()
         while True:
