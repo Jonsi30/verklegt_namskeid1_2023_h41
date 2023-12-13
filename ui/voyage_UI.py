@@ -220,6 +220,7 @@ class voyage:
         self.add_crew_to_voyage()
         while True:
             options = """
+        Voyage has been staffed succesfully!
         [B]ACK
         """
             print(options)
