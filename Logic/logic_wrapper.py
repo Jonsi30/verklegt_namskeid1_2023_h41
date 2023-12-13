@@ -117,3 +117,6 @@ class Logic_wrapper:
             head_of_service,
             flight_attendant,
         )
+    
+    def add_voyage_crew(self, voyage_id_input, captain_input, copilot_input, head_of_service_input, flight_attendant_input):
+        return Data_wrapper().add_voyage_crew(voyage_id_input, captain_input, copilot_input, head_of_service_input, flight_attendant_input)

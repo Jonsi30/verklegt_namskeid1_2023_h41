@@ -83,3 +83,7 @@ class Data_wrapper:
 
     def get_all_voyages(self):
         return self.voyage_data.get_all_voyage()
+    
+    def add_voyage_crew(self, voyage_id_input, captain_input, copilot_input, head_of_service_input, flight_attendant_input):
+        from model.voyage_model import Voyage_Model
+        return self.voyage_data.update_voyage(Voyage_Model(voyage_id_input, "lol", "lol", "lol", "lol", "lol", "lol", "lol", "lol", captain_input, copilot_input, head_of_service_input, flight_attendant_input))

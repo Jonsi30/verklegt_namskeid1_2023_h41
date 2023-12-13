@@ -88,7 +88,8 @@ class voyage:
         while True:
             os.system("cls" if os.name == "nt" else "clear")
             print(ascii().voyage_list_art())
-            Logic_wrapper().display_voyage()
+            for voyage in Logic_wrapper().display_voyage():
+                print(voyage)
             options = """
         [B]ACK
         """
@@ -103,7 +104,8 @@ class voyage:
         while True:
             os.system("cls" if os.name == "nt" else "clear")
             print(ascii().voyage_list_art())
-            Logic_wrapper().display_voyage()
+            for voyage in Logic_wrapper().display_voyage():
+                print(voyage)
             print("[A]DD EMPLOYEES")
             options = """
         [B]ACK
@@ -128,35 +130,35 @@ class voyage:
         voyage_id = """
         input voyage id"""
         print(voyage_id)
-        voyage_id_input = input("=>: ").lower
+        voyage_id_input = input("=>: ")
 
         captain = """
         captain(fx. John Johnson)"""
         print(captain)
-        captain_input = input("=>: ").lower
+        captain_input = input("=>: ")
 
         copilot = """
         copilot(fx. John Mikeson)"""
         print(copilot)
-        copilot_input = input("=>: ").lower
+        copilot_input = input("=>: ")
 
         head_of_service = """
         head_of_service(fx. Mike Johnson)"""
         print(head_of_service)
-        copilot_input = input("=>: ").lower
+        head_of_service_input = input("=>: ")
 
         flight_attendant = """
         flight_attendant(fx. Mike Mikeson)"""
         print(flight_attendant)
-        flight_attendant_input = input("=>: ").lower
+        flight_attendant_input = input("=>: ")
 
         options = """
         [B]ACK
         """
         print(options)
 
-        return voyage_id_input, captain_input, copilot_input, flight_attendant_input
-
+        return Logic_wrapper().add_voyage_crew(voyage_id_input, captain_input, copilot_input, head_of_service_input, flight_attendant_input)
+        
     def input_for_create_add_crew(self):
         self.add_crew_to_voyage()
         while True:

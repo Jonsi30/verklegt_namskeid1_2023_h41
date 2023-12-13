@@ -100,4 +100,4 @@ class LogicEmployees:
         for employee in past_flights:
             if employee["ssn"] == ssn_input:
                 employee_schedule.append["blah"]
-        print(employee_schedule)
+        return employee_schedule
