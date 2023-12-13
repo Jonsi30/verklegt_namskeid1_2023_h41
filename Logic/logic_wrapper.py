@@ -76,6 +76,8 @@ class Logic_wrapper:
     def check_if_available(self):
         pass
 
+    
+
     # def get_all_voyages(self):
     #     return self.voyage_logic.display_voyage_manager()
 
