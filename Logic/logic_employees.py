@@ -22,8 +22,7 @@ class LogicEmployees:
     def get_all_pilots(self: dict):
         """Returns a list with all the pilots working for the company NaN air."""
         pilot_list = []
-        fieldnames = ["Employee", "Rank"]
-        table = PrettyTable()
+        
         all_employees = Data_wrapper().get_all_employees()
         for employee in all_employees:
             if employee.role == "Pilot":
@@ -32,22 +31,21 @@ class LogicEmployees:
         return pilot_list
         
 
-    def get_all_crew(self, employee_dict: dict):
-        """Returns a dictionary with all the crew members working for the company NaN air."""
-        crew_dict = {}
+    def get_all_crew(self):
+        """Returns a list with all the crew members working for the company NaN air."""
+        crew_list = []
 
-        for employee in employee_dict:
-            if employee["role"] == "cabin crew":
-                crew_dict[employee["name"]] = employee["rank"]
+        for employee in Data_wrapper().get_all_employees():
+            crew_list.append(employee)
 
-        return crew_dict
+        return crew_list
 
-    def get_employee_info(self, employee_dict: dict, employee_name: str):
+    def get_employee_info(self, employee_name: str):
         """Returns a particlar employee and his attributes in a list. If the list is empty then no employee name matched the employess in the company"""
         employee_list = []
 
-        for employee in employee_dict:
-            if employee["name"] == employee_name:
+        for employee in Data_wrapper().get_all_employees():
+            if employee_name == employee.name:
                 employee_list.append(employee)
             else:
                 pass
@@ -76,16 +74,16 @@ class LogicEmployees:
                 pass
         return available_staff_list
 
-    def get_by_ssn(self, employee_dict: dict, ssn: int):
+    def get_by_ssn(self, ssn: int):
         """Returns the employee with the ssn that the user put in. If no employee has that ssn, the function returns None"""
-
-        for employee in employee_dict:
-            if employee["Social Security Number"] == ssn:
-                return employee
+        employee_ssn = []
+        for employee in Data_wrapper().get_all_employees(ssn):
+            if employee.ssn == ssn:
+                employee_ssn.append(employee)
             else:
                 pass
 
-        return None
+        return employee_ssn
 
     def check_if_available(self):
         pass

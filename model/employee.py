@@ -13,6 +13,6 @@ class Employee:
         return getattr(self, key)
 
     def __str__(self):
-        return f"name: {self.name}, role: {self.role}, rank: {self.rank}, license: {self.license}, phone nr: {self.phone_nr}, address: {self.address}, email: {self.email} ssn: {self.ssn} "
+        return f"Name: {self.name}, Role: {self.role}, Rank: {self.rank}, License: {self.license}, Phone Number: {self.phone_nr}, Address: {self.address}, Email: {self.email} Social Security Number: {self.ssn} "
         
 
