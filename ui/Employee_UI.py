@@ -9,7 +9,7 @@ class employee:
         pass
 
     def create_new_employee(self):
-        os.system("cls" if os.name == "nt" else "clear")
+        print("\033[2J\033[H")
         name = """
         Please Input The Following Details
         ----------------------------------
@@ -98,7 +98,7 @@ class employee:
 
     def get_all_pilots(self):
         while True:
-            os.system("cls" if os.name == "nt" else "clear")
+            print("\033[2J\033[H")
             pilots = Logic_wrapper().get_all_pilots()
             for pilot in pilots:
                 print(pilot)
@@ -114,8 +114,8 @@ class employee:
 
     def get_all_cabin_crew(self):
         while True:
-            os.system("cls" if os.name == "nt" else "clear")
-            cabin_crew = (Logic_wrapper().get_all_cabincrew())
+            print("\033[2J\033[H")
+            cabin_crew = Logic_wrapper().get_all_cabincrew()
             fieldnames = ["Name", "Role"]
             table = PrettyTable()
             table.field_names = fieldnames
@@ -124,7 +124,6 @@ class employee:
                 table.add_row([name, role])
             print((table))
 
-            
             options = """ 
             [B]ACK
 
@@ -137,7 +136,7 @@ class employee:
 
     def get_all_crew(self):
         while True:
-            os.system("cls" if os.name == "nt" else "clear")
+            print("\033[2J\033[H")
             ascii().employee_list_art()
             options = """
         
@@ -175,7 +174,7 @@ class employee:
     def get_certain_employee_schedule(self):
         while True:
             logic = Logic_wrapper()
-            os.system("cls" if os.name == "nt" else "clear")
+            print("\033[2J\033[H")
             print("INPUT EMPLOYEE SSN:")
             ssn = input("=> ")
             logic.get_by_ssn()
@@ -193,7 +192,7 @@ class employee:
 
     def get_available_staff(self):
         while True:
-            os.system("cls" if os.name == "nt" else "clear")
+            print("\033[2J\033[H")
             print("INPUT DATE (DD.MM.YYYY):")
             date = input("=> ")
             print("employees")
@@ -210,7 +209,7 @@ class employee:
             return date
 
     def edit_employee(self):
-        os.system("cls" if os.name == "nt" else "clear")
+        print("\033[2J\033[H")
         bang = """
         PRESS ENTER IF ITEM SHOULD NOT CHANGE
         ----------------------------------

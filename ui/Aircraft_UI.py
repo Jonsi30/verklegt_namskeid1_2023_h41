@@ -7,7 +7,7 @@ class Aircraft:
         pass
 
     def create_new_aircraft(self):
-        os.system("cls" if os.name == "nt" else "clear")
+        print("\033[2J\033[H")
         new_insigna = """
         Please Input The Following Details
         ----------------------------------
@@ -47,7 +47,7 @@ class Aircraft:
                 return
 
     def get_all_aircrafts(self):
-        os.system("cls" if os.name == "nt" else "clear")
+        print("\033[2J\033[H")
         ascii().Aircraft_list_art()
         print("aircrafts")
         print("-----------------------")
