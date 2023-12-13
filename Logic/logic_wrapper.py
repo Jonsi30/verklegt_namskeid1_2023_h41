@@ -37,9 +37,9 @@ class Logic_wrapper:
         """Returns all employess in the employee dict"""
         return self.logic_employees.get_employee_dict(ret_dict)
 
-    def update_employee(self, updated_info):
+    def update_employee(self, ssn_input,role_input,rank_input,License_input,phone_input,address_input,email_input):
         """Returns an updated employee to the employee list"""
-        return self.logic_employees.update_employee(updated_info)
+        return self.data_wrapper.update_employee(ssn_input,role_input,rank_input,License_input,phone_input,address_input,email_input)
 
     def get_all_pilots(self):
         """Returns all pilots"""

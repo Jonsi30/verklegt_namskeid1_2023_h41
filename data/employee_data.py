@@ -81,7 +81,7 @@ class Employee_data:
         for employee in every_employee:
             if employee.ssn == updated_employee.ssn:
                 new_list.append(
-                    Employee(
+                    ([
                         employee.name,
                         updated_employee.role,
                         updated_employee.rank,
@@ -90,11 +90,11 @@ class Employee_data:
                         updated_employee.address,
                         updated_employee.email,
                         employee.ssn,
-                    )
+                    ])
                 )
             else:
                 new_list.append(
-                    Employee(
+                    ([
                         employee.name,
                         employee.role,
                         employee.rank,
@@ -103,7 +103,7 @@ class Employee_data:
                         employee.address,
                         employee.email,
                         employee.ssn,
-                    )
+                    ])
                 )
 
         f = open(self.file_name, "w")
@@ -116,8 +116,22 @@ class Employee_data:
 
             writer.writeheader()
 
-        for item in new_list:
-            Employee_data().create_employee(item)
+        for i, person in enumerate(new_list):
+            name, role, rank, license, phone_nr, address, email, ssn = person
+            if role == '':
+                role = every_employee[i].role
+            if rank == '':
+                rank = every_employee[i].rank
+            if license == '':
+                license = every_employee[i].license
+            if phone_nr == '':
+                phone_nr = every_employee[i].phone_nr
+            if address == '':
+                address = every_employee[i].address
+            if email == '':
+                email = every_employee[i].email
+                
+            Employee_data().create_employee(Employee(name, role, rank, license, phone_nr, address, email, ssn))
 
     """
     def print_most_experienced_pilot(self):
