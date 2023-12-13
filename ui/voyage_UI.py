@@ -49,6 +49,16 @@ class voyage:
         print(arr_time_back)
         arr_time_back_input = input("=>: ")
 
+        available_airplanes = Logic_wrapper().get_available_airplanes(dep_time_input)
+        
+        plane_table = PrettyTable()
+        fieldnames = ["Plane Insignia", "Plane Type ID"]
+        plane_table.field_names = fieldnames
+        for aircraft in available_airplanes:
+            plane_table.add_row([aircraft.plane_insignia, aircraft.plane_type_id])
+
+        print(plane_table)
+
         plane_insignia = """
         Input Plane Insignia(TF-XXX)"""
         print(plane_insignia)

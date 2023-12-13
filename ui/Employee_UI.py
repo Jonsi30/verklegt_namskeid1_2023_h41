@@ -3,6 +3,8 @@ from ui.ASCII import ascii
 from logic.logic_wrapper import Logic_wrapper
 from prettytable import PrettyTable
 
+SSN_FIELDNAMES = ["Name", "Social Security Number"]
+EMPLOYEE_FILDNAMES = ["Name","Role","Rank","License","Phone Number","Address","Email Address","Social Security Number",]
 
 class employee:
     def __init__(self):
@@ -100,9 +102,9 @@ class employee:
         while True:
             print("\033[2J\033[H")
             pilots = Logic_wrapper().get_all_pilots()
-            fieldnames = ["Name", "Role", "Rank"]
+            SSN_FIELDNAMES = ["Name", "Role", "Rank"]
             table = PrettyTable()
-            table.field_names = fieldnames
+            table.field_names = SSN_FIELDNAMES
             for employee in pilots:
                 name, role, rank = employee
                 table.add_row([name, role, rank])
@@ -123,9 +125,9 @@ class employee:
         while True:
             print("\033[2J\033[H")
             cabin_crew = Logic_wrapper().get_all_cabincrew()
-            fieldnames = ["Name", "Role"]
+            SSN_FIELDNAMES = ["Name", "Role"]
             table = PrettyTable()
-            table.field_names = fieldnames
+            table.field_names = SSN_FIELDNAMES
             for employee in cabin_crew:
                 name, role = employee
                 table.add_row([name, role])
@@ -204,9 +206,9 @@ class employee:
             date = input("=> ")
             print(f"Employees available for the date: {date}:")
             cabin_crew = Logic_wrapper().get_available_staff(date)
-            fieldnames = ["Name", "Role", "Rank"]
+            SSN_FIELDNAMES = ["Name", "Role", "Rank"]
             table = PrettyTable()
-            table.field_names = fieldnames
+            table.field_names = SSN_FIELDNAMES
             
             for employee in cabin_crew:
                 name, role, rank = employee
@@ -234,13 +236,46 @@ class employee:
         ----------------------------------
         """
         print(bang)
+        
+
+        all_employees = Logic_wrapper().get_all_employees()
+
+        employee_ssn_table = PrettyTable()
+        employee_ssn_list = []
+        employee_ssn_table.field_names = SSN_FIELDNAMES
+
+
+        for employee in all_employees:
+            employee_ssn_table.add_row([employee.name, employee.ssn])
+            employee_ssn_list.append(employee.ssn)
+
+        print(employee_ssn_table)
 
         ssn = """ 
         
-        SSN"""
+        Enter the social security number of the employee you want to edit"""
         print(ssn)
         ssn_input = input("=> ")
+        
+        run = 0
+        while run != 1:
 
+            if ssn_input not in employee_ssn_list:
+                print("That Social security number is not valid, try again!")
+                ssn_input = input("=> ")
+            else:
+                run += 1
+                break
+       
+        employee_table = PrettyTable()
+        employee_filendames = EMPLOYEE_FILDNAMES
+        employee_table.field_names = employee_filendames
+
+        for employee in all_employees:
+            if employee.ssn == ssn_input:
+                employee_table.add_row([employee.name, employee.role, employee.rank, employee.license, employee.phone_nr, employee.address, employee.email, employee.ssn])
+        
+        print(employee_table)
         role = """ 
         
         role"""

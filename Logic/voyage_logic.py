@@ -158,3 +158,4 @@ class VoyageLogic:
 
         return table
     
+    

@@ -32,6 +32,9 @@ class Logic_wrapper:
     def create_aircraft(self, insigna_input, type_input, manu_input, seat_input):
         """Sends the data from the UI to the Data_wrapper"""
         return self.data_wrapper.create_new_aircraft(insigna_input, type_input, manu_input, seat_input)
+    
+    def get_available_airplanes(self, date):
+        return self.logic_aircraft.get_available_aircraft(date)
 
     def get_all_employees(self):
         """Returns all employess"""
