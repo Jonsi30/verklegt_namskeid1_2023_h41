@@ -1,0 +1,5 @@
+
+Prettytable install guide.
+python -m pip install -U prettytable
+python -m pip install -U git+https://github.com/jazzband/prettytable
+
