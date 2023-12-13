@@ -74,10 +74,10 @@ class LogicEmployees:
                 pass
         return available_staff_list
 
-    def get_by_ssn(self, ssn: int):
+    def get_by_ssn(self, ssn):
         """Returns the employee with the ssn that the user put in. If no employee has that ssn, the function returns None"""
         employee_ssn = []
-        for employee in Data_wrapper().get_all_employees(ssn):
+        for employee in Data_wrapper().get_all_employees():
             if employee.ssn == ssn:
                 employee_ssn.append(employee)
             else:
