@@ -112,18 +112,6 @@ class LogicEmployees:
                 pass
 
         return employee_ssn
-
-    def get_employee_dict(self, ret_dict):
-        """Returns a dictionary with all the employees that work for the company NaN air."""
-        return self.employee.get_employee_dict(ret_dict)
-
-    def get_certain_employee_scedule(self, past_flights):
-        employee_schedule = []
-        ssn_input = 1905813249
-        for employee in past_flights:
-            if employee["ssn"] == ssn_input:
-                employee_schedule.append["blah"]
-        return employee_schedule
     
 
     def get_schedule_by_ssn(self, ssn):
