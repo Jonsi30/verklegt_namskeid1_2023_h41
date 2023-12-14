@@ -8,7 +8,7 @@ FIELDNAMES = [
     "Phone Number",
     "Address",
     "Email Address",
-    "Social Security Number",
+    "Social Security Number"
 ]
 all_employees = Logic_wrapper().get_all_crew()
 employee_table = PrettyTable()
