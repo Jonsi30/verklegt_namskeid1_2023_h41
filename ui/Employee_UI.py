@@ -4,7 +4,17 @@ from logic.logic_wrapper import Logic_wrapper
 from prettytable import PrettyTable
 
 SSN_FIELDNAMES = ["Name", "Social Security Number"]
-EMPLOYEE_FILDNAMES = ["Name","Role","Rank","License","Phone Number","Address","Email Address","SSN"]
+EMPLOYEE_FILDNAMES = [
+    "Name",
+    "Role",
+    "Rank",
+    "License",
+    "Phone Number",
+    "Address",
+    "Email Address",
+    "SSN",
+]
+
 
 class employee:
     def __init__(self):
@@ -88,7 +98,6 @@ class employee:
         while True:
             os.system("cls" if os.name == "nt" else "clear")
             self.display_every_employee()
-            print("ALL EMPLOYEES")
             options = """ 
             [B]ACK
 
@@ -110,8 +119,7 @@ class employee:
                 name, role, rank, license = employee
                 table.add_row([name, role, rank, license])
             print((table))
-                        
-            
+
             options = """ 
             [B]ACK
 
@@ -154,7 +162,6 @@ class employee:
         [P]ILOTS (see all)
         [C]ABIN CREW (see all)
         [D]ISPLAY ALL EMPLOYEES (see all)
-        [S]CHEDULE FOR EMPLOYEE
 
         [E]DIT EMPLOYEE
         [N]EW EMPLOYEE
@@ -175,8 +182,6 @@ class employee:
                 self.get_all_cabin_crew()
             elif command == "d":
                 self.get_all_employees()
-            elif command == "s":
-                self.get_certain_employee_schedule()
             elif command == "n":
                 self.create_new_employee()
             elif command == "e":
@@ -186,38 +191,36 @@ class employee:
 
     def get_certain_employee_schedule(self):
         while True:
-            
+            logic = Logic_wrapper()
             print("\033[2J\033[H")
             ssn = self.validate_ssn()
             schedule = Logic_wrapper().get_certain_employee_schedule(ssn)
             print(schedule)
             options = """ 
-            [B]ACK
+            [Q]UIT
 
             """
             print(options)
             command = input("=> ")
             command = command.lower()
-            if command == "b":
-                return
+            if command == "q":
+                break
 
             return ssn
-    
-    
-    def validate_ssn(self):  
+
+    def validate_ssn(self):
         all_employees = Logic_wrapper().get_all_crew()
-        
+
         ssn_table = PrettyTable()
         fieldnames = ["Name", "SSN"]
         ssn_table.field_names = fieldnames
-        
+
         ssn_list = []
-        
+
         for info in all_employees:
             ssn_list.append(info.ssn)
             ssn_table.add_row([info.name, info.ssn])
 
-        
         print(ssn_table)
         ssn_input = input("Enter a ssn from the list above: ")
 
@@ -226,8 +229,7 @@ class employee:
                 print(ssn_table)
                 print("That id is not in the list above, try again")
                 ssn_input = input("Enter a ssn from the list above: ")
-        
-        
+
         return ssn_input
 
     def get_available_staff(self):
@@ -240,14 +242,12 @@ class employee:
             SSN_FIELDNAMES = ["Name", "Role", "Rank"]
             table = PrettyTable()
             table.field_names = SSN_FIELDNAMES
-            
+
             for employee in cabin_crew:
                 name, role, rank = employee
                 table.add_row([name, role, rank])
             print((table))
 
-            
-            
             options = """ 
             [B]ACK
 
@@ -267,14 +267,12 @@ class employee:
         ----------------------------------
         """
         print(bang)
-        
 
         all_employees = Logic_wrapper().get_all_employees()
 
         employee_ssn_table = PrettyTable()
         employee_ssn_list = []
         employee_ssn_table.field_names = SSN_FIELDNAMES
-
 
         for employee in all_employees:
             employee_ssn_table.add_row([employee.name, employee.ssn])
@@ -287,25 +285,35 @@ class employee:
         Enter the social security number of the employee you want to edit"""
         print(ssn)
         ssn_input = input("=> ")
-        
+
         run = 0
         while run != 1:
-
             if ssn_input not in employee_ssn_list:
                 print("That Social security number is not valid, try again!")
                 ssn_input = input("=> ")
             else:
                 run += 1
                 break
-       
+
         employee_table = PrettyTable()
         employee_filendames = EMPLOYEE_FILDNAMES
         employee_table.field_names = employee_filendames
 
         for employee in all_employees:
             if employee.ssn == ssn_input:
-                employee_table.add_row([employee.name, employee.role, employee.rank, employee.license, employee.phone_nr, employee.address, employee.email, employee.ssn])
-        
+                employee_table.add_row(
+                    [
+                        employee.name,
+                        employee.role,
+                        employee.rank,
+                        employee.license,
+                        employee.phone_nr,
+                        employee.address,
+                        employee.email,
+                        employee.ssn,
+                    ]
+                )
+
         print(employee_table)
         role = """ 
         
@@ -313,7 +321,9 @@ class employee:
         print(role)
         role_input = input("=> ")
         if role_input != "Pilot" and role_input != "Cabincrew" and role_input != "":
-            while role_input != "Pilot" and role_input != "Cabincrew" and role_input != "":
+            while (
+                role_input != "Pilot" and role_input != "Cabincrew" and role_input != ""
+            ):
                 print("That is not a real role! try again.")
                 role_input = input("=> ")
 
@@ -322,8 +332,20 @@ class employee:
         Rank"""
         print(rank)
         rank_input = input("=> ")
-        if rank_input != "Copilot" and rank_input != "Captain" and rank_input != "Flight Service Manager" and rank_input != "Flight Attendant" and rank_input != "":
-            while rank_input != "Copilot" and rank_input != "Captain" and rank_input != "Flight Service Manager" and rank_input != "Flight Attendant" and rank_input != "":
+        if (
+            rank_input != "Copilot"
+            and rank_input != "Captain"
+            and rank_input != "Flight Service Manager"
+            and rank_input != "Flight Attendant"
+            and rank_input != ""
+        ):
+            while (
+                rank_input != "Copilot"
+                and rank_input != "Captain"
+                and rank_input != "Flight Service Manager"
+                and rank_input != "Flight Attendant"
+                and rank_input != ""
+            ):
                 print("That is not a real rank! try again.")
                 rank_input = input("=> ")
 
@@ -391,15 +413,24 @@ class employee:
             if command == "b":
                 return
 
-
     def display_every_employee(self):
-        
         all_employees = Logic_wrapper().get_all_crew()
         employee_table = PrettyTable()
         fieldnames = EMPLOYEE_FILDNAMES
-        employee_table.field_names = (fieldnames)
+        employee_table.field_names = fieldnames
 
         for employee in all_employees:
-            employee_table.add_row([employee.name, employee.role, employee.rank, employee.license, employee.phone_nr, employee.address, employee.email, employee.ssn])
+            employee_table.add_row(
+                [
+                    employee.name,
+                    employee.role,
+                    employee.rank,
+                    employee.license,
+                    employee.phone_nr,
+                    employee.address,
+                    employee.email,
+                    employee.ssn,
+                ]
+            )
 
         print(employee_table)
