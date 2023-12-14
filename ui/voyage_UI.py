@@ -47,6 +47,9 @@ class voyage:
                 print("\n\tWe dont fly to any destination with that destination ID! Please try again.")
                 arr_at_input = input("=>: ")
 
+        
+
+        
         flight_nr_input = Logic_wrapper().generate_flight_number(arr_at_input)
 
         dep_time = """
