@@ -63,6 +63,62 @@ class destination:
             contact_nr_input,
         )
 
+    def update_destination(self):
+        from logic.logic_wrapper import Logic_wrapper
+
+        print("\033[2J\033[H")
+        new_destination = """
+        Please Input The Following Details
+        ----------------------------------
+        Input Destination """
+        print(new_destination)
+        dest_input = input("=> ")
+
+        destination_id = """
+        
+        Input destination ID (XXX)"""
+        print(destination_id)
+        dest_id_input = input("=> ")
+
+        distance = """ 
+        
+        distance from iceland (km)"""
+        print(distance)
+        dist_input = input("=> ")
+
+        duration = """
+        
+        Duration (hrs:minutes)"""
+        print(duration)
+        dura_input = input("=> ")
+
+        Contact = """
+        
+        Emergency contact"""
+        print(Contact)
+        contact_input = input("=> ")
+
+        Number = """
+        
+        emergency contact phone_nr"""
+        print(Number)
+        contact_nr_input = input("=> ")
+
+        options = """
+        [B]ACK
+        """
+        print(options)
+
+        return Logic_wrapper().create_destination(
+            dest_input,
+            dest_id_input,
+            dist_input,
+            dura_input,
+            contact_input,
+            contact_nr_input,
+        )
+
+
     def input_for_create_new_destination(self):
         self.create_new_destination()
         while True:
