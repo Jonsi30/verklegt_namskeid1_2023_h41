@@ -13,9 +13,9 @@ class Logic_wrapper:
         self.logic_employees = LogicEmployees()
         self.logic_aircraft = LogicAircraft()
 
-    def create_destination(self, dest_input, dist_input, dura_input, contact_input, contact_nr_input):
+    def create_destination(self, dest_input, dest_id_input, dist_input, dura_input, contact_input, contact_nr_input):
         """Returns a new destination to the destination list"""
-        return self.data_wrapper.create_destination(dest_input, dist_input, dura_input, contact_input, contact_nr_input)
+        return self.data_wrapper.create_destination(dest_input, dest_id_input, dist_input, dura_input, contact_input, contact_nr_input)
 
     def get_all_destinations(self):
         """EKKI SNERTA"""
@@ -91,6 +91,10 @@ class Logic_wrapper:
 
     def get_all_voyages(self):
         return self.data_wrapper.get_all_voyages()
+    
+    def generate_flight_number(self, dest_id_input):
+        """Returns a flight nubmer from the destination ID that the user put in"""
+        return self.logic_destinations.generate_flight_number(dest_id_input)
 
     def display_voyage(self):
         """Returns all voyages for the managers so the manager can put staff on voyage"""

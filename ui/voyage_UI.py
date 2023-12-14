@@ -1,5 +1,5 @@
-from logic.logic_wrapper import Logic_wrapper
 import os
+from logic.logic_wrapper import Logic_wrapper
 from ui.ASCII import ascii
 from prettytable import PrettyTable
 
@@ -8,25 +8,46 @@ class voyage:
         self.get_all_voyages = Logic_wrapper()
 
     def create_new_voyage(self):
-        id = """
-        Input ID(fx. 1111)"""
+        voyage_id_list = []
+        Destination_id_list = []
+
+        for voyage in Logic_wrapper().get_all_voyages():
+            voyage_id_list.append(voyage.id)
+
+        for destination in Logic_wrapper().get_all_destinations():
+            Destination_id_list.append(destination.destination_id)
+
+        id = f"""
+        Input a new ID(fx. 1111)
+        Id's that are unavailable are as follows: {", ".join(voyage_id_list)}"""
         print(id)
         id_input = input("=>: ")
+        if id_input in voyage_id_list:
+            while id_input in voyage_id_list:
+                print("ID has already been created! Please try again.")
+                id_input = input("=>: ")
 
-        flight_nr = """
-        Input Flight Number(fx. NA010)"""
-        print(flight_nr)
-        flight_nr_input = input("=>: ")
 
-        dep_from = """
-        Input Departure from(fx. RKV)"""
+        dep_from = f"""
+        Input the destination ID For the place you are Departuring from(fx. RVK)
+        Destination ID's we fly too are: {", ".join(Destination_id_list)}"""
         print(dep_from)
         dep_from_input = input("=>: ")
+        if dep_from_input not in Destination_id_list:
+            while dep_from_input not in Destination_id_list:
+                print("\n\tWe dont fly from any destination with that destination ID! Please try again.")
+                dep_from_input = input("=>: ")
 
         arr_at = """
-        Input Arrival at(fx. TOR)"""
+        Input destination ID for the place you are arriving at(fx. TOR)"""
         print(arr_at)
         arr_at_input = input("=>: ")
+        if arr_at_input not in Destination_id_list:
+            while arr_at_input not in Destination_id_list:
+                print("\n\tWe dont fly to any destination with that destination ID! Please try again.")
+                arr_at_input = input("=>: ")
+
+        flight_nr_input = Logic_wrapper().generate_flight_number(arr_at_input)
 
         dep_time = """
         Input Departure time(fx. 00:00 16.12.2023)"""
@@ -43,32 +64,31 @@ class voyage:
         print(dep_time_back)
         dep_time_back_input = input("=>: ")
 
-
         arr_time_back = """
         Input Arrival time Back(17:00 16.12.2023)"""
         print(arr_time_back)
         arr_time_back_input = input("=>: ")
 
         available_airplanes = Logic_wrapper().get_available_airplanes(dep_time_input)
-        
+        available_airplanes_insignia_list = []
+
         plane_table = PrettyTable()
         fieldnames = ["Plane Insignia", "Plane Type ID"]
         plane_table.field_names = fieldnames
         for aircraft in available_airplanes:
             plane_table.add_row([aircraft.plane_insignia, aircraft.plane_type_id])
+            available_airplanes_insignia_list.append(aircraft.plane_insignia)
 
-        print(plane_table)
+        print(f"\nAvailable planes:\n{plane_table}")
 
         plane_insignia = """
-        Input Plane Insignia(TF-XXX)"""
+        Input Plane Insignia of an available plane fx.(TF-XXX)"""
         print(plane_insignia)
         plane_insignia_input = input("=>: ")
-
-        options = """
-        [B]ACK
-        """
-
-        print(options)
+        if plane_insignia_input not in available_airplanes_insignia_list:
+            while plane_insignia_input not in available_airplanes_insignia_list:
+                print("\n\tNo airplane with that plane insignia is available! Please try again.")
+                plane_insignia_input = input("=>: ")
 
         return Logic_wrapper().create_voyage(
             id_input,
@@ -86,14 +106,22 @@ class voyage:
             "Unassigned",
         )
 
+
     def input_for_create_new_voyage(self):
         while True:
             os.system("cls" if os.name == "nt" else "clear")
             self.create_new_voyage()
+            options = """
+        Voyage has succesfully been created!
+        [B]ACK
+        """
+
+            print(options) 
             command = input("=> ").lower()
 
             if command == "b":
                 return
+
 
     def Voyage_list_director(self):
         while True:
@@ -110,6 +138,7 @@ class voyage:
 
             if command == "b":
                 return
+
 
     def Voyage_list_manager(self):
         while True:
@@ -134,12 +163,9 @@ class voyage:
             elif command == "a":
                 self.input_for_create_add_crew()
 
-    def get_specific_day_voyages(self):
-        return
 
     def add_crew_to_voyage(self):
-        
-        
+        """This function lets the manager add Employees to a particular trip, after that it returns the information that the manager put in and cheanges the voyage data."""
         upcoming_voyages = Logic_wrapper().get_all_voyages()
 
         upcoming_voyage_list = []
@@ -147,8 +173,11 @@ class voyage:
             
             if voyage.captain and voyage.copilot and voyage.head_of_service and voyage.flight_attendant == 'Unassigned':
                 upcoming_voyage_list.append(voyage)
-
         
+        if upcoming_voyage_list == []:
+            print("\nThere are no voyages that needs employees to be added to!")
+            return
+
         fieldnames = ["Id", "Flight Nr", "Plane Insignia", "Captain", "Copilot", "Head of Service", "Flight Attendant"]
         table = PrettyTable()
         table.field_names = fieldnames
@@ -170,7 +199,6 @@ class voyage:
                 print("That id is not in the list above! Try again") 
                 print() 
         
-
         for voyage in voyage_in_work:
             fieldnames = ["Id", "Flight Nr", "Plane Insignia", "Captain", "Copilot", "Head of Service", "Flight Attendant"]
             table = PrettyTable()
@@ -185,7 +213,6 @@ class voyage:
             print((table))
             print()
             
-
         captain_list = []
         copilot_list = []
         head_of_service_list = []
@@ -203,7 +230,6 @@ class voyage:
             elif rank == 'Flight Attendant':
                 flight_attendant_list.append([name, role, rank])
 
-
         captain_table = Logic_wrapper().table_making(captain_list)
         copilot_table = Logic_wrapper().table_making(copilot_list)
         head_of_service_table = Logic_wrapper().table_making(head_of_service_list)
@@ -213,11 +239,9 @@ class voyage:
         copilot = Logic_wrapper().select_position(copilot_list, copilot_table, 'Copilot', 'Copilots'  )
         head_of_service = Logic_wrapper().select_position(head_of_service_list, head_of_service_table, 'Flight Service Manager', 'Flight Service Managers' )
         flight_attendant = Logic_wrapper().select_position(flight_attendant_list, flight_attendant_table, 'Flight Attendant', 'Flight Attendants')
-        
 
-   
-
-
+        print("Voyage has been staffed succesfully!")
+    
         return Logic_wrapper().add_voyage_crew(
             id_number,
             captain,
@@ -229,6 +253,10 @@ class voyage:
     def input_for_create_add_crew(self):
         self.add_crew_to_voyage()
         while True:
+            options = """
+        [B]ACK
+        """
+            print(options)
             command = input("=> ").lower()
             if command == "b":
                 return

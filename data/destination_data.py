@@ -4,6 +4,7 @@ from ui.Destination_UI import destination
 
 FIELDNAMES = [
     "Destination",
+    "Destination ID",
     "Distance from Iceland",
     "Flight Time",
     "Emergency Contact",
@@ -23,6 +24,7 @@ class Destination_data:
                 ret_list.append(
                     Destination(
                         row["Destination"],
+                        row["Destination ID"],
                         row["Distance from Iceland"],
                         row["Flight Time"],
                         row["Emergency Contact"],
@@ -40,6 +42,7 @@ class Destination_data:
             writer.writerow(
                 {
                     "Destination": destination.destination,
+                    "Destination ID": destination.destination_id,
                     "Distance from Iceland": destination.distance_from_ice,
                     "Flight Time": destination.flight_time,
                     "Emergency Contact": destination.emergency_contact,
@@ -62,6 +65,7 @@ class Destination_data:
                 new_list.append(
                     Destination(
                         updated_dest.destination,
+                        updated_dest.destination_id,
                         updated_dest.distance_from_ice,
                         updated_dest.flight_time,
                         updated_dest.emergency_contact,
@@ -72,6 +76,7 @@ class Destination_data:
                 new_list.append(
                     (
                         dest.destination,
+                        dest.destination_id,
                         dest.distance_from_ice,
                         dest.flight_time,
                         dest.emergency_contact,

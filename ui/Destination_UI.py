@@ -14,9 +14,15 @@ class destination:
         new_destination = """
         Please Input The Following Details
         ----------------------------------
-        destination"""
+        Input New Destination"""
         print(new_destination)
         dest_input = input("=> ")
+
+        destination_id = """
+        
+        Input destination ID"""
+        print(destination_id)
+        dest_id_input = input("=> ")
 
         distance = """ 
         
@@ -47,7 +53,7 @@ class destination:
         """
         print(options)
 
-        return Logic_wrapper().create_destination(dest_input, dist_input, dura_input, contact_input, contact_nr_input)
+        return Logic_wrapper().create_destination(dest_input, dest_id_input, dist_input, dura_input, contact_input, contact_nr_input)
 
     def input_for_create_new_destination(self):
         self.create_new_destination()
@@ -65,6 +71,7 @@ class destination:
         all_dest = Logic_wrapper().get_all_destinations()
         fieldnames = [
             "Destination",
+            "Destination ID",
             "Distance from Iceland(KM)",
             "Flight Time",
             "Emergency Contact",
@@ -76,6 +83,7 @@ class destination:
             table.add_row(
                 [
                     destination.destination,
+                    destination.destination_id,
                     destination.distance_from_ice,
                     destination.flight_time,
                     destination.emergency_contact,
