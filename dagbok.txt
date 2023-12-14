@@ -231,7 +231,28 @@ Forgangsverkefni:
 Klára
 
 
+13. Desember, Dagur 13
+Mættir:
+Jón, Steinar, Sindri, Helgi, Tómas
 
+Morgunfundur:
+Farið yfir hvað þyrfti að gera í dag til þess að vera komnir sem lengst
+
+Hver er að gera hvað:
+Jón, Steinar og Sindri eru að lagfæra kóðann og fara yfir hvað þarf að lagfæra
+Tómas er að vinna í UI
+Helgi er að vinna í Hönnunarskýrsluni
+
+Forgangsverkefni:
+Klára
+
+
+14.Desember, Dagur 14
+Mættir:
+Jón, Steinar, Sindri, Helgi, Tómas
+
+Morgunfundur:
+Farið yfir hvað þyrfti að gera til þess að allt virki rétt
 
 
 

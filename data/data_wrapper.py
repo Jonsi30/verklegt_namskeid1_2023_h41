@@ -64,8 +64,9 @@ class Data_wrapper:
     def get_all_employees(self):
         return self.employee_data.get_all_employees()
 
-    def create_employee(self, employee_info):
-        return self.employee_data.create_employee(employee_info)
+    def create_employee(self, name_input, role_input, rank_input, License_input, phone_input, address_input, email_input, ssn_input):
+        from model.employee import Employee
+        return self.employee_data.create_employee(Employee(name_input, role_input, rank_input, License_input, phone_input, address_input, email_input, ssn_input))
 
     def update_employee(self, ssn_input, role_input, rank_input, License_input, phone_input, address_input, email_input):
         from model.employee import Employee

@@ -17,9 +17,9 @@ class Logic_wrapper:
         """Returns a new destination to the destination list"""
         return self.data_wrapper.create_destination(dest_input, dest_id_input, dist_input, dura_input, contact_input, contact_nr_input)
 
-    def create_employee(self, new_info):
+    def create_employee(self, name_input, role_input, rank_input, License_input, phone_input, address_input, email_input, ssn_input):
         """Returns a new employee to the employee list"""
-        return self.logic_employees.create_employee(new_info)
+        return self.data_wrapper.create_employee(name_input, role_input, rank_input, License_input, phone_input, address_input, email_input, ssn_input)
     
     def create_aircraft(self, insigna_input, type_input, manu_input, seat_input):
         """Sends the data from the UI to the Data_wrapper"""
