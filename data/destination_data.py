@@ -11,7 +11,6 @@ FIELDNAMES = [
     "Emergency Contact Phone Number",
 ]
 
-
 class Destination_data:
     def __init__(self):
         self.file_name = "../verklegt_namskeid1_2023_h41/files/destinations.csv"  # filenameið sem inniheldur info um þetta class

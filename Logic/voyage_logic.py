@@ -1,5 +1,5 @@
-from data.data_wrapper import Data_wrapper
 import datetime
+from data.data_wrapper import Data_wrapper
 from model.voyage_model import Voyage_Model
 from prettytable import PrettyTable
 
@@ -7,8 +7,6 @@ from prettytable import PrettyTable
 class VoyageLogic:
     def __init__(self):
         self.voyage = Data_wrapper()
-
-        
 
     def create_voyage(
         self,
@@ -158,3 +156,4 @@ class VoyageLogic:
             table.add_row([name, role, rank])
 
         return table
+    
