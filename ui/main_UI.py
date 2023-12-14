@@ -19,7 +19,7 @@ class main_UI:
     def landing_page_input_prompt(self):
         lp = ascii.landing_page(self)
         print(lp)
-        m = main_UI()
+
         while True:
             command = input("=> ")
             command = command.lower()
@@ -28,9 +28,11 @@ class main_UI:
                 print("shutting down")
                 break
             elif command == "m":
-                m.manager_menu_input_prompt()
+                self.manager_menu_input_prompt()
             elif command == "d":
-                m.director_menu_input_prompt()
+                self.director_menu_input_prompt()
+            elif command == "e":
+                employee().get_certain_employee_schedule()
             else:
                 print("invalid input!")
 
@@ -42,6 +44,7 @@ class main_UI:
     [0] Voyage List  
     [1] View All Employees
 
+    
     [Q]UIT
     """
 
@@ -106,8 +109,3 @@ class main_UI:
                 destination().get_all_destinations()
             else:
                 print("invalid input!")
-
-    def employee_menu(self):
-        print("Please Enter Your SSN:")
-        ssn = input("=> ")
-        return ssn

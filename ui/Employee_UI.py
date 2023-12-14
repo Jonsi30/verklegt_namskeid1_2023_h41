@@ -98,7 +98,6 @@ class employee:
         while True:
             os.system("cls" if os.name == "nt" else "clear")
             self.display_every_employee()
-            print("ALL EMPLOYEES")
             options = """ 
             [B]ACK
 
@@ -163,7 +162,6 @@ class employee:
         [P]ILOTS (see all)
         [C]ABIN CREW (see all)
         [D]ISPLAY ALL EMPLOYEES (see all)
-        [S]CHEDULE FOR EMPLOYEE
 
         [E]DIT EMPLOYEE
         [N]EW EMPLOYEE
@@ -184,8 +182,6 @@ class employee:
                 self.get_all_cabin_crew()
             elif command == "d":
                 self.get_all_employees()
-            elif command == "s":
-                self.get_certain_employee_schedule()
             elif command == "n":
                 self.create_new_employee()
             elif command == "e":
@@ -200,14 +196,14 @@ class employee:
             schedule = Logic_wrapper().get_certain_employee_schedule(ssn)
             print(schedule)
             options = """ 
-            [B]ACK
+            [Q]UIT
 
             """
             print(options)
             command = input("=> ")
             command = command.lower()
-            if command == "b":
-                return
+            if command == "q":
+                break
 
             return ssn
 
