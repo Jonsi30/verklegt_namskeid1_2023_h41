@@ -1,7 +1,10 @@
-import datetime
+
 from data.data_wrapper import Data_wrapper
 from model.voyage_model import Voyage_Model
 from prettytable import PrettyTable
+import datetime
+from datetime import timedelta
+from logic.logic_employees import LogicEmployees
 
 
 class VoyageLogic:
@@ -42,12 +45,17 @@ class VoyageLogic:
 
         return self.voyage.create_voyage(voyage_info)
 
-    def get_week_number(self, year_number: int, week_number: int) -> list:
-        listi = self.voyage.get_all_voyages()
+    def get_employee_week_schedule(self, year_number: int, week_number: int, ssn: str) -> list:
+        all_voayges = self.voyage.get_all_voyages()
+        employee = LogicEmployees().get_by_ssn(ssn)
+        name = employee[0]
+        name = name.name
+        
+        
         voyage_list = []
 
-        for item in listi:
-            date = item["arr_time_back"][6::]
+        for voyage in all_voayges:
+            date = voyage.arr_time_back[6::]
             year = date[6::]
             year = int(year)
             if year == year_number:
@@ -59,8 +67,9 @@ class VoyageLogic:
                 day = int(day)
                 real_week = datetime.date(year, month, day).isocalendar()[1]
                 if real_week == week_number:
-                    voyage_list.append(item)
-
+                    if voyage.captain == name or voyage.copilot == name or voyage.head_of_service == name or voyage.flight_attendant == name:
+                        voyage_list.append(voyage)
+        
         return voyage_list
 
     def display_voyage_manager(self):
@@ -121,3 +130,53 @@ class VoyageLogic:
 
         return table
     
+    def time_formatter(self, departure_time, flight_time):
+        time = departure_time[:6]
+        
+        day = int(departure_time[6:8])
+        month =  int(departure_time[9:11])
+        year = int(departure_time[12:])
+
+        hours_one = int(flight_time[:2])
+        hours_two = int(time[:2])
+        minutes_one = int(flight_time[3:])
+        minutes_two = int(time[3:])
+
+        all_hours = (hours_one + hours_two)
+        all_minutes = minutes_one + minutes_two
+
+        return day, month, year, all_hours, all_minutes
+    
+    def arrival_time_and_date(self, day, month, year, all_hours, all_minutes):
+        day_added = 0
+        
+        if all_minutes >= 60:
+            divmodminutes = divmod(all_minutes, 60)
+            all_minutes = divmodminutes[1]
+            all_hours += 1
+
+        if all_hours > 24:
+            divmodhours = divmod(all_hours, 24)
+            all_hours = divmodhours[1]
+            day_added += 1
+            
+
+        if all_minutes < 10:
+            all_minutes = f"0{all_minutes}"
+
+        if all_hours < 10:
+            all_hours = f"0{all_hours}"
+
+        new_time = f"{all_hours}:{all_minutes}"
+
+
+
+        new_date = datetime(year, month, day) + timedelta(days=day_added)
+        new_date = str(new_date)
+        day = new_date[8:10]
+        month = new_date[5:7]
+        year = new_date[:4]
+
+
+        arrival_time = f"{new_time} {day}.{month}.{year}"
+        return(arrival_time)

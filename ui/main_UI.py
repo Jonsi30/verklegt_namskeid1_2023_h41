@@ -21,6 +21,7 @@ class main_UI:
         print(lp)
 
         while True:
+
             command = input("=> ")
             command = command.lower()
             if command == "q":

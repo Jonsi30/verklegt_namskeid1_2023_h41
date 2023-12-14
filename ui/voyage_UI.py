@@ -10,12 +10,14 @@ class voyage:
     def create_new_voyage(self):
         voyage_id_list = []
         Destination_id_list = []
+        all_destinations = []
 
         for voyage in Logic_wrapper().get_all_voyages():
             voyage_id_list.append(voyage.id)
 
         for destination in Logic_wrapper().get_all_destinations():
             Destination_id_list.append(destination.destination_id)
+            all_destinations.append(destination)
 
         id = f"""
         Input a new ID(fx. 1111)
@@ -27,19 +29,9 @@ class voyage:
                 print("ID has already been created! Please try again.")
                 id_input = input("=>: ")
 
-
-        dep_from = f"""
-        Input the destination ID For the place you are Departuring from(fx. RVK)
+        arr_at = f"""
+        Input destination ID for the place you are arriving at(fx. TOR)
         Destination ID's we fly too are: {", ".join(Destination_id_list)}"""
-        print(dep_from)
-        dep_from_input = input("=>: ")
-        if dep_from_input not in Destination_id_list:
-            while dep_from_input not in Destination_id_list:
-                print("\n\tWe dont fly from any destination with that destination ID! Please try again.")
-                dep_from_input = input("=>: ")
-
-        arr_at = """
-        Input destination ID for the place you are arriving at(fx. TOR)"""
         print(arr_at)
         arr_at_input = input("=>: ")
         if arr_at_input not in Destination_id_list:
@@ -47,30 +39,35 @@ class voyage:
                 print("\n\tWe dont fly to any destination with that destination ID! Please try again.")
                 arr_at_input = input("=>: ")
 
-        
+        flight_time = ""
 
-        
+        for dest in all_destinations:
+            if arr_at_input == dest.destination_id:
+                flight_time += dest.flight_time
+
+
+
         flight_nr_input = Logic_wrapper().generate_flight_number(arr_at_input)
 
         dep_time = """
         Input Departure time(fx. 00:00 16.12.2023)"""
         print(dep_time)
         dep_time_input = input("=>: ")
-
-        arr_time = """
-        Input Arrival time(05:00 16.12.2023)"""
-        print(arr_time)
-        arr_time_input = input("=>: ")
+        
+        day, month, year, all_hours, all_minutes = Logic_wrapper().date_and_time_formatter(dep_time_input, flight_time)
+        arr_time = Logic_wrapper().arrival_time_and_date(day, month, year, all_hours, all_minutes)
+        
+        print(f"\n\tThe arrival to {arr_at_input} is {arr_time}\n")
         
         dep_time_back = """
         Input Departure Time Back(12:00 16.12.2023)"""
         print(dep_time_back)
         dep_time_back_input = input("=>: ")
 
-        arr_time_back = """
-        Input Arrival time Back(17:00 16.12.2023)"""
-        print(arr_time_back)
-        arr_time_back_input = input("=>: ")
+        day, month, year, all_hours, all_minutes = Logic_wrapper().date_and_time_formatter(dep_time_back_input, flight_time)
+        arr_time_back = Logic_wrapper().arrival_time_and_date(day, month, year, all_hours, all_minutes)
+
+        print(f"\n\tThe arrival to RVK is {arr_time_back}\n")
 
         available_airplanes = Logic_wrapper().get_available_airplanes(dep_time_input)
         available_airplanes_insignia_list = []
@@ -96,12 +93,12 @@ class voyage:
         return Logic_wrapper().create_voyage(
             id_input,
             flight_nr_input,
-            dep_from_input,
+            "RVK",
             arr_at_input,
             dep_time_input,
-            arr_time_input,
+            arr_time,
             dep_time_back_input,
-            arr_time_back_input,
+            arr_time_back,
             plane_insignia_input,
             "Unassigned",
             "Unassigned",

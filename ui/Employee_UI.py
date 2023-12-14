@@ -162,6 +162,7 @@ class employee:
         [P]ILOTS (see all)
         [C]ABIN CREW (see all)
         [D]ISPLAY ALL EMPLOYEES (see all)
+        [G]ET EMPLOYEE SCHEDULE BY WEEK
 
         [E]DIT EMPLOYEE
         [N]EW EMPLOYEE
@@ -186,16 +187,17 @@ class employee:
                 self.create_new_employee()
             elif command == "e":
                 self.input_for_edit_employee()
+            elif command == "g":
+                self.get_certain_employee_schedule()
             else:
                 print("invalid input!")
 
     def get_certain_employee_schedule(self):
         while True:
-            logic = Logic_wrapper()
             print("\033[2J\033[H")
             ssn = self.validate_ssn()
-            schedule = Logic_wrapper().get_certain_employee_schedule(ssn)
-            print(schedule)
+            employee_voyages = Logic_wrapper().get_by_ssn(ssn)
+            
             options = """ 
             [Q]UIT
 
