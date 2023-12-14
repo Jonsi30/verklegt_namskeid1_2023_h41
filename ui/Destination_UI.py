@@ -109,7 +109,7 @@ class destination:
         """
         print(options)
 
-        return Logic_wrapper().create_destination(
+        return Logic_wrapper().update_destination(
             dest_input,
             dest_id_input,
             dist_input,
