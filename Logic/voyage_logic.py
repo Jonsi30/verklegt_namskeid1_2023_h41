@@ -87,7 +87,7 @@ class VoyageLogic:
             flight_nr_back = flight_nr_new + 1
             flight_nr_back = f"NA0{flight_nr_back}"
 
-            result = f"Voyage ID: {id}\n\nFlight from Iceland: {flight_nr}\nDeparture from: {dep_from}\tDeparting time: {dep_time}\nArriving too: {arr_at}\tArrival time: {arr_time}\n\nFlight to Iceland: {flight_nr_back}\nDeparture from: {arr_at}\nDeparting time: {dep_time_back}\nArriving too: {dep_from}\tArrival time: {arr_time_back}\n\nEMPLOYEES:\nCaptain: {captain}\nCopilot: {copilot}\nHead of Service: {head_of_service}\nFlight Attendant: {flight_attendant}\nPlane insignia: {plane_insignia}\n\n{voyage_sep}\n"
+            result = f"Voyage ID: {id}\n\nFlight from Iceland: {flight_nr}\nDeparture from: {dep_from}\tDeparting time: {dep_time}\nArriving too: {arr_at}\tArrival time: {arr_time}\n\nFlight to Iceland: {flight_nr_back}\nDeparture from: {arr_at}\tDeparting time: {dep_time_back}\nArriving too: {dep_from}\tArrival time: {arr_time_back}\n\nEMPLOYEES:\nCaptain: {captain}\nCopilot: {copilot}\nHead of Service: {head_of_service}\nFlight Attendant: {flight_attendant}\nPlane insignia: {plane_insignia}\n\n{voyage_sep}\n"
             results.append(result)
         
         return results
