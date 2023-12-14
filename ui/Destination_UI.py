@@ -85,24 +85,28 @@ class destination:
 
         distance = """ 
         
+        Press enter if you dont want to change this attribute.
         distance from iceland (km), fx. 300"""
         print(distance)
         dist_input = input("=> ")
 
         duration = """
         
+        Press enter if you dont want to change this attribute.
         Duration (hrs:minutes)"""
         print(duration)
         dura_input = input("=> ")
 
         Contact = """
         
+        Press enter if you dont want to change this attribute.
         Emergency contact"""
         print(Contact)
         contact_input = input("=> ")
 
         Number = """
         
+        Press enter if you dont want to change this attribute.
         emergency contact phone_nr"""
         print(Number)
         contact_nr_input = input("=> ")
