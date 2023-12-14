@@ -21,6 +21,43 @@ class Logic_wrapper:
         """Returns a new employee to the employee list"""
         return self.logic_employees.create_employee(new_info)
     
+    def create_aircraft(self, insigna_input, type_input, manu_input, seat_input):
+        """Sends the data from the UI to the Data_wrapper"""
+        return self.data_wrapper.create_new_aircraft(insigna_input, type_input, manu_input, seat_input)
+    
+    def create_voyage(
+        self,
+        id_input,
+        flight_nr_input,
+        dep_from_input,
+        arr_at_input,
+        dep_time_input,
+        arr_time_input,
+        dep_time_back_input,
+        arr_time_back_input,
+        plane_insignia_input,
+        captain,
+        copilot,
+        head_of_service,
+        flight_attendant,
+    ):
+        return Data_wrapper().create_voyage(
+            id_input,
+            flight_nr_input,
+            dep_from_input,
+            arr_at_input,
+            dep_time_input,
+            arr_time_input,
+            dep_time_back_input,
+            arr_time_back_input,
+            plane_insignia_input,
+            captain,
+            copilot,
+            head_of_service,
+            flight_attendant,
+        )
+    
+    
     def get_all_pilots(self):
         """Returns all pilots"""
         return self.logic_employees.get_all_pilots()
@@ -53,9 +90,7 @@ class Logic_wrapper:
 
     
     
-    def create_aircraft(self, insigna_input, type_input, manu_input, seat_input):
-        """Sends the data from the UI to the Data_wrapper"""
-        return self.data_wrapper.create_new_aircraft(insigna_input, type_input, manu_input, seat_input)
+    
     
     def get_available_airplanes(self, date):
         return self.logic_aircraft.get_available_aircraft(date)
@@ -73,12 +108,6 @@ class Logic_wrapper:
     def add_voyage_crew(self, voyage_id_input, captain_input, copilot_input, head_of_service_input, flight_attendant_input):
         return Data_wrapper().add_voyage_crew(voyage_id_input, captain_input, copilot_input, head_of_service_input, flight_attendant_input)
 
-    
-    
-    
-    
-
-    
 
     def update_destination(self, new_info):
         """Returns an updated list of destinations"""
@@ -124,36 +153,5 @@ class Logic_wrapper:
     def get_certain_employee_schedule(self, ssn):
         return self.logic_employees.get_schedule_by_ssn(ssn)
 
-    def create_voyage(
-        self,
-        id_input,
-        flight_nr_input,
-        dep_from_input,
-        arr_at_input,
-        dep_time_input,
-        arr_time_input,
-        dep_time_back_input,
-        arr_time_back_input,
-        plane_insignia_input,
-        captain,
-        copilot,
-        head_of_service,
-        flight_attendant,
-    ):
-        return Data_wrapper().create_voyage(
-            id_input,
-            flight_nr_input,
-            dep_from_input,
-            arr_at_input,
-            dep_time_input,
-            arr_time_input,
-            dep_time_back_input,
-            arr_time_back_input,
-            plane_insignia_input,
-            captain,
-            copilot,
-            head_of_service,
-            flight_attendant,
-        )
     
     
