@@ -86,11 +86,6 @@ class Logic_wrapper:
         """Returns all employess"""
         return self.logic_employees.get_all_employees()
     
-
-
-    
-    
-    
     
     def get_available_airplanes(self, date):
         return self.logic_aircraft.get_available_aircraft(date)
@@ -129,16 +124,11 @@ class Logic_wrapper:
         """Returns the employee of given social security number"""
         return self.logic_employees.get_by_ssn(get_ssn)
 
-    def check_if_available(self):
-        pass
-
     def select_position(self, employee_list, table, role, rank):
         return self.voyage_logic.select_position(employee_list, table, role, rank)
     
     def table_making(self, list):
         return self.voyage_logic.table_making(list)
-
-    
     
     def generate_flight_number(self, dest_id_input):
         """Returns a flight nubmer from the destination ID that the user put in"""
@@ -147,8 +137,6 @@ class Logic_wrapper:
     def display_voyage(self):
         """Returns all voyages for the managers so the manager can put staff on voyage"""
         return self.voyage_logic.display_voyage_manager()
-
-    
 
     def get_certain_employee_schedule(self, ssn):
         return self.logic_employees.get_schedule_by_ssn(ssn)
