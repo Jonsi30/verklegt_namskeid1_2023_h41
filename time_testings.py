@@ -5,7 +5,8 @@ def main():
     dep_time = '02:35 16.12.2023'
     flight_time = '23:30'
     day, month, year, all_hours, all_minutes = time_formatter(dep_time, flight_time)
-    print(adding_time(day, month, year, all_hours, all_minutes))
+    arrival_date = (arrival_time_and_date(day, month, year, all_hours, all_minutes))
+    
 
 def time_formatter(departure_time, flight_time):
     time = departure_time[:6]
@@ -24,7 +25,7 @@ def time_formatter(departure_time, flight_time):
 
     return day, month, year, all_hours, all_minutes
     
-def adding_time(day, month, year, all_hours, all_minutes):
+def arrival_time_and_date(day, month, year, all_hours, all_minutes):
     day_added = 0
     
     if all_minutes > 60:

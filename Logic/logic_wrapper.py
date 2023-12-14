@@ -141,5 +141,9 @@ class Logic_wrapper:
     def get_certain_employee_schedule(self, ssn):
         return self.logic_employees.get_schedule_by_ssn(ssn)
 
+    def date_and_time_formatter(self, departure_time, flight_time):
+        return self.voyage_logic.time_formatter(departure_time, flight_time)
     
+    def arrival_time_and_date(self, day, month, year, all_hours, all_minutes):
+        return self.voyage_logic.arrival_time_and_date(day, month, year, all_hours, all_minutes)
     
