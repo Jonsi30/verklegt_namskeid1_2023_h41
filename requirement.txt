@@ -1,7 +1,11 @@
-
 Prettytable install guide.
+
 Fyrsta skref er að setja þetta að neðan í terminal.
+
 python -m pip install -U prettytable
+
 Næsta skref er að bæta þessu við inní terminal.
+
 python -m pip install -U git+https://github.com/jazzband/prettytable
+
 Þar af leiðandi ertu kominn með prettytable inní VSC hjá þér.
