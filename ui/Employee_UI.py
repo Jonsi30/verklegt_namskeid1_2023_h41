@@ -196,8 +196,30 @@ class employee:
         while True:
             print("\033[2J\033[H")
             ssn = self.validate_ssn()
-            employee_voyages = Logic_wrapper().get_by_ssn(ssn)
             
+            year = int(input("Enter in a year number: "))
+            if year < 2023 or year > 2026:
+                while year < 2023 or year > 2026:
+                    print("Invalid year number, try again")
+                    year = int(input("Enter in a year number: "))
+
+            week = int(input("Enter in a week number: "))
+            
+            if week > 52 or week < 1:
+                while week > 52 or week < 1:
+                    print("Invalid week number, try again")
+                    week = int(input("Enter in a week number: "))
+            
+            employee_voyages = Logic_wrapper().get_employee_week_schedule(year, week, ssn)
+            voyage_table = PrettyTable()
+            fieldnames = ["Name", "Voyage Id", ""]
+            
+            if employee_voyages:
+                for voyage in employee_voyages:
+                    
+
+
+            else: print(f"No voyages scheduled for this employee in the week nr: {week} in the year: {year}")
             options = """ 
             [Q]UIT
 
