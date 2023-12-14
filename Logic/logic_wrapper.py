@@ -108,7 +108,7 @@ class Logic_wrapper:
 
     def update_destination(self, destination_name, dest_id_input, dist_input, dura_input, contact_input, contact_nr_input):
         """Returns an updated list of destinations"""
-        return self.data_wrapper.update_destination(destination_name, dest_id_input, dist_input, dura_input, contact_input, contact_nr_input,)
+        return self.data_wrapper.update_destination(destination_name, dest_id_input, dist_input, dura_input, contact_input, contact_nr_input)
 
     def get_voyagelists_from_week(self, year_number, week_number):
         """Takes in a year, and a week for that given year, returns a list of all the voyages in a given week"""
