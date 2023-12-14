@@ -78,9 +78,6 @@ class Data_wrapper:
         from model.aircraft_model import Aircraft_Model
         return self.aircraft_data.create_aircraft(Aircraft_Model(insigna_input, type_input, manu_input, seat_input))
 
-    def get_employee_dict(self):
-        return self.employee_data.get_employee_dict()
-
     def update_destination(self, new_info):
         return self.destination_data.update_destination(new_info)
 
