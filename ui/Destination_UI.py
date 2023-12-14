@@ -65,24 +65,27 @@ class destination:
 
     def update_destination(self):
         from logic.logic_wrapper import Logic_wrapper
-
         print("\033[2J\033[H")
-        new_destination = """
-        Please Input The Following Details
-        ----------------------------------
-        Input Destination """
-        print(new_destination)
-        dest_input = input("=> ")
+        destination_ids = []
+
+        for destination in Logic_wrapper().get_all_destinations():
+            destination_ids.append(destination.destination_id)
 
         destination_id = """
-        
+        Please Input The Following Details
+        ----------------------------------
         Input destination ID (XXX)"""
         print(destination_id)
         dest_id_input = input("=> ")
 
+        if dest_id_input not in destination_ids:
+            while dest_id_input not in destination_ids:
+                print("That destination doesn't exist! Please try again.")
+                dest_id_input = input("=> ")
+
         distance = """ 
         
-        distance from iceland (km)"""
+        distance from iceland (km), fx. 300"""
         print(distance)
         dist_input = input("=> ")
 
@@ -110,7 +113,7 @@ class destination:
         print(options)
 
         return Logic_wrapper().update_destination(
-            dest_input,
+            "irrelevant",
             dest_id_input,
             dist_input,
             dura_input,
@@ -157,15 +160,19 @@ class destination:
         print((table))
 
         get_all_destinations = """
-        [N]EW 
+        [N]EW
+        [U]PDATE DESTINATION 
         [B]ACK
         """
         print(get_all_destinations)
 
         while True:
             command = input("=> ").lower()
-            if command == "n":
+            if command.lower() == "n":
                 self.create_new_destination()
                 break
+            elif command.lower() == "u":
+                self.update_destination()
             elif command == "b":
                 return
+            

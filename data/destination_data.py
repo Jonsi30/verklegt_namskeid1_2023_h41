@@ -60,27 +60,27 @@ class Destination_data:
         every_dest = all_dest.get_all_destination()
         new_list = []
         for dest in every_dest:
-            if dest.destination == updated_dest.destination:
+            if dest.destination_id == updated_dest.destination_id:
                 new_list.append(
-                    Destination(
-                        updated_dest.destination,
+                    ([
+                        dest.destination,
                         updated_dest.destination_id,
                         updated_dest.distance_from_ice,
                         updated_dest.flight_time,
                         updated_dest.emergency_contact,
                         updated_dest.emergency_contact_phone_nr,
-                    )
+                    ])
                 )
             else:
                 new_list.append(
-                    (
+                    ([
                         dest.destination,
                         dest.destination_id,
                         dest.distance_from_ice,
                         dest.flight_time,
                         dest.emergency_contact,
                         dest.emergency_contact_phone_nr,
-                    )
+                    ])
                 )
 
         f = open(self.file_name, "w")
@@ -93,8 +93,23 @@ class Destination_data:
 
             writer.writeheader()
 
-        for dest in new_list:
-            Destination_data().create_destination(dest)
+        for i, dest in enumerate(new_list):
+            destination, destination_id, distance_from_ice, flight_time, emergency_contact, emergency_contact_phone_nr = dest
+            
+            if destination == '':
+                destination = every_dest[i].destination
+            if destination_id == '':
+                destination_id = every_dest[i].destination_id
+            if distance_from_ice == '':
+                distance_from_ice = every_dest[i].distance_from_ice
+            if flight_time == '':
+                flight_time = every_dest[i].flight_time
+            if emergency_contact == '':
+                emergency_contact = every_dest[i].emergency_contact
+            if emergency_contact_phone_nr == '':
+                emergency_contact_phone_nr = every_dest[i].emergency_contact_phone_nr
+            
+            Destination_data().create_destination(Destination(destination, destination_id, distance_from_ice, flight_time, emergency_contact, emergency_contact_phone_nr))
 
 
 """
