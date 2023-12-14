@@ -67,13 +67,16 @@ class destination:
         from logic.logic_wrapper import Logic_wrapper
         print("\033[2J\033[H")
         destination_ids = []
+        destination_names = []
 
         for destination in Logic_wrapper().get_all_destinations():
             destination_ids.append(destination.destination_id)
+            
 
-        destination_id = """
+        destination_id = f"""
         Please Input The Following Details
         ----------------------------------
+        Destination ID's you can change are as follows: {", ".join(destination_ids)}
         Input destination ID (XXX)"""
         print(destination_id)
         dest_id_input = input("=> ")
@@ -111,7 +114,8 @@ class destination:
         print(Number)
         contact_nr_input = input("=> ")
 
-        options = """
+        options = f"""
+        You have succesfully changed the information details of destination {dest_id_input}!
         [B]ACK
         """
         print(options)
