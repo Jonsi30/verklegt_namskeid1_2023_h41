@@ -10,6 +10,7 @@ class destination:
 
     def create_new_destination(self):
         from logic.logic_wrapper import Logic_wrapper
+
         print("\033[2J\033[H")
         new_destination = """
         Please Input The Following Details
@@ -20,7 +21,7 @@ class destination:
 
         destination_id = """
         
-        Input destination ID"""
+        Input destination ID (XXX)"""
         print(destination_id)
         dest_id_input = input("=> ")
 
@@ -53,7 +54,14 @@ class destination:
         """
         print(options)
 
-        return Logic_wrapper().create_destination(dest_input, dest_id_input, dist_input, dura_input, contact_input, contact_nr_input)
+        return Logic_wrapper().create_destination(
+            dest_input,
+            dest_id_input,
+            dist_input,
+            dura_input,
+            contact_input,
+            contact_nr_input,
+        )
 
     def input_for_create_new_destination(self):
         self.create_new_destination()
