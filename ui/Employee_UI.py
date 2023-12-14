@@ -312,12 +312,20 @@ class employee:
         role"""
         print(role)
         role_input = input("=> ")
+        if role_input != "Pilot" and role_input != "Cabincrew" and role_input != "":
+            while role_input != "Pilot" and role_input != "Cabincrew" and role_input != "":
+                print("That is not a real role! try again.")
+                role_input = input("=> ")
 
         rank = """
         
         Rank"""
         print(rank)
         rank_input = input("=> ")
+        if rank_input != "Copilot" and rank_input != "Captain" and rank_input != "Flight Service Manager" and rank_input != "Flight Attendant" and rank_input != "":
+            while rank_input != "Copilot" and rank_input != "Captain" and rank_input != "Flight Service Manager" and rank_input != "Flight Attendant" and rank_input != "":
+                print("That is not a real rank! try again.")
+                rank_input = input("=> ")
 
         License = """
         
