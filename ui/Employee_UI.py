@@ -87,6 +87,7 @@ class employee:
     def get_all_employees(self):
         while True:
             os.system("cls" if os.name == "nt" else "clear")
+            self.display_every_employee()
             print("ALL EMPLOYEES")
             options = """ 
             [B]ACK
@@ -152,6 +153,7 @@ class employee:
         [A]VAILABLE EMPLOYEES
         [P]ILOTS (see all)
         [C]ABIN CREW (see all)
+        [D]ISPLAY ALL EMPLOYEES (see all)
         [S]CHEDULE FOR EMPLOYEE
 
         [E]DIT EMPLOYEE
@@ -171,6 +173,8 @@ class employee:
                 self.get_all_pilots()
             elif command == "c":
                 self.get_all_cabin_crew()
+            elif command == "d":
+                self.get_all_employees()
             elif command == "s":
                 self.get_certain_employee_schedule()
             elif command == "n":
