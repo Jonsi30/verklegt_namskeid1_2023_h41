@@ -85,8 +85,8 @@ class voyage:
         Input Plane Insignia of an available plane fx.(TF-XXX)"""
         print(plane_insignia)
         plane_insignia_input = input("=>: ")
-        if plane_insignia not in available_airplanes_insignia_list:
-            while plane_insignia not in available_airplanes_insignia_list:
+        if plane_insignia_input not in available_airplanes_insignia_list:
+            while plane_insignia_input not in available_airplanes_insignia_list:
                 print("\n\tNo airplane with that plane insignia is available! Please try again.")
                 plane_insignia_input = input("=>: ")
 
@@ -173,6 +173,10 @@ class voyage:
             
             if voyage.captain and voyage.copilot and voyage.head_of_service and voyage.flight_attendant == 'Unassigned':
                 upcoming_voyage_list.append(voyage)
+        
+        if upcoming_voyage_list == []:
+            print("\nThere are no voyages that needs employees to be added to!")
+            return
 
         fieldnames = ["Id", "Flight Nr", "Plane Insignia", "Captain", "Copilot", "Head of Service", "Flight Attendant"]
         table = PrettyTable()
@@ -235,6 +239,8 @@ class voyage:
         copilot = Logic_wrapper().select_position(copilot_list, copilot_table, 'Copilot', 'Copilots'  )
         head_of_service = Logic_wrapper().select_position(head_of_service_list, head_of_service_table, 'Flight Service Manager', 'Flight Service Managers' )
         flight_attendant = Logic_wrapper().select_position(flight_attendant_list, flight_attendant_table, 'Flight Attendant', 'Flight Attendants')
+
+        print("Voyage has been staffed succesfully!")
     
         return Logic_wrapper().add_voyage_crew(
             id_number,
@@ -248,7 +254,6 @@ class voyage:
         self.add_crew_to_voyage()
         while True:
             options = """
-        Voyage has been staffed succesfully!
         [B]ACK
         """
             print(options)
