@@ -29,10 +29,13 @@ class main_UI:
                 break
             elif command == "m":
                 self.manager_menu_input_prompt()
+                break
             elif command == "d":
                 self.director_menu_input_prompt()
+                break
             elif command == "e":
                 employee().get_certain_employee_schedule()
+                break
             else:
                 print("invalid input!")
 
