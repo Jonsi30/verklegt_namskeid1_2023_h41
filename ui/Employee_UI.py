@@ -222,6 +222,7 @@ class employee:
                 while year < 2023 or year > 2026:
                     print("Invalid year number, try again")
                     year = int(input("Enter in a year number: "))
+            
             try:
                 week = int(input("Enter in a week number: "))
                 
@@ -229,7 +230,10 @@ class employee:
                     while week > 52 or week < 1:
                         print("Invalid week number, try again")
                         week = int(input("Enter in a week number: "))
-            except ValueError: print("Invalid week number, try again")
+                        break
+            except ValueError: 
+                print("Invalid week number, try again")
+                    
             
             employee_voyages = Logic_wrapper().get_employee_week_schedule(year, week, ssn)
             voyage_table = PrettyTable()
