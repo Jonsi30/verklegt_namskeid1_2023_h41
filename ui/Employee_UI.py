@@ -76,7 +76,7 @@ class employee:
         """
         print(options)
 
-        return (
+        return Logic_wrapper().create_employee(
             name_input,
             role_input,
             rank_input,
