@@ -2,7 +2,7 @@
 from data.data_wrapper import Data_wrapper
 from model.voyage_model import Voyage_Model
 from prettytable import PrettyTable
-from datetime import datetime
+import datetime
 from datetime import timedelta
 
 class VoyageLogic:
@@ -46,7 +46,7 @@ class VoyageLogic:
     def get_week_number(self, year_number: int, week_number: int) -> list:
         listi = self.voyage.get_all_voyages()
         voyage_list = []
-
+        
         for item in listi:
             date = item["arr_time_back"][6::]
             year = date[6::]
