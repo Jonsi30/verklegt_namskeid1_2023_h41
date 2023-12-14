@@ -230,6 +230,7 @@ class employee:
                         print("Invalid week number, try again")
                         week = int(input("Enter in a week number: "))
             except ValueError: print("Invalid week number, try again")
+            
             employee_voyages = Logic_wrapper().get_employee_week_schedule(year, week, ssn)
             voyage_table = PrettyTable()
             fieldnames = ["Name", "Voyage Id", "Role", "Dep.Time", "Arr.Time Back", "Destination", "Week", "Year"]
