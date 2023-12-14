@@ -43,10 +43,10 @@ class VoyageLogic:
 
         return self.voyage.create_voyage(voyage_info)
 
-    def get_week_number(self, year_number: int, week_number: int) -> list:
+    def get_week_number(self, year_number: int, week_number: int, ssn: str) -> list:
         listi = self.voyage.get_all_voyages()
         voyage_list = []
-        
+
         for item in listi:
             date = item["arr_time_back"][6::]
             year = date[6::]
