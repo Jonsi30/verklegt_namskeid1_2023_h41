@@ -17,8 +17,9 @@ class voyage:
         for destination in Logic_wrapper().get_all_destinations():
             Destination_id_list.append(destination.destination_id)
 
-        id = """
-        Input a new ID(fx. 1111)"""
+        id = f"""
+        Input a new ID(fx. 1111)
+        Id's that are unavailable are as follows: {", ".join(voyage_id_list)}"""
         print(id)
         id_input = input("=>: ")
         if id_input in voyage_id_list:
@@ -78,10 +79,10 @@ class voyage:
             plane_table.add_row([aircraft.plane_insignia, aircraft.plane_type_id])
             available_airplanes_insignia_list.append(aircraft.plane_insignia)
 
-        print(f"\nAvailable planes:\n\t{plane_table}")
+        print(f"\nAvailable planes:\n{plane_table}")
 
         plane_insignia = """
-        Input Plane Insignia of an available aircraft(TF-XXX)"""
+        Input Plane Insignia of an available plane fx.(TF-XXX)"""
         print(plane_insignia)
         plane_insignia_input = input("=>: ")
         if plane_insignia not in available_airplanes_insignia_list:
