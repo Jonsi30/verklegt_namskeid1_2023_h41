@@ -26,10 +26,6 @@ class voyage:
                 print("ID has already been created! Please try again.")
                 id_input = input("=>: ")
 
-        flight_nr = """
-        Input Flight Number(fx. NA010)"""
-        print(flight_nr)
-        flight_nr_input = input("=>: ")
 
         dep_from = f"""
         Input the destination ID For the place you are Departuring from(fx. RVK)
@@ -49,6 +45,8 @@ class voyage:
             while arr_at_input not in Destination_id_list:
                 print("\n\tWe dont fly to any destination with that destination ID! Please try again.")
                 arr_at_input = input("=>: ")
+
+        flight_nr_input = Logic_wrapper().generate_flight_number(arr_at_input)
 
         dep_time = """
         Input Departure time(fx. 00:00 16.12.2023)"""
@@ -80,7 +78,7 @@ class voyage:
             plane_table.add_row([aircraft.plane_insignia, aircraft.plane_type_id])
             available_airplanes_insignia_list.append(aircraft.plane_insignia)
 
-        print(plane_table)
+        print(f"\nAvailable planes:\n\t{plane_table}")
 
         plane_insignia = """
         Input Plane Insignia of an available aircraft(TF-XXX)"""
@@ -89,13 +87,7 @@ class voyage:
         if plane_insignia not in available_airplanes_insignia_list:
             while plane_insignia not in available_airplanes_insignia_list:
                 print("\n\tNo airplane with that plane insignia is available! Please try again.")
-                plane_insignia = input("=>: ")
-
-
-        options = """
-        [B]ACK
-        """
-        print(options)
+                plane_insignia_input = input("=>: ")
 
         return Logic_wrapper().create_voyage(
             id_input,

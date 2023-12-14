@@ -91,6 +91,10 @@ class Logic_wrapper:
 
     def get_all_voyages(self):
         return self.data_wrapper.get_all_voyages()
+    
+    def generate_flight_number(self, dest_id_input):
+        """Returns a flight nubmer from the destination ID that the user put in"""
+        return self.logic_destinations.generate_flight_number(dest_id_input)
 
     def display_voyage(self):
         """Returns all voyages for the managers so the manager can put staff on voyage"""
