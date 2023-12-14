@@ -222,21 +222,32 @@ class employee:
                 while year < 2023 or year > 2026:
                     print("Invalid year number, try again")
                     year = int(input("Enter in a year number: "))
-
-            week = int(input("Enter in a week number: "))
-            
-            if week > 52 or week < 1:
-                while week > 52 or week < 1:
-                    print("Invalid week number, try again")
-                    week = int(input("Enter in a week number: "))
-            
+            try:
+                week = int(input("Enter in a week number: "))
+                
+                if week > 52 or week < 1:
+                    while week > 52 or week < 1:
+                        print("Invalid week number, try again")
+                        week = int(input("Enter in a week number: "))
+            except ValueError: print("Invalid week number, try again")
             employee_voyages = Logic_wrapper().get_employee_week_schedule(year, week, ssn)
             voyage_table = PrettyTable()
-            fieldnames = ["Name", "Voyage Id", ""]
+            fieldnames = ["Name", "Voyage Id", "Role", "Dep.Time", "Arr.Time Back", "Destination", "Week", "Year"]
+            voyage_table.field_names = fieldnames
             
+            name = ""
+            role = ""
+
+            all_employees = Logic_wrapper().get_all_employees()
+            for employee in all_employees:
+                if employee.ssn == ssn:
+                    name += employee.name
+                    role += employee.role
+
             if employee_voyages:
                 for voyage in employee_voyages:
-                    
+                    voyage_table.add_row([name, voyage.id, role, voyage.dep_time, voyage.arr_time_back, voyage.arr_at, week, year])
+                print(voyage_table)
 
 
             else: print(f"No voyages scheduled for this employee in the week nr: {week} in the year: {year}")
