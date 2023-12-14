@@ -104,8 +104,8 @@ class Logic_wrapper:
         """Returns all aircrafts and the info about the aircrafts"""
         return self.logic_aircraft.get_all_aircrafts()
 
-    def get_get_certain_employee_schedule(self):
-        return self
+    def get_certain_employee_schedule(self, ssn):
+        return self.logic_employees.get_schedule_by_ssn(ssn)
 
     def create_voyage(
         self,

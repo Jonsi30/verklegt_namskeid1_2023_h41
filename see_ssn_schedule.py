@@ -9,23 +9,36 @@ all_voyages = Logic_wrapper().get_all_voyages()
 
 def main():
 
-    ssn = '1212904889'
-    
-    #while validate == True:
-        #validate = valid_ssn(ssn)
+    ssn = valid_ssn()
     
     print(get_schedule_by_ssn(ssn))
 
-def valid_ssn(ssn) -> bool:
+def valid_ssn():
+    
     all_employees = Logic_wrapper().get_all_crew()
+    
+    ssn_table = PrettyTable()
+    fieldnames = ["Name", "SSN"]
+    ssn_table.field_names = fieldnames
+    
     ssn_list = []
+    
     for info in all_employees:
         ssn_list.append(info.ssn)
+        ssn_table.add_row([info.name, info.ssn])
+
     
-    if ssn in ssn_list:
-        return True
+    print(ssn_table)
+    ssn_input = input("Enter a ssn from the list above: ")
+
+    if ssn_input not in ssn_list:
+        while ssn_input not in ssn_list:
+            print(ssn_table)
+            print("That id is not in the list above, try again")
+            ssn_input = input("Enter a ssn from the list above: ")
     
-    return False
+    
+    return ssn_input
 
 
 def get_schedule_by_ssn(ssn):
@@ -46,13 +59,16 @@ def get_schedule_by_ssn(ssn):
 
     fieldnames = ["Voyage Id", "Employee", "Role", "Departure Time", "Arrival Time Back", "Destination"]
 
-    work_scheadule = PrettyTable()
-    work_scheadule.field_names = fieldnames
-    for work in voyages:
+    if voyages:
+        work_scheadule = PrettyTable()
+        work_scheadule.field_names = fieldnames
+        for work in voyages:
 
-        work_scheadule.add_row([work.id, name, role, work.dep_time, work.arr_time_back, work.arr_at])
+            work_scheadule.add_row([work.id, name, role, work.dep_time, work.arr_time_back, work.arr_at])
 
-    return (work_scheadule)
+        return (work_scheadule)
+    
+    return f"{name} doesn't have any upcoming voayges!"
 
 
 if __name__ == "__main__":
