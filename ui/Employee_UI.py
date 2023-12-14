@@ -351,3 +351,16 @@ class employee:
             command = input("=> ").lower()
             if command == "b":
                 return
+
+
+    def display_every_employee(self):
+        
+        all_employees = Logic_wrapper().get_all_crew()
+        employee_table = PrettyTable()
+        fieldnames = EMPLOYEE_FILDNAMES
+        employee_table.field_names = (fieldnames)
+
+        for employee in all_employees:
+            employee_table.add_row([employee.name, employee.role, employee.rank, employee.license, employee.phone_nr, employee.address, employee.email, employee.ssn])
+
+        print(employee_table)
