@@ -4,7 +4,7 @@ from logic.logic_wrapper import Logic_wrapper
 from prettytable import PrettyTable
 
 SSN_FIELDNAMES = ["Name", "Social Security Number"]
-EMPLOYEE_FILDNAMES = ["Name","Role","Rank","License","Phone Number","Address","Email Address","Social Security Number",]
+EMPLOYEE_FILDNAMES = ["Name","Role","Rank","License","Phone Number","Address","Email Address","SSN"]
 
 class employee:
     def __init__(self):
