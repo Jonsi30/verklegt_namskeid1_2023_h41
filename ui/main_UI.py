@@ -35,7 +35,7 @@ class main_UI:
                 self.director_menu_input_prompt()
                 break
             elif command == "e":
-                employee().get_certain_employee_schedule()
+                employee().get_employee_schedule()
                 break
             else:
                 print("invalid input!")

@@ -192,6 +192,26 @@ class employee:
             else:
                 print("invalid input!")
 
+    def get_employee_schedule(self):
+        while True:
+            logic = Logic_wrapper()
+            print("\033[2J\033[H")
+            ssn = self.validate_ssn()
+            schedule = Logic_wrapper().get_certain_employee_schedule(ssn)
+            print(schedule)
+            options = """ 
+            [Q]UIT
+
+            """
+            print(options)
+            command = input("=> ")
+            command = command.lower()
+            if command == "q":
+                break
+
+            return ssn
+
+
     def get_certain_employee_schedule(self):
         while True:
             print("\033[2J\033[H")
