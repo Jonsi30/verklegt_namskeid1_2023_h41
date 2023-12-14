@@ -27,7 +27,7 @@ class employee:
 
         rank = """
         
-        Duration (hrs:minutes)"""
+        Rank"""
         print(rank)
         rank_input = input("=> ")
 
