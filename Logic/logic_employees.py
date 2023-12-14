@@ -76,7 +76,7 @@ class LogicEmployees:
         """Takes in date in this format: '21:00 16.12.2023'"""
         """Returns a list of available employees for that particular date"""
         not_available_employees = []
-        #date = date[6:]
+        
 
         for voyage in Data_wrapper().get_all_voyages():
             if date == voyage.arr_time_back[6:]:
@@ -112,9 +112,6 @@ class LogicEmployees:
                 pass
 
         return employee_ssn
-
-    def check_if_available(self):
-        pass
 
     def get_employee_dict(self, ret_dict):
         """Returns a dictionary with all the employees that work for the company NaN air."""
