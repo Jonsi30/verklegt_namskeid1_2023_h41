@@ -57,7 +57,9 @@ class Logic_wrapper:
             flight_attendant,
         )
     
-    
+    def get_employee_week_schedule(self, year_number: int, week_number: int, ssn: str):
+        return self.voyage_logic.get_employee_week_schedule(year_number, week_number, ssn)
+
     def get_all_pilots(self):
         """Returns all pilots"""
         return self.logic_employees.get_all_pilots()

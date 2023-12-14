@@ -4,6 +4,8 @@ from model.voyage_model import Voyage_Model
 from prettytable import PrettyTable
 import datetime
 from datetime import timedelta
+from logic.logic_employees import LogicEmployees
+
 
 class VoyageLogic:
     def __init__(self):
@@ -43,12 +45,17 @@ class VoyageLogic:
 
         return self.voyage.create_voyage(voyage_info)
 
-    def get_week_number(self, year_number: int, week_number: int, ssn: str) -> list:
-        listi = self.voyage.get_all_voyages()
+    def get_employee_week_schedule(self, year_number: int, week_number: int, ssn: str) -> list:
+        all_voayges = self.voyage.get_all_voyages()
+        employee = LogicEmployees().get_by_ssn(ssn)
+        name = employee[0]
+        name = name.name
+        
+        
         voyage_list = []
 
-        for item in listi:
-            date = item["arr_time_back"][6::]
+        for voyage in all_voayges:
+            date = voyage.arr_time_back[6::]
             year = date[6::]
             year = int(year)
             if year == year_number:
@@ -60,8 +67,9 @@ class VoyageLogic:
                 day = int(day)
                 real_week = datetime.date(year, month, day).isocalendar()[1]
                 if real_week == week_number:
-                    voyage_list.append(item)
-
+                    if voyage.captain == name or voyage.copilot == name or voyage.head_of_service == name or voyage.flight_attendant == name:
+                        voyage_list.append(voyage)
+        
         return voyage_list
 
     def display_voyage_manager(self):
