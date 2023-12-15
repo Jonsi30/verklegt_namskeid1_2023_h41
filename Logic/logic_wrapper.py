@@ -189,7 +189,7 @@ class Logic_wrapper:
         return LogicEmployees().validate_employee_email_address(email_input)
     
     def validate_employee_ssn_input(self, ssn_input) -> bool:
-        return LogicEmployees().validate_employee_ssn(ssn_input)
+        return LogicEmployees().validate_employee_ssn_creation(ssn_input)
     
     def validate_year_input(self, year_input) -> bool:
         return LogicEmployees().validate_year_input(year_input)
@@ -202,3 +202,15 @@ class Logic_wrapper:
     
     def get_employee_name_by_ssn(self, ssn) -> str:
         return LogicEmployees().get_employee_name_by_ssn(ssn)
+    
+    def get_all_employees_ssn(self) -> list:
+        return LogicEmployees().get_all_ssn
+    
+    def validate_employee_ssn(self, ssn_input) -> bool:
+        return LogicEmployees().validate_employee_ssn(ssn_input)
+    
+    def validate_date_input_format(self, date_input) -> bool:
+        return LogicEmployees().validate_date_input_format(date_input)
+    
+    def get_employee_model_from_ssn(self, ssn_input):
+        return LogicEmployees().get_employee_model_from_ssn(ssn_input)

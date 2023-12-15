@@ -1,6 +1,7 @@
 from data.data_wrapper import Data_wrapper
 from model.employee import Employee
 from prettytable import PrettyTable
+from datetime import datetime
 
 
 class LogicEmployees:
@@ -74,6 +75,13 @@ class LogicEmployees:
             else:
                 pass
         return occupied_list
+
+    def get_all_ssn(self):
+        all_ssn = []
+        for employee in LogicEmployees().get_all_employees():
+            all_ssn.append(employee.ssn)
+        return all_ssn
+
 
     def display_available_employees(self, date):
         """Takes in date in this format: '21:00 16.12.2023'"""
@@ -233,7 +241,7 @@ class LogicEmployees:
         
         return False
     
-    def validate_employee_ssn(self, ssn_input) -> bool:
+    def validate_employee_ssn_creation(self, ssn_input) -> bool:
 
         if len(ssn_input) == 10:
             for digit in ssn_input:
@@ -291,3 +299,36 @@ class LogicEmployees:
                 role += employee.role
 
         return role
+    
+    def validate_employee_ssn(self, ssn_input) -> bool:
+
+        for employee in LogicEmployees().get_all_employees():
+            if ssn_input == employee.ssn:
+                return True
+        return False
+    
+    def validate_date_input_format(self, date_input) -> bool:
+        """Input date must be in this format: DD.MM.YYYY"""
+        try:
+            if len(date_input) == 10:
+                if date_input[2] == "." and date_input[5] == ".":
+                    for letter in date_input:
+                        if letter.isalpha():
+                            return False
+                        day = date_input[0]+date_input[1]
+                        month = date_input[3]+date_input[4]
+                        year = date_input[6:]
+                        datetime(int(year), int(month), int(day))
+                        
+                        return True
+                return False       
+            return False
+        except ValueError:
+            """datetime function return ValueError if invalid date"""
+            return False
+        
+    def get_employee_model_from_ssn(self, ssn_input):
+        """Returns the employee model that matches the ssn"""
+        for employee in self.get_all_employees():
+            if employee.ssn == ssn_input:
+                return (employee)

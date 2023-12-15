@@ -7,11 +7,15 @@ from model.voyage_model import Voyage_Model
 from data.voyage_data import Voyage_Data
 from data.employee_data import Employee_data
 from prettytable import PrettyTable
-
+from datetime import datetime
 def main():
 
-    test = 'steinar@nan.is'
-    print(test[7:])
+    date = '0.10.2023'
+    day = 23
+    month = 10
+    year = 2023
+
+    print(datetime(year, month, day))
         
 
     

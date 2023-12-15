@@ -14,7 +14,7 @@ EMPLOYEE_FILDNAMES = [
     "Email Address",
     "SSN",
 ]
-
+AVAILABLE_EMPLOYEE_FIELDNAMES = ["Name", "Role", "Rank"]
 
 class employee:
     def __init__(self):
@@ -291,21 +291,20 @@ class employee:
         ssn_table = PrettyTable()
         fieldnames = ["Name", "SSN"]
         ssn_table.field_names = fieldnames
-
-        ssn_list = []
-
+        
         for info in all_employees:
-            ssn_list.append(info.ssn)
             ssn_table.add_row([info.name, info.ssn])
 
         print(ssn_table)
+            
         ssn_input = input("Enter a ssn from the list above: ")
 
-        if ssn_input not in ssn_list:
-            while ssn_input not in ssn_list:
-                print(ssn_table)
-                print("That id is not in the list above, try again")
-                ssn_input = input("Enter a ssn from the list above: ")
+        while Logic_wrapper().validate_employee_ssn(ssn_input) == False:
+            print("SSN doesn't match any ssn in the list above, try again")
+            print(ssn_table)
+            ssn_input = input("Enter a ssn from the list above: ")
+                
+                
 
         return ssn_input
 
@@ -313,12 +312,18 @@ class employee:
         while True:
             print("\033[2J\033[H")
             print("INPUT DATE (DD.MM.YYYY):")
-            date = input("=> ")
-            print(f"Employees available for the date: {date}:")
-            cabin_crew = Logic_wrapper().get_available_staff(date)
-            SSN_FIELDNAMES = ["Name", "Role", "Rank"]
+            
+            date_input = input("=> ")
+            while Logic_wrapper().validate_date_input_format(date_input) == False:
+                print("Invalid date format, must be DD.MM.YYYY, try again!")
+                date_input = input("=> ")
+
+
+            print(f"Employees available for the date: {date_input}:")
+            cabin_crew = Logic_wrapper().get_available_staff(date_input)
+            
             table = PrettyTable()
-            table.field_names = SSN_FIELDNAMES
+            table.field_names = AVAILABLE_EMPLOYEE_FIELDNAMES
 
             for employee in cabin_crew:
                 name, role, rank = employee
@@ -335,7 +340,7 @@ class employee:
             if command == "b":
                 return
 
-            return date
+            return date_input
 
     def edit_employee(self):
         print("\033[2J\033[H")
@@ -348,12 +353,11 @@ class employee:
         all_employees = Logic_wrapper().get_all_employees()
 
         employee_ssn_table = PrettyTable()
-        employee_ssn_list = []
         employee_ssn_table.field_names = SSN_FIELDNAMES
-
+        
         for employee in all_employees:
             employee_ssn_table.add_row([employee.name, employee.ssn])
-            employee_ssn_list.append(employee.ssn)
+            
 
         print(employee_ssn_table)
 
@@ -362,69 +366,52 @@ class employee:
         Enter the social security number of the employee you want to edit"""
         print(ssn)
         ssn_input = input("=> ")
+        while Logic_wrapper().validate_employee_ssn(ssn_input) == False:
+            print("That Social security number is not valid, try again!")
+            ssn_input = input("=> ")
 
-        run = 0
-        while run != 1:
-            if ssn_input not in employee_ssn_list:
-                print("That Social security number is not valid, try again!")
-                ssn_input = input("=> ")
-            else:
-                run += 1
-                break
 
         employee_table = PrettyTable()
-        employee_filendames = EMPLOYEE_FILDNAMES
-        employee_table.field_names = employee_filendames
+        employee_table.field_names = EMPLOYEE_FILDNAMES
 
-        for employee in all_employees:
-            if employee.ssn == ssn_input:
-                employee_table.add_row(
-                    [
-                        employee.name,
-                        employee.role,
-                        employee.rank,
-                        employee.license,
-                        employee.phone_nr,
-                        employee.address,
-                        employee.email,
-                        employee.ssn,
-                    ]
-                )
+        employee = Logic_wrapper().get_employee_model_from_ssn(ssn_input)
+        
+            
+        employee_table.add_row(
+            [
+                employee.name,
+                employee.role,
+                employee.rank,
+                employee.license,
+                employee.phone_nr,
+                employee.address,
+                employee.email,
+                employee.ssn,
+            ]
+        )
 
         print(employee_table)
         role = """ 
         
         role"""
         print(role)
-        role_input = input("=> ")
-        if role_input != "Pilot" and role_input != "Cabincrew" and role_input != "":
-            while (
-                role_input != "Pilot" and role_input != "Cabincrew" and role_input != ""
-            ):
-                print("That is not a real role! try again.")
-                role_input = input("=> ")
+        role_input = input("=> ").capitalize()
+        
+        while Logic_wrapper().validate_employee_role_input(role_input) == False:
+            print("Thats not a real role, it can either be Pilot or Cabincrew, try again!")
+            role_input = input("=> ").capitalize()
 
         rank = """
         
         Rank"""
         print(rank)
-        rank_input = input("=> ")
-        if (
-            rank_input != "Copilot"
-            and rank_input != "Captain"
-            and rank_input != "Flight Service Manager"
-            and rank_input != "Flight Attendant"
-            and rank_input != ""
-        ):
-            while (
-                rank_input != "Copilot"
-                and rank_input != "Captain"
-                and rank_input != "Flight Service Manager"
-                and rank_input != "Flight Attendant"
-                and rank_input != ""
-            ):
-                print("That is not a real rank! try again.")
-                rank_input = input("=> ")
+        rank_input = input("=> ").capitalize()
+        while Logic_wrapper().validate_employee_rank_input(rank_input, role_input) == False:
+            print("That's not a real rank, pilot can either be Captain or Copilot, and cabincrew can either be Flight Service Manager or Flight Attendant")
+            print("Try again!")
+            rank_input = input("=> ").capitalize()
+
+        
 
         License = """
         
