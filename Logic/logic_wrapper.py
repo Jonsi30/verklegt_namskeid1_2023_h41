@@ -154,3 +154,51 @@ class Logic_wrapper:
     
     def validate_duration_input(self, dest_duration_input) -> bool:
         return LogicDestination().validate_dest_duration_input(dest_duration_input)
+    
+    def validate_emergency_contact_name_input(self, emerg_name_input) -> bool:
+        return LogicDestination().validate_emergency_contact_name_input(emerg_name_input)
+    
+    def validate_emergency_contact_phone_nr(self, emerg_phone_nr) -> bool:
+        return LogicDestination().validate_emergency_contact_phone_nr(emerg_phone_nr)
+    
+    def get_all_dest_ids(self) -> list:
+        return LogicDestination().get_all_dest_ids()
+    
+    def validate_input_id(self, id_input) -> bool:
+        return LogicDestination().validate_dest_id_input(id_input)
+    
+    def validate_employee_name_input(self, name_input) -> bool:
+        return LogicEmployees().validate_employee_name_input(name_input)
+    
+    def validate_employee_role_input(self, role_input) -> bool:
+        return LogicEmployees().validate_employee_role_input(role_input)
+    
+    def validate_employee_rank_input(self, rank_input, role_input) -> bool:
+        return LogicEmployees().validate_employee_rank_input(rank_input, role_input)
+    
+    def validate_employee_license_input(self, license_input, role_input) -> bool:
+        return LogicEmployees().validate_license_input(license_input, role_input)
+    
+    def validate_employee_phone_nr(self, employee_phone_input) -> bool:
+        return LogicEmployees().validate_employee_phone_nr(employee_phone_input)
+    
+    def validate_employee_address(self, address_input) -> bool:
+        return LogicEmployees().validate_employee_address(address_input)
+    
+    def validate_employee_email_address(self, email_input) -> bool:
+        return LogicEmployees().validate_employee_email_address(email_input)
+    
+    def validate_employee_ssn_input(self, ssn_input) -> bool:
+        return LogicEmployees().validate_employee_ssn(ssn_input)
+    
+    def validate_year_input(self, year_input) -> bool:
+        return LogicEmployees().validate_year_input(year_input)
+    
+    def validate_week_input(self, week_input) -> bool:
+        return LogicEmployees().validate_week_input(week_input)
+    
+    def get_employee_role_by_ssn(self, ssn) -> str:
+        return LogicEmployees().get_employee_role_by_ssn(ssn)
+    
+    def get_employee_name_by_ssn(self, ssn) -> str:
+        return LogicEmployees().get_employee_name_by_ssn(ssn)

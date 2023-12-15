@@ -162,3 +162,132 @@ class LogicEmployees:
             return work_scheadule
 
         return f"{name} doesn't have any upcoming voayges!"
+
+    def validate_employee_name_input(self, dest_name_input) -> bool:
+        """Lenght must be below 20 letters and over 4 letters str"""
+        if len(dest_name_input) < 40 and len(dest_name_input) > 4:
+            
+            for letter in dest_name_input:
+                if letter.isdigit():
+                    return False
+            return True
+        return False
+    
+    def validate_employee_role_input(self, role_input) -> bool:
+
+        if role_input != "Pilot" and role_input != "Cabincrew" and role_input != "":
+            return False
+        return True
+    
+    def validate_employee_rank_input(self, rank_input, role_input) -> bool:
+
+        if role_input == 'Pilot' and rank_input == 'Copilot' or rank_input == 'Captain':
+            return True
+
+        if role_input == 'Cabincrew' and rank_input == 'Flight Service Manager' or rank_input == 'Flight Attendant':
+            return True
+        
+        else:
+        
+            return False
+        
+    def validate_license_input(self, license_input, role_input) -> bool:
+        aircraft_ids = []
+        all_aircrafts = Data_wrapper().get_all_aircrafts()
+        for aircraft in all_aircrafts:
+            aircraft_ids.append(aircraft.plane_type_id)
+
+        if role_input == 'Cabincrew' and license_input == 'N/A':
+            return True
+        
+        if role_input == 'Pilot' and license_input in aircraft_ids:
+            return True
+        
+        else:
+            return False
+        
+
+    def validate_employee_phone_nr(self, employee_phone_nr_input) -> bool:
+        """Emergency contact phone number can't include letters"""
+        
+        if len(employee_phone_nr_input) == 7:
+            for number in employee_phone_nr_input:
+                 if number.isalpha():
+                    return False
+            return True       
+        return False
+    
+    def validate_employee_address(self, address_input) -> bool:
+        """Address must be more than 3 letters and less than 30, address doesn't have
+        to include numeric values, fx. if employee lives in the countryside"""
+
+        if len(address_input) < 30 and len(address_input) > 3:
+            return True
+        
+        return False
+    
+    def validate_employee_email_address(self, email_input) -> bool:
+
+        if email_input[7:] == '@nan.is' and len(email_input) > 8:
+            return True
+        
+        return False
+    
+    def validate_employee_ssn(self, ssn_input) -> bool:
+
+        if len(ssn_input) == 10:
+            for digit in ssn_input:
+                if digit.isalpha():
+                    return False
+                
+            return True
+        return False
+    
+    def validate_year_input(self, year_input) -> bool:
+
+        try:
+            year_input = int(year_input)
+            if year_input >= 2023 and year_input <= 2026:
+                year_input = str(year_input)
+                for digit in year_input:
+                    if digit.isalpha():
+                        return False
+                    
+                return True
+            return False
+        except ValueError:
+            return False
+    
+    def validate_week_input(self, week_input) -> bool:
+
+        try:
+            week_input = int(week_input)
+            if week_input >= 1 and week_input <= 52:
+                week_input = str(week_input)
+                for digit in week_input:
+                    if digit.isalpha():
+                        return False
+                
+                return True
+
+            return False
+        except ValueError:
+            return False
+    
+    def get_employee_name_by_ssn(self, ssn) -> str:
+        name = ""
+        all_employees = LogicEmployees().get_all_employees()
+        for employee in all_employees:
+            if employee.ssn == ssn:
+                name += employee.name
+
+        return name
+    
+    def get_employee_role_by_ssn(self, ssn) -> str:
+        role = ""
+        all_employees = LogicEmployees().get_all_employees()
+        for employee in all_employees:
+            if employee.ssn == ssn:
+                role += employee.role
+
+        return role

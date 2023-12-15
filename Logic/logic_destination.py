@@ -89,3 +89,47 @@ class LogicDestination:
                         return True
                     
         return False
+    
+    def validate_emergency_contact_name_input(self, emerg_name_input) -> bool:
+        
+        """Emergency contact name can't include digits, and can't be longer than 20 letters"""
+        
+        if len(emerg_name_input) < 40 and len(emerg_name_input) >= 2:
+            for letter in emerg_name_input:
+                if letter.isdigit():
+                    return False
+            return True       
+        return False
+    
+    def validate_emergency_contact_phone_nr(self, contact_nr_input) -> bool:
+        """Emergency contact phone number can't include letters"""
+        
+        if len(contact_nr_input) == 7:
+            for number in contact_nr_input:
+                 if number.isalpha():
+                    return False
+            return True       
+        return False
+        
+
+    def validate_dest_id_input(self, dest_id_input) -> bool:
+        all_dest = LogicDestination().get_all_destinations()
+        
+
+        for destination in all_dest:
+            if dest_id_input == destination.destination_id:
+                return True
+
+        return False
+    
+
+    def get_all_dest_ids(self) -> list:
+        all_dest = LogicDestination().get_all_destinations()
+        ids = []
+        
+        for dest in all_dest:
+            ids.append(dest.destination_id)
+
+        return ids
+
+        

@@ -55,12 +55,19 @@ class destination:
         Emergency contact name"""
         print(Contact)
         contact_input = input("=> ")
+        while Logic_wrapper().validate_emergency_contact_name_input(contact_input) == False:
+            print("Invalid emergency contact name!")
+            contact_input = input("=> ").capitalize()
+    
 
         Number = """
         
         emergency contact phone_nr"""
         print(Number)
         contact_nr_input = input("=> ")
+        while Logic_wrapper().validate_emergency_contact_phone_nr(contact_nr_input) == False:
+            print("Invalid emergency contact phone number!")
+            contact_nr_input = input("=> ")
 
         options = """
         [B]ACK
@@ -79,11 +86,9 @@ class destination:
     def update_destination(self):
         from logic.logic_wrapper import Logic_wrapper
         print("\033[2J\033[H")
-        destination_ids = []
-        destination_names = []
+        
 
-        for destination in Logic_wrapper().get_all_destinations():
-            destination_ids.append(destination.destination_id)
+        destination_ids = Logic_wrapper().get_all_dest_ids()
             
 
         destination_id = f"""
@@ -94,10 +99,9 @@ class destination:
         print(destination_id)
         dest_id_input = input("=> ")
 
-        if dest_id_input not in destination_ids:
-            while dest_id_input not in destination_ids:
-                print("That destination doesn't exist! Please try again.")
-                dest_id_input = input("=> ")
+        while Logic_wrapper().validate_dest_id_input(dest_id_input) == False:
+            print("That destination doesn't exist! Please try again.")
+            dest_id_input = input("=> ")
 
         distance = """ 
         
@@ -105,6 +109,10 @@ class destination:
         distance from iceland (km), fx. 300"""
         print(distance)
         dist_input = input("=> ")
+        while Logic_wrapper().validate_dest_distance(dist_input) == False:
+            print("Invalid destination distance input!")
+            dist_input = input("=> ")
+
 
         duration = """
         
@@ -112,20 +120,29 @@ class destination:
         Duration (hrs:minutes)"""
         print(duration)
         dura_input = input("=> ")
+        while Logic_wrapper().validate_duration_input(dura_input) == False:
+            print("Invalid destination durance input!")
+            dura_input = input("=> ")
 
         Contact = """
         
         Press enter if you dont want to change this attribute.
-        Emergency contact"""
+        Emergency contact name"""
         print(Contact)
         contact_input = input("=> ")
-
+        while Logic_wrapper().validate_emergency_contact_name_input(contact_input) == False:
+            print("Invalid emergency contact name!")
+            contact_input = input("=> ").capitalize()
+        
         Number = """
         
         Press enter if you dont want to change this attribute.
-        emergency contact phone_nr"""
+        emergency contact phone number"""
         print(Number)
         contact_nr_input = input("=> ")
+        while Logic_wrapper().validate_emergency_contact_phone_nr(contact_nr_input) == False:
+            print("Invalid emergency contact phone number!")
+            contact_nr_input = input("=> ")
 
         options = f"""
         You have succesfully changed the information details of destination {dest_id_input}!

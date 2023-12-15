@@ -10,12 +10,11 @@ from prettytable import PrettyTable
 
 def main():
 
-    test = '05:40'
-    hours = ""
-    hours += (test[0])
-    hours += (test[1])
+    test = 'steinar@nan.is'
+    print(test[7:])
+        
 
-    print(hours)
+    
     #destination,distance_from_ice,flight time,emergency contact,emergency_contact_phone_nr
     #Nuuk,666,3:30,Kuupik Kleist,3334141
     """

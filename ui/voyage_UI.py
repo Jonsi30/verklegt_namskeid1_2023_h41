@@ -2,7 +2,7 @@ import os
 from logic.logic_wrapper import Logic_wrapper
 from ui.ASCII import ascii
 from prettytable import PrettyTable
-from logic.exceptions import InvalidDestinationError
+
 
 class voyage:
     def __init__(self):

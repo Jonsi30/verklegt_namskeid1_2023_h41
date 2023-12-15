@@ -28,49 +28,75 @@ class employee:
         name"""
         print(name)
         name_input = input("=> ")
+        while Logic_wrapper().validate_employee_name_input(name_input) == False:
+            print("Invalid employee name input, try again!")
+            name_input = input("=> ")
 
         role = """ 
         
         role"""
         print(role)
-        role_input = input("=> ")
+        role_input = input("=> ").capitalize()
+        while Logic_wrapper().validate_employee_role_input(role_input) == False:
+            print("Invalid Role input, must be Pilot or Cabincrew, try again!")
+            role_input = input("=> ").capitalize()
+
 
         rank = """
         
         Rank"""
         print(rank)
         rank_input = input("=> ")
-
+        while Logic_wrapper().validate_employee_rank_input(rank_input, role_input) == False:
+            print("Invalid rank input, if Pilot is the role, the rank must be Copilot or Captain.\n If Cabincrew is the role, the rank must be Flight Service Manager or Flight Attendant! Try again!")
+            rank_input = input("=> ")
+        
         License = """
         
         License"""
         print(License)
-        License_input = input("=> ")
+        license_input = input("=> ")
+        while Logic_wrapper().validate_employee_license_input(license_input, role_input) == False:
+            print("Invalid License input, try again!")
+            license_input = input("=> ")
 
         phone = """
         
         phone"""
         print(phone)
         phone_input = input("=> ")
-
+        while Logic_wrapper().validate_employee_phone_nr(phone_input) == False:
+            print("Invalid phone number, try again!")
+            phone_input = input("=> ")
+        
         address = """
         
         address"""
         print(address)
         address_input = input("=> ")
+        while Logic_wrapper().validate_employee_address(address_input) == False:
+            print("Invalid address input, try again!")
+            address_input = input("=> ")
 
         email = """
         
         email"""
         print(email)
         email_input = input("=> ")
-
+        while Logic_wrapper().validate_employee_email_address(email_input) == False:
+            print("Invalid email input, must include @nan.is and be over than 8 letters, try again!")
+            email_input = input("=> ")
+        
         ssn = """
         
         ssn"""
         print(ssn)
         ssn_input = input("-> ")
-
+        while Logic_wrapper().validate_employee_ssn_input(ssn_input) == False:
+            print("Invalid ssn input, must be only digits and 10 digits long, try again!")
+            ssn_input = input("-> ")
+        
+        
         options = """
         [B]ACK
         """
@@ -80,7 +106,7 @@ class employee:
             name_input,
             role_input,
             rank_input,
-            License_input,
+            license_input,
             phone_input,
             address_input,
             email_input,
@@ -217,22 +243,19 @@ class employee:
             print("\033[2J\033[H")
             ssn = self.validate_ssn()
             
-            year = int(input("Enter in a year number: "))
-            if year < 2023 or year > 2026:
-                while year < 2023 or year > 2026:
-                    print("Invalid year number, try again")
-                    year = int(input("Enter in a year number: "))
+            year = input("Enter in a year number: ")
             
-            try:
-                week = int(input("Enter in a week number: "))
-                
-                if week > 52 or week < 1:
-                    while week > 52 or week < 1:
-                        print("Invalid week number, try again")
-                        week = int(input("Enter in a week number: "))
-                        break
-            except ValueError: 
+            while Logic_wrapper().validate_year_input(year) == False:
+                    print("Invalid year number, must be a year between 2023 - 2026, try again!")
+                    year = (input("Enter in a year number: "))
+            
+            
+            week = input("Enter in a week number: ")
+            
+            while Logic_wrapper().validate_week_input(week) == False:
                 print("Invalid week number, try again")
+                week = (input("Enter in a week number: "))
+                
                     
             
             employee_voyages = Logic_wrapper().get_employee_week_schedule(year, week, ssn)
@@ -240,14 +263,8 @@ class employee:
             fieldnames = ["Name", "Voyage Id", "Role", "Dep.Time", "Arr.Time Back", "Destination", "Week", "Year"]
             voyage_table.field_names = fieldnames
             
-            name = ""
-            role = ""
-
-            all_employees = Logic_wrapper().get_all_employees()
-            for employee in all_employees:
-                if employee.ssn == ssn:
-                    name += employee.name
-                    role += employee.role
+            name = Logic_wrapper().get_employee_name_by_ssn(ssn)
+            role = Logic_wrapper().get_employee_role_by_ssn(ssn)
 
             if employee_voyages:
                 for voyage in employee_voyages:
