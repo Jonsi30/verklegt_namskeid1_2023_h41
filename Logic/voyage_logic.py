@@ -2,9 +2,9 @@
 from data.data_wrapper import Data_wrapper
 from model.voyage_model import Voyage_Model
 from prettytable import PrettyTable
-from datetime import datetime
+
 import datetime
-from datetime import timedelta
+
 from logic.logic_employees import LogicEmployees
 from logic.logic_destination import LogicDestination
 
@@ -221,21 +221,23 @@ class VoyageLogic:
     
     def validate_dep_time_back(self, arr_time, dep_time_back_input) -> bool:
         #arr_time 04:30 23.12.2023
+        from datetime import datetime, timedelta
         dep_time_back = VoyageLogic().validate_departure_time(dep_time_back_input)
+        
         if dep_time_back == True:
             date = "%H:%M %d.%m.%Y"
             
-            arr_time = datetime.strptime(arr_time, date)
-            dep_time = datetime.strptime(dep_time_back_input, date)
+            dep_datetime = datetime.strptime(dep_time_back_input, date)
+            arr_datetime = datetime.strptime(arr_time, date)
 
-            time_between = dep_time - arr_time
+            time_between = dep_datetime - arr_datetime
             one_hour = timedelta(hours=1)
             
+
             
-            
-            if time_between >= one_hour:
-                return True
-            return False
+            return time_between >= one_hour
+                
+        
         return False
             
             #dep_time = (dep_time_back_input[:5])

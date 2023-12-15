@@ -52,7 +52,7 @@ class voyage:
         print(f"\n\tThe arrival to {arr_at_input} is {arr_time}\n")
         
         dep_time_back = """
-        Input Departure Time Back(12:00 16.12.2023)"""
+        Input Departure Time Back, must be in this format: 12:00 16.12.2023)"""
         print(dep_time_back)
         dep_time_back_input = input("=>: ")
         while Logic_wrapper().validate_dep_time_back(arr_time, dep_time_back_input) == False:
