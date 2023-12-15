@@ -2,6 +2,7 @@
 from data.data_wrapper import Data_wrapper
 from model.voyage_model import Voyage_Model
 from prettytable import PrettyTable
+from datetime import datetime
 import datetime
 from datetime import timedelta
 from logic.logic_employees import LogicEmployees
@@ -218,7 +219,7 @@ class VoyageLogic:
             
         return False
     
-    def validate_dep_time_back(arr_time, dep_time_back_input) -> bool:
+    def validate_dep_time_back(self, arr_time, dep_time_back_input) -> bool:
         #arr_time 04:30 23.12.2023
         dep_time_back = VoyageLogic().validate_departure_time(dep_time_back_input)
         if dep_time_back == True:
@@ -229,12 +230,82 @@ class VoyageLogic:
 
             time_between = dep_time - arr_time
             one_hour = timedelta(hours=1)
+            if time_between >= one_hour:
+                return True
+            return False
+        return False
             
             #dep_time = (dep_time_back_input[:5])
            # dep_date = dep_time_back_input[6:]
 
            # arr_time = (arr_time[:5])
             #arr_date = arr_time[6:]
+
+    def get_available_plane_insignia(self, available_planes: list) -> list:
+        insigna_list = []
+        for aircraft in available_planes:
+            insigna_list.append(aircraft.plane_insignia)
+
+        return insigna_list
+    
+    def get_unstaffed_voyages(self, upcoming_voyages: list) -> list:
+        unstaffed_voyages = []
+        for voyage in upcoming_voyages:
+            
+            if voyage.captain and voyage.copilot and voyage.head_of_service and voyage.flight_attendant == 'Unassigned':
+                unstaffed_voyages.append(voyage)
+        return unstaffed_voyages
+        
+    def validate_voyage_user_input_id(self, user_id_input, unstaffed_voyages: list) -> bool:
+        
+        for info in unstaffed_voyages:
+            if info.id == user_id_input:
+                return True
+        return False
+    
+    def get_voyage_from_id_input(self, id_number):
+        all_voyages = Data_wrapper().get_all_voyages()
+        for voyage in all_voyages:
+            if voyage.id == id_number:
+                return voyage
+            
+    def get_available_captain_info(self, available_staff):
+        available_captains = []
+        for i in available_staff:
+            name, role, rank = i
+            if rank == 'Captain':
+                available_captains.append([name, role, rank])
+
+        return available_captains
+    
+    def get_available_copilot_info(self, available_staff):
+        available_copilots = []
+
+        for i in available_staff:
+            name, role, rank = i
+            if rank == 'Copilot':
+                available_copilots.append([name, role, rank])
+        return available_copilots
+    
+    def get_available_head_of_service_info(self, available_staff):
+        available_head_of_services = []
+        for i in available_staff:
+            name, role, rank = i
+            
+            if rank == 'Flight Service Manager':
+                available_head_of_services.append([name, role, rank])
+        return available_head_of_services
+    
+    def get_available_flight_attendant_info(self, available_staff):
+        available_flight_attendants = []
+
+        for i in available_staff:
+            name, role, rank = i
+            
+            if rank == 'Flight Attendant':
+                available_flight_attendants.append([name, role, rank])
+        return available_flight_attendants
+
 
 
 

@@ -15,27 +15,42 @@ class Aircraft:
         ----------------------------------
         plane_insigna(TF-XXX)"""
         print(new_insigna)
-        insigna_input = input("=> ")
+        insigna_input = input("=> ").upper()
+        while Logic_wrapper().validate_plane_insignia(insigna_input) == False:
+            print("Invalid plane insignia, must be in the format: TF-XXX, try again!")
+            insigna_input = input("=> ").upper()
 
         type = """ 
         
         plane_type_id(NAxxxxx)"""
         print(type)
         type_input = input("=> ")
+        while Logic_wrapper().validate_plane_type_id(type_input) == False:
+            print("Invalid plane type id, must be on this format: NAxxxxx, try again!")
+            type_input = input("=> ")
 
         manufacturor = """
         
         manufacturor"""
         print(manufacturor)
         manu_input = input("=> ")
-
+        while Logic_wrapper().validate_manu_input(manu_input, type_input) == False:
+            print("Invalid manufacturer name, manufacturer name must include the plane type in it, try again!")
+            manu_input = input("=> ")
+        
+        
         seat_capacity = """
         
         number of seats"""
         print(seat_capacity)
         seat_input = input("=> ")
+        while Logic_wrapper().validate_seat_input(seat_input) == False:
+            print("Seat number must be all digits, try again!")
+            seat_input = input("=> ")
 
+        
         options = """
+        Aircraft has been created!
         [B]ACK"""
         print(options)
 

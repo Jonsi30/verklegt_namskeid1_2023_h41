@@ -32,4 +32,27 @@ class LogicAircraft:
 
         return available_planes
 
+    def validate_plane_insignia(self, plane_insignia_input) -> bool:
+        if len(plane_insignia_input) == 6 :
+            if plane_insignia_input[:3] == 'TF-':
+                return True
+            return False
+        return False
     
+    def validate_plane_type_id(self, type_input) -> bool:
+        if len(type_input) < 20:
+            if type_input[:2] == 'NA':
+                return True
+            return False
+        return False
+    
+    def validate_manu_input(self, manu_input, type_input) -> bool:
+        if manu_input in type_input:
+            return True
+        return False
+    
+    def validate_seat_input(self, seat_input) -> bool:
+        for digit in seat_input:
+            if digit.isalpha():
+                return False
+        return True

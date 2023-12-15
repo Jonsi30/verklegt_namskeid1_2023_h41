@@ -55,8 +55,9 @@ class voyage:
         Input Departure Time Back(12:00 16.12.2023)"""
         print(dep_time_back)
         dep_time_back_input = input("=>: ")
-        #while Logic_wrapper().validate_dep_time_back(arr_time, dep_time_back_input) == False:
-
+        while Logic_wrapper().validate_dep_time_back(arr_time, dep_time_back_input) == False:
+            print("Invalid departure time back, departure time back must be after arrival date!")
+            dep_time_back_input = input("=>: ")
 
 
 
@@ -66,14 +67,15 @@ class voyage:
         print(f"\n\tThe arrival to RVK is {arr_time_back}\n")
 
         available_airplanes = Logic_wrapper().get_available_airplanes(dep_time_input)
-        available_airplanes_insignia_list = []
+        
+        available_airplanes_insignia_list = Logic_wrapper().get_available_plane_insignia(available_airplanes)
 
         plane_table = PrettyTable()
         fieldnames = ["Plane Insignia", "Plane Type ID"]
         plane_table.field_names = fieldnames
         for aircraft in available_airplanes:
             plane_table.add_row([aircraft.plane_insignia, aircraft.plane_type_id])
-            available_airplanes_insignia_list.append(aircraft.plane_insignia)
+            
 
         print(f"\nAvailable planes:\n{plane_table}")
 
@@ -81,6 +83,8 @@ class voyage:
         Input Plane Insignia of an available plane fx.(TF-XXX)"""
         print(plane_insignia)
         plane_insignia_input = input("=>: ")
+        
+        
         if plane_insignia_input not in available_airplanes_insignia_list:
             while plane_insignia_input not in available_airplanes_insignia_list:
                 print("\n\tNo airplane with that plane insignia is available! Please try again.")
@@ -164,67 +168,55 @@ class voyage:
         """This function lets the manager add Employees to a particular trip, after that it returns the information that the manager put in and cheanges the voyage data."""
         upcoming_voyages = Logic_wrapper().get_all_voyages()
 
-        upcoming_voyage_list = []
-        for voyage in upcoming_voyages:
-            
-            if voyage.captain and voyage.copilot and voyage.head_of_service and voyage.flight_attendant == 'Unassigned':
-                upcoming_voyage_list.append(voyage)
+
+        upcoming_unassigned_voyage_list = Logic_wrapper().get_unstaffed_voyages(upcoming_voyages)
         
-        if upcoming_voyage_list == []:
+        
+        if upcoming_unassigned_voyage_list == []:
             print("\nThere are no voyages that needs employees to be added to!")
             return
 
         fieldnames = ["Id", "Flight Nr", "Plane Insignia", "Captain", "Copilot", "Head of Service", "Flight Attendant"]
         table = PrettyTable()
         table.field_names = fieldnames
-        for voyage in upcoming_voyage_list:
+        for voyage in upcoming_unassigned_voyage_list:
             table.add_row([voyage.id, voyage.flight_nr, voyage.plane_insignia, voyage.captain, voyage.copilot, voyage.head_of_service, voyage.flight_attendant])
 
-        voyage_in_work = []
-        run = 0
-        while run == 0:
+        
+        
+        
+        print((table))
+        id_number = (input("Input an Id from the list above, that you want to work with: "))
+        
+        while Logic_wrapper().validate_voyage_user_input_id(id_number, upcoming_unassigned_voyage_list) == False:
             print((table))
-            id_number = (input("Input an Id from the list above, that you want to work with: "))
-            print()
-            for voyage in upcoming_voyage_list:
-                if voyage.id == id_number:
-                    voyage_in_work.append(voyage)
-                    run += 1
-                    break
-            if run == 0:    
-                print("That id is not in the list above! Try again") 
-                print() 
+            id_number = (input("Invalid id, input an Id from the list above, that you want to work with: "))
+
+        voyage_in_work = Logic_wrapper().get_voyage_from_id_input(id_number)  
+
+        
         
         for voyage in voyage_in_work:
             fieldnames = ["Id", "Flight Nr", "Plane Insignia", "Captain", "Copilot", "Head of Service", "Flight Attendant"]
             table = PrettyTable()
             table.field_names = fieldnames
-            date = ""
-            for voayge in voyage_in_work:
+            
+            for voyage in voyage_in_work:
                 
                 table.add_row([voyage.id, voyage.flight_nr, voyage.plane_insignia, voyage.captain, voyage.copilot, voyage.head_of_service, voyage.flight_attendant])
-                date += voayge.arr_time_back[6:]
+                
             print(f"You will work with the voyage with the id: {id_number}")
             
             print((table))
             print()
+        
+        available = Logic_wrapper().get_available_staff(voyage.arr_time_back[6:])
             
-        captain_list = []
-        copilot_list = []
-        head_of_service_list = []
-        flight_attendant_list = []
+        captain_list = Logic_wrapper().get_available_captain_info(available)
+        copilot_list = Logic_wrapper().get_available_copilot_info(available)
+        head_of_service_list = Logic_wrapper().get_available_flight_service_manager_info(available)
+        flight_attendant_list = Logic_wrapper().get_available_flight_attendant_info(available)
 
-        available = Logic_wrapper().get_available_staff(date)
-        for i in available:
-            name, role, rank = i
-            if rank == 'Captain':
-                captain_list.append([name, role, rank])
-            elif rank == 'Copilot':
-                copilot_list.append([name, role, rank])
-            elif rank == 'Flight Service Manager':
-                head_of_service_list.append([name, role, rank])
-            elif rank == 'Flight Attendant':
-                flight_attendant_list.append([name, role, rank])
 
         captain_table = Logic_wrapper().table_making(captain_list)
         copilot_table = Logic_wrapper().table_making(copilot_list)

@@ -233,5 +233,41 @@ class Logic_wrapper:
     def validate_departure_time(self, dep_time):
         return VoyageLogic().validate_departure_time(dep_time)
     
-    def validate_dep_time_back(arr_time, dep_time_back_input) -> bool:
+    def validate_dep_time_back(self, arr_time, dep_time_back_input) -> bool:
         return VoyageLogic().validate_dep_time_back(arr_time, dep_time_back_input)
+    
+    def get_available_plane_insignia(self, available_planes: list) -> list:
+        return VoyageLogic().get_available_plane_insignia(available_planes)
+    
+    def get_unstaffed_voyages(self, upcoming_voyages) -> list:
+        return VoyageLogic().get_unstaffed_voyages(upcoming_voyages)
+    
+    def validate_voyage_user_input_id(self, user_id_input, unstaffed_voyages: list) -> bool:
+        return VoyageLogic().validate_voyage_user_input_id(user_id_input, unstaffed_voyages)
+    
+    def get_voyage_from_id_input(self, id_number):
+        return VoyageLogic().get_voyage_from_id_input(self, id_number) 
+    
+    def get_available_captain_info(self, available_staff):
+        return VoyageLogic().get_available_captain_info(available_staff)
+    
+    def get_available_copilot_info(self, available_staff):
+        return VoyageLogic().get_available_copilot_info(available_staff)
+    
+    def get_available_flight_service_manager_info(self, available_staff):
+        return VoyageLogic().get_available_head_of_service_info(available_staff)
+    
+    def get_available_flight_attendant_info(self, available_staff):
+        return VoyageLogic().get_available_flight_attendant_info(available_staff)
+    
+    def validate_plane_insignia(self, plane_insignia_input) -> bool:
+        return LogicAircraft().validate_plane_insignia(plane_insignia_input)
+    
+    def validate_plane_type_id(self, type_input) -> bool:
+        return LogicAircraft().validate_plane_type_id(type_input)
+    
+    def validate_manu_input(self, manu_input, type_input) -> bool:
+        return LogicAircraft().validate_manu_input(manu_input, type_input)
+    
+    def validate_seat_input(self, seat_input) -> bool:
+        return LogicAircraft().validate_seat_input(seat_input)
