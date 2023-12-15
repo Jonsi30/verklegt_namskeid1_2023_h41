@@ -4,6 +4,7 @@ from ui.ASCII import ascii
 from prettytable import PrettyTable
 
 
+
 class destination:
     def __init__(self):
         pass
@@ -17,29 +18,41 @@ class destination:
         ----------------------------------
         Input New Destination"""
         print(new_destination)
-        dest_input = input("=> ")
+        dest_input = input("=> ").capitalize()
+        while Logic_wrapper().validate_dest_name_input(dest_input) == False:
+            print("Invalid destination name input!")
+            dest_input = input("=> ").capitalize()
 
         destination_id = """
-        
+
         Input destination ID (XXX)"""
         print(destination_id)
-        dest_id_input = input("=> ")
+        dest_id_input = input("=> ").upper()
+        while Logic_wrapper().validate_dest_id_input(dest_id_input) == False:
+            print("Invalid Id input!")
+            dest_id_input = input("=> ").upper()
 
         distance = """ 
         
         distance from iceland (km)"""
         print(distance)
         dist_input = input("=> ")
-
+        while Logic_wrapper().validate_dest_distance(dist_input) == False:
+            print("Invalid destination distance input!")
+            dist_input = input("=> ")
+        
         duration = """
         
         Duration (hrs:minutes)"""
         print(duration)
         dura_input = input("=> ")
+        while Logic_wrapper().validate_duration_input(dura_input) == False:
+            print("Invalid destination durance input!")
+            dura_input = input("=> ")
 
         Contact = """
         
-        Emergency contact"""
+        Emergency contact name"""
         print(Contact)
         contact_input = input("=> ")
 

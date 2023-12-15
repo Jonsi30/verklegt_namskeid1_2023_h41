@@ -143,3 +143,14 @@ class Logic_wrapper:
     def arrival_time_and_date(self, day, month, year, all_hours, all_minutes):
         return self.voyage_logic.arrival_time_and_date(day, month, year, all_hours, all_minutes)
     
+    def validate_dest_id_input(self, dest_id_input) -> bool:
+        return LogicDestination().validate_dest_id_input(dest_id_input)
+    
+    def validate_dest_name_input(self, dest_name_input) -> bool:
+        return LogicDestination().validate_dest_name_input(dest_name_input)
+    
+    def validate_dest_distance(self, dest_distance_input) -> bool:
+        return LogicDestination().validate_dest_distance(dest_distance_input)
+    
+    def validate_duration_input(self, dest_duration_input) -> bool:
+        return LogicDestination().validate_dest_duration_input(dest_duration_input)

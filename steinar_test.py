@@ -9,6 +9,13 @@ from data.employee_data import Employee_data
 from prettytable import PrettyTable
 
 def main():
+
+    test = '05:40'
+    hours = ""
+    hours += (test[0])
+    hours += (test[1])
+
+    print(hours)
     #destination,distance_from_ice,flight time,emergency contact,emergency_contact_phone_nr
     #Nuuk,666,3:30,Kuupik Kleist,3334141
     """
@@ -42,13 +49,13 @@ def main():
     """
     #John Johnson,Pilot,Captain,NAFokker50,8203341,Engihjalli 30,0404952139
 
-    
+    """
     model_info = Employee('John Johnson', 'Pilot', 'Copilot', 'NAFokker50', '5812345', 'Engihjalli 30', 'john@email.com', '0404952139')
     new_info = Logic_wrapper()
     new_info.update_employee(model_info)
     
     #updated_dest = Logic_wrapper().update_destination(new_info)
-    
+    """
 
     """
     name = Data_wrapper()

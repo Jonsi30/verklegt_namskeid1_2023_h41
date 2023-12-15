@@ -42,3 +42,50 @@ class LogicDestination:
                 break
 
         return flight_nr
+    
+    def validate_dest_id_input(self, dest_id_input) -> bool:
+        """Must be 3 letter str"""
+        if len(dest_id_input) == 3:
+            for letter in dest_id_input:
+                if letter.isdigit():
+                    return False
+            return True
+        return False
+    
+    def validate_dest_name_input(self, dest_name_input) -> bool:
+        """Lenght must be below 20 letters and over 4 letters str"""
+        if len(dest_name_input) < 20 and len(dest_name_input) > 4:
+            
+            for letter in dest_name_input:
+                if letter.isdigit():
+                    return False
+            return True
+        return False
+    
+    def validate_dest_distance(self, dest_distance) -> bool:
+        """Distance must be numeric"""
+        
+            
+        for digit in dest_distance:
+                if digit.isalpha():
+                    return False
+        return True
+    
+    def validate_dest_duration_input(self, dest_duration) -> bool:
+        """Duration must be in a correct from"""
+        
+        if len(dest_duration) == 5:
+            if dest_duration[2] == ":":
+                if dest_duration[0].isdigit() and dest_duration[1].isdigit() and dest_duration[3].isdigit() and dest_duration[4].isdigit():
+                    hour = ""
+                    hour += (dest_duration[0])
+                    hour += (dest_duration[1])
+                    
+                    minutes = ""
+                    minutes += (dest_duration[3])
+                    minutes += (dest_duration[4])
+
+                    if int(hour) <= 23 and int(minutes) <= 59:
+                        return True
+                    
+        return False

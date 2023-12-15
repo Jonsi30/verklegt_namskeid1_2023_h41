@@ -2,6 +2,7 @@ import os
 from logic.logic_wrapper import Logic_wrapper
 from ui.ASCII import ascii
 from prettytable import PrettyTable
+from logic.exceptions import InvalidDestinationError
 
 class voyage:
     def __init__(self):
@@ -34,6 +35,7 @@ class voyage:
         Destination ID's we fly too are: {", ".join(Destination_id_list)}"""
         print(arr_at)
         arr_at_input = input("=>: ")
+       
         if arr_at_input not in Destination_id_list:
             while arr_at_input not in Destination_id_list:
                 print("\n\tWe dont fly to any destination with that destination ID! Please try again.")
