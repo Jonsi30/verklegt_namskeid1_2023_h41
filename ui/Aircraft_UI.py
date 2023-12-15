@@ -52,8 +52,8 @@ class Aircraft:
     def get_all_aircrafts(self):
         print("\033[2J\033[H")
         ascii().Aircraft_list_art()
-        print("aircrafts")
-        print("-----------------------")
+        
+        
         
 
         all_aircrafts = LogicAircraft().get_all_aircrafts()
