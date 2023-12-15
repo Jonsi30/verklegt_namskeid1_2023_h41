@@ -41,14 +41,3 @@ class Aircraft_Data:
                 }
             )
 
-    """
-    
-
-    def display_plane_status(self):
-        #User can read plane status with a given time and date.
-        pass
-
-    def display_pilots_with_aircraft_license(self):
-        #User can read no. pilots with license on a given plane
-        pass
-    """

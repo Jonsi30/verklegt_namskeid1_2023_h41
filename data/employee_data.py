@@ -15,7 +15,7 @@ FIELDNAMES = [
 
 class Employee_data:
     def __init__(self):
-        self.file_name = "../verklegt_namskeid1_2023_h41/files/employees.csv"  # filenameið sem inniheldur info um þetta class
+        self.file_name = "../verklegt_namskeid1_2023_h41/files/employees.csv"  
 
     def get_all_employees(self):
         ret_list = []

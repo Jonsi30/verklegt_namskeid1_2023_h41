@@ -230,6 +230,9 @@ class VoyageLogic:
 
             time_between = dep_time - arr_time
             one_hour = timedelta(hours=1)
+            
+            
+            
             if time_between >= one_hour:
                 return True
             return False

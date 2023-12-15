@@ -153,7 +153,7 @@ class Voyage_Data:
 
             for voyage in all_voyages:
                 flight_number = voyage.flight_nr
-                flight_nr_back = flight_number_back(
+                flight_nr_back = Voyage_Data().flight_number_back(
                     flight_number
                 )  # Gets the flight number for the returning flight
 
@@ -179,10 +179,10 @@ class Voyage_Data:
                     }
                 )
 
-def flight_number_back(flight_nr):
-    """This function takes in a flight number, returns a returning flight number"""
-    flight_nr = flight_nr[2::]
-    flight_nr = int(flight_nr)
-    flight_nr_back = flight_nr + 1
-    flight_nr_back = f"NA{flight_nr_back}"
-    return flight_nr_back
+    def flight_number_back(self, flight_nr):
+        """This function takes in a flight number, returns a returning flight number"""
+        flight_nr = flight_nr[2::]
+        flight_nr = int(flight_nr)
+        flight_nr_back = flight_nr + 1
+        flight_nr_back = f"NA{flight_nr_back}"
+        return flight_nr_back

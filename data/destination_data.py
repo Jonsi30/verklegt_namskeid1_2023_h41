@@ -1,6 +1,6 @@
 import csv
 from model.destination import Destination
-from ui.Destination_UI import destination
+
 
 FIELDNAMES = [
     "Destination",
@@ -50,12 +50,7 @@ class Destination_data:
             )
 
     def update_destination(self, updated_dest: Destination):
-        # *sækja öll destination
-        # loopa yfir destinations
-        # ef ég finnd match á id í updated of current dest þá geri ég breytingarnar
-        # tæma skránna
-        # write flag "w" writeheader()
-        # kalla á create destination for each dest í þessum list *
+        
         all_dest = Destination_data()
         every_dest = all_dest.get_all_destination()
         new_list = []
@@ -112,16 +107,4 @@ class Destination_data:
             Destination_data().create_destination(Destination(destination, destination_id, distance_from_ice, flight_time, emergency_contact, emergency_contact_phone_nr))
 
 
-"""
-    def print_most_popular_destination(self):
-        #User can read popular destinations
-        pass
 
-    def update_emergency_contact(self):
-        #User can update emergency contact info
-        pass
-
-    def create_destination(self):
-        #User can Create Destination
-        pass
-"""
