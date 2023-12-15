@@ -5,6 +5,7 @@ from prettytable import PrettyTable
 import datetime
 from datetime import timedelta
 from logic.logic_employees import LogicEmployees
+from logic.logic_destination import LogicDestination
 
 
 class VoyageLogic:
@@ -180,3 +181,46 @@ class VoyageLogic:
 
         arrival_time = f"{new_time} {day}.{month}.{year}"
         return(arrival_time)
+    
+    def all_voyage_ids(self) -> list:
+        all_voyage_ids = []
+        all_voayges = self.voyage.get_all_voyages()
+        for voyage in all_voayges:
+            all_voyage_ids.append(voyage.id)
+        return all_voyage_ids
+    
+    def validate_voyage_id_input(self, id_input) -> bool:
+        all_voyage_ids = self.all_voyage_ids()
+
+        if len(id_input) == 4 and id_input not in all_voyage_ids:
+            for digit in id_input:
+                if digit.isalpha():
+                    return False
+            return True
+        return False
+    
+    def validate_voyage_dest_input(self, dest_input) -> bool:
+        all_dest_id = LogicDestination().get_all_dest_ids()
+
+        if dest_input not in all_dest_id:
+            return False
+        return True
+        
+    def validate_departure_time(self, dep_time) -> bool:
+        
+        if len(dep_time) == 16:
+            time = (dep_time[:5])
+            date = dep_time[6:]
+            validate_date = LogicEmployees().validate_date_input_format(date)
+            validate_time = LogicDestination().validate_dest_duration_input(time)
+            if validate_date == True  and validate_time == True:
+                return True
+            
+        return False
+    
+                    
+        
+            
+            
+
+    

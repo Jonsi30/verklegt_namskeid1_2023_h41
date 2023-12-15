@@ -9,45 +9,32 @@ class voyage:
         self.get_all_voyages = Logic_wrapper()
 
     def create_new_voyage(self):
-        voyage_id_list = []
-        Destination_id_list = []
-        all_destinations = []
-
-        for voyage in Logic_wrapper().get_all_voyages():
-            voyage_id_list.append(voyage.id)
-
-        for destination in Logic_wrapper().get_all_destinations():
-            Destination_id_list.append(destination.destination_id)
-            all_destinations.append(destination)
+        
+        all_destinations = Logic_wrapper().get_all_destinations()
+        taken_voyage_ids = Logic_wrapper().get_all_voyage_ids()
+        all_destinations_id = Logic_wrapper().get_all_dest_ids()
 
         id = f"""
         Input a new ID(fx. 1111)
-        Id's that are unavailable are as follows: {", ".join(voyage_id_list)}"""
+        Id's that are unavailable are as follows: {", ".join(taken_voyage_ids)}"""
         print(id)
         id_input = input("=>: ")
-        if id_input in voyage_id_list:
-            while id_input in voyage_id_list:
-                print("ID has already been created! Please try again.")
-                id_input = input("=>: ")
+        while Logic_wrapper().validate_voyage_id(id_input) == False:
+            print(id)
+            print("ID is either in the list above, or invalid, ID must be 4 digits, try again!")
+            id_input = input("=>: ")
 
         arr_at = f"""
         Input destination ID for the place you are arriving at(fx. TOR)
-        Destination ID's we fly too are: {", ".join(Destination_id_list)}"""
+        Destination ID's we fly too are: {", ".join(all_destinations_id)}"""
         print(arr_at)
         arr_at_input = input("=>: ")
        
-        if arr_at_input not in Destination_id_list:
-            while arr_at_input not in Destination_id_list:
-                print("\n\tWe dont fly to any destination with that destination ID! Please try again.")
-                arr_at_input = input("=>: ")
+        while Logic_wrapper().validate_voyage_dest(arr_at_input) == False:
+            print(f'Invalid destination id!, please select one these options: {", ".join(all_destinations_id)}')
+            arr_at_input = input("=>: ")
 
-        flight_time = ""
-
-        for dest in all_destinations:
-            if arr_at_input == dest.destination_id:
-                flight_time += dest.flight_time
-
-
+        flight_time = Logic_wrapper().get_flight_time_from_dest_id(arr_at_input)
 
         flight_nr_input = Logic_wrapper().generate_flight_number(arr_at_input)
 
@@ -55,6 +42,9 @@ class voyage:
         Input Departure time(fx. 00:00 16.12.2023)"""
         print(dep_time)
         dep_time_input = input("=>: ")
+        while Logic_wrapper().validate_departure_time(dep_time_input) == False:
+            print("Invalid departure time, format must be: MM:HH dd.mm.yy fx. 00:00 16.12.2023")
+            dep_time_input = input("=>: ")
         
         day, month, year, all_hours, all_minutes = Logic_wrapper().date_and_time_formatter(dep_time_input, flight_time)
         arr_time = Logic_wrapper().arrival_time_and_date(day, month, year, all_hours, all_minutes)

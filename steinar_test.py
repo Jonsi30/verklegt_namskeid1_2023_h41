@@ -10,10 +10,19 @@ from prettytable import PrettyTable
 from datetime import datetime
 def main():
 
-    email = 'gillz@nan.is'
+    dep_time = '00:00 16.12.2023'
 
-    print(email[-7:])
-        
+    
+    print(dep_time[6:])
+    time = (dep_time[:5])
+    minutes = time[:2]
+    hours = time[3:5]
+    date = dep_time[6:]
+    day = date[:2]
+    month = date[3:5]
+    year = date[6:]
+
+   
 
     
     #destination,distance_from_ice,flight time,emergency contact,emergency_contact_phone_nr

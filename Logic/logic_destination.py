@@ -132,4 +132,8 @@ class LogicDestination:
 
         return ids
 
+    def get_flight_time_from_dest_id(self, id) ->str:
         
+        for dest in self.get_all_destinations():
+            if dest.destination_id == id:
+                return dest.flight_time

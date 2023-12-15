@@ -204,7 +204,7 @@ class Logic_wrapper:
         return LogicEmployees().get_employee_name_by_ssn(ssn)
     
     def get_all_employees_ssn(self) -> list:
-        return LogicEmployees().get_all_ssn
+        return LogicEmployees().get_all_ssn()
     
     def validate_employee_ssn(self, ssn_input) -> bool:
         return LogicEmployees().validate_employee_ssn(ssn_input)
@@ -216,4 +216,19 @@ class Logic_wrapper:
         return LogicEmployees().get_employee_model_from_ssn(ssn_input)
     
     def validate_aircraft_license(self, license_input) -> bool:
-        return LogicEmployees.validate_aircraft_license(self, license_input)
+        return LogicEmployees().validate_aircraft_license(self, license_input)
+    
+    def get_all_voyage_ids(self) -> list:
+        return VoyageLogic().all_voyage_ids()
+
+    def validate_voyage_id(self, id_input):
+        return VoyageLogic().validate_voyage_id_input(id_input)
+    
+    def validate_voyage_dest(self, dest_input):
+        return VoyageLogic().validate_voyage_dest_input(dest_input)
+    
+    def get_flight_time_from_dest_id(self, arr_at_input):
+        return LogicDestination().get_flight_time_from_dest_id(arr_at_input)
+    
+    def validate_departure_time(self, dep_time):
+        return VoyageLogic().validate_departure_time(dep_time)

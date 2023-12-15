@@ -321,9 +321,10 @@ class LogicEmployees:
                         day = date_input[0]+date_input[1]
                         month = date_input[3]+date_input[4]
                         year = date_input[6:]
-                        datetime(int(year), int(month), int(day))
-                        
-                        return True
+                        if int(year) <= 2026 and int(year) >= 2023:
+                            datetime(int(year), int(month), int(day))
+                            return True
+                        return False
                 return False       
             return False
         except ValueError:
