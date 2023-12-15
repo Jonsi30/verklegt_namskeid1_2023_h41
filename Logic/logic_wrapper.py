@@ -232,3 +232,6 @@ class Logic_wrapper:
     
     def validate_departure_time(self, dep_time):
         return VoyageLogic().validate_departure_time(dep_time)
+    
+    def validate_dep_time_back(arr_time, dep_time_back_input) -> bool:
+        return VoyageLogic().validate_dep_time_back(arr_time, dep_time_back_input)

@@ -10,7 +10,7 @@ class voyage:
 
     def create_new_voyage(self):
         
-        all_destinations = Logic_wrapper().get_all_destinations()
+        
         taken_voyage_ids = Logic_wrapper().get_all_voyage_ids()
         all_destinations_id = Logic_wrapper().get_all_dest_ids()
 
@@ -55,6 +55,10 @@ class voyage:
         Input Departure Time Back(12:00 16.12.2023)"""
         print(dep_time_back)
         dep_time_back_input = input("=>: ")
+        #while Logic_wrapper().validate_dep_time_back(arr_time, dep_time_back_input) == False:
+
+
+
 
         day, month, year, all_hours, all_minutes = Logic_wrapper().date_and_time_formatter(dep_time_back_input, flight_time)
         arr_time_back = Logic_wrapper().arrival_time_and_date(day, month, year, all_hours, all_minutes)

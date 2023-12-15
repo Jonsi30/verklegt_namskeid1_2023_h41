@@ -218,7 +218,27 @@ class VoyageLogic:
             
         return False
     
-                    
+    def validate_dep_time_back(arr_time, dep_time_back_input) -> bool:
+        #arr_time 04:30 23.12.2023
+        dep_time_back = VoyageLogic().validate_departure_time(dep_time_back_input)
+        if dep_time_back == True:
+            date = "%H:%M %d.%m.%Y"
+            
+            arr_time = datetime.strptime(arr_time, date)
+            dep_time = datetime.strptime(dep_time_back_input, date)
+
+            time_between = dep_time - arr_time
+            one_hour = timedelta(hours=1)
+            
+            #dep_time = (dep_time_back_input[:5])
+           # dep_date = dep_time_back_input[6:]
+
+           # arr_time = (arr_time[:5])
+            #arr_date = arr_time[6:]
+
+
+
+
         
             
             
