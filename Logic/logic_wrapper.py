@@ -92,12 +92,6 @@ class Logic_wrapper:
     def get_available_airplanes(self, date):
         return self.logic_aircraft.get_available_aircraft(date)
 
-    
-
-    def get_employee_dict(self, ret_dict):
-        """Returns all employess in the employee dict"""
-        return self.logic_employees.get_employee_dict(ret_dict)
-
     def update_employee(self, ssn_input,role_input,rank_input,License_input,phone_input,address_input,email_input):
         """Returns an updated employee to the employee list"""
         return self.data_wrapper.update_employee(ssn_input,role_input,rank_input,License_input,phone_input,address_input,email_input)

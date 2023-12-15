@@ -194,7 +194,7 @@ class employee:
 
     def get_employee_schedule(self):
         while True:
-            logic = Logic_wrapper()
+            
             print("\033[2J\033[H")
             ssn = self.validate_ssn()
             schedule = Logic_wrapper().get_certain_employee_schedule(ssn)
