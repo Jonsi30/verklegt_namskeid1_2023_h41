@@ -110,7 +110,8 @@ class employee:
             print("Invalid ssn input, must be only digits and 10 digits long, try again!")
             ssn_input = input("-> ")
         
-        
+        success_message = f"You've succesfully created {name_input} in the system!"
+        print(success_message)
         options = """
         [B]ACK
         """

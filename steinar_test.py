@@ -10,12 +10,9 @@ from prettytable import PrettyTable
 from datetime import datetime
 def main():
 
-    date = '0.10.2023'
-    day = 23
-    month = 10
-    year = 2023
+    email = 'gillz@nan.is'
 
-    print(datetime(year, month, day))
+    print(email[-7:])
         
 
     

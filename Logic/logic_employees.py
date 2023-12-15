@@ -239,7 +239,7 @@ class LogicEmployees:
     
     def validate_employee_email_address(self, email_input) -> bool:
 
-        if email_input[7:] == '@nan.is' and len(email_input) > 8:
+        if email_input[-7:] == '@nan.is' and len(email_input) > 4:
             return True
         
         return False
