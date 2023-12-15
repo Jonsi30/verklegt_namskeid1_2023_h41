@@ -43,7 +43,7 @@ class LogicDestination:
 
         return flight_nr
     
-    def validate_dest_id_input(self, dest_id_input) -> bool:
+    def validate_dest_id_input_create(self, dest_id_input) -> bool:
         """Must be 3 letter str"""
         if len(dest_id_input) == 3:
             for letter in dest_id_input:

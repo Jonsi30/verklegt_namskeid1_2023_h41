@@ -275,6 +275,9 @@ Hver er að gera hvað:
 Jón og steinar eru að lagfæra hvað má vera í hvaða layer í kóðanum okkar og færa eftir þörfum
 Sindri, Tómas og Helgi eru að vinna í að fínpússa hönnunarskýrsluna
 
+Síðdegisfundur:
+Farið yfir hver ætti að skila verkefninu
+
 Forgangsverkefni:
 Klára hópverkefnið með stæl
 

@@ -52,7 +52,7 @@ class voyage:
         print(f"\n\tThe arrival to {arr_at_input} is {arr_time}\n")
         
         dep_time_back = """
-        Input Departure Time Back(12:00 16.12.2023)"""
+        Input Departure Time Back, must be in this format: 12:00 16.12.2023)"""
         print(dep_time_back)
         dep_time_back_input = input("=>: ")
         while Logic_wrapper().validate_dep_time_back(arr_time, dep_time_back_input) == False:
@@ -192,23 +192,18 @@ class voyage:
             print((table))
             id_number = (input("Invalid id, input an Id from the list above, that you want to work with: "))
 
-        voyage_in_work = Logic_wrapper().get_voyage_from_id_input(id_number)  
-
+        voyage = Logic_wrapper().get_voyage_from_id_input(id_number)  
         
+        fieldnames = ["Id", "Flight Nr", "Plane Insignia", "Captain", "Copilot", "Head of Service", "Flight Attendant"]
+        table = PrettyTable()
+        table.field_names = fieldnames
+                
+        table.add_row([voyage.id, voyage.flight_nr, voyage.plane_insignia, voyage.captain, voyage.copilot, voyage.head_of_service, voyage.flight_attendant])
         
-        for voyage in voyage_in_work:
-            fieldnames = ["Id", "Flight Nr", "Plane Insignia", "Captain", "Copilot", "Head of Service", "Flight Attendant"]
-            table = PrettyTable()
-            table.field_names = fieldnames
-            
-            for voyage in voyage_in_work:
-                
-                table.add_row([voyage.id, voyage.flight_nr, voyage.plane_insignia, voyage.captain, voyage.copilot, voyage.head_of_service, voyage.flight_attendant])
-                
-            print(f"You will work with the voyage with the id: {id_number}")
-            
-            print((table))
-            print()
+        print(f"You will work with the voyage with the id: {id_number}")
+        
+        print((table))
+        print()
         
         available = Logic_wrapper().get_available_staff(voyage.arr_time_back[6:])
             

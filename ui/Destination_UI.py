@@ -65,7 +65,7 @@ class destination:
         emergency contact phone_nr"""
         print(Number)
         contact_nr_input = input("=> ")
-        while Logic_wrapper().validate_emergency_contact_phone_nr(contact_nr_input) == False:
+        while Logic_wrapper().validate_employee_phone_nr(contact_nr_input) == False:
             print("Invalid emergency contact phone number!")
             contact_nr_input = input("=> ")
 

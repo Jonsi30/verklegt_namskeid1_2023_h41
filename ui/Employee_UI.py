@@ -264,15 +264,12 @@ class employee:
                     print("Invalid year number, must be a year between 2023 - 2026, try again!")
                     year = (input("Enter in a year number: "))
             
-            
             week = input("Enter in a week number: ")
             
             while Logic_wrapper().validate_week_input(week) == False:
                 print("Invalid week number, try again")
                 week = (input("Enter in a week number: "))
                 
-                    
-            
             employee_voyages = Logic_wrapper().get_employee_week_schedule(year, week, ssn)
             voyage_table = PrettyTable()
             fieldnames = ["Name", "Voyage Id", "Role", "Dep.Time", "Arr.Time Back", "Destination", "Week", "Year"]
@@ -281,11 +278,11 @@ class employee:
             name = Logic_wrapper().get_employee_name_by_ssn(ssn)
             role = Logic_wrapper().get_employee_role_by_ssn(ssn)
 
-            if employee_voyages:
+            if employee_voyages != []:
                 for voyage in employee_voyages:
                     voyage_table.add_row([name, voyage.id, role, voyage.dep_time, voyage.arr_time_back, voyage.arr_at, week, year])
+                
                 print(voyage_table)
-
 
             else: print(f"No voyages scheduled for this employee in the week nr: {week} in the year: {year}")
             options = """ 
