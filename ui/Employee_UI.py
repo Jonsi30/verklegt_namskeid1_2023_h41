@@ -51,14 +51,28 @@ class employee:
             print("Invalid rank input, if Pilot is the role, the rank must be Copilot or Captain.\n If Cabincrew is the role, the rank must be Flight Service Manager or Flight Attendant! Try again!")
             rank_input = input("=> ")
         
-        License = """
-        
-        License"""
-        print(License)
-        license_input = input("=> ")
-        while Logic_wrapper().validate_employee_license_input(license_input, role_input) == False:
-            print("Invalid License input, try again!")
+        if role_input.lower() == 'pilot':
+            
+            aircraft_table = PrettyTable()
+            aircraft_table.field_names = ["Aircraft"]
+            all_aircrafts = Logic_wrapper().get_all_aircraft()
+            for aircraft in all_aircrafts:
+                aircraft_table.add_row([aircraft.plane_type_id])
+            
+            print(aircraft_table)
+            License = """
+            
+            Choose the Aircraft license for this pilot from the list above"""
+            print(License)
             license_input = input("=> ")
+            
+            
+            while Logic_wrapper().validate_aircraft_license(license_input) == False:
+                print(aircraft_table)
+                print("That plane license doesn't exist in the list above, try again!")
+                license_input = input("=> ")
+        else:
+            license_input = 'N/A'
 
         phone = """
         
@@ -395,47 +409,78 @@ class employee:
         
         role"""
         print(role)
-        role_input = input("=> ").capitalize()
-        
-        while Logic_wrapper().validate_employee_role_input(role_input) == False:
-            print("Thats not a real role, it can either be Pilot or Cabincrew, try again!")
-            role_input = input("=> ").capitalize()
+        role_input = input("=> ")
+        if role_input == "":
+            role_input = employee.role
+        else:
+            while Logic_wrapper().validate_employee_role_input(role_input) == False:
+                print("Thats not a real role, it can either be Pilot or Cabincrew, try again!")
+                role_input = input("=> ")
 
         rank = """
         
         Rank"""
         print(rank)
-        rank_input = input("=> ").capitalize()
-        while Logic_wrapper().validate_employee_rank_input(rank_input, role_input) == False:
-            print("That's not a real rank, pilot can either be Captain or Copilot, and cabincrew can either be Flight Service Manager or Flight Attendant")
-            print("Try again!")
-            rank_input = input("=> ").capitalize()
+        rank_input = input("=> ")
+        if rank_input == "":
+            rank_input = employee.rank
+        else:
+            while Logic_wrapper().validate_employee_rank_input(rank_input, role_input) == False:
+                print("That's not a real rank, pilot can either be Captain or Copilot, and cabincrew can either be Flight Service Manager or Flight Attendant")
+                print("Try again!")
+                rank_input = input("=> ")
 
-        
+            if role_input == 'Pilot':
+                aircraft_table = PrettyTable()
+                aircraft_table.field_names = ["Aircraft"]
+                all_aircrafts = Logic_wrapper().get_all_aircraft()
+                for aircraft in all_aircrafts:
+                    aircraft_table.add_row([aircraft.plane_type_id])
+                
+                print(aircraft_table)
+                
+                License = """
+            
+                Choose the Aircraft license for this pilot from the list above"""
+                print(License)
+                license_input = input("=> ")
+                while Logic_wrapper().validate_aircraft_license(license_input) == False:
+                    print(aircraft_table)
+                    print("That plane license doesn't exist in the list above, try again!")
+                    license_input = input("=> ")
 
-        License = """
-        
-        License"""
-        print(License)
-        License_input = input("=> ")
+            else:
+                license_input = 'N/A'
 
         phone = """
         
         phone"""
         print(phone)
         phone_input = input("=> ")
-
+        while Logic_wrapper().validate_phone_nr(phone_input) == False:
+            print("Not a valid phone number, can't include letters and must be 7 digits, try again!")
+            phone_input = input("=> ")  
+        
         address = """
         
         address"""
         print(address)
         address_input = input("=> ")
+        while Logic_wrapper().validate_employee_address(address_input) == False:
+            print("Invalid address input, try again!")
+            address_input = input("=> ")
 
         email = """
         
         email"""
         print(email)
         email_input = input("=> ")
+        while Logic_wrapper().validate_employee_email_address(email_input) == False:
+            print("Invalid email input, must include @nan.is and be over than 8 letters, try again!")
+            email_input = input("=> ")
+
+        success_message = f"You have successfully edited the info for {employee.name}!"
+        print(success_message)
 
         options = """
         [B]ACK
@@ -446,7 +491,7 @@ class employee:
             ssn_input,
             role_input,
             rank_input,
-            License_input,
+            license_input,
             phone_input,
             address_input,
             email_input,

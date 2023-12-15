@@ -140,8 +140,8 @@ class destination:
         emergency contact phone number"""
         print(Number)
         contact_nr_input = input("=> ")
-        while Logic_wrapper().validate_emergency_contact_phone_nr(contact_nr_input) == False:
-            print("Invalid emergency contact phone number!")
+        while Logic_wrapper().validate_phone_nr(contact_nr_input) == False:
+            print("Invalid emergency contact phone number, must be 7 digits, try again!")
             contact_nr_input = input("=> ")
 
         options = f"""

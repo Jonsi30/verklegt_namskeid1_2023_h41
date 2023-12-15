@@ -101,8 +101,8 @@ class LogicDestination:
             return True       
         return False
     
-    def validate_emergency_contact_phone_nr(self, contact_nr_input) -> bool:
-        """Emergency contact phone number can't include letters"""
+    def validate_phone_nr(self, contact_nr_input) -> bool:
+        """Phone number can't include letters"""
         
         if len(contact_nr_input) == 7:
             for number in contact_nr_input:

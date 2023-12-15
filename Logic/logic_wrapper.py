@@ -158,8 +158,8 @@ class Logic_wrapper:
     def validate_emergency_contact_name_input(self, emerg_name_input) -> bool:
         return LogicDestination().validate_emergency_contact_name_input(emerg_name_input)
     
-    def validate_emergency_contact_phone_nr(self, emerg_phone_nr) -> bool:
-        return LogicDestination().validate_emergency_contact_phone_nr(emerg_phone_nr)
+    def validate_phone_nr(self, emerg_phone_nr) -> bool:
+        return LogicDestination().validate_phone_nr(emerg_phone_nr)
     
     def get_all_dest_ids(self) -> list:
         return LogicDestination().get_all_dest_ids()
@@ -214,3 +214,6 @@ class Logic_wrapper:
     
     def get_employee_model_from_ssn(self, ssn_input):
         return LogicEmployees().get_employee_model_from_ssn(ssn_input)
+    
+    def validate_aircraft_license(self, license_input) -> bool:
+        return LogicEmployees.validate_aircraft_license(self, license_input)

@@ -2,7 +2,7 @@ from data.data_wrapper import Data_wrapper
 from model.employee import Employee
 from prettytable import PrettyTable
 from datetime import datetime
-
+from logic.logic_aircraft import LogicAircraft
 
 class LogicEmployees:
     def __init__(self):
@@ -189,12 +189,15 @@ class LogicEmployees:
     
     def validate_employee_rank_input(self, rank_input, role_input) -> bool:
 
-        if role_input == 'Pilot' and rank_input == 'Copilot' or rank_input == 'Captain':
-            return True
+        if role_input == 'Pilot':
+            if rank_input == 'Copilot' or rank_input == 'Captain':
+                return True
+            return False
 
-        if role_input == 'Cabincrew' and rank_input == 'Flight Service Manager' or rank_input == 'Flight Attendant':
-            return True
-        
+        if role_input == 'Cabincrew':
+            if rank_input == 'Flight Service Manager' or rank_input == 'Flight Attendant':
+                return True
+            return False
         else:
         
             return False
@@ -332,3 +335,11 @@ class LogicEmployees:
         for employee in self.get_all_employees():
             if employee.ssn == ssn_input:
                 return (employee)
+            
+    def validate_aircraft_license(self, license_input):
+        """Check if aircraft license from input exists"""
+
+        for aircraft in LogicAircraft().get_all_aircrafts():
+            if aircraft.plane_type_id == license_input:
+                return True
+        return False
