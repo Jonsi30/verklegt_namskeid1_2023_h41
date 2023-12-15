@@ -171,7 +171,7 @@ class VoyageLogic:
 
 
 
-        new_date = datetime(year, month, day) + timedelta(days=day_added)
+        new_date = datetime.datetime(year, month, day) + datetime.timedelta(days=day_added)
         new_date = str(new_date)
         day = new_date[8:10]
         month = new_date[5:7]

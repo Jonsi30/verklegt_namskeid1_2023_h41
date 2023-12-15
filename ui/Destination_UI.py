@@ -65,52 +65,63 @@ class destination:
 
     def update_destination(self):
         from logic.logic_wrapper import Logic_wrapper
-
         print("\033[2J\033[H")
-        new_destination = """
+        destination_ids = []
+        destination_names = []
+
+        for destination in Logic_wrapper().get_all_destinations():
+            destination_ids.append(destination.destination_id)
+            
+
+        destination_id = f"""
         Please Input The Following Details
         ----------------------------------
-        Input Destination """
-        print(new_destination)
-        dest_input = input("=> ")
-
-        destination_id = """
-        
+        Destination ID's you can change are as follows: {", ".join(destination_ids)}
         Input destination ID (XXX)"""
         print(destination_id)
         dest_id_input = input("=> ")
 
+        if dest_id_input not in destination_ids:
+            while dest_id_input not in destination_ids:
+                print("That destination doesn't exist! Please try again.")
+                dest_id_input = input("=> ")
+
         distance = """ 
         
-        distance from iceland (km)"""
+        Press enter if you dont want to change this attribute.
+        distance from iceland (km), fx. 300"""
         print(distance)
         dist_input = input("=> ")
 
         duration = """
         
+        Press enter if you dont want to change this attribute.
         Duration (hrs:minutes)"""
         print(duration)
         dura_input = input("=> ")
 
         Contact = """
         
+        Press enter if you dont want to change this attribute.
         Emergency contact"""
         print(Contact)
         contact_input = input("=> ")
 
         Number = """
         
+        Press enter if you dont want to change this attribute.
         emergency contact phone_nr"""
         print(Number)
         contact_nr_input = input("=> ")
 
-        options = """
+        options = f"""
+        You have succesfully changed the information details of destination {dest_id_input}!
         [B]ACK
         """
         print(options)
 
         return Logic_wrapper().update_destination(
-            dest_input,
+            "irrelevant",
             dest_id_input,
             dist_input,
             dura_input,
@@ -157,15 +168,19 @@ class destination:
         print((table))
 
         get_all_destinations = """
-        [N]EW 
+        [N]EW
+        [U]PDATE DESTINATION 
         [B]ACK
         """
         print(get_all_destinations)
 
         while True:
             command = input("=> ").lower()
-            if command == "n":
+            if command.lower() == "n":
                 self.create_new_destination()
                 break
+            elif command.lower() == "u":
+                self.update_destination()
             elif command == "b":
                 return
+            

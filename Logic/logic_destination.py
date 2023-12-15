@@ -34,11 +34,6 @@ class LogicDestination:
         
         return destinations
 
-    def update_destination_info(
-        self, new_info
-    ):  # new info er model af destination klasanum
-        return self.destination.update_destination(new_info)
-
     def generate_flight_number(self, dest_id_input):
         """Generates a flight number for the destination that was input into the function"""
         for i, destination in enumerate(Data_wrapper().get_all_destinations()):

@@ -257,7 +257,7 @@ class employee:
 
             else: print(f"No voyages scheduled for this employee in the week nr: {week} in the year: {year}")
             options = """ 
-            [Q]UIT
+            [B]ACK
 
             """
             print(options)
